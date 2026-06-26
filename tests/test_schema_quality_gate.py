@@ -634,7 +634,7 @@ class SchemaQualityGateTest(unittest.TestCase):
 
     def write_portal_sdk_boundary(self, root: Path) -> None:
         portal = root / "apps" / "sdkwork-clawrouter-pc"
-        commons = portal / "packages" / "sdkwork-clawrouter-pc-commons"
+        commons = portal / "packages" / "sdkwork-clawroutes-pc-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
         (portal / "package.json").write_text(
             '{"scripts":{"dev":"vite --configLoader native","dev:browser":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*","@sdkwork/clawrouter-open-sdk":"workspace:*"}}\n',

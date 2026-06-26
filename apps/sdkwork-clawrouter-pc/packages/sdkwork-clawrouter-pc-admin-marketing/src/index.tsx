@@ -13,7 +13,7 @@ import {
   TrendingUp,
   WalletCards,
 } from 'lucide-react';
-import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   MarketingService,
   backendPromotionBudgetLedgerEntriesList,

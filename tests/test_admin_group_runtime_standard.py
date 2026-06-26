@@ -246,7 +246,7 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         service = (package_root / "src" / "groupService.ts").read_text(encoding="utf-8")
         view = (package_root / "src" / "index.tsx").read_text(encoding="utf-8")
         form = (package_root / "src" / "groupForm.ts").read_text(encoding="utf-8")
-        verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
+        verifier = (ROOT / "scripts" / "verify-claw-router-application.mjs").read_text(encoding="utf-8")
 
         self.assertEqual(package["type"], "module")
         self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")

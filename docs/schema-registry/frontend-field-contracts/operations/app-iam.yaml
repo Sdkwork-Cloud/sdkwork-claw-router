@@ -487,7 +487,7 @@ frontend_operations:
         type: string
         description: Safe OAuth provider binding summary without provider subject IDs or tokens.
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizations
   operation_scope: app_shell
   operation_id: organizations.list
@@ -589,7 +589,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizationTree
   operation_scope: app_shell
   operation_id: organizations.tree.retrieve
@@ -665,7 +665,7 @@ frontend_operations:
                 type: object
                 additionalProperties: true
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizationMemberships
   operation_scope: app_shell
   operation_id: organizationMemberships.list
@@ -735,7 +735,7 @@ frontend_operations:
               type: string
               maxLength: 1024
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartments
   operation_scope: app_shell
   operation_id: departments.list
@@ -809,7 +809,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartmentTree
   operation_scope: app_shell
   operation_id: departments.tree.retrieve
@@ -890,7 +890,7 @@ frontend_operations:
                 type: object
                 additionalProperties: true
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartmentAssignments
   operation_scope: app_shell
   operation_id: departmentAssignments.list
@@ -976,7 +976,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamPositions
   operation_scope: app_shell
   operation_id: positions.list
@@ -1054,7 +1054,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamPositionAssignments
   operation_scope: app_shell
   operation_id: positionAssignments.list
@@ -1136,7 +1136,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamRoleBindings
   operation_scope: app_shell
   operation_id: roleBindings.list

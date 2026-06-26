@@ -69,7 +69,7 @@ def same_origin_runtime(required_env: str) -> dict:
         "requiredBaseUrlEnv": required_env,
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
         "rustRouteContractCrate": {
-            "crate": "sdkwork-router-models-catalog-backend-api",
+            "crate": "sdkwork-routes-models-catalog-backend-api",
             "executableRouterExport": "admin_model_catalog_router",
         },
         "handlerAdapterExports": [
@@ -82,9 +82,9 @@ def same_origin_runtime(required_env: str) -> dict:
         "mountCoverage": {
             "status": "verified",
             "evidence": [
-                "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-router-backend-api through sdkwork_router_models_catalog_backend_api.",
+                "Model catalog admin CRUD, mappings, sync, and rankings routes are owned by sdkwork-models route crates and mounted in sdkwork-routes-clawrouter-backend-api through sdkwork_routes_models_catalog_backend_api.",
                 "Catalog admin stores live in sdkwork-models-catalog-repository-sqlx; Claw Router wires Sqlite/Postgres stores and cache invalidation adapters at compose time.",
-                "cargo test -p sdkwork-router-models-catalog-backend-api --test route_manifest verifies backend route manifest alignment.",
+                "cargo test -p sdkwork-routes-models-catalog-backend-api --test route_manifest verifies backend route manifest alignment.",
             ],
         },
     }
@@ -93,14 +93,14 @@ def same_origin_runtime(required_env: str) -> dict:
 def same_origin_app_runtime() -> dict:
     runtime = same_origin_runtime("VITE_SDKWORK_MODELS_APP_API_BASE_URL")
     runtime["rustRouteContractCrate"] = {
-        "crate": "sdkwork-router-models-catalog-app-api",
+        "crate": "sdkwork-routes-models-catalog-app-api",
         "executableRouterExport": "admin_model_catalog_router",
     }
     runtime["handlerAdapterExports"] = []
     runtime["mountCoverage"]["evidence"] = [
-        "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-router-app-api through sdkwork_router_models_catalog_app_api.",
+        "Model catalog and rankings app routes are owned by sdkwork-models route crates and mounted in sdkwork-routes-clawrouter-app-api through sdkwork_routes_models_catalog_app_api.",
         "Catalog handlers and domain types live in sdkwork-models-catalog-service; Claw Router supplies RefreshableSqlPricingCatalog as the host pricing snapshot port.",
-        "cargo test -p sdkwork-router-models-catalog-app-api --test route_manifest verifies app route manifest alignment.",
+        "cargo test -p sdkwork-routes-models-catalog-app-api --test route_manifest verifies app route manifest alignment.",
     ]
     return runtime
 

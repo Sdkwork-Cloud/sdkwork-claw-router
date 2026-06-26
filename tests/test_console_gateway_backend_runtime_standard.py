@@ -11,7 +11,7 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
             ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
         app_api = (
-            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
         app_gateway_path = (
             ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_gateway.rs"

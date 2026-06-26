@@ -5,7 +5,7 @@ import {
   readRequiredApiItems,
   readRequiredString,
   readRequiredNumber,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type { GatewayTrace as SdkGatewayTrace } from '@sdkwork/clawrouter-app-sdk';
 
 export interface GatewayTrace {

@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, get, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Serialize;
 use serde_json::{Map, Value};
 use sha2::{Digest, Sha256};
@@ -219,10 +219,10 @@ pub fn admin_channel_router_with_store(
 
 async fn fetch_channels(
     State(state): State<AdminChannelState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
 
     match state
         .store
@@ -239,11 +239,11 @@ async fn fetch_channels(
 
 async fn create_channel(
     State(state): State<AdminChannelState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_object(&body, "channel request body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -269,11 +269,11 @@ async fn create_channel(
 
 async fn update_channel(
     State(state): State<AdminChannelState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_object(&body, "channel update body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -300,11 +300,11 @@ async fn update_channel(
 
 async fn delete_channel(
     State(state): State<AdminChannelState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -327,11 +327,11 @@ async fn delete_channel(
 
 async fn test_channel(
     State(state): State<AdminChannelState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -355,14 +355,6 @@ async fn test_channel(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminChannelSubject {
-    AdminChannelSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_object(
     body: &[u8],

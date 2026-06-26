@@ -14,12 +14,12 @@ import {
   readString,
   readStringArray,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import {
   isCanonicalModelCatalogKey,
   isRegionalModelCatalogKey,
   parseModelCatalogIdentity,
-} from '@sdkwork/clawrouter-pc-commons/model-catalog-identity';
+} from '@sdkwork/clawroutes-pc-commons/model-catalog-identity';
 import type {
   AdminAiResourceCreateRequest,
   AdminAiResourceGroupItem,

@@ -3,7 +3,7 @@ import {
   getSdkworkAppbaseAppSdkClient,
   readApiRecord,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export async function fetchClawRouterAuthRuntimeSettings(): Promise<ApiRecord> {
   const result = await getSdkworkAppbaseAppSdkClient().system.iam.runtime.retrieve();

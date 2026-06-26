@@ -3,8 +3,8 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, get, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use crate::api::response::PlusApiResult;
 use crate::application::{
@@ -55,7 +55,7 @@ pub fn admin_cache_router_with_manager(manager: RuntimeCacheManager) -> Router {
 
 async fn fetch_overview(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
 ) -> Response {
     match state.manager.snapshot().await {
         Ok(snapshot) => cache_success(snapshot),
@@ -65,7 +65,7 @@ async fn fetch_overview(
 
 async fn refresh_all(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
 ) -> Response {
     match state.manager.refresh_all().await {
         Ok(outcome) => cache_success(outcome),
@@ -75,7 +75,7 @@ async fn refresh_all(
 
 async fn refresh_instance(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path(instance_name): Path<String>,
 ) -> Response {
     match state.manager.refresh_instance(&instance_name).await {
@@ -86,7 +86,7 @@ async fn refresh_instance(
 
 async fn delete_instance(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path(instance_name): Path<String>,
 ) -> Response {
     match state.manager.delete_instance(&instance_name).await {
@@ -97,7 +97,7 @@ async fn delete_instance(
 
 async fn refresh_namespace(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path(namespace): Path<String>,
 ) -> Response {
     match state.manager.refresh_namespace(&namespace).await {
@@ -108,7 +108,7 @@ async fn refresh_namespace(
 
 async fn delete_namespace(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path(namespace): Path<String>,
 ) -> Response {
     match state.manager.delete_namespace(&namespace).await {
@@ -119,7 +119,7 @@ async fn delete_namespace(
 
 async fn list_namespace_keys(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path(namespace): Path<String>,
     Query(query): Query<CacheKeyListQuery>,
 ) -> Response {
@@ -143,7 +143,7 @@ async fn list_namespace_keys(
 
 async fn delete_key(
     State(state): State<AdminCacheState>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Path((namespace, key)): Path<(String, String)>,
 ) -> Response {
     match state.manager.delete_key(&namespace, &key).await {

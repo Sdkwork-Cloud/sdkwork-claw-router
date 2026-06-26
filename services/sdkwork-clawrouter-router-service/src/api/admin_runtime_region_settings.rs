@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::State;
@@ -8,7 +9,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use tokio::sync::RwLock;
 
@@ -77,10 +77,10 @@ pub fn admin_runtime_region_settings_router_with_store(
 
 async fn fetch_runtime_region_settings(
     State(state): State<AdminRuntimeRegionSettingsState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     match load_settings_with_cache(&state, subject).await {
         Ok(settings) => Json(PlusApiResult::success(to_response(settings))).into_response(),
         Err(error) => runtime_region_system_response(
@@ -92,11 +92,11 @@ async fn fetch_runtime_region_settings(
 
 async fn update_runtime_region_settings(
     State(state): State<AdminRuntimeRegionSettingsState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_body::<RuntimeRegionSettingsUpdateRequest>(
         &body,
         "runtime region settings",
@@ -172,14 +172,6 @@ impl RuntimeRegionSettingsCacheKey {
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> RuntimeRegionSettingsSubject {
-    RuntimeRegionSettingsSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
 where

@@ -27,25 +27,25 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
         for spec_file in spec_files:
             source = (SPECS_ROOT / spec_file).read_text(encoding="utf-8")
             with self.subTest(spec=spec_file):
-                self.assertIn("sdkwork-router-", source)
+                self.assertIn("sdkwork-routes-", source)
                 self.assertNotIn("sdkwork-routes-", source)
 
     def test_router_api_packages_are_declared_as_workspace_route_crates(self) -> None:
         cargo_toml = (ROOT / "Cargo.toml").read_text(encoding="utf-8")
         expected_packages = [
-            "sdkwork-router-llm-open-api",
-            "sdkwork-router-payment-open-api",
-            "sdkwork-router-image-open-api",
-            "sdkwork-router-video-open-api",
-            "sdkwork-router-audio-open-api",
-            "sdkwork-router-drive-open-api",
-            "sdkwork-router-knowledgebase-open-api",
-            "sdkwork-router-memory-open-api",
-            "sdkwork-router-agent-open-api",
-            "sdkwork-router-iaas-open-api",
-            "sdkwork-router-paas-open-api",
-            "sdkwork-router-app-api",
-            "sdkwork-router-backend-api",
+            "sdkwork-routes-llm-open-api",
+            "sdkwork-routes-payment-open-api",
+            "sdkwork-routes-image-open-api",
+            "sdkwork-routes-video-open-api",
+            "sdkwork-routes-audio-open-api",
+            "sdkwork-routes-drive-open-api",
+            "sdkwork-routes-knowledgebase-open-api",
+            "sdkwork-routes-memory-open-api",
+            "sdkwork-routes-agent-open-api",
+            "sdkwork-routes-iaas-open-api",
+            "sdkwork-routes-paas-open-api",
+            "sdkwork-routes-clawrouter-app-api",
+            "sdkwork-routes-clawrouter-backend-api",
         ]
 
         for package_name in expected_packages:
@@ -67,19 +67,19 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
 
     def test_router_api_route_crates_have_component_specs(self) -> None:
         expected_packages = [
-            "sdkwork-router-llm-open-api",
-            "sdkwork-router-payment-open-api",
-            "sdkwork-router-image-open-api",
-            "sdkwork-router-video-open-api",
-            "sdkwork-router-audio-open-api",
-            "sdkwork-router-drive-open-api",
-            "sdkwork-router-knowledgebase-open-api",
-            "sdkwork-router-memory-open-api",
-            "sdkwork-router-agent-open-api",
-            "sdkwork-router-iaas-open-api",
-            "sdkwork-router-paas-open-api",
-            "sdkwork-router-app-api",
-            "sdkwork-router-backend-api",
+            "sdkwork-routes-llm-open-api",
+            "sdkwork-routes-payment-open-api",
+            "sdkwork-routes-image-open-api",
+            "sdkwork-routes-video-open-api",
+            "sdkwork-routes-audio-open-api",
+            "sdkwork-routes-drive-open-api",
+            "sdkwork-routes-knowledgebase-open-api",
+            "sdkwork-routes-memory-open-api",
+            "sdkwork-routes-agent-open-api",
+            "sdkwork-routes-iaas-open-api",
+            "sdkwork-routes-paas-open-api",
+            "sdkwork-routes-clawrouter-app-api",
+            "sdkwork-routes-clawrouter-backend-api",
         ]
 
         for package_name in expected_packages:
@@ -102,11 +102,11 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
 
     def test_app_and_backend_route_crates_expose_executable_router_builders(self) -> None:
         expected = {
-            "sdkwork-router-app-api": [
+            "sdkwork-routes-clawrouter-app-api": [
                 "src/routes.rs#build_sdkwork_claw_router_app_api_router",
                 "src/routes.rs#build_sdkwork_claw_router_app_api_router_from_env",
             ],
-            "sdkwork-router-backend-api": [
+            "sdkwork-routes-clawrouter-backend-api": [
                 "src/routes.rs#build_sdkwork_claw_router_backend_api_router",
                 "src/routes.rs#build_sdkwork_claw_router_backend_api_router_from_env",
             ],
@@ -139,12 +139,12 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
             encoding="utf-8",
         )
 
-        self.assertIn("sdkwork-router-app-api.workspace = true", gateway_manifest)
-        self.assertIn("sdkwork-router-backend-api.workspace = true", gateway_manifest)
+        self.assertIn("sdkwork-routes-clawrouter-app-api.workspace = true", gateway_manifest)
+        self.assertIn("sdkwork-routes-clawrouter-backend-api.workspace = true", gateway_manifest)
         self.assertNotIn("sdkwork-clawrouter-app-api-server.workspace = true", gateway_manifest)
         self.assertNotIn("sdkwork-clawrouter-admin-api-server.workspace = true", gateway_manifest)
-        self.assertIn("sdkwork_router_app_api::", gateway_runtime)
-        self.assertIn("sdkwork_router_backend_api::", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_app_api::", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_backend_api::", gateway_runtime)
         self.assertNotIn("sdkwork_clawrouter_app_api_server::", gateway_runtime)
         self.assertNotIn("sdkwork_clawrouter_admin_api_server::", gateway_runtime)
 
@@ -163,23 +163,23 @@ class SdkworkRouterApiPackageStandardTest(unittest.TestCase):
             gateway_runtime,
         )
         self.assertIn("claw_router_gateway_dependency_surfaces", gateway_runtime)
-        self.assertIn("sdkwork_router_app_api::manifest::API_AUTHORITY", gateway_runtime)
-        self.assertIn("sdkwork_router_backend_api::manifest::API_AUTHORITY", gateway_runtime)
-        self.assertIn("sdkwork_router_app_api::paths::ROUTE_PREFIX", gateway_runtime)
-        self.assertIn("sdkwork_router_backend_api::paths::ROUTE_PREFIX", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_app_api::manifest::API_AUTHORITY", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_backend_api::manifest::API_AUTHORITY", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_app_api::paths::ROUTE_PREFIX", gateway_runtime)
+        self.assertIn("sdkwork_routes_clawrouter_backend_api::paths::ROUTE_PREFIX", gateway_runtime)
         self.assertIn("sdkwork_api_cloud_gateway_surface_path", edge_server)
         self.assertIn("path_matches_prefix(path, APP_API_PREFIX)", edge_server)
         self.assertIn("path_matches_prefix(path, BACKEND_API_PREFIX)", edge_server)
 
     def test_sdkwork_dependency_open_api_route_packages_keep_sdkwork_authority_mapping(self) -> None:
         expected_mappings = {
-            "sdkwork-router-drive-open-api": ("sdkwork-drive-open-api", "sdkwork-drive-sdk"),
-            "sdkwork-router-knowledgebase-open-api": (
+            "sdkwork-routes-drive-open-api": ("sdkwork-drive-open-api", "sdkwork-drive-sdk"),
+            "sdkwork-routes-knowledgebase-open-api": (
                 "sdkwork-knowledgebase-open-api",
                 "sdkwork-knowledgebase-sdk",
             ),
-            "sdkwork-router-memory-open-api": ("sdkwork-memory-open-api", "sdkwork-memory-sdk"),
-            "sdkwork-router-agent-open-api": ("sdkwork-agent-open-api", "sdkwork-agent-sdk"),
+            "sdkwork-routes-memory-open-api": ("sdkwork-memory-open-api", "sdkwork-memory-sdk"),
+            "sdkwork-routes-agent-open-api": ("sdkwork-agent-open-api", "sdkwork-agent-sdk"),
         }
 
         for package_name, (api_authority, sdk_family) in expected_mappings.items():

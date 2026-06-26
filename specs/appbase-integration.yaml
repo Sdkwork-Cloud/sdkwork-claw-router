@@ -28,7 +28,7 @@ integrations:
         - "@sdkwork/iam-sdk-ports"
         - "@sdkwork/iam-service"
       adapters:
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iam-runtime.ts
         - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
         - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
     contractTests:
@@ -37,7 +37,7 @@ integrations:
       - python -B -m unittest tests.test_iam_identity_contract_standard
     forbiddenProductForks:
       - apps/sdkwork-clawrouter-pc/src/auth/corePcReactCompat.ts
-      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iam-sdk-clients.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/iam-sdk-clients.ts
     sdkBoundary: generated-sdk-through-ports
 
   - capability: foundation
@@ -49,9 +49,9 @@ integrations:
       dependencies:
         - "@sdkwork/appbase-pc-react"
       adapters:
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-request-boundary.ts
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-request-boundary.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts
     contractTests:
       - apps/sdkwork-clawrouter-pc/auth-runtime.test.ts
       - tests/test_appbase_capability_guardian.py
@@ -69,12 +69,12 @@ integrations:
       dependencies:
         - "@sdkwork/notification-pc-react"
       adapters:
-        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/notificationService.ts
     contractTests:
       - tests/test_console_messages_runtime_standard.py
       - tests/test_console_messages_backend_runtime_standard.py
     verification:
       - python -B -m unittest tests.test_console_messages_runtime_standard tests.test_console_messages_backend_runtime_standard
     forbiddenProductForks:
-      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notification-sdk-clients.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/notification-sdk-clients.ts
     sdkBoundary: generated-sdk-through-ports

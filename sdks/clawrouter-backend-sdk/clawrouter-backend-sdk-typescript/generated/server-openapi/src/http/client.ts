@@ -220,14 +220,24 @@ export class HttpClient extends BaseHttpClient {
   private applySdkworkAuthHeaders(headers?: Record<string, string>): Record<string, string> | undefined {
     const authConfig = this.getInternalAuthConfig();
     const tokenManager = authConfig.tokenManager;
+    const authToken = tokenManager?.getAuthToken?.();
     const accessToken = tokenManager?.getAccessToken?.();
-    if (!accessToken) {
+    if (!authToken && !accessToken) {
       return headers;
     }
 
-    return {
+    const nextHeaders: Record<string, string> = {
       ...(headers ?? {}),
-      [HttpClient.ACCESS_TOKEN_HEADER]: accessToken,
+    };
+    if (authToken && !nextHeaders.Authorization) {
+      nextHeaders.Authorization = `Bearer ${authToken}`;
+    }
+    if (accessToken) {
+      nextHeaders[HttpClient.ACCESS_TOKEN_HEADER] = accessToken;
+    }
+
+    return {
+      ...nextHeaders,
     };
   }
 

@@ -19,4 +19,4 @@ Package-local unit tests that belong beside a package, live secrets, production 
 
 ## Verification
 - `python -B -m unittest tests.test_architecture_standard_guardian`
-- `python -B -m unittest tests.test_sdkwork_router_api_package_standard`
+- `python -B -m unittest tests.test_sdkwork_routes_api_package_standard`

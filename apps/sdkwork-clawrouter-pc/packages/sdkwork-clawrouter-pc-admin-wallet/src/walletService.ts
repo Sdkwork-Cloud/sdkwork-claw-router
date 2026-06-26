@@ -3,8 +3,8 @@ import {
   readRequiredApiItems,
   readRequiredString,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
-import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
 
 type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 

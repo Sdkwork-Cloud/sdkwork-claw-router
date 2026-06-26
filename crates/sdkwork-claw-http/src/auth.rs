@@ -239,7 +239,17 @@ impl TrustedRequestSubject {
             return Some(subject);
         }
         if let Some(context) = extensions.get::<sdkwork_web_core::WebRequestContext>() {
-            return crate::web_bridge::trusted_request_subject_from_web_context(context);
+            if let Some(subject) = crate::web_bridge::trusted_request_subject_from_web_context(context)
+            {
+                return Some(subject);
+            }
+        }
+        if let Some(context) = extensions.get::<IamAppContext>() {
+            if let Some(subject) =
+                crate::web_bridge::trusted_request_subject_from_iam_app_context(context)
+            {
+                return Some(subject);
+            }
         }
         if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
             return None;
@@ -380,8 +390,14 @@ pub async fn app_request_subject_boundary(
     next: Next,
 ) -> Response {
     if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
+        if let Some(subject) =
+            TrustedRequestSubject::resolve_optional(request.headers(), request.extensions())
+        {
+            attach_trusted_request_subject(&mut request, subject);
+        }
         return next.run(request).await;
     }
+
     let method = request.method().as_str().to_owned();
     let path_and_query = request
         .uri()
@@ -423,30 +439,36 @@ pub async fn optional_app_request_subject_boundary(
     next: Next,
 ) -> Response {
     if crate::web_framework_compat::claw_web_framework_enabled_from_env() {
-        return next.run(request).await;
-    }
-    let method = request.method().as_str().to_owned();
-    let path_and_query = request
-        .uri()
-        .path_and_query()
-        .map(|value| value.as_str().to_owned())
-        .unwrap_or_else(|| request.uri().path().to_owned());
-    if let Ok(now_unix_seconds) = current_unix_seconds() {
-        if let Some(subject) = optional_app_request_subject(
-            request.headers_mut(),
-            &method,
-            &path_and_query,
-            &config,
-            now_unix_seconds,
-        ) {
+        if let Some(subject) =
+            TrustedRequestSubject::resolve_optional(request.headers(), request.extensions())
+        {
             attach_trusted_request_subject(&mut request, subject);
         }
+        next.run(request).await
     } else {
-        remove_internal_trusted_subject_headers(request.headers_mut());
-        remove_signed_subject_headers(request.headers_mut());
-        remove_app_session_token_headers(request.headers_mut());
+        let method = request.method().as_str().to_owned();
+        let path_and_query = request
+            .uri()
+            .path_and_query()
+            .map(|value| value.as_str().to_owned())
+            .unwrap_or_else(|| request.uri().path().to_owned());
+        if let Ok(now_unix_seconds) = current_unix_seconds() {
+            if let Some(subject) = optional_app_request_subject(
+                request.headers_mut(),
+                &method,
+                &path_and_query,
+                &config,
+                now_unix_seconds,
+            ) {
+                attach_trusted_request_subject(&mut request, subject);
+            }
+        } else {
+            remove_internal_trusted_subject_headers(request.headers_mut());
+            remove_signed_subject_headers(request.headers_mut());
+            remove_app_session_token_headers(request.headers_mut());
+        }
+        next.run(request).await
     }
-    next.run(request).await
 }
 
 pub fn verified_app_request_subject(

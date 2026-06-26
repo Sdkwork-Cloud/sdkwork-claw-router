@@ -1,4 +1,4 @@
-import { getSdkworkAppbaseBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+import { getSdkworkAppbaseBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
 
 export type OAuthListParams = {
   page?: string;

@@ -36,12 +36,12 @@ class RustBackendArchitectureGuardian:
     )
     THIN_ROUTE_API_SERVERS: dict[str, tuple[str, str]] = {
         "services/sdkwork-clawrouter-admin-api-server": (
-            "sdkwork_router_backend_api",
-            "crates/sdkwork-router-backend-api",
+            "sdkwork_routes_clawrouter_backend_api",
+            "crates/sdkwork-routes-clawrouter-backend-api",
         ),
         "services/sdkwork-clawrouter-app-api-server": (
-            "sdkwork_router_app_api",
-            "crates/sdkwork-router-app-api",
+            "sdkwork_routes_clawrouter_app_api",
+            "crates/sdkwork-routes-clawrouter-app-api",
         ),
     }
     REQUIRED_WORKSPACE_DEPENDENCIES: tuple[str, ...] = (

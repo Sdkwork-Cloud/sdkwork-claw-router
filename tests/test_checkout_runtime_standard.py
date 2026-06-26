@@ -30,7 +30,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         app_routes = (
-            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
         commerce_http = (
             COMMERCE_API_SERVER / "src" / "recharge_router.rs"
@@ -76,7 +76,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("CheckoutStore", product_ports_mod)
         self.assertNotIn("CheckoutStore", app_api)
         self.assertNotIn("app_checkout_router()", app_api)
-        self.assertIn("pub use sdkwork_router_app_api::*;", app_api)
+        self.assertIn("pub use sdkwork_routes_clawrouter_app_api::*;", app_api)
         self.assertIn("is_commerce_dependency_contract_path", app_routes)
         self.assertIn('"/app/v3/api/recharges/"', app_routes)
         self.assertIn("app_recharge_checkout_router_with_sqlite_pool", commerce_http)

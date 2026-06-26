@@ -1,17 +1,16 @@
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::{Query, State};
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
 use crate::api::response::PlusApiResult;
-use crate::api::subject::admin_operator_fields;
 use crate::ports::{
-    AdminAnalyticsQuery, AdminAnalyticsReadStore, AdminAnalyticsSubject, AdminAnalyticsTimeRange,
+    AdminAnalyticsQuery, AdminAnalyticsReadStore, AdminAnalyticsTimeRange,
 };
 
 #[derive(Clone)]
@@ -40,10 +39,10 @@ pub fn admin_analytics_router_with_read_store(
 
 async fn fetch_admin_analytics_overview(
     State(state): State<AdminAnalyticsState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Query(params): Query<AdminAnalyticsQueryParams>,
 ) -> Response {
-    let query = analytics_query(trusted, params);
+    let query = analytics_query(scoped, params);
 
     match state.read_store.load_admin_analytics(query).await {
         Ok(snapshot) => Json(PlusApiResult::success(snapshot)).into_response(),
@@ -59,17 +58,11 @@ async fn fetch_admin_analytics_overview(
 }
 
 fn analytics_query(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     params: AdminAnalyticsQueryParams,
 ) -> AdminAnalyticsQuery {
-    let operator = admin_operator_fields(trusted);
     AdminAnalyticsQuery {
-        subject: AdminAnalyticsSubject {
-            tenant_id: operator.tenant_id,
-            organization_id: operator.organization_id,
-            operator_id: operator.operator_id,
-            operator_type: operator.operator_type,
-        },
+        subject: scoped.into(),
         time_range: AdminAnalyticsTimeRange::parse(params.time_range.as_deref()),
         start_time: normalize_optional_text(params.start_time),
         end_time: normalize_optional_text(params.end_time),

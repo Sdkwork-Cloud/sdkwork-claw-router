@@ -8,7 +8,7 @@ use sqlx::{query, SqlitePool};
 use std::fs;
 use std::path::Path;
 
-const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v13";
+const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v14";
 
 pub async fn repair_sqlite_pool() -> SqlitePool {
     let template_path = sqlite_template_path("repair", REPAIR_SQLITE_TEMPLATE_REVISION);
@@ -39,6 +39,11 @@ async fn ensure_repair_sqlite_template(template_path: &Path) {
         )
     });
     let pool = sqlite_file_pool(template_path).await;
+    sdkwork_clawrouter_router_service::infrastructure::sql::installer::ensure_sqlite_integration_iam_fixture(
+        &pool,
+    )
+    .await
+    .expect("ensure sqlite integration IAM fixture");
     query("VACUUM").execute(&pool).await.unwrap();
     pool.close().await;
 }

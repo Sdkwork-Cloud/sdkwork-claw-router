@@ -27,11 +27,9 @@ mod admin_transaction_center_store;
 mod admin_user_store;
 mod api_key_command_store;
 mod api_key_management_read_store;
-mod app_auth_store;
 mod app_chat_store;
 mod app_gateway_traces_read_store;
 mod app_generation_history_read_store;
-mod app_iam_directory_read_store;
 mod app_notification_store;
 mod app_providers_read_store;
 mod app_routing_channel_command_store;
@@ -39,15 +37,12 @@ mod app_routing_read_store;
 mod app_routing_strategy_store;
 mod app_runtime_gateway_client;
 mod app_runtime_store;
-mod app_session_event_store;
-mod app_user_profile_read_store;
 mod chat_completion_relay;
 mod chat_completion_stream_relay;
 mod dashboard_overview_read_store;
 mod embeddings_relay;
 mod gateway_usage_recorder;
 mod invocation_dispatcher;
-mod login_continuation_store;
 mod model_ranking_refresh_store;
 mod model_rankings_read_store;
 mod payment_callback_store;
@@ -61,11 +56,8 @@ mod settings_store;
 mod settlements_dashboard_read_store;
 mod site_settings_store;
 mod sticky_route_store;
-mod tenant_signing_key_store;
 mod usage_logs_read_store;
 mod usage_settlement_store;
-mod verification_code_sender;
-mod verification_delivery_config_store;
 
 pub use admin_ai_resource_store::{
     AdminAiResourceGroupItem, AdminAiResourceGroupMemberCommand, AdminAiResourceGroupResourceItem,
@@ -257,11 +249,6 @@ pub use api_key_command_store::{
 pub use api_key_management_read_store::{
     ApiKeyManagementReadFuture, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
 };
-pub use app_auth_store::{
-    AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
-    AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
-    AppAuthVerificationCodeCommand, AppAuthVerificationCodeLookup, AppOrganizationMembership,
-};
 pub use app_chat_store::{
     AppChatConversationItem, AppChatConversationList, AppChatFuture, AppChatMessageItem,
     AppChatStore, AppChatSubject, AppChatTurnItem, AppChatTurnOutcome, AppChatUsageSnapshot,
@@ -274,13 +261,6 @@ pub use app_gateway_traces_read_store::{
 pub use app_generation_history_read_store::{
     AppGenerationHistoryItem, AppGenerationHistoryItems, AppGenerationHistoryReadFuture,
     AppGenerationHistoryReadStore, AppGenerationHistorySubject,
-};
-pub use app_iam_directory_read_store::{
-    AppIamDepartmentAssignmentItem, AppIamDepartmentItem, AppIamDepartmentTreeItem,
-    AppIamDirectoryItems, AppIamDirectoryQuery, AppIamDirectoryReadFuture,
-    AppIamDirectoryReadStore, AppIamDirectorySubject, AppIamOrganizationItem,
-    AppIamOrganizationMembershipItem, AppIamOrganizationTreeItem, AppIamPositionAssignmentItem,
-    AppIamPositionItem, AppIamRoleBindingItem,
 };
 pub use app_notification_store::{
     AcknowledgeAppNotificationCommand, AppNotificationFuture, AppNotificationItem,
@@ -318,16 +298,6 @@ pub use app_runtime_store::{
     CompleteAppRuntimeInvocationCommand, CreateAppRuntimeArtifactCommand,
     CreateAppRuntimeEventCommand, CreateAppRuntimeInvocationCommand,
 };
-pub use app_session_event_store::{
-    ActiveAppSession, AppSessionEventStore, AppSessionEventStoreFuture, AppSessionRecord,
-    AppSessionUserRecord, LoadActiveAppSessionQuery, RecordAppSecurityEventCommand,
-    RecordAppSessionIssuedEventCommand, ResolveAppSessionOrganizationQuery,
-    ResolvedAppSessionOrganization, RevokeAppSessionCommand, RotateAppSessionTokensCommand,
-};
-pub use app_user_profile_read_store::{
-    AppUserProfileReadFuture, AppUserProfileReadStore, AppUserProfileSnapshot,
-    AppUserProfileSubject,
-};
 pub use chat_completion_relay::{
     ChatCompletionRelay, ChatCompletionRelayFuture, ChatCompletionRelayRequest,
     ChatCompletionRelayResponse,
@@ -350,10 +320,6 @@ pub use gateway_usage_recorder::{
 };
 pub use invocation_dispatcher::{
     InvocationDispatchError, InvocationDispatcher, InvocationDispatcherFuture,
-};
-pub use login_continuation_store::{
-    LoginContinuationFuture, LoginContinuationRecord, LoginContinuationStore,
-    StoreLoginContinuationCommand, LOGIN_CONTINUATION_TTL_SECONDS,
 };
 pub use model_ranking_refresh_store::{
     ModelRankingRefreshAuditCommand, ModelRankingRefreshAuditFuture, ModelRankingRefreshCommand,
@@ -410,24 +376,10 @@ pub use sticky_route_store::{
     StickyObjectRouteBinding, StickyObjectRouteLookup, StickyObjectRouteUpsert, StickyRouteStore,
     StickyRouteStoreFuture,
 };
-pub use tenant_signing_key_store::{
-    TenantSigningKey, TenantSigningKeyFuture, TenantSigningKeyStore,
-};
 pub use usage_logs_read_store::{
     UsageLogItem, UsageLogsPage, UsageLogsQuery, UsageLogsReadFuture, UsageLogsReadStore,
     UsageLogsStatus, UsageLogsSubject,
 };
 pub use usage_settlement_store::{
     UsageSettlementCommand, UsageSettlementFuture, UsageSettlementOutcome, UsageSettlementStore,
-};
-pub use verification_code_sender::{
-    ConfiguredVerificationCodeSender, DebugVerificationCodeSender,
-    ProviderVerificationDeliveryFuture, ProviderVerificationDeliveryReceipt,
-    ProviderVerificationDeliveryRequest, ProviderVerificationDeliverySender,
-    RequiredConfiguredVerificationCodeSender, VerificationCodeDeliveryFuture,
-    VerificationCodeDeliveryReceipt, VerificationCodeDeliveryRequest, VerificationCodeSender,
-};
-pub use verification_delivery_config_store::{
-    VerificationDeliveryConfig, VerificationDeliveryConfigFuture, VerificationDeliveryConfigQuery,
-    VerificationDeliveryConfigStore,
 };

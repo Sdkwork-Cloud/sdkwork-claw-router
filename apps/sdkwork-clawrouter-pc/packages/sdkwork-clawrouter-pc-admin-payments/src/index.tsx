@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useId, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AlertTriangle, BarChart3, CreditCard, Pencil, Power, PowerOff, Receipt, ShieldCheck, Trash2 } from 'lucide-react';
-import { AdminResourceCenter, ConfirmDialog, type AdminResourceRecord, type AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter, ConfirmDialog, type AdminResourceRecord, type AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   backendPaymentsAttemptsList,
   backendPaymentsChannelsList,

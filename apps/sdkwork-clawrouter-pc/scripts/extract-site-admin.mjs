@@ -32,7 +32,7 @@ const statusPillBlock = extractBetween("function StatusPill(", "function validat
 const readFormUtils = extractBetween("function readFormString(formData: FormData, name: string): string {", "function readRequiredFormString(");
 
 const siteAdminFile = `import React, { useEffect, useMemo, useState } from 'react';
-import { AdminTableShell, BusinessStateTableRow, readMediaResourceUrl } from '@sdkwork/clawrouter-pc-commons';
+import { AdminTableShell, BusinessStateTableRow, readMediaResourceUrl } from '@sdkwork/clawroutes-pc-commons';
 import { Edit, Globe2, Loader2, Plus, RefreshCw, Search, Trash2, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ModelService, SiteService, type SiteItem, type Vendor } from '@sdkwork/models-pc-admin-catalog/modelService';

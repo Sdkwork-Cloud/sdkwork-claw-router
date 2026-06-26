@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTAL = ROOT / "apps" / "sdkwork-clawrouter-pc"
-COMMONS = PORTAL / "packages" / "sdkwork-clawrouter-pc-commons" / "src"
+COMMONS = PORTAL / "packages" / "sdkwork-clawroutes-pc-commons" / "src"
 
 
 class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
@@ -73,14 +73,14 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("formatDecimalAmount", usage_view)
         self.assertTrue(
-            "from 'sdkwork-clawrouter-pc-commons/runtime'" in usage_view
-            or "from '@sdkwork/clawrouter-pc-commons/runtime'" in usage_view,
+            "from 'sdkwork-clawroutes-pc-commons/runtime'" in usage_view
+            or "from '@sdkwork/clawroutes-pc-commons/runtime'" in usage_view,
             "usage view must import decimal helpers from commons runtime",
         )
         self.assertIn("formatDecimalAmount", record_view)
         self.assertTrue(
-            "from 'sdkwork-clawrouter-pc-commons/runtime'" in record_view
-            or "from '@sdkwork/clawrouter-pc-commons/runtime'" in record_view,
+            "from 'sdkwork-clawroutes-pc-commons/runtime'" in record_view
+            or "from '@sdkwork/clawroutes-pc-commons/runtime'" in record_view,
             "record view must import decimal helpers from commons runtime",
         )
         views = [usage_view, record_view]
@@ -90,8 +90,8 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
             self.assertIn("sumDecimalStrings", settlements_view)
             self.assertIn("decimalNumber", settlements_view)
             self.assertTrue(
-                "from 'sdkwork-clawrouter-pc-commons/runtime'" in settlements_view
-                or "from '@sdkwork/clawrouter-pc-commons/runtime'" in settlements_view,
+                "from 'sdkwork-clawroutes-pc-commons/runtime'" in settlements_view
+                or "from '@sdkwork/clawroutes-pc-commons/runtime'" in settlements_view,
                 "settlements view must import decimal helpers from commons runtime",
             )
             views.append(settlements_view)

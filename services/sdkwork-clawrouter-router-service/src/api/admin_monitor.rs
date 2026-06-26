@@ -1,16 +1,15 @@
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::State;
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Serialize;
 
 use crate::api::response::PlusApiResult;
-use crate::api::subject::admin_operator_fields;
-use crate::ports::{AdminMonitorQuery, AdminMonitorReadStore, AdminMonitorSubject};
+use crate::ports::{AdminMonitorQuery, AdminMonitorReadStore};
 
 #[derive(Clone)]
 struct AdminMonitorState {
@@ -44,9 +43,9 @@ pub fn admin_monitor_router_with_read_store(
 
 async fn fetch_nodes(
     State(state): State<AdminMonitorState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
 ) -> Response {
-    let query = monitor_query(trusted);
+    let query = monitor_query(scoped);
     match state.read_store.list_monitor_nodes(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => monitor_system_response("monitor nodes read model is unavailable", error),
@@ -55,9 +54,9 @@ async fn fetch_nodes(
 
 async fn fetch_alerts(
     State(state): State<AdminMonitorState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
 ) -> Response {
-    let query = monitor_query(trusted);
+    let query = monitor_query(scoped);
     match state.read_store.list_monitor_alerts(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => monitor_system_response("monitor alerts read model is unavailable", error),
@@ -66,9 +65,9 @@ async fn fetch_alerts(
 
 async fn fetch_performance(
     State(state): State<AdminMonitorState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
 ) -> Response {
-    let query = monitor_query(trusted);
+    let query = monitor_query(scoped);
     match state.read_store.list_monitor_performance(query).await {
         Ok(items) => monitor_success(items),
         Err(error) => {
@@ -77,15 +76,9 @@ async fn fetch_performance(
     }
 }
 
-fn monitor_query(trusted: TrustedRequestSubject) -> AdminMonitorQuery {
-    let operator = admin_operator_fields(trusted);
+fn monitor_query(scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject) -> AdminMonitorQuery {
     AdminMonitorQuery {
-        subject: AdminMonitorSubject {
-            tenant_id: operator.tenant_id,
-            organization_id: operator.organization_id,
-            operator_id: operator.operator_id,
-            operator_type: operator.operator_type,
-        },
+        subject: scoped.into(),
     }
 }
 

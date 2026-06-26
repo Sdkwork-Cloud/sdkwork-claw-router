@@ -249,7 +249,7 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "notificationService.ts"
         ).read_text(encoding="utf-8")

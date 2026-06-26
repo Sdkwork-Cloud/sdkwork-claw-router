@@ -12,7 +12,7 @@ import {
   readRequiredString,
   readStringArray,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import {
   createSdkworkGenerationService,
   type SdkworkGenerationWorkspaceData,

@@ -3,8 +3,8 @@ import {
   readMediaResource,
   readMediaResourceUrl,
   type ClawRouterMediaResource,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
-import { trim } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
+import { trim } from '@sdkwork/clawroutes-pc-commons/sdkwork-utils';
 import {
   mapSdkworkGenerationArtifactsToHistoryMedia,
   mapSdkworkGenerationModalityToHistoryType,

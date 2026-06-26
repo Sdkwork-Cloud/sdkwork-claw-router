@@ -14,7 +14,7 @@ function json(path) {
 
 test('portal workspace declares appbase app and backend generated SDK packages', () => {
   const packageJson = json('package.json');
-  const commonsPackageJson = json('packages/sdkwork-clawrouter-pc-commons/package.json');
+  const commonsPackageJson = json('packages/sdkwork-clawroutes-pc-commons/package.json');
   const workspaceSource = source('pnpm-workspace.yaml');
   const tsconfigSource = source('tsconfig.json');
   const typecheckSource = source('tsconfig.typecheck.json');
@@ -54,7 +54,7 @@ test('portal workspace declares appbase app and backend generated SDK packages',
 
 test('portal workspace declares Commerce app and backend generated SDK packages', () => {
   const packageJson = json('package.json');
-  const commonsPackageJson = json('packages/sdkwork-clawrouter-pc-commons/package.json');
+  const commonsPackageJson = json('packages/sdkwork-clawroutes-pc-commons/package.json');
   const workspaceSource = source('pnpm-workspace.yaml');
   const tsconfigSource = source('tsconfig.json');
   const typecheckSource = source('tsconfig.typecheck.json');
@@ -139,7 +139,7 @@ test('clawrouter SDK families declare Commerce dependencies and exclude Commerce
 });
 
 test('commons SDK client bootstrap composes appbase, product and open SDKs through standard credentials', () => {
-  const sdkClientsSource = source('packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts');
+  const sdkClientsSource = source('packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts');
 
   assert.match(sdkClientsSource, /from '@sdkwork\/iam-app-sdk'/);
   assert.match(sdkClientsSource, /from '@sdkwork\/iam-backend-sdk'/);
@@ -162,7 +162,7 @@ test('commons SDK client bootstrap composes appbase, product and open SDKs throu
 });
 
 test('commons SDK client bootstrap composes Commerce dependency SDKs through the Commerce service provider', () => {
-  const sdkClientsSource = source('packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts');
+  const sdkClientsSource = source('packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts');
 
   assert.match(sdkClientsSource, /from '@sdkwork\/commerce-service'/);
   assert.match(sdkClientsSource, /from '@sdkwork\/clawrouter-pc-core\/sdk'/);
@@ -178,7 +178,7 @@ test('commons SDK client bootstrap composes Commerce dependency SDKs through the
 });
 
 test('IAM runtime uses the high-level appbase auth runtime while binding app SDK clients to the shared token manager', () => {
-  const iamRuntimeSource = source('packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts');
+  const iamRuntimeSource = source('packages/sdkwork-clawroutes-pc-commons/src/iam-runtime.ts');
 
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
   assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*wrapCredentialEntryClient\(getSdkworkAppbaseAppSdkClient\(\)/);
@@ -197,9 +197,9 @@ test('IAM runtime uses the high-level appbase auth runtime while binding app SDK
 });
 
 test('appbase-owned app capabilities no longer call the product clawrouter app SDK', () => {
-  const sessionServiceSource = source('packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts');
-  const portalSessionSource = source('packages/sdkwork-clawrouter-pc-commons/src/portal-session.ts');
-  const iamDirectorySource = source('packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts');
+  const sessionServiceSource = source('packages/sdkwork-clawroutes-pc-commons/src/sessionService.ts');
+  const portalSessionSource = source('packages/sdkwork-clawroutes-pc-commons/src/portal-session.ts');
+  const iamDirectorySource = source('packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts');
   const authSettingsSource = source('src/auth/clawRouterAuthSettingsService.ts');
   const userServiceSource = source('packages/sdkwork-clawrouter-pc-console-user/src/userService.ts');
 
@@ -249,7 +249,7 @@ test('dependency composition manifest declares SDK inventory and permission inhe
 });
 
 test('commons package does not depend on low-level appbase IAM SDK adapters', () => {
-  const commonsPackageJson = json('packages/sdkwork-clawrouter-pc-commons/package.json');
+  const commonsPackageJson = json('packages/sdkwork-clawroutes-pc-commons/package.json');
   const typecheckShimsSource = source('src/typecheck-shims.d.ts');
 
   assert.equal(commonsPackageJson.dependencies['@sdkwork/auth-runtime-pc-react'], 'workspace:*');

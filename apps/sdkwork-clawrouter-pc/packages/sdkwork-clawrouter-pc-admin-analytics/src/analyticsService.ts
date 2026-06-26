@@ -8,9 +8,9 @@ import {
   readRequiredString,
   readString,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/api-result';
-import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
-import { optionalText } from '@sdkwork/clawrouter-pc-commons/sdk-request-boundary';
+} from '@sdkwork/clawroutes-pc-commons/api-result';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
+import { optionalText } from '@sdkwork/clawroutes-pc-commons/sdk-request-boundary';
 
 export type AdminAnalyticsTimeRange = 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly';
 export type AdminAnalyticsRankMetric = 'points' | 'tokens' | 'requests';

@@ -8,9 +8,9 @@ import {
   readMediaResource,
   type ClawRouterMediaResource,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
-import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
 
 type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 type RechargeSettingsUpdateInput = Parameters<BackendCommerceService['recharges']['settings']['update']>[0];

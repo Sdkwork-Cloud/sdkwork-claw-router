@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AlertTriangle, Check, Copy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { copyTextToClipboard } from '@sdkwork/clawrouter-pc-commons/clipboard';
+import { copyTextToClipboard } from '@sdkwork/clawroutes-pc-commons/clipboard';
 import { ChatMarkdownMessage } from './ChatMarkdownMessage';
 import type { ChatMessage } from './chatTypes';
 

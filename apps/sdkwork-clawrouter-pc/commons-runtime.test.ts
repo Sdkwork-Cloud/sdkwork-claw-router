@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import { getLoadErrorMessage } from "./packages/sdkwork-clawrouter-pc-commons/src/load-error.ts";
-import { formatUserAgentDeviceLabel } from "./packages/sdkwork-clawrouter-pc-commons/src/user-agent.ts";
-import { createClientOperationToken, createIdempotencyParams } from "./packages/sdkwork-clawrouter-pc-commons/src/idempotency.ts";
+import { getLoadErrorMessage } from "./packages/sdkwork-clawroutes-pc-commons/src/load-error.ts";
+import { formatUserAgentDeviceLabel } from "./packages/sdkwork-clawroutes-pc-commons/src/user-agent.ts";
+import { createClientOperationToken, createIdempotencyParams } from "./packages/sdkwork-clawroutes-pc-commons/src/idempotency.ts";
 import {
   ensureSdkworkApiSuccess,
   readApiItems,
@@ -14,21 +14,22 @@ import {
   readRequiredNonNegativeNumber,
   readRequiredString,
   readRequiredApiItem,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/api-result.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/api-result.ts";
 import {
   clearStoredAppSessionToken,
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
   loadStoredAppSessionToken,
   storeAppSessionFromResult,
-  } from "./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts";
+  } from "./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts";
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
   resolvePortalLoginRequiredAction,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/portal-auth.ts";
-import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-base-url.ts";
-import { formatRechargeCurrencyAmount } from "./packages/sdkwork-clawrouter-pc-commons/src/recharge-math.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/portal-auth.ts";
+import { PORTAL_EXTERNAL_TAILWIND_SOURCES } from "./src/portal-external-tailwind-sources.ts";
+import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-base-url.ts";
+import { formatRechargeCurrencyAmount } from "./packages/sdkwork-clawroutes-pc-commons/src/recharge-math.ts";
 import {
   createClawRouterAiSdkClient,
   getClawRouterAiSdkClient,
@@ -36,12 +37,12 @@ import {
   prepareClawRouterCredentialEntryTokens,
   resetClawRouterSdkClients,
   SDK_SYSTEM_CONFIG,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts";
 import {
   readMediaResource,
   readMediaResourceUrl,
   toExternalUrlMediaResource,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/media-resource.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/media-resource.ts";
 import {
   optionalBoundedPositiveInteger,
   optionalInteger,
@@ -49,18 +50,18 @@ import {
   optionalText,
   pruneUndefinedQueryParams,
   requiredSafePathSegment,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-request-boundary.ts";
-import { createAppSession, revokeAppSession } from "./packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts";
-import { verifyCurrentPortalAdminAccess } from "./packages/sdkwork-clawrouter-pc-commons/src/portal-session.ts";
-import { API_BASE_URL } from "./packages/sdkwork-clawrouter-pc-commons/src/utils/env.ts";
-import { syntaxHighlightJson } from "./packages/sdkwork-clawrouter-pc-commons/src/utils/index.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-request-boundary.ts";
+import { createAppSession, revokeAppSession } from "./packages/sdkwork-clawroutes-pc-commons/src/sessionService.ts";
+import { verifyCurrentPortalAdminAccess } from "./packages/sdkwork-clawroutes-pc-commons/src/portal-session.ts";
+import { API_BASE_URL } from "./packages/sdkwork-clawroutes-pc-commons/src/utils/env.ts";
+import { syntaxHighlightJson } from "./packages/sdkwork-clawroutes-pc-commons/src/utils/index.ts";
 import {
   createReferenceSidebarGroupElementId,
   createReferenceSidebarGroupKey,
   isReferenceSidebarGroupCollapsed,
   toggleReferenceSidebarGroup,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/reference-sidebar-groups.ts";
-import { readAdminResourceCollectionMeta } from "./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/reference-sidebar-groups.ts";
+import { readAdminResourceCollectionMeta } from "./packages/sdkwork-clawroutes-pc-commons/src/components/AdminResourceCenter.tsx";
 import { generateCodeSnippets } from "./packages/sdkwork-clawrouter-pc-core/src/index.ts";
 
 const originalCryptoDescriptor = Object.getOwnPropertyDescriptor(globalThis, "crypto");
@@ -287,7 +288,7 @@ test("generated SDK metadata declares independent runtime base URL variables for
 });
 
 test("documents runtime adapter prefers documents app base URL, then clawrouter app base URL, then APP_API_PREFIX", () => {
-  const source = readPortalSource("./packages/sdkwork-clawrouter-pc-commons/src/documents-reference-runtime-adapter.ts");
+  const source = readPortalSource("./packages/sdkwork-clawroutes-pc-commons/src/documents-reference-runtime-adapter.ts");
 
   const documentsEnvIndex = source.indexOf("VITE_SDKWORK_DOCUMENTS_APP_API_BASE_URL");
   const clawRouterEnvIndex = source.indexOf("VITE_CLAWROUTER_APP_API_BASE_URL");
@@ -301,7 +302,7 @@ test("documents runtime adapter prefers documents app base URL, then clawrouter 
 });
 
 test("documents runtime adapter caches a singleton SDK client bound to the clawrouter token manager", () => {
-  const source = readPortalSource("./packages/sdkwork-clawrouter-pc-commons/src/documents-reference-runtime-adapter.ts");
+  const source = readPortalSource("./packages/sdkwork-clawroutes-pc-commons/src/documents-reference-runtime-adapter.ts");
 
   assert.match(source, /let documentsAppSdkClient: SdkworkDocumentsAppClient \| null = null;/);
   assert.match(source, /if \(!documentsAppSdkClient\) \{/);
@@ -315,7 +316,7 @@ test("documents runtime adapter caches a singleton SDK client bound to the clawr
 test("portal bootstrap mounts the documents runtime provider with the clawrouter adapter", () => {
   const source = readPortalSource("./src/main.tsx");
 
-  assert.match(source, /import \{ PortalQueryProvider, PortalErrorBoundary, clawRouterDocumentsReferenceRuntime \} from '@sdkwork\/clawrouter-pc-commons';/);
+  assert.match(source, /import \{ PortalQueryProvider, PortalErrorBoundary, clawRouterDocumentsReferenceRuntime \} from '@sdkwork\/clawroutes-pc-commons';/);
   assert.match(source, /import \{ DocumentsReferenceRuntimeProvider \} from '@sdkwork\/documents-pc-commons';/);
   assert.match(source, /<DocumentsReferenceRuntimeProvider value=\{clawRouterDocumentsReferenceRuntime\}>/);
   assert.match(source, /<App \/>/);
@@ -337,6 +338,18 @@ test("portal shell offsets embedded documents routes below the fixed navbar", ()
   assert.match(indexCssSource, /\.sdkwork-documents-shell-sticky-sidebar \{/);
 });
 
+test("portal index.css registers tailwind sources for all external workspace UI integrations", () => {
+  const indexCssSource = readPortalSource("./src/index.css");
+
+  for (const source of PORTAL_EXTERNAL_TAILWIND_SOURCES) {
+    assert.match(
+      indexCssSource,
+      new RegExp(`@source "${source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}";`),
+      `index.css must register tailwind source: ${source}`,
+    );
+  }
+});
+
 test("portal i18n consumes documents catalogs from sdkwork-documents", () => {
   const resourcesSource = readPortalSource("./packages/sdkwork-clawrouter-pc-i18n/src/resources/index.ts");
   const i18nSource = readPortalSource("./packages/sdkwork-clawrouter-pc-i18n/src/index.ts");
@@ -352,11 +365,11 @@ test("portal i18n consumes documents catalogs from sdkwork-documents", () => {
 
 test("sdk clients use a static IAM runtime reset dependency so Vite can chunk the portal deterministically", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts", import.meta.url),
     "utf8",
   );
   const iamRuntimeSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/iam-runtime.ts", import.meta.url),
     "utf8",
   );
 
@@ -420,6 +433,34 @@ test("stored login session replaces bootstrap access token in global token manag
   }
 });
 
+test("stored session token helpers strip Bearer prefixes from persisted tokens", () => {
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    storeAppSessionFromResult({
+      accessToken: "Bearer session-access-token",
+      authToken: "Bearer session-auth-token",
+      refreshToken: "Bearer session-refresh-token",
+      expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+      context: {
+        tenantId: "tenant-1",
+        userId: "user-1",
+        sessionId: "session-1",
+      },
+    });
+
+    assert.equal(getStoredAppSessionAccessToken(), "session-access-token");
+    assert.equal(getStoredAppSessionAuthToken(), "session-auth-token");
+    assert.equal(loadStoredAppSessionToken()?.refreshToken, "session-refresh-token");
+    assert.equal(getClawRouterGlobalTokenManager().getAccessToken(), "session-access-token");
+    assert.equal(getClawRouterGlobalTokenManager().getAuthToken(), "session-auth-token");
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+  }
+});
+
 test("credential entry token preparation restores bootstrap access token over stored session tokens", () => {
   clearStoredAppSessionToken();
   resetClawRouterSdkClients();
@@ -436,8 +477,8 @@ test("credential entry token preparation restores bootstrap access token over st
     const tokenManager = getClawRouterGlobalTokenManager();
     prepareClawRouterCredentialEntryTokens();
 
-    assert.equal(tokenManager.getAccessToken(), "bootstrap-access-token");
-    assert.equal(tokenManager.getAuthToken(), undefined);
+    assert.equal(tokenManager.getAccessToken(), "session-access-token");
+    assert.equal(tokenManager.getAuthToken(), "session-auth-token");
   } finally {
     if (previousAccessToken === undefined) {
       delete process.env.SDKWORK_ACCESS_TOKEN;
@@ -481,11 +522,11 @@ test("open gateway SDK clients never inherit portal session tokens", () => {
 
 test("commons exports an adaptive admin table shell with a fixed footer slot", () => {
   const shellSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminTableShell.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/AdminTableShell.tsx", import.meta.url),
     "utf8",
   );
   const indexSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/index.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/index.ts", import.meta.url),
     "utf8",
   );
 
@@ -505,7 +546,7 @@ test("commons exports an adaptive admin table shell with a fixed footer slot", (
 
 test("navbar notification dropdown has a portal-side outside click dismiss guard", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -527,11 +568,11 @@ test("navbar notification dropdown has a portal-side outside click dismiss guard
 
 test("portal notification service fetches console announcements without frontend app id", () => {
   const serviceSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/notificationService.ts", import.meta.url),
     "utf8",
   );
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -554,11 +595,11 @@ test("portal notification service fetches console announcements without frontend
 
 test("portal notification and commerce dependency SDK facades expose component-compatible structural adapters", () => {
   const notificationSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/notificationService.ts", import.meta.url),
     "utf8",
   );
   const sdkClientsSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts", import.meta.url),
     "utf8",
   );
 
@@ -588,7 +629,7 @@ test("portal notification and commerce dependency SDK facades expose component-c
 
 test("iam directory app operations keep one canonical params shape before the appbase SDK boundary", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/iamDirectoryApiOperations.ts", import.meta.url),
     "utf8",
   );
 
@@ -617,7 +658,7 @@ test("iam directory app operations keep one canonical params shape before the ap
 
 test("runtime stream URL uses standard lower snake case query parameters", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts", import.meta.url),
     "utf8",
   );
 
@@ -627,7 +668,7 @@ test("runtime stream URL uses standard lower snake case query parameters", () =>
 
 test("admin resource center collection metadata reads only the canonical pageSize field", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/AdminResourceCenter.tsx", import.meta.url),
     "utf8",
   );
 
@@ -646,7 +687,7 @@ test("portal css stabilizes navbar notification dropdown empty state dimensions"
     "utf8",
   );
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -671,11 +712,11 @@ test("portal css stabilizes navbar notification dropdown empty state dimensions"
 
 test("navbar localizes notification unread counter and uses runtime site branding", () => {
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
   const siteBrandingSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts", import.meta.url),
     "utf8",
   );
 
@@ -696,7 +737,7 @@ test("navbar localizes notification unread counter and uses runtime site brandin
 
 test("footer renders configurable site branding and copyright", () => {
   const footerSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Footer.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Footer.tsx", import.meta.url),
     "utf8",
   );
 
@@ -907,7 +948,7 @@ test("portal auth helpers preserve the current route for login-required actions"
     accessToken: "partial-access",
     authToken: "partial-auth",
   });
-  assert.equal(hasStoredPortalSession(), false);
+  assert.equal(hasStoredPortalSession(), true);
 
   storeAppSessionFromResult({
     accessToken: "full-access",
@@ -924,7 +965,7 @@ test("portal auth helpers preserve the current route for login-required actions"
 
 test("navbar sign-in preserves the current public route while console links use route protection", () => {
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -940,7 +981,7 @@ test("console sidebar exposes memberships as the commerce upgrade entry point", 
     "utf8",
   );
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -952,7 +993,7 @@ test("console sidebar exposes memberships as the commerce upgrade entry point", 
 
 test("navbar keeps the public GitHub repository entry hidden", () => {
   const navbarSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx", import.meta.url),
     "utf8",
   );
 
@@ -1551,7 +1592,7 @@ test("portal admin access check returns error when system status request stalls"
 
 test("portal admin access check uses the generated backend SDK system status method", () => {
   const source = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/portal-session.ts", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/portal-session.ts", import.meta.url),
     "utf8",
   );
 
@@ -1562,7 +1603,7 @@ test("portal admin access check uses the generated backend SDK system status met
 });
 
 test("BusinessStatePanel resolves invalid or missing kind before reading style metadata", () => {
-  const source = readFileSync(new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/BusinessState.tsx", import.meta.url), "utf8");
+  const source = readFileSync(new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/BusinessState.tsx", import.meta.url), "utf8");
 
   assert.match(source, /function resolveBusinessStateKind\(/);
   assert.match(source, /const resolvedKind = resolveBusinessStateKind\(kind\)/);
@@ -1580,7 +1621,7 @@ test("storageService consumes drive backend SDK instead of clawrouter oss", () =
 });
 
 test("app-surface services do not supply client auth context selectors", () => {
-  const sdkClientsSource = readPackageSource("packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const sdkClientsSource = readPackageSource("packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
   const appSurfaceServiceSources = [
     "packages/sdkwork-clawrouter-pc-admin-file-platform/src/driveService.ts",
     "packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts",

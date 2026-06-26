@@ -1,5 +1,5 @@
-import type { NotificationItem } from '@sdkwork/clawrouter-pc-commons/runtime';
-import { NotificationService } from '@sdkwork/clawrouter-pc-commons/runtime';
+import type { NotificationItem } from '@sdkwork/clawroutes-pc-commons/runtime';
+import { NotificationService } from '@sdkwork/clawroutes-pc-commons/runtime';
 import type { SdkworkNotificationItem } from '@sdkwork/notification-pc-react';
 
 export type MessageItem = NotificationItem;

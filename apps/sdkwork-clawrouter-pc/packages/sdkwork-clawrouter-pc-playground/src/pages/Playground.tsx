@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/runtime';
-import { copyTextToClipboard } from '@sdkwork/clawrouter-pc-commons/clipboard';
+import { createClientOperationToken } from '@sdkwork/clawroutes-pc-commons/runtime';
+import { copyTextToClipboard } from '@sdkwork/clawroutes-pc-commons/clipboard';
 import {
   getSdkworkGenerationModelBucket,
 } from '@sdkwork/generations-pc-workspace/generation-asset-config';

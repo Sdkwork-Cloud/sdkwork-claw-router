@@ -87,7 +87,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "runtime.ts"
         ).read_text(encoding="utf-8")
@@ -100,8 +100,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("appApiPath", commons_runtime_source)
         self.assertIn("streamJson<RuntimeStreamEvent>", commons_runtime_source)
         self.assertTrue(
-            "sdkwork-clawrouter-pc-commons/runtime" in runtime_stream_source
-            or "@sdkwork/clawrouter-pc-commons/runtime" in runtime_stream_source,
+            "sdkwork-clawroutes-pc-commons/runtime" in runtime_stream_source
+            or "@sdkwork/clawroutes-pc-commons/runtime" in runtime_stream_source,
             "runtimeStream must re-export from commons runtime",
         )
         self.assertNotIn("APP_API_PREFIX", runtime_stream_source)
@@ -116,7 +116,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")
@@ -1007,7 +1007,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "runtime.ts"
         ).read_text(encoding="utf-8")
@@ -1016,7 +1016,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "package.json"
         ).read_text(encoding="utf-8")
         portal_tsconfig_source = (

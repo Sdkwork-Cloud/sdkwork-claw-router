@@ -3,7 +3,7 @@ import { Globe, Bell, Palette, Moon, Sun, Check, Loader2, Monitor } from 'lucide
 import { motion, AnimatePresence } from 'motion/react';
 import { useOutletContext } from 'react-router-dom';
 import { ConsoleContextProps } from '@sdkwork/clawrouter-pc-console-core';
-import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawroutes-pc-commons';
 import { SettingsService, SettingsData } from './settingsService';
 
 import { useTranslation } from 'react-i18next';

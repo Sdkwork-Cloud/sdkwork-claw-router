@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BarChart3, FileText, ShieldCheck } from 'lucide-react';
-import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   backendAuditCommerceEventsList,
   backendCommerceReportsOrderRevenueList,

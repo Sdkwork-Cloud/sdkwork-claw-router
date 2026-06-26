@@ -1,12 +1,12 @@
 use std::net::IpAddr;
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::{Path, Query, State};
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, put};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
@@ -93,10 +93,10 @@ pub fn admin_service_node_router_with_store(
 
 async fn list_service_nodes(
     State(state): State<AdminServiceNodeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Query(query): Query<AdminServiceNodeListQuery>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let query = match build_list_query(subject, query) {
         Ok(query) => query,
         Err(response) => return response,
@@ -112,10 +112,10 @@ async fn list_service_nodes(
 
 async fn create_service_node(
     State(state): State<AdminServiceNodeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Json(payload): Json<AdminServiceNodeCreateRequest>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let command = match build_create_command(subject, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -131,11 +131,11 @@ async fn create_service_node(
 
 async fn update_service_node(
     State(state): State<AdminServiceNodeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Path(node_id): Path<String>,
     Json(payload): Json<AdminServiceNodeUpdateRequest>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let command = match build_update_command(subject, node_id, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -151,11 +151,11 @@ async fn update_service_node(
 
 async fn update_service_node_status(
     State(state): State<AdminServiceNodeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Path(node_id): Path<String>,
     Json(payload): Json<AdminServiceNodeStatusRequest>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let command = match build_status_command(subject, node_id, payload) {
         Ok(command) => command,
         Err(response) => return response,
@@ -171,10 +171,10 @@ async fn update_service_node_status(
 
 async fn delete_service_node(
     State(state): State<AdminServiceNodeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(scoped): RequiredAdminSqlScopedSubject,
     Path(node_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let node_id = match required_visible_text(node_id, "node id", MAX_ID_LEN) {
         Ok(node_id) => node_id,
         Err(response) => return response,
@@ -189,15 +189,6 @@ async fn delete_service_node(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminServiceNodeSubject {
-    let operator = admin_operator_fields(trusted);
-    AdminServiceNodeSubject {
-        tenant_id: operator.tenant_id,
-        organization_id: operator.organization_id,
-        operator_id: operator.operator_id,
-        operator_type: operator.operator_type,
-    }
-}
 
 fn build_list_query(
     subject: AdminServiceNodeSubject,

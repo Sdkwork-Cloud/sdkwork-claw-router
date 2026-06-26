@@ -2,7 +2,7 @@ import {
   ensureSdkworkApiSuccess,
   getSdkworkAgentBackendSdkClient,
   readApiData,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 function readSkillIdsFromAgentRecord(record: Record<string, unknown>): string[] {
   const profile = record.managementProfile;

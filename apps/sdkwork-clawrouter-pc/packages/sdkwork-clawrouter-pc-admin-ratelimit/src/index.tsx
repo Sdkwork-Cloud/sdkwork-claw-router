@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Plus, Search, Globe, Key, Database, X, Lock, Gauge, Trash2, Loader2, AlertTriangle } from 'lucide-react';
-import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawrouter-pc-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawroutes-pc-commons';
 import { RateLimitService, IpLimitRule, TokenLimitRule, ModelLimitRule, FirewallRule } from './ratelimitService';
 import {
   rateLimitQueryKeys,

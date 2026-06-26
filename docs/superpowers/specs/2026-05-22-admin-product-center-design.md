@@ -412,7 +412,7 @@ packages/sdkwork-clawrouter-pc-admin-inventory/src/
 ```
 
 The service files remain the only remote-call boundary and must import from
-`sdkwork-clawrouter-pc-commons/runtime`. View components call service functions,
+`sdkwork-clawroutes-pc-commons/runtime`. View components call service functions,
 not the SDK directly.
 
 The UI should be operational and dense:

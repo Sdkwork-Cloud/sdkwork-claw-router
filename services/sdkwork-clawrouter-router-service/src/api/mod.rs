@@ -29,13 +29,10 @@ mod admin_system;
 mod admin_transaction_center;
 mod admin_user;
 mod app_api_keys;
-mod app_auth;
 mod app_chat;
 mod app_dashboard;
 mod app_gateway;
 mod app_generation_history;
-mod app_iam_directory;
-mod app_iam_directory_query;
 mod app_notification;
 mod app_payment_callback;
 mod app_providers;
@@ -46,7 +43,6 @@ mod app_runtime;
 mod app_settings;
 mod app_settlements;
 mod app_usage_logs;
-mod app_user_profile;
 mod openai_chat;
 pub mod openai_contract;
 mod openai_embeddings;
@@ -60,6 +56,8 @@ mod payment_aggregate;
 mod request_id;
 mod response;
 mod site_settings;
+pub mod admin_sql_subject;
+pub mod app_sql_subject;
 mod subject;
 
 pub use admin_analytics::admin_analytics_router_with_read_store;
@@ -96,15 +94,6 @@ pub use admin_transaction_center::admin_transaction_center_router_with_store;
 pub use admin_user::{admin_user_api_key_command_router_with_store, admin_user_router_with_store};
 pub use app_api_keys::app_api_key_router;
 pub use app_api_keys::app_api_key_router_with_read_store_and_command_store;
-pub use app_auth::{
-    app_auth_router_with_runtime, app_auth_router_with_store,
-    app_auth_router_with_store_and_verification_sender,
-    app_auth_router_with_store_auth_settings_store_and_verification_sender,
-    app_public_auth_router_with_store_auth_settings_store_and_verification_sender,
-    app_sessions_router_with_store, app_sessions_router_with_store_and_verification_sender,
-    authenticate_password_and_issue_iam_session, unconfigured_app_auth_store,
-    AppSessionCreateError, IamSessionResponse,
-};
 pub use app_chat::app_chat_router;
 pub use app_chat::app_chat_router_with_store;
 pub use app_dashboard::app_dashboard_overview_router;
@@ -113,8 +102,6 @@ pub use app_gateway::app_gateway_traces_router;
 pub use app_gateway::app_gateway_traces_router_with_read_store;
 pub use app_generation_history::app_generation_history_router;
 pub use app_generation_history::app_generation_history_router_with_read_store;
-pub use app_iam_directory::app_iam_directory_router;
-pub use app_iam_directory::app_iam_directory_router_with_read_store;
 pub use app_notification::app_notification_router;
 pub use app_notification::app_notification_router_with_store;
 pub use app_payment_callback::app_payment_callback_router;
@@ -143,8 +130,6 @@ pub use app_settlements::app_settlements_dashboard_router;
 pub use app_settlements::app_settlements_dashboard_router_with_read_store;
 pub use app_usage_logs::app_usage_logs_router;
 pub use app_usage_logs::app_usage_logs_router_with_read_store;
-pub use app_user_profile::app_user_profile_router;
-pub use app_user_profile::app_user_profile_router_with_read_store;
 pub use openai_chat::openai_chat_completions_router;
 pub use openai_chat::openai_chat_completions_router_with_relay;
 pub use openai_chat::openai_chat_completions_router_with_relay_and_plugins;

@@ -5,11 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
-use serde::Deserialize;
-
+use crate::api::app_sql_subject::{map_optional_app_sql_subject, ResolvedAppSqlScopedSubject};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::optional_subject_or_unauthorized;
+use serde::Deserialize;
 use crate::ports::{
     DashboardOverviewQuery, DashboardOverviewReadFuture, DashboardOverviewReadStore,
     DashboardOverviewSnapshot, DashboardOverviewSubject,
@@ -108,16 +106,13 @@ fn app_dashboard_overview_router_with_state(
 
 async fn fetch_dashboard_overview(
     State(state): State<AppDashboardOverviewState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
     Query(query): Query<AppDashboardOverviewQuery>,
 ) -> Response {
-    let subject = match optional_subject_or_unauthorized(subject, state.require_subject) {
-        Ok(Some(subject)) => Some(DashboardOverviewSubject {
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-        }),
-        Ok(None) => None,
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
+        Ok(subject) => subject,
         Err(response) => return response,
     };
 

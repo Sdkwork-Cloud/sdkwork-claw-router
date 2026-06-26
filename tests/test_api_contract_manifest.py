@@ -479,7 +479,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     operation: listCatalogProducts
                     operation_id: catalog.products.list
                     kind: read
@@ -494,7 +494,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         items:
                           type: array
                   - route: /admin/commerce
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     operation: listInventoryStocks
                     operation_id: inventory.stocks.list
                     kind: read
@@ -541,7 +541,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         id: { type: string }
                   - route: /console/commerce
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     operation: listWalletAccounts
                     operation_id: wallet.accounts.list
                     kind: read
@@ -556,7 +556,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         items:
                           type: array
                   - route: /admin/commerce
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     operation: listPaymentAttempts
                     operation_id: payments.attempts.list
                     kind: read
@@ -595,7 +595,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     operation: fetchCheckoutStatus
                     operation_id: payments.checkout.retrieve
                     kind: read

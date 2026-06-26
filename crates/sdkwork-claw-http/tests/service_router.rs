@@ -273,7 +273,7 @@ async fn service_router_exposes_ordered_openapi_schema_tabs_from_route_config() 
 }
 
 #[tokio::test]
-async fn service_router_exposes_ordered_sdkwork_router_api_schema_tabs() {
+async fn service_router_exposes_ordered_sdkwork_routes_api_schema_tabs() {
     let response = sdkwork_claw_http::service_router("sdkwork-clawrouter-cloud-gateway")
         .oneshot(
             Request::builder()
@@ -2218,11 +2218,13 @@ async fn service_router_surface_openapi_documents_exclude_commerce_dependency_co
     .await;
     for (method, path, operation_id) in [
         ("get", "/app/v3/api/ai/models", "models.list"),
-        ("get", "/app/v3/api/platform/apps/store", "apps.store.list"),
     ] {
         assert_openapi_operation(&app_payload, method, path, operation_id);
     }
     for (method, path) in [
+        ("get", "/app/v3/api/platform/apps/store"),
+        ("get", "/app/v3/api/platform/apps/categories"),
+        ("get", "/app/v3/api/platform/apps/installed"),
         ("get", "/app/v3/api/catalog/products"),
         ("get", "/app/v3/api/catalog/skus/{skuId}"),
         ("get", "/app/v3/api/cart/current"),

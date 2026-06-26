@@ -77,7 +77,7 @@ complete commercial-grade appbase platform.
   recharge, checkout, settlements, admin finance, admin marketing, admin user
   balance adjustment, and membership.
 - Portal commercial calls are routed through
-  `sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts`, then through generated
+  `sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts`, then through generated
   `@sdkwork/clawrouter-app-sdk` or `@sdkwork/clawrouter-backend-sdk`.
 - `sdkwork-appbase` has reusable frontend blocks:
   `@sdkwork/commerce-contracts`, `@sdkwork/commerce-sdk-ports`, and

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RefreshCw } from 'lucide-react';
-import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawroutes-pc-commons';
 
 interface MembershipAdminPageShellProps {
   isLoading: boolean;

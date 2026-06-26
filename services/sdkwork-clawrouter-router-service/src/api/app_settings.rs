@@ -6,11 +6,13 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, put};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
+use crate::api::app_sql_subject::{
+    map_optional_app_sql_subject, map_required_app_sql_subject, RequiredAppSqlScopedSubject,
+    ResolvedAppSqlScopedSubject,
+};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
@@ -104,9 +106,11 @@ fn app_settings_router_with_state(
 
 async fn fetch_settings(
     State(state): State<AppSettingsState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match resolve_settings_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -119,11 +123,11 @@ async fn fetch_settings(
 
 async fn update_settings(
     State(state): State<AppSettingsState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Json(request): Json<UpdateSettingsRequest>,
 ) -> Response {
-    let subject = resolve_required_settings_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, SettingsSubject::from);
     let settings = match validate_update_settings_request(request) {
         Ok(settings) => settings,
         Err(message) => {
@@ -148,25 +152,6 @@ async fn update_settings(
     match state.store.update_settings(command).await {
         Ok(outcome) => Json(PlusApiResult::success(outcome)).into_response(),
         Err(error) => settings_system_response("settings command store is unavailable", error),
-    }
-}
-
-fn resolve_settings_subject(
-    subject: Option<TrustedRequestSubject>,
-    require_subject: bool,
-) -> Result<Option<SettingsSubject>, Response> {
-    map_optional_app_user_subject(subject, require_subject, |trusted| SettingsSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    })
-}
-
-fn resolve_required_settings_subject(trusted: TrustedRequestSubject) -> SettingsSubject {
-    SettingsSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
     }
 }
 

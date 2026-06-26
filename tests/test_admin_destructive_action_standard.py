@@ -29,7 +29,7 @@ class AdminDestructiveActionStandardTest(unittest.TestCase):
                 self.assertIn("ConfirmDialog", source)
                 self.assertIn("role=\"alertdialog\"", (
                     base
-                    / "sdkwork-clawrouter-pc-commons"
+                    / "sdkwork-clawroutes-pc-commons"
                     / "src"
                     / "components"
                     / "ConfirmDialog.tsx"

@@ -11,7 +11,7 @@ import {
   type RuntimeStreamEvent,
   type RuntimeUsageSnapshot,
   type SdkworkMemoryAppSdkClient,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 type JsonObject = Record<string, JsonValue>;
 type SdkUsageSnapshot = {

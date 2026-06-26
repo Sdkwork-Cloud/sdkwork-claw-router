@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { AdminTableShell, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from '@sdkwork/clawrouter-pc-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from '@sdkwork/clawroutes-pc-commons';
 import { Edit, Globe2, Image as ImageIcon, Loader2, Plus, RefreshCw, Search, Trash2, Upload, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ModelService, type Vendor } from '@sdkwork/models-pc-admin-catalog/modelService';

@@ -7,12 +7,11 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
+use crate::api::app_sql_subject::{RequiredAppSqlScopedSubject, SqlScopedSubject};
 use serde::{Deserialize, Serialize};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::required_subject;
 use crate::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use crate::domain::{
     ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError, GatewayAccessPolicy,
@@ -209,13 +208,9 @@ where
 
 async fn fetch_keys(
     State(state): State<AppApiKeyState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
 ) -> Response {
-    let subject = match required_subject(subject) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-
+    let scope = scope;
     match state
         .read_store
         .load_gateway_api_key_management_snapshot()
@@ -223,7 +218,7 @@ async fn fetch_keys(
     {
         Ok(snapshot) => {
             let scoped_snapshot =
-                snapshot.for_subject(subject.tenant_id, subject.organization_id, subject.user_id);
+                snapshot.for_subject(scope.tenant_id, scope.organization_id, scope.user_id);
             Json(PlusApiResult::success(list_response(&scoped_snapshot))).into_response()
         }
         Err(error) => (
@@ -239,13 +234,9 @@ async fn fetch_keys(
 
 async fn fetch_key_groups(
     State(state): State<AppApiKeyState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
 ) -> Response {
-    let subject = match required_subject(subject) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-
+    let scope = scope;
     match state
         .read_store
         .load_gateway_api_key_management_snapshot()
@@ -253,7 +244,7 @@ async fn fetch_key_groups(
     {
         Ok(snapshot) => {
             let scoped_snapshot =
-                snapshot.for_subject(subject.tenant_id, subject.organization_id, subject.user_id);
+                snapshot.for_subject(scope.tenant_id, scope.organization_id, scope.user_id);
             Json(PlusApiResult::success(group_list_response(
                 &scoped_snapshot,
             )))
@@ -272,11 +263,11 @@ async fn fetch_key_groups(
 
 async fn create_key(
     State(state): State<AppApiKeyState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Json(request): Json<AppApiKeyCreateRequest>,
 ) -> Response {
-    match create_key_inner(state, subject, headers, request).await {
+    match create_key_inner(state, scope, headers, request).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -303,12 +294,12 @@ async fn create_key(
 
 async fn update_key(
     State(state): State<AppApiKeyState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(api_key_id): Path<i64>,
     Json(request): Json<AppApiKeyUpdateRequest>,
 ) -> Response {
-    match update_key_inner(state, subject, headers, api_key_id, request).await {
+    match update_key_inner(state, scope, headers, api_key_id, request).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -335,11 +326,11 @@ async fn update_key(
 
 async fn delete_key(
     State(state): State<AppApiKeyState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(api_key_id): Path<i64>,
 ) -> Response {
-    match delete_key_inner(state, subject, headers, api_key_id).await {
+    match delete_key_inner(state, scope, headers, api_key_id).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
         Err(AppApiKeyCreateError::Unauthorized(message)) => (
             StatusCode::UNAUTHORIZED,
@@ -366,12 +357,10 @@ async fn delete_key(
 
 async fn create_key_inner(
     state: AppApiKeyState,
-    subject: Option<TrustedRequestSubject>,
+    subject: SqlScopedSubject,
     headers: HeaderMap,
     request: AppApiKeyCreateRequest,
 ) -> Result<AppApiKeyCreateResponse, AppApiKeyCreateError> {
-    let subject =
-        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let snapshot = state
         .read_store
         .load_gateway_api_key_management_snapshot()
@@ -418,8 +407,8 @@ async fn create_key_inner(
         tenant_id: subject.tenant_id,
         organization_id: subject.organization_id,
         user_id: subject.user_id,
-        operator_id: subject.operator_id,
-        operator_type: subject.operator_type,
+        operator_id: subject.operator_id(),
+        operator_type: SqlScopedSubject::operator_type(),
         name,
         group_id: group.id,
         key_prefix: key_prefix(&raw_key),
@@ -456,13 +445,11 @@ async fn create_key_inner(
 
 async fn update_key_inner(
     state: AppApiKeyState,
-    subject: Option<TrustedRequestSubject>,
+    subject: SqlScopedSubject,
     _headers: HeaderMap,
     api_key_id: i64,
     request: AppApiKeyUpdateRequest,
 ) -> Result<AppApiKeyUpdateResponse, AppApiKeyCreateError> {
-    let subject =
-        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let api_key_id = positive_api_key_id(api_key_id)?;
     let snapshot = state
         .read_store
@@ -493,8 +480,8 @@ async fn update_key_inner(
         tenant_id: subject.tenant_id,
         organization_id: subject.organization_id,
         user_id: subject.user_id,
-        operator_id: subject.operator_id,
-        operator_type: subject.operator_type,
+        operator_id: subject.operator_id(),
+        operator_type: SqlScopedSubject::operator_type(),
         api_key_id,
         name: optional_updated_name(request.name.as_deref())?,
         group_id,
@@ -544,12 +531,10 @@ async fn update_key_inner(
 
 async fn delete_key_inner(
     state: AppApiKeyState,
-    subject: Option<TrustedRequestSubject>,
+    subject: SqlScopedSubject,
     _headers: HeaderMap,
     api_key_id: i64,
 ) -> Result<AppApiKeyDeleteResponse, AppApiKeyCreateError> {
-    let subject =
-        subject.ok_or_else(|| unauthorized_error("trusted request subject is required"))?;
     let api_key_id = positive_api_key_id(api_key_id)?;
     let snapshot = state
         .read_store
@@ -578,8 +563,8 @@ async fn delete_key_inner(
         tenant_id: subject.tenant_id,
         organization_id: subject.organization_id,
         user_id: subject.user_id,
-        operator_id: subject.operator_id,
-        operator_type: subject.operator_type,
+        operator_id: subject.operator_id(),
+        operator_type: SqlScopedSubject::operator_type(),
         api_key_id,
         requested_at: current_timestamp_string(),
         request_id: generate_server_request_id().map_err(app_api_key_request_id_error)?,
@@ -764,7 +749,7 @@ fn unrestricted_modalities() -> Vec<String> {
 async fn resolve_group(
     snapshot: &GatewayApiKeyManagementSnapshot,
     request: &AppApiKeyCreateRequest,
-    subject: TrustedRequestSubject,
+    subject: SqlScopedSubject,
     state: &AppApiKeyState,
 ) -> Result<ChannelGroup, AppApiKeyCreateError> {
     if let Some(group_id) = request.channel_group_id {
@@ -807,7 +792,7 @@ async fn resolve_group(
 fn resolve_update_group(
     snapshot: &GatewayApiKeyManagementSnapshot,
     request: &AppApiKeyUpdateRequest,
-    subject: TrustedRequestSubject,
+    subject: SqlScopedSubject,
 ) -> Result<Option<ChannelGroup>, AppApiKeyCreateError> {
     if let Some(group_id) = request.channel_group_id {
         return snapshot
@@ -841,7 +826,7 @@ fn resolve_update_group(
 
 async fn ensure_default_group(
     snapshot: &GatewayApiKeyManagementSnapshot,
-    subject: TrustedRequestSubject,
+    subject: SqlScopedSubject,
     state: &AppApiKeyState,
 ) -> Result<ChannelGroup, AppApiKeyCreateError> {
     let pricing_plan_code =

@@ -16,7 +16,8 @@ import {
   type ThemePreference,
 } from './themePreference';
 import { RequireAdminSession, RequirePortalSession, PortalAuthenticatedAuthRouteGuard } from './auth/protectedPortalRoutes';
-import { PortalErrorBoundary } from '@sdkwork/clawrouter-pc-commons';
+import { SdkworkSessionAuthBrowserRoot } from '@sdkwork/auth-pc-react';
+import { PortalErrorBoundary } from '@sdkwork/clawroutes-pc-commons';
 import {
   SdkworkCommerceHostNavbarActions,
 } from '@sdkwork/commerce-pc-host';
@@ -47,7 +48,6 @@ const UserView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-user'), 
 const SettingsView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-settings'), 'SettingsView');
 const AccountView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
 const SettlementsView = lazyRoute(() => import('@sdkwork/commerce-pc-billing'), 'SdkworkBillingPage');
-const MessagesView = lazyRoute(() => import('@sdkwork/clawrouter-pc-console-messages'), 'MessagesView');
 
 const DashboardAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-dashboard'), 'DashboardAdmin');
 const AnalyticsAdmin = lazyRoute(() => import('@sdkwork/clawrouter-pc-admin-analytics'), 'AnalyticsAdmin');
@@ -68,7 +68,6 @@ const CatalogAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/cl
 const InventoryAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-inventory'), 'InventoryAdmin');
 const OrdersAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-orders'), 'OrdersAdmin');
 const PaymentsAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-payments'), 'PaymentsAdmin');
-const MembershipsAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-memberships'), 'MembershipsAdmin');
 const WalletAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-wallet'), 'WalletAdmin');
 const FinanceAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-finance'), 'FinanceAdmin');
 const MarketingAdmin = lazyRoute<AdminSectionRouteProps>(() => import('@sdkwork/clawrouter-pc-admin-marketing'), 'MarketingAdmin');
@@ -175,6 +174,20 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <SdkworkSessionAuthBrowserRoot
+        copy={{
+          businessCodeLabel: '业务码',
+          close: '留在当前页',
+          codeLabel: '错误码',
+          description: '接口拒绝了当前会话。请先查看下方详情，再决定是否重新登录。',
+          detailsTitle: '技术详情',
+          httpStatusLabel: 'HTTP 状态',
+          login: '前往登录',
+          messageLabel: '错误信息',
+          pathLabel: '请求路径',
+          title: '需要重新登录',
+        }}
+      >
       <ScrollToTop />
       <div className="min-h-screen flex flex-col selection:bg-lobster-500/30">
         <Suspense fallback={<RouteFallback />}>
@@ -191,7 +204,6 @@ export default function App() {
               <Route path="account" element={<AccountView />} />
               {ClawRouterConsoleCommerceHostRoutes()}
               <Route path="settlements" element={<SettlementsView />} />
-              <Route path="notifications" element={<MessagesView />} />
               <Route path="user" element={<UserView />} />
               <Route path="settings" element={<SettingsView />} />
               <Route path="*" element={<Navigate to="/console/dashboard" replace />} />
@@ -246,13 +258,7 @@ export default function App() {
               <Route path="payments/attempts" element={<PaymentsAdmin sectionId="attempts" />} />
               <Route path="payments/webhook-events" element={<PaymentsAdmin sectionId="webhookEvents" />} />
               <Route path="payments/reconciliation-runs" element={<PaymentsAdmin sectionId="reconciliationRuns" />} />
-              <Route path="memberships" element={<Navigate to="/admin/memberships/packages" replace />} />
-              <Route path="memberships/packages" element={<MembershipsAdmin sectionId="packages" />} />
-              <Route path="memberships/vip-packages" element={<MembershipsAdmin sectionId="vipPackages" />} />
-              <Route path="memberships/plans" element={<MembershipsAdmin sectionId="plans" />} />
-              <Route path="memberships/members" element={<MembershipsAdmin sectionId="members" />} />
-              <Route path="memberships/entitlements" element={<MembershipsAdmin sectionId="entitlements" />} />
-              <Route path="memberships/recharge-packages" element={<MembershipsAdmin sectionId="rechargePackages" />} />
+              <Route path="memberships/*" element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="wallet" element={<Navigate to="/admin/wallet/wallet-accounts" replace />} />
               <Route path="wallet/recharge-orders" element={<WalletAdmin sectionId="rechargeOrders" />} />
               <Route path="wallet/wallet-accounts" element={<WalletAdmin sectionId="walletAccounts" />} />
@@ -333,6 +339,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </div>
+      </SdkworkSessionAuthBrowserRoot>
     </BrowserRouter>
   );
 }

@@ -11,7 +11,7 @@ import {
   readRequiredString,
   readRequiredNonNegativeNumber,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 const MAX_RECORD_LOG_PAGE_SIZE = 200;
 const MAX_RECORD_LOG_FILTER_LENGTH = 128;

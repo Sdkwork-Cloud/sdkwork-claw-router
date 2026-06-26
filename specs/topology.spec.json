@@ -177,24 +177,6 @@
       "standalone.split-services.development": {
         "processes": [
           {
-            "id": "application.open-http",
-            "crate": "sdkwork-clawrouter-cloud-gateway",
-            "binary": "sdkwork-clawrouter-cloud-gateway",
-            "required": true
-          },
-          {
-            "id": "application.backend-http",
-            "crate": "sdkwork-clawrouter-admin-api-server",
-            "binary": "sdkwork-clawrouter-admin-api-server",
-            "required": true
-          },
-          {
-            "id": "app-api",
-            "crate": "sdkwork-clawrouter-app-api-server",
-            "binary": "sdkwork-clawrouter-app-api-server",
-            "required": true
-          },
-          {
             "id": "platform.api-gateway",
             "binary": "sdkwork-api-cloud-gateway",
             "repository": "sdkwork-api-cloud-gateway",
@@ -214,9 +196,7 @@
           }
         ],
         "healthSurfaces": [
-          "application.public-ingress",
-          "application.open-http",
-          "application.backend-http"
+          "application.public-ingress"
         ]
       },
       "cloud.unified-process.development": {
@@ -253,27 +233,9 @@
             "required": false
           },
           {
-            "id": "application.open-http",
+            "id": "application.public-ingress",
             "crate": "sdkwork-clawrouter-cloud-gateway",
             "binary": "sdkwork-clawrouter-cloud-gateway",
-            "required": true
-          },
-          {
-            "id": "application.backend-http",
-            "crate": "sdkwork-clawrouter-admin-api-server",
-            "binary": "sdkwork-clawrouter-admin-api-server",
-            "required": true
-          },
-          {
-            "id": "app-api",
-            "crate": "sdkwork-clawrouter-app-api-server",
-            "binary": "sdkwork-clawrouter-app-api-server",
-            "required": true
-          },
-          {
-            "id": "application.public-ingress",
-            "crate": "sdkwork-clawrouter-standalone-gateway",
-            "binary": "sdkwork-clawrouter-standalone-gateway",
             "required": true
           },
           {
@@ -285,31 +247,11 @@
         ],
         "healthSurfaces": [
           "platform.api-gateway",
-          "application.public-ingress",
-          "application.open-http",
-          "application.backend-http"
+          "application.public-ingress"
         ]
       },
       "cloud.split-services.production": {
         "processes": [
-          {
-            "id": "application.open-http",
-            "crate": "sdkwork-clawrouter-cloud-gateway",
-            "binary": "sdkwork-clawrouter-cloud-gateway",
-            "required": true
-          },
-          {
-            "id": "application.backend-http",
-            "crate": "sdkwork-clawrouter-admin-api-server",
-            "binary": "sdkwork-clawrouter-admin-api-server",
-            "required": true
-          },
-          {
-            "id": "app-api",
-            "crate": "sdkwork-clawrouter-app-api-server",
-            "binary": "sdkwork-clawrouter-app-api-server",
-            "required": true
-          },
           {
             "id": "platform.api-gateway",
             "binary": "sdkwork-api-cloud-gateway",
@@ -318,8 +260,8 @@
           },
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-clawrouter-standalone-gateway",
-            "binary": "sdkwork-clawrouter-standalone-gateway",
+            "crate": "sdkwork-clawrouter-cloud-gateway",
+            "binary": "sdkwork-clawrouter-cloud-gateway",
             "required": true
           },
           {
@@ -331,8 +273,6 @@
         ],
         "healthSurfaces": [
           "application.public-ingress",
-          "application.open-http",
-          "application.backend-http",
           "platform.api-gateway"
         ]
       }

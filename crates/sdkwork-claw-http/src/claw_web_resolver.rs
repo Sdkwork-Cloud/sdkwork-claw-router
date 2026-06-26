@@ -1,386 +1,107 @@
-use async_trait::async_trait;
-use sdkwork_claw_config::AppSessionConfig;
-use sdkwork_iam_web_adapter::IamDatabaseWebRequestContextResolver;
-use sdkwork_web_core::{
-    WebAuthLevel, WebDeploymentMode, WebEnvironment, WebFrameworkError, WebLoginScope,
-    WebRequestContextResolver, WebRequestPrincipal, WebSubjectType,
-};
+use std::path::PathBuf;
+use std::sync::Arc;
 
-use crate::app_session_tenant_signing::AppSessionTenantSigningKeyResolver;
-use crate::auth::{
-    decode_app_session_token_claims_unverified, verify_app_session_token,
-    verify_app_session_token_claims, verify_app_session_token_claims_with_signing_secret,
-    verify_dual_app_session_token_pair, AppSessionTokenClaims, AppSessionTokenKind,
-    TrustedRequestSubject,
-};
+use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine};
+use sdkwork_iam_web_adapter::IamWebRequestContextResolver;
+use sqlx::PgPool;
 
-/// Claw Router web-framework resolver that accepts signed v2 app-session bootstrap tokens
-/// before delegating to the IAM database resolver.
-#[derive(Clone)]
-pub struct ClawRouterWebRequestContextResolver {
-    iam: IamDatabaseWebRequestContextResolver,
-    app_session: AppSessionConfig,
-    tenant_signing_key_resolver: Option<std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
-}
-
-impl ClawRouterWebRequestContextResolver {
-    pub fn new(iam: IamDatabaseWebRequestContextResolver, app_session: AppSessionConfig) -> Self {
-        Self {
-            iam,
-            app_session,
-            tenant_signing_key_resolver: None,
-        }
-    }
-
-    pub fn with_tenant_signing_key_resolver(
-        mut self,
-        tenant_signing_key_resolver: std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>,
-    ) -> Self {
-        self.tenant_signing_key_resolver = Some(tenant_signing_key_resolver);
-        self
-    }
-
-    pub async fn from_env() -> Result<Self, String> {
-        let iam = sdkwork_iam_web_adapter::iam_database_resolver_from_env().await;
-        let app_session = AppSessionConfig::from_env()
-            .map_err(|error| error.to_string())?
-            .ok_or_else(|| {
-                format!(
-                    "{} is required for claw router web framework bootstrap access tokens",
-                    AppSessionConfig::ENV_APP_SESSION_SECRET
-                )
-            })?;
-        Ok(Self::new(iam, app_session))
-    }
-}
-
-#[async_trait]
-impl WebRequestContextResolver for ClawRouterWebRequestContextResolver {
-    async fn resolve_api_key(
-        &self,
-        raw_api_key: &str,
-    ) -> Result<WebRequestPrincipal, WebFrameworkError> {
-        self.iam.resolve_api_key(raw_api_key).await
-    }
-
-    async fn resolve_oauth_bearer(
-        &self,
-        raw_bearer_token: &str,
-    ) -> Result<WebRequestPrincipal, WebFrameworkError> {
-        self.iam.resolve_oauth_bearer(raw_bearer_token).await
-    }
-
-    async fn resolve_dual_token(
-        &self,
-        raw_auth_token: &str,
-        raw_access_token: &str,
-    ) -> Result<WebRequestPrincipal, WebFrameworkError> {
-        if let Some(principal) = resolve_claw_dual_token(
-            &self.app_session,
-            self.tenant_signing_key_resolver.as_ref(),
-            raw_auth_token,
-            raw_access_token,
-            current_unix_seconds(),
-        )
-        .await
-        {
-            return Ok(principal);
-        }
-        self.iam
-            .resolve_dual_token(raw_auth_token, raw_access_token)
-            .await
-    }
-
-    async fn resolve_access_token(
-        &self,
-        raw_access_token: &str,
-    ) -> Result<WebRequestPrincipal, WebFrameworkError> {
-        if let Some(principal) = resolve_claw_access_token(
-            &self.app_session,
-            self.tenant_signing_key_resolver.as_ref(),
-            raw_access_token,
-            current_unix_seconds(),
-        )
-        .await
-        {
-            return Ok(principal);
-        }
-        self.iam.resolve_access_token(raw_access_token).await
-    }
-}
-
-async fn resolve_claw_access_token(
-    config: &AppSessionConfig,
-    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
-    raw_access_token: &str,
-    now_unix_seconds: i64,
-) -> Option<WebRequestPrincipal> {
-    let token = strip_optional_bearer_prefix(raw_access_token)?;
-    if let Some(principal) = verify_claw_access_token_with_tenant_signing(
-        config,
-        tenant_signing_key_resolver,
-        token,
-        now_unix_seconds,
-    )
-    .await
-    {
-        return Some(principal);
-    }
-    if let Ok(claims) = verify_app_session_token_claims(config, token, now_unix_seconds) {
-        if claims.token_kind == AppSessionTokenKind::Access {
-            return Some(web_principal_from_app_session_claims(&claims));
-        }
-    }
-    verify_app_session_token(config, token, now_unix_seconds)
+/// Ensures IAM database env is materialized from the claw unified postgres profile when needed.
+pub fn ensure_iam_database_env_for_claw_database(database_config: &DatabaseConfig) {
+    if std::env::var("SDKWORK_IAM_DATABASE_URL")
         .ok()
-        .map(|subject| web_principal_from_trusted_subject(&subject))
-}
-
-async fn resolve_claw_dual_token(
-    config: &AppSessionConfig,
-    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
-    raw_auth_token: &str,
-    raw_access_token: &str,
-    now_unix_seconds: i64,
-) -> Option<WebRequestPrincipal> {
-    if let Some(principal) = verify_claw_dual_token_with_tenant_signing(
-        config,
-        tenant_signing_key_resolver,
-        raw_auth_token,
-        raw_access_token,
-        now_unix_seconds,
-    )
-    .await
+        .filter(|value| !value.trim().is_empty())
+        .is_some()
     {
-        return Some(principal);
+        return;
     }
-    let subject = verify_dual_app_session_token_pair(
-        config,
-        raw_auth_token,
-        raw_access_token,
-        now_unix_seconds,
-    )
-    .ok()?;
-    Some(web_principal_from_trusted_subject(&subject))
+
+    if database_config.engine != DatabaseEngine::Postgres {
+        return;
+    }
+
+    let app_root = resolve_clawrouter_app_root();
+    sdkwork_iam_database_host::unified_postgres_env::apply_unified_claw_postgres_env(&app_root);
 }
 
-async fn verify_claw_access_token_with_tenant_signing(
-    config: &AppSessionConfig,
-    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
-    token: &str,
-    now_unix_seconds: i64,
-) -> Option<WebRequestPrincipal> {
-    let resolver = tenant_signing_key_resolver?;
-    let claims = decode_app_session_token_claims_unverified(token).ok()?;
-    if claims.token_kind != AppSessionTokenKind::Access {
-        return None;
+/// Builds the canonical IAM `WebRequestContextResolver` for clawrouter HTTP surfaces.
+pub async fn iam_web_resolver_for_claw_database(
+    database_config: Option<&DatabaseConfig>,
+    postgres_pool: Option<Arc<PgPool>>,
+) -> IamWebRequestContextResolver {
+    if let Some(config) = database_config {
+        ensure_iam_database_env_for_claw_database(config);
     }
-    let kid = claims.kid.as_deref()?;
-    let signing_secret = resolver.resolve_signing_secret_by_kid(kid).await?;
-    let verified = verify_app_session_token_claims_with_signing_secret(
-        config,
-        &signing_secret,
-        token,
-        now_unix_seconds,
-    )
-    .ok()?;
-    Some(web_principal_from_app_session_claims(&verified))
+
+    if let Some(pool) = postgres_pool {
+        return IamWebRequestContextResolver::new(Some(pool));
+    }
+
+    sdkwork_iam_web_adapter::iam_web_request_context_resolver_from_env().await
 }
 
-async fn verify_claw_dual_token_with_tenant_signing(
-    config: &AppSessionConfig,
-    tenant_signing_key_resolver: Option<&std::sync::Arc<dyn AppSessionTenantSigningKeyResolver>>,
-    raw_auth_token: &str,
-    raw_access_token: &str,
-    now_unix_seconds: i64,
-) -> Option<WebRequestPrincipal> {
-    let resolver = tenant_signing_key_resolver?;
-    let auth_token = strip_optional_bearer_prefix(raw_auth_token)?;
-    let access_token = strip_optional_bearer_prefix(raw_access_token)?;
-    let auth_claims = decode_app_session_token_claims_unverified(auth_token).ok()?;
-    let access_claims = decode_app_session_token_claims_unverified(access_token).ok()?;
-    if auth_claims.token_kind != AppSessionTokenKind::Auth
-        || access_claims.token_kind != AppSessionTokenKind::Access
-    {
-        return None;
-    }
-    let auth_kid = auth_claims.kid.as_deref()?;
-    let access_kid = access_claims.kid.as_deref()?;
-    if auth_kid != access_kid {
-        return None;
-    }
-    let signing_secret = resolver.resolve_signing_secret_by_kid(auth_kid).await?;
-    let auth_verified = verify_app_session_token_claims_with_signing_secret(
-        config,
-        &signing_secret,
-        auth_token,
-        now_unix_seconds,
-    )
-    .ok()?;
-    let access_verified = verify_app_session_token_claims_with_signing_secret(
-        config,
-        &signing_secret,
-        access_token,
-        now_unix_seconds,
-    )
-    .ok()?;
-    if auth_verified.trusted_subject() != access_verified.trusted_subject() {
-        return None;
-    }
-    Some(web_principal_from_app_session_claims(&access_verified))
-}
-
-fn web_principal_from_app_session_claims(claims: &AppSessionTokenClaims) -> WebRequestPrincipal {
-    WebRequestPrincipal::builder()
-        .tenant_id(claims.tenant_id.to_string())
-        .organization_id((claims.organization_id > 0).then(|| claims.organization_id.to_string()))
-        .user_id(claims.user_id.to_string())
-        .session_id(Some(claims.session_id.clone()))
-        .app_id(claims.app_id.clone())
-        .login_scope(parse_login_scope(
-            &claims.login_scope,
-            claims.organization_id,
-        ))
-        .environment(parse_environment(&claims.environment))
-        .deployment_mode(parse_deployment_mode(&claims.deployment_mode))
-        .auth_level(parse_auth_level(&claims.auth_level))
-        .data_scope(claims.data_scope.clone())
-        .permission_scope(claims.permission_scope.clone())
-        .subject_type(WebSubjectType::User)
-        .build()
-}
-
-fn web_principal_from_trusted_subject(subject: &TrustedRequestSubject) -> WebRequestPrincipal {
-    WebRequestPrincipal::builder()
-        .tenant_id(subject.tenant_id.to_string())
-        .organization_id((subject.organization_id > 0).then(|| subject.organization_id.to_string()))
-        .user_id(subject.user_id.to_string())
-        .login_scope(if subject.organization_id > 0 {
-            WebLoginScope::Organization
-        } else {
-            WebLoginScope::Tenant
+fn resolve_clawrouter_app_root() -> PathBuf {
+    std::env::var("SDKWORK_CLAW_APP_ROOT")
+        .ok()
+        .map(PathBuf::from)
+        .or_else(|| {
+            std::env::current_dir()
+                .ok()
+                .and_then(|cwd| cwd.canonicalize().ok())
         })
-        .auth_level(WebAuthLevel::Password)
-        .subject_type(WebSubjectType::User)
-        .build()
-}
-
-fn parse_login_scope(login_scope: &str, organization_id: i64) -> WebLoginScope {
-    match login_scope.trim().to_ascii_uppercase().as_str() {
-        "ORGANIZATION" if organization_id > 0 => WebLoginScope::Organization,
-        _ => WebLoginScope::Tenant,
-    }
-}
-
-fn parse_environment(value: &str) -> WebEnvironment {
-    match value.trim().to_ascii_lowercase().as_str() {
-        "dev" | "development" => WebEnvironment::Dev,
-        "test" => WebEnvironment::Test,
-        _ => WebEnvironment::Prod,
-    }
-}
-
-fn parse_deployment_mode(value: &str) -> WebDeploymentMode {
-    match value.trim().to_ascii_lowercase().as_str() {
-        "local" => WebDeploymentMode::Local,
-        "private" => WebDeploymentMode::Private,
-        _ => WebDeploymentMode::Saas,
-    }
-}
-
-fn parse_auth_level(value: &str) -> WebAuthLevel {
-    match value.trim().to_ascii_lowercase().as_str() {
-        "anonymous" => WebAuthLevel::Anonymous,
-        "mfa" => WebAuthLevel::Mfa,
-        "system" => WebAuthLevel::System,
-        _ => WebAuthLevel::Password,
-    }
-}
-
-fn strip_optional_bearer_prefix(raw: &str) -> Option<&str> {
-    let trimmed = raw.trim();
-    if trimmed.is_empty() {
-        return None;
-    }
-    trimmed
-        .strip_prefix("Bearer ")
-        .or_else(|| trimmed.strip_prefix("bearer "))
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .or(Some(trimmed))
-}
-
-fn current_unix_seconds() -> i64 {
-    std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)
-        .map(|duration| duration.as_secs() as i64)
-        .unwrap_or(0)
+        .unwrap_or_else(|| PathBuf::from("."))
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use crate::auth::{
-        sign_app_session_token, sign_app_session_token_with_claims, AppSessionTokenClaims,
-        AppSessionTokenKind,
+    use super::{
+        ensure_iam_database_env_for_claw_database, iam_web_resolver_for_claw_database,
+        resolve_clawrouter_app_root,
     };
-    use sdkwork_claw_config::AppSessionConfig;
+    use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine};
+    use std::sync::Arc;
 
-    const TEST_SECRET: &str = "sdkwork-clawrouter-local-dev-secret-20260507";
-
-    fn test_config() -> AppSessionConfig {
-        AppSessionConfig::from_signing_secret(TEST_SECRET).unwrap()
+    #[test]
+    fn resolve_clawrouter_app_root_returns_path() {
+        let root = resolve_clawrouter_app_root();
+        assert!(!root.as_os_str().is_empty());
     }
 
-    fn test_subject() -> TrustedRequestSubject {
-        TrustedRequestSubject {
-            tenant_id: 100_001,
-            organization_id: 0,
-            user_id: 30,
-            operator_id: 30,
-            operator_type: crate::auth::DEFAULT_USER_OPERATOR_TYPE,
+    #[test]
+    fn ensure_iam_database_env_skips_when_iam_url_already_set() {
+        let prior = std::env::var("SDKWORK_IAM_DATABASE_URL").ok();
+        std::env::set_var(
+            "SDKWORK_IAM_DATABASE_URL",
+            "postgresql://iam:iam@127.0.0.1:5432/iam",
+        );
+        let config = DatabaseConfig {
+            engine: DatabaseEngine::Postgres,
+            url: "postgresql://claw:claw@127.0.0.1:5432/claw".to_owned(),
+            max_connections: 5,
+        };
+        ensure_iam_database_env_for_claw_database(&config);
+        assert_eq!(
+            std::env::var("SDKWORK_IAM_DATABASE_URL").expect("iam url"),
+            "postgresql://iam:iam@127.0.0.1:5432/iam"
+        );
+        match prior {
+            Some(value) => std::env::set_var("SDKWORK_IAM_DATABASE_URL", value),
+            None => std::env::remove_var("SDKWORK_IAM_DATABASE_URL"),
         }
     }
 
     #[tokio::test]
-    async fn resolve_claw_access_token_accepts_signed_bootstrap_access_claim_token() {
-        let config = test_config();
-        let now = 1_800_000_000_i64;
-        let claims = AppSessionTokenClaims {
-            token_kind: AppSessionTokenKind::Access,
-            tenant_id: 100_001,
-            organization_id: 0,
-            user_id: 30,
-            session_id: "bootstrap-local-dev".to_owned(),
-            app_id: "sdkwork-clawrouter".to_owned(),
-            login_scope: "TENANT".to_owned(),
-            environment: "dev".to_owned(),
-            deployment_mode: "local".to_owned(),
-            auth_level: "password".to_owned(),
-            data_scope: vec!["tenant:100001".to_owned(), "user:30".to_owned()],
-            permission_scope: vec!["clawrouter.console.access".to_owned()],
-            issued_at: now + 1,
-            expires_at: now + 300,
-            kid: None,
+    async fn iam_web_resolver_for_claw_database_uses_shared_postgres_pool() {
+        let config = DatabaseConfig {
+            engine: DatabaseEngine::Sqlite,
+            url: "sqlite::memory:".to_owned(),
+            max_connections: 1,
         };
-        let token = sign_app_session_token_with_claims(&config, &claims);
-        let principal = resolve_claw_access_token(&config, None, &token, now + 2)
-            .await
-            .expect("principal");
-        assert_eq!("100001", principal.tenant_id());
-        assert_eq!("30", principal.user_id());
-        assert_eq!("sdkwork-clawrouter", principal.app_id());
-    }
-
-    #[tokio::test]
-    async fn resolve_claw_access_token_accepts_legacy_subject_access_token() {
-        let config = test_config();
-        let now = 1_800_000_000_i64;
-        let token = sign_app_session_token(&config, test_subject(), now + 1, now + 300);
-        let principal = resolve_claw_access_token(&config, None, &token, now + 2)
-            .await
-            .expect("principal");
-        assert_eq!("100001", principal.tenant_id());
-        assert_eq!("30", principal.user_id());
+        let pool = sqlx::postgres::PgPoolOptions::new()
+            .max_connections(1)
+            .connect_lazy("postgres://invalid-for-lazy-pool")
+            .expect("lazy pool");
+        let resolver =
+            iam_web_resolver_for_claw_database(Some(&config), Some(Arc::new(pool.clone()))).await;
+        drop(resolver);
     }
 }

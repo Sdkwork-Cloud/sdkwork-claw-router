@@ -10,7 +10,7 @@ import {
   resolvePortalAuthenticatedAuthRouteRedirect,
   verifyCurrentPortalAdminAccess,
   type PortalAdminAccessState,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export { PROTECTED_PORTAL_ROUTE_PREFIXES, isProtectedPortalPath };
 

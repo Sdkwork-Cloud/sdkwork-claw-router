@@ -15,9 +15,9 @@
 
 **Files:**
 - Modify: `package.json`
-- Modify: `scripts/run-claw-router-product.mjs`
+- Modify: `scripts/run-claw-router-application.mjs`
 - Modify: `scripts/dev/start-workspace.mjs`
-- Test: `scripts/run-claw-router-product.test.mjs`
+- Test: `scripts/run-claw-router-application.test.mjs`
 
 - [ ] **Step 1: Write or extend failing tests for default single-port messaging**
 
@@ -70,7 +70,7 @@
 **Files:**
 - Modify only if verification reveals gaps
 
-- [ ] **Step 1: Run `node scripts/run-claw-router-product.mjs plan --dev-env-file .env.postgres`**
+- [ ] **Step 1: Run `node scripts/run-claw-router-application.mjs plan --dev-env-file .env.postgres`**
 
 - [ ] **Step 2: Confirm the rendered default Claw Router dev topology still exposes one public entry port**
 

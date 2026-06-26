@@ -1,22 +1,39 @@
-# Applications
+# apps/
 
-## Purpose
-`apps/` stores independently runnable application roots and application surfaces. `apps/sdkwork-clawrouter-pc/` is the PC React portal surface for this repository.
+Application: sdkwork-clawrouter
+Status: active
+Owner: SDKWork maintainers
+Specs: APPLICATION_SPEC.md, SDKWORK_WORKSPACE_SPEC.md
 
-## Owner
-SDKWork Claw Router maintainers and application surface owners.
+## Primary App Surface
+
+The repository root is the primary runnable app surface.
+The repository root `sdkwork.app.config.json` governs the primary application manifest.
+
+## Directory Index
+
+| Directory | Surface role | Runnable | Purpose | Entry |
+| --- | --- | --- | --- | --- |
+| sdkwork-clawrouter-pc | pc | yes | SDKWork ClawRouter PC pc application root. | [README](sdkwork-clawrouter-pc/README.md) |
 
 ## Allowed Content
-Application roots with their own `sdkwork.app.config.json`, local `AGENTS.md`, `.sdkwork/`, `specs/`, source packages, public assets, scripts, docs, and tests.
+
+- Selected language/architecture application roots with `README.md`, `AGENTS.md`, `.sdkwork/`, and `specs/` when authored packages exist.
+- Architecture-local `packages/`, `config/`, `src/`, `lib/`, `App/`, or `entry/` directories required by the owning architecture standard.
 
 ## Forbidden Content
-Generated SDK transport output outside SDK family workspaces, runtime user data, local secrets, cache directories, and app surfaces without a local dictionary.
+
+- Repository-root API contracts, generated SDK workspaces, Rust crates, or deployment descriptors moved under `apps/`.
+- Runtime secrets, user-private state, generated SDK transport output, or cross-application copied business logic.
 
 ## Related Specs
-- `../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`
-- `../../sdkwork-specs/APP_PC_ARCHITECTURE_SPEC.md`
-- `../../sdkwork-specs/APP_PC_REACT_UI_SPEC.md`
+
+- `../sdkwork-specs/APPLICATION_SPEC.md`
+- `../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`
+- `../sdkwork-specs/APP_CLIENT_ARCHITECTURE_ALIGNMENT_SPEC.md`
 
 ## Verification
-- `python -B tools/architecture_standard_guardian.py`
-- `pnpm.cmd --dir apps/sdkwork-clawrouter-pc typecheck`
+
+```bash
+node ../sdkwork-specs/tools/check-apps-directory-index.mjs --root .
+```

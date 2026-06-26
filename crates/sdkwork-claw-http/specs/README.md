@@ -1,8 +1,6 @@
 # SDKWork Claw Http Component Specs
 
-This directory is the local standards index for `sdkwork-claw-http`.
-
-Root SDKWork standards remain authoritative. Local component specs can narrow or document this component, but they must not contradict [the root standards](../../../../sdkwork-specs/README.md).
+Local standards index for `sdkwork-claw-http`. Root SDKWork specs remain authoritative per [sdkwork-specs/README.md](../../../../sdkwork-specs/README.md).
 
 ## Component
 
@@ -10,46 +8,50 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | --- | --- |
 | Name | `sdkwork-claw-http` |
 | Type | `rust-crate` |
-| Root | `sdkwork-clawrouter/crates/sdkwork-claw-http` |
 | Domain | `platform` |
 | Capability | `router` |
-| Languages | `rust` |
 | Status | `standardizing` |
 
-## Contract Manifest
+## HTTP Auth and Context (sdkwork-web-framework)
 
-- [component.spec.json](./component.spec.json) is the machine-readable component contract.
-- Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
-- Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
+Production app/backend surfaces use **sdkwork-web-framework** as the canonical HTTP auth and context pipeline. This crate provides Claw-specific IAM resolver wiring and **legacy-only** subject bridges.
+
+| Module | Responsibility |
+| --- | --- |
+| `claw_web_resolver.rs` | `iam_web_resolver_for_claw_database` — wires `DatabaseConfig` and optional shared `PgPool` into `IamWebRequestContextResolver` |
+| `web_bridge.rs` | **Legacy only**: projects into `TrustedRequestSubject` for handlers not yet migrated to `TenantAppContext` |
+| `web_framework_compat.rs` | Feature flags; `merge_web_framework_scoped_app_read_router`; legacy `project_trusted_subject_from_web_request_context` middleware |
+| `auth.rs` | Legacy signed-subject and app-session boundaries; `TrustedRequestSubject` Axum extractors |
+
+Migrated app-api SQL read handlers live in `sdkwork-clawrouter-router-service/src/api/app_sql_subject.rs` and consume `WebRequestContext` / `TenantAppContext` per `WEB_FRAMEWORK_SPEC.md`.
+
+### Environment flags
+
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| _(unset)_ | Web Framework **on** | IAM JWT dual-token path via sdkwork-web-framework |
+| `SDKWORK_CLAW_WEB_FRAMEWORK_ENABLED=false` | Off | Skip `WebFrameworkLayer` wrapping |
+| `SDKWORK_CLAW_WEB_FRAMEWORK_LEGACY=true` | Legacy session path | Use claw app-session tokens; for integration tests and explicit rollback only |
+
+IAM database URL resolution uses `SDKWORK_IAM_DATABASE_URL` or unified claw postgres bridging via `ensure_iam_database_env_for_claw_database`.
+
+See also: [docs/standard-alignment-audit.md](../../../docs/standard-alignment-audit.md) §1, [WEB_FRAMEWORK_SPEC.md](../../../../sdkwork-specs/WEB_FRAMEWORK_SPEC.md), [IAM_SPEC.md](../../../../sdkwork-specs/IAM_SPEC.md).
 
 ## Canonical Specs
 
-| Spec | Applies Because |
+| Spec | Purpose |
 | --- | --- |
-| [COMPONENT_SPEC.md](../../../../sdkwork-specs/COMPONENT_SPEC.md) | Local component specs directory and manifest rules. |
-| [CONFIG_SPEC.md](../../../../sdkwork-specs/CONFIG_SPEC.md) | Runtime configuration, environment, SDK bootstrap, and feature flag rules. |
-| [DEPLOYMENT_SPEC.md](../../../../sdkwork-specs/DEPLOYMENT_SPEC.md) | SaaS/private/local runtime parity and deployment rules. |
-| [DOCUMENTATION_SPEC.md](../../../../sdkwork-specs/DOCUMENTATION_SPEC.md) | Module README, examples, ADR, changelog, and runbook rules. |
-| [DOMAIN_SPEC.md](../../../../sdkwork-specs/DOMAIN_SPEC.md) | Canonical domain ownership and naming. |
-| [GOVERNANCE_SPEC.md](../../../../sdkwork-specs/GOVERNANCE_SPEC.md) | Standard ownership, exception, compatibility, and migration rules. |
-| [MODULE_SPEC.md](../../../../sdkwork-specs/MODULE_SPEC.md) | Reusable package contract and dependency direction. |
-| [OBSERVABILITY_SPEC.md](../../../../sdkwork-specs/OBSERVABILITY_SPEC.md) | Log, metric, trace, audit, and diagnostic rules. |
-| [PERFORMANCE_SPEC.md](../../../../sdkwork-specs/PERFORMANCE_SPEC.md) | Latency, pagination, bundle, scalability, and retry budget rules. |
-| [README.md](../../../../sdkwork-specs/README.md) | SDKWork root standards entrypoint. |
-| [TEST_SPEC.md](../../../../sdkwork-specs/TEST_SPEC.md) | Contract, frontend, SDK, security, parity, and documentation verification rules. |
+| [WEB_FRAMEWORK_SPEC.md](../../../../sdkwork-specs/WEB_FRAMEWORK_SPEC.md) | Canonical HTTP request context |
+| [WEB_BACKEND_SPEC.md](../../../../sdkwork-specs/WEB_BACKEND_SPEC.md) | Backend HTTP surface rules |
+| [IAM_SPEC.md](../../../../sdkwork-specs/IAM_SPEC.md) | IAM context and dual-token auth |
+| [RUST_CODE_SPEC.md](../../../../sdkwork-specs/RUST_CODE_SPEC.md) | Rust crate rules |
 
-## Public Exports
-
-- Public exports are not declared in the package manifest.
-
-## SDK Clients
-
-- No generated SDK client class is declared at this component boundary.
-
-## Local Extension Specs
-
-- No local extension specs are declared yet.
+Full manifest: [component.spec.json](./component.spec.json).
 
 ## Verification
 
-- `cargo test --manifest-path apps/sdkwork-clawrouter/crates/sdkwork-claw-http/Cargo.toml`
+```bash
+cargo test -p sdkwork-claw-http
+cargo test -p sdkwork-claw-http --test auth
+python ../../../tools/sdkwork_standard_alignment_guardian.py --strict
+```

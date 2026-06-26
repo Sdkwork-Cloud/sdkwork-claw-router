@@ -6,7 +6,7 @@ import {
   AdminResourceCenter,
   ConfirmDialog,
   type AdminResourceSection,
-} from '@sdkwork/clawrouter-pc-commons';
+} from '@sdkwork/clawroutes-pc-commons';
 import {
   attachAdminCategoryNamesToResult,
   createAdminAiCategory,
@@ -22,7 +22,7 @@ import {
   formatAdminResourceOptionLabel,
   readAdminResourceOptions,
   type AdminResourceOption,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import {
   DEFAULT_MCP_PAGE_PARAMS,
   EMPTY_MCP_ITEMS,

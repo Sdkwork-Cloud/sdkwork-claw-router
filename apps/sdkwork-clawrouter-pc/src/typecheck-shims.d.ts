@@ -2178,6 +2178,17 @@ declare module '@sdkwork/auth-pc-react' {
   ): unknown;
 
   export function SdkworkIamAuthRoutes(props: SdkworkIamAuthRoutesProps): JSX.Element;
+
+  export interface SdkworkSessionAuthUnauthorizedProviderProps {
+    authLoginPath?: string;
+    children?: ReactNode;
+    copy?: Record<string, string>;
+    onBeforeLoginRedirect?: (detail: Record<string, unknown>) => void;
+  }
+
+  export function SdkworkSessionAuthUnauthorizedProvider(
+    props: SdkworkSessionAuthUnauthorizedProviderProps,
+  ): JSX.Element;
 }
 
 declare module '@sdkwork/host-tauri-pc-react' {
@@ -2305,6 +2316,32 @@ declare module '@sdkwork/auth-runtime-pc-react' {
     };
     tokenManager?: unknown;
   }): SdkworkAppbasePcAuthRuntimeComposition;
+
+  export type SdkworkSessionAuthUnauthorizedMode = 'redirect' | 'modal' | 'debug';
+
+  export interface SdkworkSessionAuthUnauthorizedDetail {
+    businessCode?: string;
+    code?: string;
+    httpStatus?: number;
+    message: string;
+    occurredAt: string;
+    path?: string;
+    raw?: unknown;
+  }
+
+  export function resolveSdkworkSessionAuthUnauthorizedMode(options?: {
+    hostname?: string;
+    readEnv?: (name: string) => string | undefined;
+  }): SdkworkSessionAuthUnauthorizedMode;
+
+  export function formatSdkworkSessionAuthUnauthorizedDetail(
+    error: unknown,
+    context?: { path?: string },
+  ): SdkworkSessionAuthUnauthorizedDetail;
+
+  export function dispatchSdkworkSessionAuthUnauthorized(
+    detail: SdkworkSessionAuthUnauthorizedDetail,
+  ): void;
 }
 
 declare module '@sdkwork/host-pc-react' {

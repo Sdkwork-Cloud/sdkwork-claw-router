@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
@@ -271,11 +271,11 @@ pub fn admin_channel_group_router_with_store(
 
 async fn fetch_channel_group_channel_bindings(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(group_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -304,12 +304,12 @@ async fn fetch_channel_group_channel_bindings(
 
 async fn replace_channel_group_channel_bindings(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(group_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -357,11 +357,11 @@ async fn replace_channel_group_channel_bindings(
 
 async fn fetch_channel_group_route_explain(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(group_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -399,10 +399,10 @@ async fn fetch_channel_group_route_explain(
 
 async fn fetch_channel_groups(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
 
     match state
         .store
@@ -421,11 +421,11 @@ async fn fetch_channel_groups(
 
 async fn create_channel_group(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_body::<AdminChannelGroupCreateRequest>(&body, "channel group") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -453,12 +453,12 @@ async fn create_channel_group(
 
 async fn update_channel_group(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(group_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -491,11 +491,11 @@ async fn update_channel_group(
 
 async fn delete_channel_group(
     State(state): State<AdminChannelGroupState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(group_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let group_id = match parse_positive_id(&group_id, "channel group id") {
         Ok(group_id) => group_id,
         Err(message) => return bad_request(message),
@@ -518,14 +518,6 @@ async fn delete_channel_group(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminChannelGroupSubject {
-    AdminChannelGroupSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
 where

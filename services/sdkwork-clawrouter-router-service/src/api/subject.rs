@@ -28,12 +28,12 @@ pub fn map_optional_app_user_subject<T>(
     map: impl FnOnce(TrustedRequestSubject) -> T,
 ) -> Result<Option<T>, Response> {
     match optional_subject_or_unauthorized(subject, require_subject)? {
-        Some(trusted) => Ok(Some(map(trusted))),
+        Some(subject) => Ok(Some(map(subject))),
         None => Ok(None),
     }
 }
 
-pub fn unauthorized_subject_response() -> Response {
+pub(crate) fn unauthorized_subject_response() -> Response {
     (
         StatusCode::UNAUTHORIZED,
         Json(PlusApiResult::<()>::error(

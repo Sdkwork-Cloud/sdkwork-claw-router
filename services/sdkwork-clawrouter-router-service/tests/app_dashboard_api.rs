@@ -52,6 +52,62 @@ async fn app_dashboard_overview_normalizes_valid_utc_timestamps_before_read_stor
     assert_eq!(30, captured_subject.user_id);
 }
 
+#[tokio::test]
+async fn app_dashboard_overview_resolves_subject_from_web_request_context_without_legacy_headers() {
+    let read_store = Arc::new(CapturingDashboardOverviewReadStore::default());
+    let router = app_dashboard_overview_router_with_read_store(read_store.clone());
+
+    let response = router
+        .oneshot(common::web_framework_app_request(
+            "GET",
+            "/app/v3/api/ai/dashboard/overview?time_range=daily",
+            Body::empty(),
+            "100001",
+            Some("30002"),
+            "40003",
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("2000", payload["code"]);
+
+    let captured_subject = read_store.captured_subject.lock().unwrap().unwrap();
+    assert_eq!(100_001, captured_subject.tenant_id);
+    assert_eq!(30_002, captured_subject.organization_id);
+    assert_eq!(40_003, captured_subject.user_id);
+}
+
+#[tokio::test]
+async fn app_dashboard_overview_returns_mapping_error_for_non_numeric_web_principal_ids() {
+    let read_store = Arc::new(CapturingDashboardOverviewReadStore::default());
+    let router = app_dashboard_overview_router_with_read_store(read_store.clone());
+
+    let response = router
+        .oneshot(common::web_framework_app_request(
+            "GET",
+            "/app/v3/api/ai/dashboard/overview?time_range=daily",
+            Body::empty(),
+            "tenant-bootstrap",
+            Some("0"),
+            "system",
+        ))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::INTERNAL_SERVER_ERROR, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: Value = serde_json::from_slice(&body).unwrap();
+    assert_eq!("5001", payload["code"]);
+    assert!(read_store.captured_subject.lock().unwrap().is_none());
+}
+
 #[derive(Default)]
 struct CapturingDashboardOverviewReadStore {
     captured_query: Mutex<Option<DashboardOverviewQuery>>,

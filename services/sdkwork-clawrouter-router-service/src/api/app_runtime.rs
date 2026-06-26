@@ -14,7 +14,7 @@ use base64::{engine::general_purpose, Engine as _};
 use bytes::Bytes;
 use futures_util::{Stream, StreamExt};
 use http_body_util::BodyExt;
-use sdkwork_claw_http::TrustedRequestSubject;
+use crate::api::app_sql_subject::{map_required_app_sql_subject, RequiredAppSqlScopedSubject};
 use serde::Deserialize;
 use serde::Serialize;
 use serde_json::{Map, Value};
@@ -581,11 +581,11 @@ fn app_runtime_router_with_state(
 
 async fn list_invocations(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let query = match normalize_invocation_query(query) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
@@ -598,11 +598,11 @@ async fn list_invocations(
 
 async fn get_invocation(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -616,11 +616,11 @@ async fn get_invocation(
 
 async fn create_invocation(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Json(request): Json<AppRuntimeCreateInvocationRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let command = match build_create_invocation_command(&state, subject, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -640,12 +640,12 @@ async fn create_invocation(
 
 async fn complete_invocation(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCompleteInvocationRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let command = match build_complete_invocation_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -748,12 +748,12 @@ async fn request_runtime_stream_cancellation(
 
 async fn list_events(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -772,12 +772,12 @@ async fn list_events(
 
 async fn stream_events(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -915,12 +915,12 @@ async fn execute_or_complete_empty_stream(
 
 async fn create_event(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCreateEventRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let command = match build_create_event_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -938,12 +938,12 @@ async fn create_event(
 
 async fn list_artifacts(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Query(query): Query<AppRuntimeListQuery>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let invocation_id = match normalize_id(&invocation_id, "invocationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -962,12 +962,12 @@ async fn list_artifacts(
 
 async fn create_artifact(
     State(state): State<AppRuntimeState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(invocation_id): Path<String>,
     Json(request): Json<AppRuntimeCreateArtifactRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, crate::ports::AppRuntimeSubject::from);
     let command = match build_create_artifact_command(&state, subject, invocation_id, request) {
         Ok(command) => command,
         Err(AppRuntimeBuildError::BadRequest(message)) => return bad_request(message),
@@ -3524,7 +3524,7 @@ where
         || api_key.user_id != subject.user_id
     {
         return Err(DomainError::new(
-            "runtime route API key does not belong to trusted subject",
+            "runtime route API key does not belong to scoped subject",
         ));
     }
     if api_key.status_code != 1 {
@@ -5477,15 +5477,6 @@ fn normalize_invocation_query(
         status: normalize_optional_text(query.status.as_deref(), "status", MAX_KIND_LEN)?,
     })
 }
-
-fn required_subject(trusted: TrustedRequestSubject) -> AppRuntimeSubject {
-    AppRuntimeSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    }
-}
-
 fn normalize_page(page: Option<i64>, page_size: Option<i64>) -> (i64, i64) {
     let page = page.unwrap_or(1).max(1);
     let page_size = page_size.unwrap_or(30).max(1).min(MAX_PAGE_SIZE);

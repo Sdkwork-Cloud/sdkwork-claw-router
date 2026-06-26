@@ -1,10 +1,8 @@
 mod common;
-use common::InternalTrustedSubjectHeaders;
 use std::sync::{Arc, Mutex};
 
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_clawrouter_router_service::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use sdkwork_clawrouter_router_service::domain::{
     ChannelGroup, DecimalValue, DomainResult, GatewayApiKey, QuotaPolicy,
@@ -225,22 +223,27 @@ async fn app_channel_group_routes_do_not_expose_legacy_public_path() {
 }
 
 fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
-    Request::builder()
-        .method(method)
-        .uri(path)
-        .header("content-type", "application/json")
-        .internal_trusted_subject(10, 20, 30)
-        .extension(TrustedRequestSubject {
-            tenant_id: 100001,
-            organization_id: 0,
-            user_id: 30,
-            operator_id: 30,
-            operator_type: 1,
-        })
-        .header("Idempotency-Key", "idem-app-api-key-test")
-        .header("X-Request-Id", "22222222-2222-4333-8444-555555555555")
-        .body(Body::from(body.to_owned()))
-        .unwrap()
+    let mut request = common::web_framework_app_request(
+        method,
+        path,
+        Body::from(body.to_owned()),
+        "10",
+        Some("20"),
+        "30",
+    );
+    request.headers_mut().insert(
+        "content-type",
+        axum::http::HeaderValue::from_static("application/json"),
+    );
+    request.headers_mut().insert(
+        "Idempotency-Key",
+        axum::http::HeaderValue::from_static("idem-app-api-key-test"),
+    );
+    request.headers_mut().insert(
+        "X-Request-Id",
+        axum::http::HeaderValue::from_static("22222222-2222-4333-8444-555555555555"),
+    );
+    request
 }
 
 async fn json_payload(response: axum::response::Response) -> Value {
@@ -284,8 +287,8 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
             if self.include_owner_key {
                 snapshot.api_keys.push(GatewayApiKey {
                     id: 701,
-                    tenant_id: 100001,
-                    organization_id: 0,
+                    tenant_id: 10,
+                    organization_id: 20,
                     user_id: 30,
                     group_id: 501,
                     name: "Console Key".to_owned(),

@@ -4,14 +4,11 @@ pub(crate) mod admin_marketing_recharge;
 pub mod admin_monitor_repository_adapter;
 pub(crate) mod ai_routing_seed;
 pub mod app_gateway_traces_repository_adapter;
-pub mod app_iam_directory_repository_adapter;
 pub mod app_providers_repository_adapter;
-pub mod app_user_profile_repository_adapter;
 pub mod catalog;
 pub(crate) mod dashboard_overview_metrics;
 pub(crate) mod iam_application_bootstrap;
 pub mod iam_scope_resolver;
-pub(crate) mod iam_seed_defaults;
 pub mod installer;
 pub(crate) mod model_catalog_import;
 pub(crate) mod model_modality;
@@ -34,10 +31,5 @@ pub(crate) mod sql_site_settings;
 pub mod sqlite;
 pub(crate) mod store_error;
 pub(crate) mod string_value;
-pub mod tenant_signing_key_store;
-pub(crate) mod verification_delivery_queue;
 
 pub use queries::PricingCatalogSql;
-pub use tenant_signing_key_store::{
-    LegacyGlobalTenantSigningKeyStore, PostgresTenantSigningKeyStore, SqliteTenantSigningKeyStore,
-};

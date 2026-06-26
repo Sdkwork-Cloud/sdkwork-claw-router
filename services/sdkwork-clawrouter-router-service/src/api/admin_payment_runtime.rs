@@ -3,8 +3,8 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use crate::api::response::PlusApiResult;
 use crate::application::{
@@ -49,7 +49,7 @@ where
 
 async fn fetch_payment_runtime_snapshot<S>(
     State(state): State<AdminPaymentRuntimeState<S>>,
-    _trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(_scoped): RequiredAdminSqlScopedSubject,
     Query(query): Query<PaymentRuntimeSnapshotQuery>,
 ) -> Response
 where

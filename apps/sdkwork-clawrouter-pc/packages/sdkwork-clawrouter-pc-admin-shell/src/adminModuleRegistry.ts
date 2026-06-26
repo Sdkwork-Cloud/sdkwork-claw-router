@@ -9,7 +9,6 @@ import {
   CircleDollarSign,
   ClipboardList,
   CreditCard,
-  Crown,
   Database,
   FileText,
   FolderOpen,
@@ -47,7 +46,6 @@ export type AdminModuleId =
   | 'home'
   | 'productCenter'
   | 'transactionCenter'
-  | 'memberCenter'
   | 'marketingCenter'
   | 'financeCenter'
   | 'storageCenter'
@@ -115,13 +113,6 @@ export const ADMIN_MODULES: AdminModuleDef[] = [
     icon: ShoppingCart,
     defaultPath: '/admin/orders/orders',
     pathPrefixes: ['/admin/orders', '/admin/payments'],
-  }),
-  moduleBlock({
-    id: 'memberCenter',
-    nameKey: 'admin.header.memberCenter',
-    icon: Crown,
-    defaultPath: '/admin/memberships/packages',
-    pathPrefixes: ['/admin/memberships'],
   }),
   moduleBlock({
     id: 'marketingCenter',
@@ -246,19 +237,6 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
         itemBlock({ path: '/admin/payments/attempts', labelKey: 'admin.menu.paymentAttempts', icon: Activity, iconColor: 'text-orange-500' }),
         itemBlock({ path: '/admin/payments/webhook-events', labelKey: 'admin.menu.paymentWebhookEvents', icon: Megaphone, iconColor: 'text-pink-500' }),
         itemBlock({ path: '/admin/payments/reconciliation-runs', labelKey: 'admin.menu.paymentReconciliationRuns', icon: BarChart3, iconColor: 'text-emerald-500' }),
-      ]),
-    ],
-  },
-  {
-    moduleId: 'memberCenter',
-    groups: [
-      groupBlock('admin.menu.memberCenter.memberships', [
-        itemBlock({ path: '/admin/memberships/packages', labelKey: 'admin.menu.membershipPackages', icon: Package, iconColor: 'text-amber-500' }),
-        itemBlock({ path: '/admin/memberships/vip-packages', labelKey: 'admin.menu.membershipVipPackages', icon: Crown, iconColor: 'text-lobster-500' }),
-        itemBlock({ path: '/admin/memberships/plans', labelKey: 'admin.menu.membershipPlans', icon: Crown, iconColor: 'text-violet-500' }),
-        itemBlock({ path: '/admin/memberships/members', labelKey: 'admin.menu.membershipMembers', icon: Users, iconColor: 'text-blue-500' }),
-        itemBlock({ path: '/admin/memberships/entitlements', labelKey: 'admin.menu.membershipEntitlements', icon: ShieldCheck, iconColor: 'text-emerald-500' }),
-        itemBlock({ path: '/admin/memberships/recharge-packages', labelKey: 'admin.menu.membershipRechargePackages', icon: Package, iconColor: 'text-sky-500' }),
       ]),
     ],
   },

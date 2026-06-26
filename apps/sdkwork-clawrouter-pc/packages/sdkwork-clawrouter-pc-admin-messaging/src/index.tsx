@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   SlidersHorizontal,
 } from 'lucide-react';
-import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   listMessagingProviderAccounts,
   listMessagingRateLimitBuckets,

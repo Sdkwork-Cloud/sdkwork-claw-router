@@ -205,3 +205,15 @@ Orchestration scripts (`start-workspace`, `start-claw-router-production`) emit c
 
 - When a complete split PostgreSQL profile is present, it takes precedence over a stale `SDKWORK_CLAW_DATABASE_URL` in the process environment.
 - Explicit process overrides still win when tests or operators pass `skipDevEnvFile` isolation or set split fields directly without a conflicting file overlay.
+
+## 11. HTTP Web Framework (Rust Edge / API Processes)
+
+Aligned with `../sdkwork-specs/WEB_FRAMEWORK_SPEC.md` and `docs/standard-alignment-audit.md` §1.
+
+| Variable | Default | Process | Purpose |
+| --- | --- | --- | --- |
+| `SDKWORK_CLAW_WEB_FRAMEWORK_ENABLED` | `true` (implicit) | Rust app/backend route servers | When `false`, skip `WebFrameworkLayer` wrapping |
+| `SDKWORK_CLAW_WEB_FRAMEWORK_LEGACY` | unset | Rust route integration tests | When `true`, use claw app-session token boundaries instead of IAM JWT web-framework path |
+| `SDKWORK_IAM_DATABASE_URL` | bridged from claw postgres | Rust IAM resolver | IAM token validation database; auto-materialized from unified claw postgres profile when unset |
+
+Production browser traffic (`pnpm dev` unified edge on port 3900) must use IAM dual-token JWTs resolved by sdkwork-web-framework. Do not set `SDKWORK_CLAW_WEB_FRAMEWORK_LEGACY` in production profiles.

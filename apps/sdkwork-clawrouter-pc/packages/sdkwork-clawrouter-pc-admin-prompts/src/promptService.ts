@@ -10,7 +10,7 @@ import {
   ensureSdkworkApiSuccess,
   getSdkworkPromptsBackendSdkClient,
   requiredSafePathSegment,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type {
   AdminPromptBindingItem,
   AdminPromptItem,

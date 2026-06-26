@@ -15,7 +15,7 @@ import {
   readPortalPermissionScope,
   revokeAppSession,
   subscribePortalSessionChange,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 const ADMIN_SIDEBAR_GROUPS_DEFAULT_OPEN = true;
 const ADMIN_BUSINESS_ROUTE_PREFIXES = [

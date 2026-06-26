@@ -5,11 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
-use serde::Deserialize;
-
+use crate::api::app_sql_subject::{map_optional_app_sql_subject, ResolvedAppSqlScopedSubject};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
+use serde::Deserialize;
 use crate::ports::{
     SettlementsDashboardQuery, SettlementsDashboardReadFuture, SettlementsDashboardReadStore,
     SettlementsDashboardSnapshot, SettlementsDashboardSubject,
@@ -88,15 +86,11 @@ fn app_settlements_dashboard_router_with_state(
 
 async fn fetch_settlements_dashboard(
     State(state): State<AppSettlementsDashboardState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
     Query(query): Query<AppSettlementsDashboardQuery>,
 ) -> Response {
-    let subject = match map_optional_app_user_subject(subject, state.require_subject, |trusted| {
-        SettlementsDashboardSubject {
-            tenant_id: trusted.tenant_id,
-            organization_id: trusted.organization_id,
-            user_id: trusted.user_id,
-        }
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
     }) {
         Ok(subject) => subject,
         Err(response) => return response,

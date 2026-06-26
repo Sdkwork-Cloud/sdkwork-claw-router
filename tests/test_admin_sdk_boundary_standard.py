@@ -21,9 +21,9 @@ BACKEND_SDK_MARKERS = (
 )
 
 COMMONS_BACKEND_RUNTIME_BOUNDARIES = {
-    Path("sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"),
-    Path("sdkwork-clawrouter-pc-commons/src/runtime.ts"),
-    Path("sdkwork-clawrouter-pc-commons/src/portal-session.ts"),
+    Path("sdkwork-clawroutes-pc-commons/src/sdk-clients.ts"),
+    Path("sdkwork-clawroutes-pc-commons/src/runtime.ts"),
+    Path("sdkwork-clawroutes-pc-commons/src/portal-session.ts"),
 }
 
 
@@ -134,7 +134,7 @@ class AdminSdkBoundaryStandardTest(unittest.TestCase):
                     self.assertIn(marker, source)
 
     def test_portal_session_backend_access_check_is_narrowly_scoped(self) -> None:
-        source = read_text(PACKAGES_ROOT / "sdkwork-clawrouter-pc-commons" / "src" / "portal-session.ts")
+        source = read_text(PACKAGES_ROOT / "sdkwork-clawroutes-pc-commons" / "src" / "portal-session.ts")
         self.assertIn("getClawRouterBackendSdkClient", source)
         self.assertIn("backendClient.system.installation.status.retrieve()", source)
 

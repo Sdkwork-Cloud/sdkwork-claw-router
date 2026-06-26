@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from 'react';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Footer, Navbar } from '@sdkwork/clawrouter-pc-commons';
+import { Footer, Navbar } from '@sdkwork/clawroutes-pc-commons';
 
 export type AppShellRouteProps = {
   isDark: boolean;

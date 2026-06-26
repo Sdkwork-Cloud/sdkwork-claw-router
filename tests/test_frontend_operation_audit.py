@@ -94,7 +94,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadCurrentUser(): Promise<void> {
                   await getClawRouterAppSdkClient().user.fetchUserProfile();
@@ -130,7 +130,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
-                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function login(): Promise<void> {
                   await getClawRouterIamRuntime().service.auth.sessions.create({ grantType: 'password' });
@@ -168,7 +168,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/playgroundService.ts",
                 """
-                import { getSdkworkGenerationsAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkGenerationsAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
                 import { createSdkworkGenerationService } from '@sdkwork/generations-pc-workspace/generation-service';
 
                 export class PlaygroundService {
@@ -262,7 +262,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
                 import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
-                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export const clawRouterAuthController = createSdkworkIamRuntimeAuthController({
                   getRuntime: getClawRouterIamRuntime,
@@ -324,7 +324,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/demo/node_modules/sdkwork-clawrouter-pc-commons/src/sessionService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/node_modules/sdkwork-clawroutes-pc-commons/src/sessionService.ts",
                 """
                 export async function createAppSession(): Promise<void> {
                 }
@@ -351,7 +351,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function fetchItems(): Promise<void> {
                   await getClawRouterAppSdkClient().demo.items.list();
@@ -496,7 +496,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
@@ -537,7 +537,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
@@ -708,7 +708,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons';
+                import { getClawRouterBackendSdkClient } from 'sdkwork-clawroutes-pc-commons';
 
                 export class AdminService {
                   static async fetchItems(): Promise<string[]> {
@@ -751,7 +751,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -830,7 +830,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons';
+                import { getClawRouterBackendSdkClient } from 'sdkwork-clawroutes-pc-commons';
 
                 export class AdminService {
                   static async fetchItems(): Promise<string[]> {
@@ -994,7 +994,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/billingService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export class BillingService {
                   static async fetchWallet(): Promise<unknown> {
@@ -1037,7 +1037,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/userService.ts",
                 """
-                import { getSdkworkAppbaseAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkAppbaseAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export class UserService {
                   static async fetchCurrentUser(): Promise<unknown> {
@@ -1076,7 +1076,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthService.ts",
                 """
-                import { getSdkworkAppbaseAppSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+                import { getSdkworkAppbaseAppSdkClient } from 'sdkwork-clawroutes-pc-commons/sdk-clients';
 
                 export async function createAuthorizationUrl(): Promise<unknown> {
                   return getSdkworkAppbaseAppSdkClient().oauth.authorizationUrls.create({
@@ -1119,7 +1119,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts",
                 """
-                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/sdk-clients';
 
                 export async function listOAuthProviderCatalog(): Promise<unknown> {
                   return getSdkworkAppbaseBackendSdkClient().iam.oauth.providerCatalog.list();
@@ -1197,7 +1197,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/adminUserService.ts",
                 """
-                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export class AdminUserService {
                   static async fetchUsers(): Promise<unknown> {
@@ -1235,7 +1235,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/oauthAdminService.ts",
                 """
-                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/sdk-clients';
 
                 export async function listOAuthResourceAccounts(): Promise<unknown> {
                   return getSdkworkAppbaseBackendSdkClient().iam.oauth.resourceAccounts.list();
@@ -1273,7 +1273,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -1284,7 +1284,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             )
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-console-service.ts",
                 """
                 import { appAccountsCurrentSummaryRetrieve } from './commerce-runtime.ts';
 
@@ -1303,7 +1303,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [commerce_account]
                 frontend_operations:
                   - route: /console/account
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-console-service.ts
                     operation: fetchAccountDetails
                     operation_scope: app_shell
                     kind: read
@@ -1318,7 +1318,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts#fetchAccountDetails must use getSdkworkCommerceService for app api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-console-service.ts#fetchAccountDetails must use getSdkworkCommerceService for app api_surface",
                 result.messages,
             )
 
@@ -1329,7 +1329,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/appRuntimeApiOperations.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function listModelCatalog(): Promise<unknown> {
                   return getClawRouterAppSdkClient().intelligence.modelsList();
@@ -1385,7 +1385,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -1403,7 +1403,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 frontend_operations:
                   - route: /
                     operation_scope: app_shell
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts
                     operation: fetchSiteBranding
                     operation_id: site.runtime.retrieve
                     kind: read
@@ -1428,7 +1428,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts",
                 """
-                import { getClawRouterAiSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAiSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export class ChatService {
                   static async sendMessage(): Promise<string> {

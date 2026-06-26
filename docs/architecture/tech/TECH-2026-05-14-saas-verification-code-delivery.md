@@ -1,5 +1,7 @@
 > Migrated from `docs/superpowers/plans/2026-05-14-saas-verification-code-delivery.md` on 2026-06-24.
 > Owner: SDKWork maintainers
+>
+> **Superseded (2026-06-25):** Claw Router no longer implements verification-code delivery in `app_auth.rs`. Login, registration, password reset, and verification delivery are owned by federated `sdkwork-routes-iam-app-api` in the `sdkwork-iam` repository. See `../sdkwork-iam/docs/IAM_INTEGRATION.md`.
 
 # SaaS Verification Code Delivery Implementation Plan
 

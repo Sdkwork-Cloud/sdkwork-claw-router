@@ -66,7 +66,27 @@ const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
 pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.22.1";
 /// Claw-router owns gateway schema; sibling SoR modules compose at install time in standalone mode.
 fn compose_sibling_commerce_module() -> bool {
-    standalone_iam_bootstrap_enabled()
+    deployment_profile_is_standalone()
+}
+
+/// IAM DDL and OAuth schema are owned by `sdkwork-iam-database-host`, not the product installer.
+fn product_database_iam_schema_enabled() -> bool {
+    false
+}
+
+/// IAM subject seeds and bootstrap admin belong to the federated IAM database host.
+fn product_database_iam_seed_enabled() -> bool {
+    product_database_iam_schema_enabled()
+}
+
+fn deployment_profile_is_standalone() -> bool {
+    resolve_deployment_runtime(None)
+        .map(|runtime| runtime.profile == DeploymentProfile::Standalone)
+        .unwrap_or(true)
+}
+
+fn standalone_iam_bootstrap_enabled() -> bool {
+    product_database_iam_schema_enabled()
 }
 const COMPOSE_SDKWORK_MODELS_CATALOG_MODULE: bool = true;
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
@@ -104,12 +124,6 @@ static APPBASE_COMMERCE_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
     Vec<(String, Vec<SchemaColumnDefinition>)>,
 > = OnceLock::new();
 static APPBASE_IAM_OAUTH_SCHEMA_INDEX_NAMES: OnceLock<BTreeSet<String>> = OnceLock::new();
-
-fn standalone_iam_bootstrap_enabled() -> bool {
-    resolve_deployment_runtime(None)
-        .map(|runtime| runtime.profile == DeploymentProfile::Standalone)
-        .unwrap_or(true)
-}
 
 const APPBASE_COMMERCE_LEGACY_NOT_NULL_COLUMN_REPAIRS: &[(&str, &str, &str)] = &[
     (
@@ -898,26 +912,32 @@ impl DatabaseInstaller {
         match &self.backend {
             InstallerBackend::Sqlite(pool) => {
                 import_sqlite_bundled_ai_routing_seed(pool).await?;
-                import_sqlite_default_iam_subject_seed(pool).await?;
+                if product_database_iam_seed_enabled() {
+                    import_sqlite_default_iam_subject_seed(pool).await?;
+                }
                 if compose_sibling_commerce_module() {
                     import_sqlite_commerce_experience_seed(pool).await?;
                 }
             }
             InstallerBackend::Postgres(pool) => {
                 import_postgres_bundled_ai_routing_seed(pool).await?;
-                import_postgres_default_iam_subject_seed(pool).await?;
+                if product_database_iam_seed_enabled() {
+                    import_postgres_default_iam_subject_seed(pool).await?;
+                }
                 if compose_sibling_commerce_module() {
                     import_postgres_commerce_experience_seed(pool).await?;
                 }
             }
         }
-        self.ensure_iam_tenant_application_bootstrap().await?;
         Ok(())
     }
 
     async fn bootstrap_admin_user_if_needed(
         &self,
     ) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+        if !product_database_iam_seed_enabled() {
+            return Ok(None);
+        }
         match &self.backend {
             InstallerBackend::Sqlite(pool) => {
                 bootstrap_sqlite_admin_user_if_needed(pool, &self.bootstrap_admin_options).await
@@ -1178,15 +1198,7 @@ impl DatabaseInstaller {
                 }
             }
         };
-        self.ensure_iam_tenant_application_bootstrap().await?;
         Ok(changed)
-    }
-
-    async fn ensure_iam_tenant_application_bootstrap(&self) -> Result<(), DatabaseInstallError> {
-        crate::infrastructure::sql::iam_application_bootstrap::ensure_clawrouter_tenant_application_bootstrap(
-            &self.options,
-        )
-        .await
     }
 }
 
@@ -1959,7 +1971,8 @@ async fn sqlite_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if bootstrap_admin_options.enabled
+    if product_database_iam_seed_enabled()
+        && bootstrap_admin_options.enabled
         && !sqlite_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
             .await?
     {
@@ -1996,7 +2009,9 @@ async fn sqlite_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !sqlite_default_iam_subject_seed_complete(pool).await? {
+    if product_database_iam_seed_enabled()
+        && !sqlite_default_iam_subject_seed_complete(pool).await?
+    {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if compose_sibling_commerce_module() && !sqlite_commerce_experience_seed_complete(pool).await? {
@@ -2168,7 +2183,8 @@ async fn postgres_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if bootstrap_admin_options.enabled
+    if product_database_iam_seed_enabled()
+        && bootstrap_admin_options.enabled
         && !postgres_bootstrap_admin_seed_complete(pool, bootstrap_admin_options.username.as_str())
             .await?
     {
@@ -2205,7 +2221,9 @@ async fn postgres_status(
     {
         return Ok(InstallationStatus::UpgradeRequired);
     }
-    if !postgres_default_iam_subject_seed_complete(pool).await? {
+    if product_database_iam_seed_enabled()
+        && !postgres_default_iam_subject_seed_complete(pool).await?
+    {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if compose_sibling_commerce_module()
@@ -2402,11 +2420,6 @@ async fn install_postgres(
     }
     import_postgres_bundled_ai_routing_seed(pool).await?;
     import_postgres_default_iam_subject_seed(pool).await?;
-    crate::infrastructure::sql::iam_application_bootstrap::ensure_postgres_clawrouter_tenant_application(
-        pool,
-        options,
-    )
-    .await?;
     if compose_sibling_commerce_module() {
         import_postgres_commerce_experience_seed(pool).await?;
         ensure_postgres_bootstrap_admin_recharge_catalog(pool).await?;
@@ -2517,7 +2530,9 @@ async fn repair_sqlite_installation(
     if !sqlite_ai_routing_seed_complete(pool).await? || !ai_routing_payload_current {
         import_sqlite_bundled_ai_routing_seed(pool).await?;
     }
-    if !sqlite_default_iam_subject_seed_complete(pool).await? {
+    if product_database_iam_seed_enabled()
+        && !sqlite_default_iam_subject_seed_complete(pool).await?
+    {
         import_sqlite_default_iam_subject_seed(pool).await?;
     }
     if compose_sibling_commerce_module() {
@@ -2668,14 +2683,11 @@ async fn repair_postgres_installation(
     {
         import_postgres_bundled_ai_routing_seed(pool).await?;
     }
-    if !postgres_default_iam_subject_seed_complete(pool).await? {
+    if product_database_iam_seed_enabled()
+        && !postgres_default_iam_subject_seed_complete(pool).await?
+    {
         import_postgres_default_iam_subject_seed(pool).await?;
     }
-    crate::infrastructure::sql::iam_application_bootstrap::ensure_postgres_clawrouter_tenant_application(
-        pool,
-        options,
-    )
-    .await?;
     if compose_sibling_commerce_module() {
         if !postgres_commerce_experience_seed_complete(pool).await? {
             import_postgres_commerce_experience_seed(pool).await?;
@@ -2727,6 +2739,9 @@ async fn import_postgres_bundled_ai_routing_seed(
 async fn import_sqlite_default_iam_subject_seed(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(());
+    }
     import_sqlite_default_iam_seed(pool)
         .await
         .map_err(DatabaseInstallError::Database)
@@ -2735,6 +2750,9 @@ async fn import_sqlite_default_iam_subject_seed(
 async fn import_postgres_default_iam_subject_seed(
     pool: &PgPool,
 ) -> Result<(), DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(());
+    }
     import_postgres_default_iam_seed(pool)
         .await
         .map_err(DatabaseInstallError::Database)
@@ -3503,6 +3521,16 @@ async fn bootstrap_sqlite_admin_user_if_needed(
     pool: &SqlitePool,
     options: &BootstrapAdminOptions,
 ) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(None);
+    }
+    bootstrap_sqlite_admin_user(pool, options).await
+}
+
+async fn bootstrap_sqlite_admin_user(
+    pool: &SqlitePool,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
     if !options.enabled
         || sqlite_bootstrap_admin_seed_complete(pool, options.username.as_str()).await?
     {
@@ -3543,6 +3571,16 @@ async fn bootstrap_sqlite_admin_user_if_needed(
 }
 
 async fn bootstrap_postgres_admin_user_if_needed(
+    pool: &PgPool,
+    options: &BootstrapAdminOptions,
+) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(None);
+    }
+    bootstrap_postgres_admin_user(pool, options).await
+}
+
+async fn bootstrap_postgres_admin_user(
     pool: &PgPool,
     options: &BootstrapAdminOptions,
 ) -> Result<Option<BootstrapAdminReport>, DatabaseInstallError> {
@@ -3589,6 +3627,11 @@ async fn reset_sqlite_admin_password(
     pool: &SqlitePool,
     options: &BootstrapAdminOptions,
 ) -> Result<ResetAdminPasswordReport, DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Err(DatabaseInstallError::InvalidState(
+            "bootstrap admin password reset is owned by sdkwork-iam-database-host".to_owned(),
+        ));
+    }
     let mut tx = pool.begin().await?;
     let now = current_utc_timestamp_string();
     let user_id =
@@ -3670,6 +3713,11 @@ async fn reset_postgres_admin_password(
     pool: &PgPool,
     options: &BootstrapAdminOptions,
 ) -> Result<ResetAdminPasswordReport, DatabaseInstallError> {
+    if !product_database_iam_seed_enabled() {
+        return Err(DatabaseInstallError::InvalidState(
+            "bootstrap admin password reset is owned by sdkwork-iam-database-host".to_owned(),
+        ));
+    }
     let mut tx = pool.begin().await?;
     let now = current_utc_timestamp_string();
     let user_id =
@@ -3784,10 +3832,16 @@ fn reset_admin_password_history_id(user_id: &str, now: &str) -> String {
 }
 
 async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<bool, sqlx::Error> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(true);
+    }
     sqlite_default_iam_seed_complete(pool).await
 }
 
 async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(true);
+    }
     postgres_default_iam_seed_complete(pool).await
 }
 
@@ -3825,6 +3879,9 @@ async fn sqlite_bootstrap_admin_seed_complete(
     pool: &SqlitePool,
     username: &str,
 ) -> Result<bool, sqlx::Error> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(true);
+    }
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
@@ -3857,6 +3914,9 @@ async fn postgres_bootstrap_admin_seed_complete(
     pool: &PgPool,
     username: &str,
 ) -> Result<bool, sqlx::Error> {
+    if !product_database_iam_seed_enabled() {
+        return Ok(true);
+    }
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
@@ -7752,6 +7812,24 @@ fn normalize_install_code(value: String, name: &str) -> Result<String, DatabaseI
         )));
     }
     Ok(value)
+}
+
+/// Integration-test fixture for stores that still exercise IAM directory SQL against SQLite.
+pub async fn ensure_sqlite_integration_iam_fixture(
+    pool: &SqlitePool,
+) -> Result<(), DatabaseInstallError> {
+    if sqlite_table_exists(pool, "iam_user").await? {
+        return Ok(());
+    }
+    apply_sqlite_appbase_iam_foundation_schema(pool).await?;
+    apply_sqlite_appbase_iam_oauth_schema(pool).await?;
+    import_sqlite_default_iam_seed(pool)
+        .await
+        .map_err(DatabaseInstallError::Database)?;
+    let mut options = BootstrapAdminOptions::default();
+    options.password = Some("Integration-Test-Admin-Password-2026!".to_owned());
+    bootstrap_sqlite_admin_user(pool, &options).await?;
+    Ok(())
 }
 
 #[cfg(test)]

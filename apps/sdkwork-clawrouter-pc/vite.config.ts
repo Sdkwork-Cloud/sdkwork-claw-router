@@ -51,8 +51,12 @@ const portalPackageModuleCache = new Map<string, string | null>();
 const LOCAL_PORTAL_PACKAGE_PREFIXES = [
   'sdkwork-clawrouter-pc-',
   'sdkwork-clawrouter-',
+  'sdkwork-clawroutes-',
 ];
-const LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX = '@sdkwork/clawrouter-pc-';
+const LOCAL_PORTAL_SCOPED_PACKAGE_PREFIXES = [
+  '@sdkwork/clawrouter-pc-',
+  '@sdkwork/clawroutes-',
+];
 const PORTAL_OPTIMIZED_BARE_DEPENDENCIES = new Set([
   'react',
   'react/jsx-runtime',
@@ -270,14 +274,15 @@ function shouldResolvePortalLocalPackage(source: string): boolean {
   }
 
   const {packageName} = parsePackageSpecifier(source);
-  if (packageName.startsWith(LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX)) {
+  if (LOCAL_PORTAL_SCOPED_PACKAGE_PREFIXES.some((prefix) => packageName.startsWith(prefix))) {
     return true;
   }
   return LOCAL_PORTAL_PACKAGE_PREFIXES.some((prefix) => packageName.startsWith(prefix));
 }
 
 function portalLocalPackageRoot(packageName: string, configDir: string): string | null {
-  if (packageName.startsWith(LOCAL_PORTAL_SCOPED_PACKAGE_PREFIX)) {
+  const scopedPrefix = LOCAL_PORTAL_SCOPED_PACKAGE_PREFIXES.find((prefix) => packageName.startsWith(prefix));
+  if (scopedPrefix) {
     return path.join(
       configDir,
       'packages',
@@ -647,6 +652,10 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/models-backend-sdk/api/ai', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript/generated/server-openapi/src/api/ai.ts') },
         { find: '@sdkwork/models-backend-sdk', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/models-app-sdk', replacement: path.resolve(sdkworkModelsRoot, 'sdks/sdkwork-models-app-sdk/sdkwork-models-app-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: '@sdkwork/models-pc-admin-catalog/modelService', replacement: path.resolve(sdkworkModelsRoot, 'apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts') },
+        { find: '@sdkwork/models-pc-admin-catalog/vendorPickerModal', replacement: path.resolve(sdkworkModelsRoot, 'apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/vendorPickerModal.tsx') },
+        { find: '@sdkwork/models-pc-admin-catalog', replacement: path.resolve(sdkworkModelsRoot, 'apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/index.tsx') },
+        { find: '@sdkwork/models-pc-admin-resource', replacement: path.resolve(sdkworkModelsRoot, 'apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource/src/index.tsx') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
         { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },

@@ -19,7 +19,7 @@ import {
   APP_API_PREFIX,
   BACKEND_API_PREFIX,
   OPEN_API_PREFIX,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts";
 import {
   buildSdkReferenceSidebarTree,
   buildSdkReferenceSystems,
@@ -835,7 +835,7 @@ test("api reference schema tabs source uses commons SDK prefix boundary instead 
     "utf8",
   );
 
-  assert.match(source, /from '@sdkwork\/clawrouter-pc-commons\/runtime'/);
+  assert.match(source, /from '@sdkwork\/clawroutes-pc-commons\/runtime'/);
   assert.match(source, /\bAPP_API_PREFIX\b/);
   assert.match(source, /\bBACKEND_API_PREFIX\b/);
   assert.match(source, /\bOPEN_API_PREFIX\b/);

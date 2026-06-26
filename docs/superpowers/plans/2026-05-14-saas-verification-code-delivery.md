@@ -1,5 +1,7 @@
 # SaaS Verification Code Delivery Implementation Plan
 
+> **Superseded (2026-06-25):** Claw Router verification delivery and auth routes are owned by federated `sdkwork-routes-iam-app-api` in `sdkwork-iam`. See `../../sdkwork-iam/docs/IAM_INTEGRATION.md`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a standard verification-code delivery system for Java SaaS and Rust SaaS, with admin-managed email/SMS provider configuration and strict dev/prod behavior.

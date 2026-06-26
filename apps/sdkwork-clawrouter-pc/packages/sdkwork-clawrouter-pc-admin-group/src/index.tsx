@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AdminTableShell, AiResourceSelectorModal, BottomPagination, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawrouter-pc-commons';
+import { AdminTableShell, AiResourceSelectorModal, BottomPagination, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawroutes-pc-commons';
 import { Plus, Search, Trash2, Edit, ChevronDown, ChevronLeft, ChevronRight, RefreshCw, ArrowUpDown, LayoutGrid, X, Link2, Save, Coins, Info } from 'lucide-react';
 import { GroupService, buildGroupRoutePreflight, type GroupAiResourceOption, type GroupChannelBindingData, type GroupChannelBindingInput, type GroupChannelOption, type GroupData, type GroupResourceGroupOption, type GroupRouteExplainResult } from './groupService';
 import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';

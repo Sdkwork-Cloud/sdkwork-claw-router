@@ -251,73 +251,18 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         self.assertIn("sms", messaging.get("scope", []))
         self.assertIn("email", messaging.get("scope", []))
 
-    def test_verification_delivery_queue_sender_is_fail_closed_and_redacted(self) -> None:
-        helper_path = (
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "verification_delivery_queue.rs"
-        )
-        sqlite_sender_path = (
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "sqlite"
-            / "verification_delivery_queue_sender.rs"
-        )
-        postgres_sender_path = (
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "infrastructure"
-            / "sql"
-            / "postgres"
-            / "verification_delivery_queue_sender.rs"
-        )
-        app_api_path = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
-        app_auth_path = (
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "api"
-            / "app_auth.rs"
-        )
-
-        for path in [helper_path, sqlite_sender_path, postgres_sender_path]:
-            self.assertTrue(path.exists(), str(path))
-
-        helper_source = helper_path.read_text(encoding="utf-8")
-        self.assertIn('"variableKeys"', helper_source)
-        self.assertIn("rate_limited_error", helper_source)
-        self.assertNotIn('"variables": variables', helper_source)
-        self.assertNotIn('"target": &delivery.target', helper_source)
-        self.assertNotIn('"secretRef"', helper_source)
-
-        for sender_path in [sqlite_sender_path, postgres_sender_path]:
-            sender_source = sender_path.read_text(encoding="utf-8")
-            self.assertIn("existing_delivery_status", sender_source)
-            self.assertIn("VerificationDeliveryStatus::RateLimited", sender_source)
-            self.assertIn("return Err(rate_limited_error", sender_source)
-            self.assertIn("increment_rate_limit_bucket", sender_source)
-            self.assertNotIn("notification", sender_source.lower())
-
-        app_auth_source = app_auth_path.read_text(encoding="utf-8")
-        self.assertIn("map_verification_delivery_error", app_auth_source)
-        self.assertIn("StatusCode::TOO_MANY_REQUESTS", app_auth_source)
-        self.assertIn('PlusApiResult::error("4290"', app_auth_source)
-
+    def test_product_app_runtime_does_not_wire_local_verification_delivery(self) -> None:
+        app_api_path = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
+        iam_runtime_path = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "iam_runtime.rs"
         app_api_source = app_api_path.read_text(encoding="utf-8")
-        self.assertIn(".with_default_provider_sender", app_api_source)
-        self.assertIn("SqliteVerificationDeliveryQueueSender::new", app_api_source)
-        self.assertIn("PostgresVerificationDeliveryQueueSender::new", app_api_source)
+        iam_runtime_source = iam_runtime_path.read_text(encoding="utf-8")
+
+        self.assertNotIn("VerificationDeliveryQueueSender", app_api_source)
+        self.assertNotIn("verification_code_sender", app_api_source)
+        self.assertNotIn("app_auth_router", app_api_source)
+        self.assertIn("merge_federated_iam_routers", app_api_source)
+        self.assertIn("bootstrap_iam_database_from_env", iam_runtime_source)
+        self.assertIn("wire_iam_routers", iam_runtime_source)
 
 
 if __name__ == "__main__":

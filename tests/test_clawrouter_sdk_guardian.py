@@ -238,7 +238,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "/v1",
             )
         portal = root / "apps" / "sdkwork-clawrouter-pc"
-        commons = portal / "packages" / "sdkwork-clawrouter-pc-commons"
+        commons = portal / "packages" / "sdkwork-clawroutes-pc-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
         (portal / "package.json").write_text(
             json.dumps(
@@ -1362,7 +1362,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 "/backend/v3/api",
             )
             portal = root / "apps" / "sdkwork-clawrouter-pc"
-            commons = portal / "packages" / "sdkwork-clawrouter-pc-commons"
+            commons = portal / "packages" / "sdkwork-clawroutes-pc-commons"
             commons.mkdir(parents=True, exist_ok=True)
             (portal / "package.json").write_text('{"dependencies":{}}\n', encoding="utf-8")
             (commons / "package.json").write_text('{"dependencies":{}}\n', encoding="utf-8")
@@ -1374,7 +1374,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             self.assertIn("portal package.json must depend on @sdkwork/clawrouter-open-sdk", result.messages)
             self.assertIn("portal commons package.json must depend on @sdkwork/clawrouter-backend-sdk", result.messages)
             self.assertIn("portal commons package.json must depend on @sdkwork/clawrouter-open-sdk", result.messages)
-            self.assertIn("portal SDK boundary is missing: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts", result.messages)
+            self.assertIn("portal SDK boundary is missing: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts", result.messages)
 
     def test_reports_portal_runtime_missing_sdk_client_export(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -1394,7 +1394,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 / "apps"
                 / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-clawrouter-pc-commons"
+                / "sdkwork-clawroutes-pc-commons"
                 / "src"
                 / "runtime.ts"
             )
@@ -1405,7 +1405,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "portal commons runtime must export ./sdk-clients.ts: "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/runtime.ts",
                 result.messages,
             )
 
@@ -1427,7 +1427,7 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
                 / "apps"
                 / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-clawrouter-pc-commons"
+                / "sdkwork-clawroutes-pc-commons"
                 / "src"
                 / "index.ts"
             )
@@ -1437,8 +1437,8 @@ class ClawRouterSdkGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal commons UI root must not export ./sdk-clients; use sdkwork-clawrouter-pc-commons/runtime: "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/index.ts",
+                "portal commons UI root must not export ./sdk-clients; use sdkwork-clawroutes-pc-commons/runtime: "
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/index.ts",
                 result.messages,
             )
 

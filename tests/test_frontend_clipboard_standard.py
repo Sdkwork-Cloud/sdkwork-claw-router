@@ -15,13 +15,13 @@ DOCUMENTS_PACKAGES_ROOT = (
 )
 APPROVED_CLIPBOARD_UTILITY = (
     FRONTEND_ROOT
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "clipboard.ts"
 )
 COPY_BUTTON_COMPONENT = (
     FRONTEND_ROOT
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "components"
     / "CopyButton.tsx"
@@ -48,7 +48,7 @@ class FrontendClipboardStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             offenders,
-            "Copy actions must use sdkwork-clawrouter-pc-commons copyTextToClipboard so permission failures and unsupported browsers are handled consistently.",
+            "Copy actions must use sdkwork-clawroutes-pc-commons copyTextToClipboard so permission failures and unsupported browsers are handled consistently.",
         )
 
     def test_shared_clipboard_utility_returns_structured_result_without_throwing(self) -> None:

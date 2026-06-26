@@ -22,13 +22,13 @@ import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
   storeAppSessionFromResult,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts";
 import {
   createClawRouterAppSdkClient,
   handleClawRouterSdkSessionAuthError,
   isClawRouterSdkSessionAuthError,
   resetClawRouterSdkSessionAuthRedirectState,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts";
 import {
   createSdkworkIamRuntimeAuthService,
 } from "../../../sdkwork-iam/apps/sdkwork-iam-pc/packages/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
@@ -211,23 +211,40 @@ function authRuntimeSettingsFixture(overrides: Record<string, unknown> = {}): Re
 
 function installPortalAuthRedirectWindow({
   hash,
+  hostname,
   pathname,
   replace,
+  runtimeEnv,
   search,
+  sessionAuthEvents,
 }: {
   hash: string;
+  hostname?: string;
   pathname: string;
   replace: (to: string) => void;
+  runtimeEnv?: Record<string, string>;
   search: string;
+  sessionAuthEvents?: Array<Record<string, unknown>>;
 }): () => void {
   const descriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     value: {
+      __CLAWROUTER_ENV__: runtimeEnv,
       addEventListener: () => {},
-      dispatchEvent: () => true,
+      dispatchEvent: (event: Event) => {
+        if (
+          sessionAuthEvents
+          && event instanceof CustomEvent
+          && event.type === "sdkwork:session-auth-unauthorized"
+        ) {
+          sessionAuthEvents.push(event.detail as Record<string, unknown>);
+        }
+        return true;
+      },
       location: {
         hash,
+        hostname,
         pathname,
         replace,
         search,
@@ -291,9 +308,9 @@ function createPortalSessionStorageHarness(): { openNewTab: () => void; restore:
 
 let freshAppSessionTokenModuleImportIndex = 0;
 
-async function importFreshAppSessionTokenModule(): Promise<typeof import("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts")> {
+async function importFreshAppSessionTokenModule(): Promise<typeof import("./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts")> {
   freshAppSessionTokenModuleImportIndex += 1;
-  return import(`./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts?fresh=${freshAppSessionTokenModuleImportIndex}`);
+  return import(`./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts?fresh=${freshAppSessionTokenModuleImportIndex}`);
 }
 
 test("portal exposes appbase auth routes as standalone React routes", () => {
@@ -351,8 +368,8 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   const configSource = readPortalFile("./src/auth/clawRouterAuthConfig.ts");
   const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
   const adminSettingsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts");
-  const iamRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts");
-  const sdkClientsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const iamRuntimeSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/iam-runtime.ts");
+  const sdkClientsSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
 
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
@@ -1088,9 +1105,9 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
 });
 
 test("navbar routes sign in through the auth module instead of bootstrapping sessions directly", () => {
-  const navbarSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx");
-  const portalAuthSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/portal-auth.ts");
-  const sessionTokenSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts");
+  const navbarSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx");
+  const portalAuthSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/portal-auth.ts");
+  const sessionTokenSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts");
 
   assert.doesNotMatch(navbarSource, /createAppSession/);
   assert.match(navbarSource, /buildPortalAuthLoginRedirect/);
@@ -1475,6 +1492,125 @@ test("generated SDK auth errors clear stale sessions on public pages without for
   }
 });
 
+test("generated SDK auth errors stay on local protected pages when dev redirect bypass is enabled", () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    hostname: "127.0.0.1",
+    pathname: "/console/dashboard",
+    replace: (to) => redirects.push(to),
+    runtimeEnv: {
+      VITE_SDKWORK_CLAWROUTER_DEV_SESSION_AUTH_REDIRECT_BYPASS: "true",
+    },
+    search: "",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+
+    assert.notEqual(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, []);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
+test("generated SDK auth errors open modal details on local protected pages by default", () => {
+  const redirects: string[] = [];
+  const sessionAuthEvents: Array<Record<string, unknown>> = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    hostname: "127.0.0.1",
+    pathname: "/console/dashboard",
+    replace: (to) => redirects.push(to),
+    sessionAuthEvents,
+    search: "",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+
+    assert.notEqual(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, []);
+    assert.equal(sessionAuthEvents.length, 1);
+    assert.equal(sessionAuthEvents[0]?.code, "4010");
+    assert.equal(sessionAuthEvents[0]?.message, "app session token has expired");
+    assert.equal(sessionAuthEvents[0]?.path, "/console/dashboard");
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
+test("generated SDK auth errors redirect from local protected pages when redirect mode is configured", () => {
+  const redirects: string[] = [];
+  const restoreWindow = installPortalAuthRedirectWindow({
+    hash: "",
+    hostname: "127.0.0.1",
+    pathname: "/console/dashboard",
+    replace: (to) => redirects.push(to),
+    runtimeEnv: {
+      VITE_SDKWORK_SESSION_AUTH_UNAUTHORIZED_MODE: "redirect",
+    },
+    search: "",
+  });
+
+  try {
+    resetClawRouterSdkSessionAuthRedirectState();
+    storeAppSessionFromResult({
+      code: "200",
+      data: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      },
+    });
+
+    assert.equal(handleClawRouterSdkSessionAuthError({
+      code: "4010",
+      msg: "app session token has expired",
+    }), true);
+
+    assert.equal(loadStoredAppSessionToken(), null);
+    assert.deepEqual(redirects, [
+      "/auth/login?redirect=%2Fconsole%2Fdashboard",
+    ]);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkSessionAuthRedirectState();
+    restoreWindow();
+  }
+});
+
 test("generated SDK unauthorized errors redirect once and skip auth pages", () => {
   const redirects: string[] = [];
   const restoreWindow = installPortalAuthRedirectWindow({
@@ -1577,9 +1713,10 @@ test("generated SDK request boundary redirects when API responses report an expi
 test("portal wires console and admin routes through the protected session guard", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const guardSource = readPortalFile("./src/auth/protectedPortalRoutes.ts");
-  const sharedAuthSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/portal-auth.ts");
+  const sharedAuthSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/portal-auth.ts");
 
   assert.match(appSource, /RequirePortalSession/);
+  assert.match(appSource, /SdkworkSessionAuthBrowserRoot|SdkworkSessionAuthUnauthorizedProvider/);
   assert.match(appSource, /<Route path="\/console" element=\{<PortalErrorBoundary><RequirePortalSession><ConsoleLayout/);
   assert.match(appSource, /RequireAdminSession/);
   assert.match(appSource, /<Route path="\/admin" element=\{<PortalErrorBoundary><RequireAdminSession><AdminLayout/);
@@ -1595,8 +1732,8 @@ test("portal wires console and admin routes through the protected session guard"
   assert.match(guardSource, /adminAccessState === 'forbidden'/);
   assert.match(guardSource, /shared\.auth\.adminAccess\.forbiddenTitle/);
   assert.doesNotMatch(guardSource, /adminAccessState === 'forbidden'[\s\S]*to: '\/console\/dashboard'/);
-  assert.match(guardSource, /@sdkwork\/clawrouter-pc-commons\/runtime/);
-  assert.doesNotMatch(guardSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+  assert.match(guardSource, /@sdkwork\/clawroutes-pc-commons\/runtime/);
+  assert.doesNotMatch(guardSource, /sdkwork-clawroutes-pc-commons\/runtime/);
   assert.match(sharedAuthSource, /hasPortalIamSession/);
   assert.match(sharedAuthSource, /resolveStoredPortalTenantId/);
   assert.doesNotMatch(guardSource, /\bfetch\s*\(/);
@@ -1612,7 +1749,7 @@ test("portal wires console and admin routes through the protected session guard"
 test("console and admin logout revoke the current IAM session through the app SDK", () => {
   const consoleLayoutSource = readPortalFile("./packages/sdkwork-clawrouter-pc-console-shell/src/ConsoleLayout.tsx");
   const adminLayoutSource = readAdminLayoutSource();
-  const sessionServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts");
+  const sessionServiceSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/sessionService.ts");
 
   assert.match(consoleLayoutSource, /revokeAppSession/);
   assert.doesNotMatch(consoleLayoutSource, /clearAppSession/);
@@ -2095,7 +2232,7 @@ test("admin service provider center is an independent package backed by backend 
   assert.equal(packageJson.dependencies["@sdkwork/clawrouter-pc-admin-service-provider"], "workspace:*");
   assert.equal(serviceProviderPackageJson.name, "@sdkwork/clawrouter-pc-admin-service-provider");
   assert.equal(serviceProviderPackageJson.dependencies["@sdkwork/clawrouter-backend-sdk"], undefined);
-  assert.equal(serviceProviderPackageJson.dependencies["@sdkwork/clawrouter-pc-commons"], "workspace:*");
+  assert.equal(serviceProviderPackageJson.dependencies["@sdkwork/clawroutes-pc-commons"], "workspace:*");
   assert.match(tsconfigSource, /"@sdkwork\/clawrouter-pc-admin-service-provider":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-service-provider\/src\/index\.tsx"\s*\]/);
 
   assert.match(
@@ -2223,7 +2360,7 @@ test("admin OAuth owns official account and mini program resource-account sectio
   assert.equal(packageJson.dependencies[legacyMiniProgramPackage], undefined);
   assert.equal(oauthPackageJson.name, "@sdkwork/clawrouter-pc-admin-oauth");
   assert.equal(oauthPackageJson.dependencies["@sdkwork/clawrouter-backend-sdk"], undefined);
-  assert.equal(oauthPackageJson.dependencies["@sdkwork/clawrouter-pc-commons"], "workspace:*");
+  assert.equal(oauthPackageJson.dependencies["@sdkwork/clawroutes-pc-commons"], "workspace:*");
   assert.match(tsconfigSource, /"@sdkwork\/clawrouter-pc-admin-oauth":\s*\[\s*"\.\/packages\/sdkwork-clawrouter-pc-admin-oauth\/src\/index\.tsx"\s*\]/);
 
   const operationsHeaderModule = findAdminModuleDefinitionSource(adminRegistrySource, "operations");
@@ -2283,7 +2420,7 @@ test("admin OAuth owns official account and mini program resource-account sectio
 });
 
 test("admin commerce pages no longer render nested second-level sidebars", () => {
-  const adminResourceCenterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx");
+  const adminResourceCenterSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/components/AdminResourceCenter.tsx");
   const catalogWrapperSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
   const catalogSource = readPortalFile("../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx");
   const inventorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-inventory/src/index.tsx");

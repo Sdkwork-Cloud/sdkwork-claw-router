@@ -2,7 +2,7 @@ import type {
   AppModelCatalogItem,
   AppModelCatalogPriceAvailability,
 } from './runtimeModelCatalogTypes.ts';
-import { parseModelCatalogIdentity } from '@sdkwork/clawrouter-pc-commons/model-catalog-identity';
+import { parseModelCatalogIdentity } from '@sdkwork/clawroutes-pc-commons/model-catalog-identity';
 import { type Model, type ModelCategoryKey, type ModelGroupKey, type ModelPricingStatus } from './data/models.ts';
 
 type ModelModality = Model['modality'];

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Search, Plus, Megaphone, Clock, CheckCircle2, MoreVertical, X, Edit, Trash2, Send, Loader2, AlertCircle, BellRing, BellOff } from 'lucide-react';
 import Editor from '@monaco-editor/react';
 import { useTranslation } from 'react-i18next';
-import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawrouter-pc-commons';
+import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from '@sdkwork/clawroutes-pc-commons';
 import { AnnouncementService, type Announcement } from './announcementService';
 import {
   createAnnouncementInputFromForm,

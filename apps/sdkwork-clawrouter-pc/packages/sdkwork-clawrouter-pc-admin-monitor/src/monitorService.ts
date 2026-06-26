@@ -7,7 +7,7 @@ import {
   readRequiredString,
   readString,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export interface SysNode {
   id: string;

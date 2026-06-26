@@ -7,22 +7,22 @@ const workspaceRoot = path.resolve(scriptDir, "..");
 
 const APPBASE_IAM_MANIFEST_PATH = path.resolve(
   workspaceRoot,
-  "../sdkwork-iam/crates/sdkwork-router-iam-app-api/src/manifest.rs",
+  "../sdkwork-iam/crates/sdkwork-routes-iam-app-api/src/manifest.rs",
 );
 
 const TARGETS = [
   {
     surface: "app-api",
     manifestPath:
-      "sdks/_route-manifests/app-api/sdkwork-router-app-api.route-manifest.json",
-    outputPath: "crates/sdkwork-router-app-api/src/http_route_manifest.rs",
+      "sdks/_route-manifests/app-api/sdkwork-routes-clawrouter-app-api.route-manifest.json",
+    outputPath: "crates/sdkwork-routes-clawrouter-app-api/src/http_route_manifest.rs",
     mergeAppbaseIamRoutes: true,
   },
   {
     surface: "backend-api",
     manifestPath:
-      "sdks/_route-manifests/backend-api/sdkwork-router-backend-api.route-manifest.json",
-    outputPath: "crates/sdkwork-router-backend-api/src/http_route_manifest.rs",
+      "sdks/_route-manifests/backend-api/sdkwork-routes-clawrouter-backend-api.route-manifest.json",
+    outputPath: "crates/sdkwork-routes-clawrouter-backend-api/src/http_route_manifest.rs",
     mergeAppbaseIamRoutes: false,
   },
 ];

@@ -889,7 +889,7 @@ function runtimeConfigPostgresUrlUsesPlaceholder(value) {
   }
   const legacyDefault = 'postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router';
   const legacyWrongUsername =
-    'postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require';
+    'postgresql://sdkwork_ai_prod:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require';
   const legacyWrongDatabase =
     'postgresql://sdkwork:change-me@db.example.com:5432/sdkwork?sslmode=require';
   if (

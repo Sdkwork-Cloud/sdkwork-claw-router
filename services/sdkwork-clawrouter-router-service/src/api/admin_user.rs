@@ -1,6 +1,7 @@
 use std::collections::BTreeMap;
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
@@ -8,7 +9,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -167,10 +167,10 @@ pub fn admin_user_api_key_command_router_with_store(
 async fn fetch_users(
     State(state): State<AdminUserState>,
     Query(query): Query<UsersListQuery>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
 
     let q = normalize_query_text(query.q.as_deref());
     let page_size = normalize_users_page_size(query.page_size);
@@ -191,10 +191,10 @@ async fn fetch_users(
 
 async fn fetch_api_keys_map(
     State(state): State<AdminUserState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
 
     match state
         .store
@@ -208,11 +208,11 @@ async fn fetch_api_keys_map(
 
 async fn create_user(
     State(state): State<AdminUserState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let request = match parse_json_body::<CreateUserRequest>(&body, "user request body is required")
     {
         Ok(request) => request,
@@ -257,11 +257,11 @@ async fn create_user(
 
 async fn update_user(
     State(state): State<AdminUserState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let request = match parse_json_body::<UpdateUserRequest>(&body, "user request body is required")
     {
         Ok(request) => request,
@@ -328,11 +328,11 @@ async fn update_user_with_request(
 async fn adjust_balance(
     State(state): State<AdminUserState>,
     Path(user_id): Path<i64>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let user_id = match positive_path_id(user_id, "userId") {
         Ok(id) => id,
         Err(message) => return bad_request(message),
@@ -394,11 +394,11 @@ async fn adjust_balance(
 
 async fn create_api_key(
     State(state): State<AdminUserState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let request =
         match parse_json_body::<CreateApiKeyRequest>(&body, "api key request body is required") {
             Ok(request) => request,
@@ -463,10 +463,10 @@ async fn create_api_key(
 async fn delete_api_key(
     State(state): State<AdminUserState>,
     Path(api_key_id): Path<i64>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let api_key_id = match positive_path_id(api_key_id, "apiKeyId") {
         Ok(id) => id,
         Err(message) => return bad_request(message),
@@ -503,11 +503,11 @@ async fn delete_api_key(
 
 async fn create_backend_api_key(
     State(state): State<AdminApiKeyCommandState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let request =
         match parse_json_body::<CreateApiKeyRequest>(&body, "api key request body is required") {
             Ok(request) => request,
@@ -596,10 +596,10 @@ async fn create_backend_api_key(
 async fn delete_backend_api_key(
     State(state): State<AdminApiKeyCommandState>,
     Path(api_key_id): Path<i64>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject: AdminUserSubject = scoped.into();
     let api_key_id = match positive_path_id(api_key_id, "apiKeyId") {
         Ok(id) => id,
         Err(message) => return bad_request(message),
@@ -743,14 +743,6 @@ fn admin_api_key_item_from_gateway(api_key: GatewayApiKey) -> AdminUserApiKeyIte
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminUserSubject {
-    AdminUserSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn normalize_query_text(value: Option<&str>) -> Option<String> {
     value

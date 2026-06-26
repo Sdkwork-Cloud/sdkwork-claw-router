@@ -5,10 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 
+use crate::api::app_sql_subject::{map_optional_app_sql_subject, ResolvedAppSqlScopedSubject};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppProviderItem, AppProvidersItems, AppProvidersReadFuture, AppProvidersReadStore,
     AppProvidersSubject,
@@ -55,9 +54,11 @@ fn app_providers_router_with_state(
 
 async fn fetch_providers(
     State(state): State<AppProvidersState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match providers_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -66,17 +67,6 @@ async fn fetch_providers(
         Ok(items) => Json(PlusApiResult::success(AppProvidersItems::new(items))).into_response(),
         Err(error) => app_providers_read_model_error(error),
     }
-}
-
-fn providers_subject(
-    subject: Option<TrustedRequestSubject>,
-    require_subject: bool,
-) -> Result<Option<AppProvidersSubject>, Response> {
-    map_optional_app_user_subject(subject, require_subject, |trusted| AppProvidersSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    })
 }
 
 fn app_providers_read_model_error(error: impl std::fmt::Display) -> Response {

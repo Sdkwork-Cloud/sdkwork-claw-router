@@ -185,7 +185,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         router_app_api = (
-            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
         dependency_surfaces = (
             ROOT / "specs" / "dependency-api-surfaces.json"
@@ -217,7 +217,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn('AppWalletApiResult::error("4010"', commerce_account_router)
         self.assertIn("account summary read model is unavailable", commerce_account_router)
         self.assertIn("retrieve_account_summary_snapshot", commerce_storage)
-        self.assertIn("pub use sdkwork_router_app_api::*;", app_api)
+        self.assertIn("pub use sdkwork_routes_clawrouter_app_api::*;", app_api)
         self.assertIn('Some("commerce" | "promotion")', router_app_api)
         self.assertIn('"/app/v3/api/accounts/"', router_app_api)
         self.assertIn("is_commerce_dependency_contract_path", router_app_api)
@@ -400,7 +400,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")

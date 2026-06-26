@@ -2,7 +2,6 @@ import React, { useState, useCallback, useEffect, type ReactNode } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Activity,
-  Bell,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -17,8 +16,8 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-import { Navbar } from '@sdkwork/clawrouter-pc-commons';
-import { revokeAppSession } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { Navbar } from '@sdkwork/clawroutes-pc-commons';
+import { revokeAppSession } from '@sdkwork/clawroutes-pc-commons/runtime';
 
 import { useTranslation } from 'react-i18next';
 
@@ -63,7 +62,6 @@ const consoleSidebarGroups = [
     itemBlock({ path: '/console/settlements', labelKey: 'console.menu.settlements', fallbackLabel: 'Bills and Reports', icon: Receipt }),
   ]),
   groupBlock('console.menu.group.notificationsSettings', 'Notifications & Settings', [
-    itemBlock({ path: '/console/notifications', labelKey: 'console.menu.notifications', fallbackLabel: 'Message Center', icon: Bell }),
     itemBlock({ path: '/console/settings', labelKey: 'console.menu.settings', fallbackLabel: 'Configuration center', icon: Settings }),
   ]),
 ];

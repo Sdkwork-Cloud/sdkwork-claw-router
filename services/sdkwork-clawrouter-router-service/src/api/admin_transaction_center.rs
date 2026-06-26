@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
@@ -208,20 +208,20 @@ pub fn admin_transaction_center_router_with_store(
 
 async fn list_orders(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_orders(query)).await
+    list_response(scoped, query, |query| state.store.list_orders(query)).await
 }
 
 async fn load_order(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(order_id): Path<String>,
 ) -> Response {
-    resource_response(trusted, headers, order_id, "order id", |query| {
+    resource_response(scoped, headers, order_id, "order id", |query| {
         state.store.load_order(query)
     })
     .await
@@ -229,12 +229,12 @@ async fn load_order(
 
 async fn list_order_events(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(order_id): Path<String>,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    child_list_response(trusted, headers, order_id, "order id", query, |query| {
+    child_list_response(scoped, headers, order_id, "order id", query, |query| {
         state.store.list_order_events(query)
     })
     .await
@@ -242,20 +242,20 @@ async fn list_order_events(
 
 async fn list_refunds(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_refunds(query)).await
+    list_response(scoped, query, |query| state.store.list_refunds(query)).await
 }
 
 async fn load_refund(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(refund_id): Path<String>,
 ) -> Response {
-    resource_response(trusted, headers, refund_id, "refund id", |query| {
+    resource_response(scoped, headers, refund_id, "refund id", |query| {
         state.store.load_refund(query)
     })
     .await
@@ -263,31 +263,31 @@ async fn load_refund(
 
 async fn list_fulfillments(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_fulfillments(query)).await
+    list_response(scoped, query, |query| state.store.list_fulfillments(query)).await
 }
 
 async fn list_shipments(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_shipments(query)).await
+    list_response(scoped, query, |query| state.store.list_shipments(query)).await
 }
 
 async fn list_shipment_tracking_events(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(shipment_id): Path<String>,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
     child_list_response(
-        trusted,
+        scoped,
         headers,
         shipment_id,
         "shipment id",
@@ -299,11 +299,11 @@ async fn list_shipment_tracking_events(
 
 async fn list_payment_providers(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_providers(query)
     })
     .await
@@ -311,11 +311,11 @@ async fn list_payment_providers(
 
 async fn list_payment_provider_accounts(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_provider_accounts(query)
     })
     .await
@@ -323,7 +323,7 @@ async fn list_payment_provider_accounts(
 
 async fn create_payment_provider_account(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -334,7 +334,7 @@ async fn create_payment_provider_account(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match build_create_payment_provider_account_command(trusted, &headers, request) {
+    let command = match build_create_payment_provider_account_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -353,7 +353,7 @@ async fn create_payment_provider_account(
 
 async fn update_payment_provider_account(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(provider_account_id): Path<String>,
     body: Bytes,
@@ -366,7 +366,7 @@ async fn update_payment_provider_account(
         Err(message) => return bad_request(message),
     };
     let command = match build_update_payment_provider_account_command(
-        trusted,
+        scoped,
         &headers,
         provider_account_id,
         request,
@@ -390,7 +390,7 @@ async fn update_payment_provider_account(
 
 async fn update_payment_provider_account_status(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(provider_account_id): Path<String>,
     body: Bytes,
@@ -403,7 +403,7 @@ async fn update_payment_provider_account_status(
         Err(message) => return bad_request(message),
     };
     let command = match build_update_payment_provider_account_status_command(
-        trusted,
+        scoped,
         &headers,
         provider_account_id,
         request,
@@ -431,12 +431,12 @@ async fn update_payment_provider_account_status(
 
 async fn delete_payment_provider_account(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(provider_account_id): Path<String>,
 ) -> Response {
     let command =
-        match build_delete_payment_provider_account_command(trusted, &headers, provider_account_id)
+        match build_delete_payment_provider_account_command(scoped, &headers, provider_account_id)
         {
             Ok(command) => command,
             Err(response) => return response,
@@ -457,11 +457,11 @@ async fn delete_payment_provider_account(
 
 async fn list_payment_methods(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_methods(query)
     })
     .await
@@ -469,11 +469,11 @@ async fn list_payment_methods(
 
 async fn list_payment_channels(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_channels(query)
     })
     .await
@@ -481,11 +481,11 @@ async fn list_payment_channels(
 
 async fn list_payment_route_rules(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_route_rules(query)
     })
     .await
@@ -493,11 +493,11 @@ async fn list_payment_route_rules(
 
 async fn list_payment_intents(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_intents(query)
     })
     .await
@@ -505,11 +505,11 @@ async fn list_payment_intents(
 
 async fn list_payment_attempts(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_attempts(query)
     })
     .await
@@ -517,11 +517,11 @@ async fn list_payment_attempts(
 
 async fn list_payment_webhook_events(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_webhook_events(query)
     })
     .await
@@ -529,18 +529,18 @@ async fn list_payment_webhook_events(
 
 async fn list_payment_reconciliation_runs(
     State(state): State<AdminTransactionCenterState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<TransactionCenterListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_payment_reconciliation_runs(query)
     })
     .await
 }
 
 async fn list_response<'a, F>(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     query: TransactionCenterListQueryRequest,
     load: F,
 ) -> Response
@@ -549,7 +549,7 @@ where
         ListAdminTransactionRecordsQuery,
     ) -> crate::ports::AdminTransactionCenterFuture<'a, AdminTransactionCollection>,
 {
-    let query = match validated_list_query(trusted, query) {
+    let query = match validated_list_query(scoped, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -563,7 +563,7 @@ where
 }
 
 async fn child_list_response<'a, F>(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     parent_id: String,
     field_name: &'static str,
@@ -575,7 +575,7 @@ where
         ListAdminTransactionChildRecordsQuery,
     ) -> crate::ports::AdminTransactionCenterFuture<'a, AdminTransactionCollection>,
 {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let parent_id = match normalize_required_text(parent_id, field_name, MAX_ID_LEN) {
         Ok(parent_id) => parent_id,
         Err(response) => return response,
@@ -611,7 +611,7 @@ where
 }
 
 async fn resource_response<'a, F>(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     record_id: String,
     field_name: &'static str,
@@ -623,7 +623,7 @@ where
     )
         -> crate::ports::AdminTransactionCenterFuture<'a, Option<AdminTransactionJsonRecord>>,
 {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let record_id = match normalize_required_text(record_id, field_name, MAX_ID_LEN) {
         Ok(record_id) => record_id,
         Err(response) => return response,
@@ -653,10 +653,10 @@ fn collection_response(collection: AdminTransactionCollection) -> Response {
 }
 
 fn validated_list_query(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     query: TransactionCenterListQueryRequest,
 ) -> Result<ListAdminTransactionRecordsQuery, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -716,11 +716,11 @@ fn validated_list_query(
 }
 
 fn build_create_payment_provider_account_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: PaymentProviderAccountMutationRequest,
 ) -> Result<CreateAdminPaymentProviderAccountCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let normalized = normalize_payment_provider_account_mutation(request)?;
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let account_no = generate_payment_provider_account_no(&subject, &idempotency_key);
@@ -754,12 +754,12 @@ fn build_create_payment_provider_account_command(
 }
 
 fn build_update_payment_provider_account_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     provider_account_id: String,
     request: PaymentProviderAccountMutationRequest,
 ) -> Result<UpdateAdminPaymentProviderAccountCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let provider_account_id =
         normalize_required_text(provider_account_id, "providerAccountId", MAX_ID_LEN)?;
     let normalized = normalize_payment_provider_account_mutation(request)?;
@@ -787,12 +787,12 @@ fn build_update_payment_provider_account_command(
 }
 
 fn build_update_payment_provider_account_status_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     provider_account_id: String,
     request: PaymentProviderAccountStatusUpdateRequest,
 ) -> Result<UpdateAdminPaymentProviderAccountStatusCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let provider_account_id =
         normalize_required_text(provider_account_id, "providerAccountId", MAX_ID_LEN)?;
     let status = normalize_enum(
@@ -819,12 +819,12 @@ fn build_update_payment_provider_account_status_command(
 }
 
 fn build_delete_payment_provider_account_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: &HeaderMap,
     provider_account_id: String,
 ) -> Result<DeleteAdminPaymentProviderAccountCommand, Response> {
     Ok(DeleteAdminPaymentProviderAccountCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         provider_account_id: normalize_required_text(
             provider_account_id,
             "providerAccountId",
@@ -951,14 +951,6 @@ fn validate_secret_ref(provider_code: &str, value: &str) -> Result<(), Response>
     })
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminTransactionCenterSubject {
-    AdminTransactionCenterSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &Bytes, resource: &str) -> Result<T, String>
 where

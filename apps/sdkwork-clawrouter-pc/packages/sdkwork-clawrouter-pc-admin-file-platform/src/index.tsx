@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AdminResourceCenter } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter } from '@sdkwork/clawroutes-pc-commons';
 import { StorageOperationsSettings } from '@sdkwork/file-platform-pc-react';
 import { createAdminStoragePort } from './adminStoragePort';
 import {

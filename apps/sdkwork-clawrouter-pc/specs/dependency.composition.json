@@ -3,149 +3,15 @@
   "kind": "sdkwork.dependency.composition",
   "applicationCode": "clawrouter",
   "clientArchitecture": "pc",
-  "permissionComposition": {
-    "inheritanceMode": "module-catalog-with-overrides",
-    "applicationModule": {
-      "manifestRef": "specs/iam.module.manifest.json"
-    },
-    "moduleCatalogRefs": [
-      {
-        "moduleId": "iam-kernel",
-        "manifestRef": "../../../sdkwork-iam/iam/modules/iam-kernel/iam.module.manifest.json",
-        "inheritPermissions": true,
-        "inheritRoles": false
-      },
-      {
-        "moduleId": "commerce",
-        "manifestRef": "../../../sdkwork-iam/iam/modules/commerce/iam.module.manifest.json",
-        "inheritPermissions": true,
-        "inheritRoles": true
-      }
-    ],
-    "bootstrapAccessTokenScope": {
-      "inheritFrom": "sdkwork.app.config.json#backend.accessTokenPermissionScope",
-      "supplement": [],
-      "overrideReplace": false
-    },
-    "routePermissionHints": {
-      "inheritFromOpenApi": true,
-      "inheritFromModuleManifests": true,
-      "overrides": [
-        {
-          "kind": "permission-code-replacement",
-          "from": "clawrouter:console",
-          "to": "clawrouter.console.access",
-          "scope": "bootstrap-dev-only",
-          "reason": "Migrate legacy colon permission codes to PERMISSION_STANDARD_SPEC format"
-        }
-      ]
-    },
-    "consumerPolicy": {
-      "forbidLocalPermissionCatalogForDependencyDomains": true,
-      "allowExplicitOverridesOnly": true,
-      "allowFrontendHintsWithoutServerDuplication": true
-    }
-  },
   "surfaces": [
     {
       "surface": "app",
       "corePackage": "@sdkwork/clawrouter-pc-core",
-      "sdkClients": [
-        {
-          "id": "productApp",
-          "workspace": "clawrouter-app-sdk",
-          "nativePackage": "@sdkwork/clawrouter-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "application-owned",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "productOpen",
-          "workspace": "clawrouter-open-sdk",
-          "nativePackage": "@sdkwork/clawrouter-open-sdk",
-          "surface": "open-api",
-          "credentialMode": "protected-open-api-flexible",
-          "role": "application-owned",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "appbaseApp",
-          "workspace": "sdkwork-iam-app-sdk",
-          "nativePackage": "@sdkwork/iam-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-iam-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "commerceApp",
-          "workspace": "sdkwork-commerce-app-sdk",
-          "nativePackage": "sdkwork-commerce-app-sdk-generated-typescript",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-commerce-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "driveApp",
-          "workspace": "sdkwork-drive-app-sdk",
-          "nativePackage": "@sdkwork/drive-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-drive-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "generationsApp",
-          "workspace": "sdkwork-generations-app-sdk",
-          "nativePackage": "@sdkwork/clawrouter-pc-core/sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-generations-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "memoryApp",
-          "workspace": "sdkwork-memory-app-sdk",
-          "nativePackage": "@sdkwork/memory-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-memory-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "agentApp",
-          "workspace": "sdkwork-agent-app-sdk",
-          "nativePackage": "@sdkwork/agent-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-agent-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        },
-        {
-          "id": "modelsApp",
-          "workspace": "sdkwork-models-app-sdk",
-          "nativePackage": "@sdkwork/models-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-models-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-core/sdk"
-        }
-      ],
+      "sdkClients": [],
       "reusableModules": [],
       "hostAdapters": [],
       "dependencyApiExports": [],
-      "dependencyApiSurfaces": [
-        "../../specs/dependency-api-surfaces.json"
-      ]
+      "dependencyApiSurfaces": []
     },
     {
       "surface": "backend-admin",
@@ -154,109 +20,60 @@
         {
           "id": "clawrouterBackend",
           "workspace": "clawrouter-backend-sdk",
-          "nativePackage": "@sdkwork/clawrouter-backend-sdk",
           "surface": "backend-api",
           "credentialMode": "authenticated-backend-admin",
-          "role": "application-owned",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
-        },
-        {
-          "id": "appbaseBackend",
-          "workspace": "sdkwork-iam-backend-sdk",
-          "nativePackage": "@sdkwork/iam-backend-sdk",
-          "surface": "backend-api",
-          "credentialMode": "authenticated-backend-admin",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-iam-backend-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
-        },
-        {
-          "id": "commerceBackend",
-          "workspace": "sdkwork-commerce-backend-sdk",
-          "nativePackage": "sdkwork-commerce-backend-sdk-generated-typescript",
-          "surface": "backend-api",
-          "credentialMode": "authenticated-backend-admin",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-commerce-backend-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
-        },
-        {
-          "id": "modelsBackend",
-          "workspace": "sdkwork-models-backend-sdk",
-          "nativePackage": "@sdkwork/models-backend-sdk",
-          "surface": "backend-api",
-          "credentialMode": "authenticated-backend-admin",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-models-backend-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
+          "role": "application-owned"
         },
         {
           "id": "agentBackend",
           "workspace": "sdkwork-agent-backend-sdk",
-          "nativePackage": "@sdkwork/agent-backend-sdk",
+          "surface": "backend-api",
+          "credentialMode": "authenticated-backend-admin",
+          "role": "application-owned"
+        },
+        {
+          "id": "commerceBackend",
+          "workspace": "sdkwork-commerce-backend-sdk",
+          "surface": "backend-api",
+          "credentialMode": "authenticated-backend-admin",
+          "role": "application-owned"
+        },
+        {
+          "id": "iamBackend",
+          "workspace": "sdkwork-iam-backend-sdk",
           "surface": "backend-api",
           "credentialMode": "authenticated-backend-admin",
           "role": "dependency",
-          "sdkDependencyRef": "sdkwork-agent-backend-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
+          "sdkDependencyRef": "sdkwork-iam-backend-sdk"
+        },
+        {
+          "id": "modelsBackend",
+          "workspace": "sdkwork-models-backend-sdk",
+          "surface": "backend-api",
+          "credentialMode": "authenticated-backend-admin",
+          "role": "application-owned"
         },
         {
           "id": "promptsBackend",
           "workspace": "sdkwork-prompts-backend-sdk",
-          "nativePackage": "@sdkwork/prompts-backend-sdk",
           "surface": "backend-api",
           "credentialMode": "authenticated-backend-admin",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-prompts-backend-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-admin-core/sdk"
+          "role": "application-owned"
         }
       ],
       "reusableModules": [],
       "hostAdapters": [],
       "dependencyApiExports": [],
-      "dependencyApiSurfaces": [
-        "../../specs/dependency-api-surfaces.json"
-      ]
+      "dependencyApiSurfaces": []
     },
     {
       "surface": "console",
       "corePackage": "@sdkwork/clawrouter-pc-console-core",
-      "sdkClients": [
-        {
-          "id": "productApp",
-          "workspace": "clawrouter-app-sdk",
-          "nativePackage": "@sdkwork/clawrouter-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "application-owned",
-          "exportFrom": "@sdkwork/clawrouter-pc-console-core/sdk"
-        },
-        {
-          "id": "productOpen",
-          "workspace": "clawrouter-open-sdk",
-          "nativePackage": "@sdkwork/clawrouter-open-sdk",
-          "surface": "open-api",
-          "credentialMode": "protected-open-api-flexible",
-          "role": "application-owned",
-          "exportFrom": "@sdkwork/clawrouter-pc-console-core/sdk"
-        },
-        {
-          "id": "appbaseApp",
-          "workspace": "sdkwork-iam-app-sdk",
-          "nativePackage": "@sdkwork/iam-app-sdk",
-          "surface": "app-api",
-          "credentialMode": "authenticated-app-api",
-          "role": "dependency",
-          "sdkDependencyRef": "sdkwork-iam-app-sdk",
-          "exportFrom": "@sdkwork/clawrouter-pc-console-core/sdk"
-        }
-      ],
+      "sdkClients": [],
       "reusableModules": [],
       "hostAdapters": [],
       "dependencyApiExports": [],
-      "dependencyApiSurfaces": [
-        "../../specs/dependency-api-surfaces.json"
-      ]
+      "dependencyApiSurfaces": []
     }
   ],
   "buildToolEntries": {
@@ -278,7 +95,6 @@
         "@sdkwork/clawrouter-pc-admin-inventory",
         "@sdkwork/clawrouter-pc-admin-marketing",
         "@sdkwork/clawrouter-pc-admin-mcp",
-        "@sdkwork/clawrouter-pc-admin-memberships",
         "@sdkwork/clawrouter-pc-admin-messaging",
         "@sdkwork/clawrouter-pc-admin-monitor",
         "@sdkwork/clawrouter-pc-admin-oauth",
@@ -297,11 +113,10 @@
         "@sdkwork/clawrouter-pc-admin-skill",
         "@sdkwork/clawrouter-pc-admin-user",
         "@sdkwork/clawrouter-pc-admin-wallet",
-        "@sdkwork/clawrouter-pc-commons",
+        "@sdkwork/clawroutes-pc-commons",
         "@sdkwork/clawrouter-pc-console-api-keys",
         "@sdkwork/clawrouter-pc-console-dashboard",
         "@sdkwork/clawrouter-pc-console-gateway",
-        "@sdkwork/clawrouter-pc-console-messages",
         "@sdkwork/clawrouter-pc-console-settings",
         "@sdkwork/clawrouter-pc-console-shell",
         "@sdkwork/clawrouter-pc-console-usage",

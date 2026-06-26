@@ -5,10 +5,10 @@ import test from "node:test";
 import {
   clearStoredAppSessionToken,
   storeAppSessionFromResult,
-} from "./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts";
-import { resetClawRouterSdkClients } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
+} from "./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts";
+import { resetClawRouterSdkClients } from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts";
 import { GatewayService } from "./packages/sdkwork-clawrouter-pc-console-gateway/src/gatewayService.ts";
-import { NotificationService } from "./packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts";
+import { NotificationService } from "./packages/sdkwork-clawroutes-pc-commons/src/notificationService.ts";
 import { MessagesService } from "./packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts";
 import { UserService } from "./packages/sdkwork-clawrouter-pc-console-user/src/userService.ts";
 import { ChatService } from "./packages/sdkwork-clawrouter-pc-playground/src/components/chat/chatService.ts";
@@ -1057,7 +1057,7 @@ test("shared notification service reads notification items returned by the gener
 });
 
 test("navbar delegates popup queue and persisted acknowledgement state to the appbase notification component", () => {
-  const navbarSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx");
+  const navbarSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx");
   const appbaseNotificationSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react/src/NotificationBell.tsx");
 
   assert.match(navbarSource, /SdkworkNotificationBell/, "Navbar must render the shared appbase notification component");

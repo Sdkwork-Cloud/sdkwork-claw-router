@@ -36,7 +36,7 @@ class RankingsRuntimeStandardTest(unittest.TestCase):
         page_path = RANKINGS_PACKAGE / "src" / "Rankings.tsx"
         catalog_path = RANKINGS_PACKAGE / "src" / "rankingCatalog.ts"
         runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "rankings-runtime.test.ts"
-        verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
+        verifier_path = ROOT / "scripts" / "verify-claw-router-application.mjs"
 
         self.assertTrue(catalog_path.exists(), "Rankings business logic must live in a pure catalog module.")
         self.assertTrue(runtime_test_path.exists(), "Rankings runtime behavior must have executable Node tests.")
@@ -196,7 +196,7 @@ class RankingsRuntimeStandardTest(unittest.TestCase):
 
     def test_rankings_production_smoke_covers_route_and_chunk_semantics(self) -> None:
         smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
-        product_test_path = ROOT / "scripts" / "run-claw-router-product.test.mjs"
+        product_test_path = ROOT / "scripts" / "run-claw-router-application.test.mjs"
         catalog_path = RANKINGS_PACKAGE / "src" / "rankingCatalog.ts"
 
         smoke_source = smoke_path.read_text(encoding="utf-8")

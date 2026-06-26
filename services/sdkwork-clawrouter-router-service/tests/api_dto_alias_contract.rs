@@ -48,12 +48,7 @@ const PRODUCT_API_SOURCES: &[(&str, &str)] = &[
         include_str!("../src/api/admin_transaction_center.rs"),
     ),
     ("admin_user.rs", include_str!("../src/api/admin_user.rs")),
-    ("app_auth.rs", include_str!("../src/api/app_auth.rs")),
     ("app_chat.rs", include_str!("../src/api/app_chat.rs")),
-    (
-        "app_iam_directory_query.rs",
-        include_str!("../src/api/app_iam_directory_query.rs"),
-    ),
     (
         "app_notification.rs",
         include_str!("../src/api/app_notification.rs"),

@@ -1749,7 +1749,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                 self.assertRegex(
                     source,
                     r"parseModelCatalogIdentity|isCanonicalModelCatalogKey|isRegionalModelCatalogKey",
-                    "Portal catalog-key handling must reuse sdkwork-clawrouter-pc-commons model catalog identity helpers.",
+                    "Portal catalog-key handling must reuse sdkwork-clawroutes-pc-commons model catalog identity helpers.",
                 )
 
         commons_source = read_text(
@@ -1757,7 +1757,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "model-catalog-identity.ts"
         )
@@ -2367,8 +2367,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
 
         for service_runtime in (
             ROOT / "services" / "sdkwork-clawrouter-cloud-gateway" / "src" / "runtime.rs",
-            ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs",
-            ROOT / "crates" / "sdkwork-router-backend-api" / "src" / "routes.rs",
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs",
+            ROOT / "crates" / "sdkwork-routes-clawrouter-backend-api" / "src" / "routes.rs",
         ):
             source = read_text(service_runtime)
             self.assertIn("DatabaseInstaller", source)

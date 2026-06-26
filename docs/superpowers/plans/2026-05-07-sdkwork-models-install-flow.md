@@ -175,7 +175,7 @@ Out of scope for this plan:
 - Modify `tests/test_model_catalog_standard_contract.py`
   Move environment seed expectations from legacy `spring-ai-plus-server-application/src/main/resources/data/model-catalog` to `apps/sdkwork-clawrouter/data/sdkwork-models`.
 
-- Modify `scripts/verify-claw-router-product.mjs`
+- Modify `scripts/verify-claw-router-application.mjs`
   Add `sdkwork-models` validation to the standard verification sequence.
 
 ---
@@ -370,7 +370,7 @@ git commit -m "add sdkwork-models catalog schema"
 - Create: `data/sdkwork-models/tools/export-clawrouter-seed.mjs`
 - Modify: `tests/test_sdkwork_models_standard.py`
 - Modify: `package.json`
-- Modify: `scripts/verify-claw-router-product.mjs`
+- Modify: `scripts/verify-claw-router-application.mjs`
 
 - [ ] **Step 1: Write failing validator tests**
 
@@ -470,7 +470,7 @@ Add a root script:
 "models:check": "node data/sdkwork-models/tools/build-index.mjs --check && node data/sdkwork-models/tools/validate-catalog.mjs"
 ```
 
-Update `scripts/verify-claw-router-product.mjs` to run this check in normal verification.
+Update `scripts/verify-claw-router-application.mjs` to run this check in normal verification.
 
 - [ ] **Step 6: Run tests**
 
@@ -487,7 +487,7 @@ Expected: fails until Task 4 adds valid catalog data.
 - [ ] **Step 7: Commit**
 
 ```powershell
-git add data/sdkwork-models/tools package.json scripts/verify-claw-router-product.mjs tests/test_sdkwork_models_standard.py
+git add data/sdkwork-models/tools package.json scripts/verify-claw-router-application.mjs tests/test_sdkwork_models_standard.py
 git commit -m "add sdkwork-models validation tooling"
 ```
 

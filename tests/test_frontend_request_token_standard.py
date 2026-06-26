@@ -10,7 +10,7 @@ REQUEST_ID_SOURCE = (
     / "apps"
     / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "idempotency.ts"
 )
@@ -20,8 +20,8 @@ BACKEND_OPENAPI_SOURCE = ROOT / "generated" / "openapi" / "clawrouter-backend-op
 APP_SDK_SOURCE_ROOT = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
 BACKEND_SDK_SOURCE_ROOT = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
 API_CONTRACT_MANIFEST = ROOT / "generated" / "api" / "api-contract-manifest.json"
-VERIFIER_SOURCE = ROOT / "scripts" / "verify-claw-router-product.mjs"
-TOOLING_TEST_SOURCE = ROOT / "scripts" / "run-claw-router-product.test.mjs"
+VERIFIER_SOURCE = ROOT / "scripts" / "verify-claw-router-application.mjs"
+TOOLING_TEST_SOURCE = ROOT / "scripts" / "run-claw-router-application.test.mjs"
 NODE_TEST_SOURCE = ROOT / "apps" / "sdkwork-clawrouter-pc" / "commons-runtime.test.ts"
 API_PLAYGROUND_REQUEST_SOURCE = (
     ROOT.parent

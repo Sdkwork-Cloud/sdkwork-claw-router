@@ -6,10 +6,11 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 use serde::Serialize;
 use serde_json::{Map, Value};
+
+use crate::api::app_sql_subject::{map_required_app_sql_subject, RequiredAppSqlScopedSubject};
 
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
@@ -207,11 +208,11 @@ pub fn app_chat_router_with_store(
 
 async fn list_conversations(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Query(query): Query<AppChatListQuery>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let (page, page_size) = match normalize_page(query) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -228,11 +229,11 @@ async fn list_conversations(
 
 async fn get_conversation(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(conversation_id): Path<String>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let conversation_id = match normalize_id(&conversation_id, "conversationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -246,11 +247,11 @@ async fn get_conversation(
 
 async fn create_conversation(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Json(request): Json<AppChatCreateConversationRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let command = match build_create_conversation_command(&state, subject, request) {
         Ok(command) => command,
         Err(AppChatBuildError::BadRequest(message)) => return bad_request(message),
@@ -273,11 +274,11 @@ async fn create_conversation(
 
 async fn list_messages(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(conversation_id): Path<String>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let conversation_id = match normalize_id(&conversation_id, "conversationId") {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -293,12 +294,12 @@ async fn list_messages(
 
 async fn create_turn(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(conversation_id): Path<String>,
     Json(request): Json<AppChatCreateTurnRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let command = match build_create_turn_command(&state, subject, conversation_id, request) {
         Ok(command) => command,
         Err(AppChatBuildError::BadRequest(message)) => return bad_request(message),
@@ -315,12 +316,12 @@ async fn create_turn(
 
 async fn complete_turn_response(
     State(state): State<AppChatState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path((conversation_id, turn_id)): Path<(String, String)>,
     Json(request): Json<AppChatCompleteTurnResponseRequest>,
 ) -> Response {
-    let subject = required_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppChatSubject::from);
     let command = match build_complete_turn_response_command(
         &state,
         subject,
@@ -470,14 +471,6 @@ fn build_complete_turn_response_command(
         metadata: normalize_metadata(request.metadata)?,
         requested_at: current_timestamp_string(),
     })
-}
-
-fn required_subject(trusted: TrustedRequestSubject) -> AppChatSubject {
-    AppChatSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    }
 }
 
 fn normalize_page(query: AppChatListQuery) -> Result<(i64, i64), String> {

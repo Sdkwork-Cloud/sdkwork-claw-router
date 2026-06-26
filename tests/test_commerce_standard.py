@@ -450,7 +450,7 @@ class CommerceStandardTest(unittest.TestCase):
         navbar = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "components"
             / "Navbar.tsx"
@@ -1600,7 +1600,7 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("'/vip'", view)
 
     def test_commons_does_not_own_concrete_commerce_business_runtime(self) -> None:
-        commons_dir = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-commons"
+        commons_dir = PORTAL_PATH / "packages" / "sdkwork-clawroutes-pc-commons"
         runtime = (commons_dir / "src" / "runtime.ts").read_text(encoding="utf-8")
         package_json = (commons_dir / "package.json").read_text(encoding="utf-8")
         index = (commons_dir / "src" / "index.ts").read_text(encoding="utf-8")

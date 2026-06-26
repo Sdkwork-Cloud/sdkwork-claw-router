@@ -5,11 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
-use serde::Deserialize;
-
+use crate::api::app_sql_subject::{map_optional_app_sql_subject, ResolvedAppSqlScopedSubject};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
+use serde::Deserialize;
 use crate::ports::{
     UsageLogsPage, UsageLogsQuery, UsageLogsReadFuture, UsageLogsReadStore, UsageLogsStatus,
     UsageLogsSubject,
@@ -115,15 +113,11 @@ fn app_usage_logs_router_with_state(
 
 async fn fetch_usage_logs(
     State(state): State<AppUsageLogsState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
     Query(query): Query<AppUsageLogsQuery>,
 ) -> Response {
-    let subject = match map_optional_app_user_subject(subject, state.require_subject, |trusted| {
-        UsageLogsSubject {
-            tenant_id: trusted.tenant_id,
-            organization_id: trusted.organization_id,
-            user_id: trusted.user_id,
-        }
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
     }) {
         Ok(subject) => subject,
         Err(response) => return response,

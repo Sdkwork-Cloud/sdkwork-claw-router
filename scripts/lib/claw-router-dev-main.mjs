@@ -226,14 +226,14 @@ function main() {
     ...settings.passthrough,
   ];
 
-  const productArgs = [settings.mode, ...workspaceArgs];
+  const applicationArgs = [settings.mode, ...workspaceArgs];
   if (settings.devEnvFile) {
-    productArgs.unshift('--dev-env-file', settings.devEnvFile);
+    applicationArgs.unshift('--dev-env-file', settings.devEnvFile);
   }
 
   const child = spawn(
     process.execPath,
-    [path.join(REPO_ROOT, 'scripts', 'run-claw-router-product.mjs'), ...productArgs],
+    [path.join(REPO_ROOT, 'scripts', 'run-claw-router-application.mjs'), ...applicationArgs],
     {
       cwd: REPO_ROOT,
       env: mergedEnv,

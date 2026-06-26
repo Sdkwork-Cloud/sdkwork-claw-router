@@ -7,10 +7,10 @@
 SDKWork Claw Router Rust maintainers and crate owners.
 
 ## Allowed Content
-Cargo packages, Rust modules, crate-local tests, component specs, route manifests such as `crates/sdkwork-router-*-open-api/src/manifest.rs`, and crate READMEs.
+Cargo packages, Rust modules, crate-local tests, component specs, route manifests such as `crates/sdkwork-routes-*-open-api/src/manifest.rs`, and crate READMEs.
 
 ## Forbidden Content
-Top-level generated SDK output, frontend packages, runtime databases, local secrets, build caches, and route crate names outside the `sdkwork-router-<capability>-<surface>` pattern.
+Top-level generated SDK output, frontend packages, runtime databases, local secrets, build caches, and route crate names outside the `sdkwork-routes-<capability>-<surface>` pattern.
 
 ## Related Specs
 - `../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`
@@ -20,4 +20,4 @@ Top-level generated SDK output, frontend packages, runtime databases, local secr
 ## Verification
 - `cargo fmt --all --check`
 - `cargo check --workspace`
-- `python -B -m unittest tests.test_sdkwork_router_api_package_standard`
+- `python -B -m unittest tests.test_sdkwork_routes_api_package_standard`

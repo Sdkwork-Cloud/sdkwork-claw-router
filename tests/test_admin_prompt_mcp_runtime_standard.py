@@ -294,7 +294,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         commons_resource_options = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "admin-resource-options.ts"
         ).read_text(encoding="utf-8")
@@ -380,7 +380,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         resource_center = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "components"
             / "AdminResourceCenter.tsx"
@@ -610,7 +610,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         resource_center = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "components"
             / "AdminResourceCenter.tsx"

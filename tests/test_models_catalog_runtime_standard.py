@@ -461,7 +461,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")
@@ -520,7 +520,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
 
     def test_models_runtime_node_test_covers_public_price_semantics(self) -> None:
         runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "models-runtime.test.ts"
-        verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
+        verifier_path = ROOT / "scripts" / "verify-claw-router-application.mjs"
 
         self.assertTrue(runtime_test_path.exists(), "Portal must have executable Node tests for /models runtime mapping.")
         runtime_test_source = runtime_test_path.read_text(encoding="utf-8")
@@ -605,7 +605,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
 
     def test_models_production_smoke_covers_routes_and_bundle_semantics(self) -> None:
         smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
-        product_test_path = ROOT / "scripts" / "run-claw-router-product.test.mjs"
+        product_test_path = ROOT / "scripts" / "run-claw-router-application.test.mjs"
 
         self.assertTrue(smoke_path.exists(), "Portal production smoke script must exist.")
         ssr_smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "models-ssr-smoke.test.cjs"
@@ -621,7 +621,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")

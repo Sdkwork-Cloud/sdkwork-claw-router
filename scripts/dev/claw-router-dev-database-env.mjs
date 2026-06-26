@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const DEFAULT_DEV_POSTGRES_DATABASE = Object.freeze({
-  host: '[::1]',
+  host: '127.0.0.1',
   port: '5432',
   database: 'sdkwork_ai_dev',
   username: 'sdkwork_ai_dev',

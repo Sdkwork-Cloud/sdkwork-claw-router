@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -254,47 +254,47 @@ pub fn admin_catalog_router_with_store(store: Arc<dyn AdminCatalogStore + Send +
 
 async fn list_categories(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_categories(query)).await
+    list_response(scoped, query, |query| state.store.list_categories(query)).await
 }
 
 async fn list_products(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_products(query)).await
+    list_response(scoped, query, |query| state.store.list_products(query)).await
 }
 
 async fn list_skus(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_skus(query)).await
+    list_response(scoped, query, |query| state.store.list_skus(query)).await
 }
 
 async fn list_attributes(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_attributes(query)).await
+    list_response(scoped, query, |query| state.store.list_attributes(query)).await
 }
 
 async fn list_category_attributes(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_category_attributes(query)
     })
     .await
@@ -302,16 +302,16 @@ async fn list_category_attributes(
 
 async fn list_price_lists(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<CatalogListQueryRequest>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_price_lists(query)).await
+    list_response(scoped, query, |query| state.store.list_price_lists(query)).await
 }
 
 async fn create_category(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -319,7 +319,7 @@ async fn create_category(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match category_command(trusted, &headers, None, request) {
+    let command = match category_command(scoped, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -331,7 +331,7 @@ async fn create_category(
 
 async fn update_category(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(category_id): Path<String>,
     body: Bytes,
@@ -344,7 +344,7 @@ async fn update_category(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match category_command(trusted, &headers, Some(category_id), request) {
+    let command = match category_command(scoped, &headers, Some(category_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -356,11 +356,11 @@ async fn update_category(
 
 async fn delete_category(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(category_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let category_id = match normalize_required_text(category_id, "categoryId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -384,7 +384,7 @@ async fn delete_category(
 
 async fn initialize_category_seeds(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -407,7 +407,7 @@ async fn initialize_category_seeds(
         Err(response) => return response,
     };
     let command = AdminCategorySeedInitializeCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         datasets,
         bundles,
         mode,
@@ -432,7 +432,7 @@ async fn initialize_category_seeds(
 
 async fn create_product(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -440,7 +440,7 @@ async fn create_product(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match product_command(trusted, &headers, None, request) {
+    let command = match product_command(scoped, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -452,7 +452,7 @@ async fn create_product(
 
 async fn update_product(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(product_id): Path<String>,
     body: Bytes,
@@ -465,7 +465,7 @@ async fn update_product(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match product_command(trusted, &headers, Some(product_id), request) {
+    let command = match product_command(scoped, &headers, Some(product_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -477,11 +477,11 @@ async fn update_product(
 
 async fn delete_product(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(product_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let product_id = match normalize_required_text(product_id, "productId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -505,7 +505,7 @@ async fn delete_product(
 
 async fn create_sku(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -513,7 +513,7 @@ async fn create_sku(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match sku_command(trusted, &headers, None, request) {
+    let command = match sku_command(scoped, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -525,7 +525,7 @@ async fn create_sku(
 
 async fn update_sku(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(sku_id): Path<String>,
     body: Bytes,
@@ -538,7 +538,7 @@ async fn update_sku(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match sku_command(trusted, &headers, Some(sku_id), request) {
+    let command = match sku_command(scoped, &headers, Some(sku_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -550,11 +550,11 @@ async fn update_sku(
 
 async fn delete_sku(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(sku_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let sku_id = match normalize_required_text(sku_id, "skuId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -578,7 +578,7 @@ async fn delete_sku(
 
 async fn create_attribute(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -586,7 +586,7 @@ async fn create_attribute(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match attribute_command(trusted, &headers, request) {
+    let command = match attribute_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -598,7 +598,7 @@ async fn create_attribute(
 
 async fn create_category_attribute(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -607,7 +607,7 @@ async fn create_category_attribute(
             Ok(request) => request,
             Err(message) => return bad_request(message),
         };
-    let command = match category_attribute_command(trusted, &headers, None, request) {
+    let command = match category_attribute_command(scoped, &headers, None, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -619,7 +619,7 @@ async fn create_category_attribute(
 
 async fn update_category_attribute(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(binding_id): Path<String>,
     body: Bytes,
@@ -633,7 +633,7 @@ async fn update_category_attribute(
         Ok(value) => value,
         Err(response) => return response,
     };
-    let command = match category_attribute_command(trusted, &headers, Some(binding_id), request) {
+    let command = match category_attribute_command(scoped, &headers, Some(binding_id), request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -645,11 +645,11 @@ async fn update_category_attribute(
 
 async fn delete_category_attribute(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Path(binding_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let binding_id = match normalize_required_text(binding_id, "bindingId", MAX_ID_LEN) {
         Ok(value) => value,
         Err(response) => return response,
@@ -673,7 +673,7 @@ async fn delete_category_attribute(
 
 async fn create_price_list(
     State(state): State<AdminCatalogState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
@@ -681,7 +681,7 @@ async fn create_price_list(
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let command = match price_list_command(trusted, &headers, request) {
+    let command = match price_list_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -692,7 +692,7 @@ async fn create_price_list(
 }
 
 async fn list_response<'a, F>(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     query: CatalogListQueryRequest,
     load: F,
 ) -> Response
@@ -701,7 +701,7 @@ where
         ListAdminCatalogRecordsQuery,
     ) -> crate::ports::AdminCatalogFuture<'a, AdminCatalogCollection>,
 {
-    let query = match validated_list_query(trusted, query) {
+    let query = match validated_list_query(scoped, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -725,10 +725,10 @@ fn resource_result(result: Result<AdminCatalogJsonRecord, DomainError>, context:
 }
 
 fn validated_list_query(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     request: CatalogListQueryRequest,
 ) -> Result<ListAdminCatalogRecordsQuery, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -768,13 +768,13 @@ fn validated_list_query(
 }
 
 fn category_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     category_id: Option<String>,
     request: CategoryMutationRequest,
 ) -> Result<AdminCategoryMutationCommand, Response> {
     Ok(AdminCategoryMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         category_id,
         category_no: normalize_required_text(request.category_no, "categoryNo", MAX_ID_LEN)?,
         parent_id: normalize_optional_text(request.parent_id, "parentId", MAX_ID_LEN)?,
@@ -817,13 +817,13 @@ fn normalize_category_seed_datasets(
 }
 
 fn product_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     product_id: Option<String>,
     request: ProductMutationRequest,
 ) -> Result<AdminProductMutationCommand, Response> {
     Ok(AdminProductMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         product_id,
         spu_no: normalize_required_text(request.spu_no, "spuNo", MAX_ID_LEN)?,
         product_type: normalize_enum(request.product_type, "productType", PRODUCT_TYPES)?,
@@ -866,7 +866,7 @@ fn normalize_product_category_ids(
 }
 
 fn sku_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     sku_id: Option<String>,
     request: SkuMutationRequest,
@@ -896,7 +896,7 @@ fn sku_command(
         });
     }
     Ok(AdminSkuMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         sku_id,
         sku_no: normalize_required_text(request.sku_no, "skuNo", MAX_ID_LEN)?,
         product_id: normalize_required_text(request.product_id, "productId", MAX_ID_LEN)?,
@@ -930,12 +930,12 @@ fn sku_command(
 }
 
 fn attribute_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: AttributeMutationRequest,
 ) -> Result<AdminAttributeMutationCommand, Response> {
     Ok(AdminAttributeMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         attribute_no: normalize_required_text(request.attribute_no, "attributeNo", MAX_ID_LEN)?,
         name: normalize_required_text(request.name, "name", 256)?,
         value_type: normalize_enum(request.value_type, "valueType", ATTRIBUTE_VALUE_TYPES)?,
@@ -951,13 +951,13 @@ fn attribute_command(
 }
 
 fn category_attribute_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     binding_id: Option<String>,
     request: CategoryAttributeMutationRequest,
 ) -> Result<AdminCategoryAttributeMutationCommand, Response> {
     Ok(AdminCategoryAttributeMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         binding_id,
         category_id: normalize_required_text(request.category_id, "categoryId", MAX_ID_LEN)?,
         attribute_id: normalize_required_text(request.attribute_id, "attributeId", MAX_ID_LEN)?,
@@ -973,12 +973,12 @@ fn category_attribute_command(
 }
 
 fn price_list_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: PriceListMutationRequest,
 ) -> Result<AdminPriceListMutationCommand, Response> {
     Ok(AdminPriceListMutationCommand {
-        subject: map_subject(trusted),
+        subject: scoped.into(),
         price_list_no: normalize_required_text(request.price_list_no, "priceListNo", MAX_ID_LEN)?,
         currency_code: normalize_required_text(request.currency_code, "currencyCode", 16)?
             .to_ascii_uppercase(),
@@ -997,14 +997,6 @@ fn price_list_command(
     })
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminCatalogSubject {
-    AdminCatalogSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &Bytes, resource: &str) -> Result<T, String>
 where

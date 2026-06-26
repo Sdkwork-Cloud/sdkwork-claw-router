@@ -7,7 +7,7 @@ import {
   readClawRouterRuntimeEnv,
   readRequiredNonNegativeNumber,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type {
   DashboardConfigurationDomain as SdkDashboardConfigurationDomain,
   DashboardOverviewResponse as SdkDashboardOverviewResponse,

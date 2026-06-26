@@ -375,7 +375,7 @@ class ClawRouterOpenApiGenerator:
                 "sdkwork-models-app-api" if surface == "app" else "sdkwork-models-backend-api"
             )
             operation_spec["x-sdkwork-source-route-crate"] = (
-                "sdkwork-router-models-catalog-app-api" if surface == "app" else "sdkwork-router-models-catalog-backend-api"
+                "sdkwork-routes-models-catalog-app-api" if surface == "app" else "sdkwork-routes-models-catalog-backend-api"
             )
             paths.setdefault(api_path, {})[method] = operation_spec
 

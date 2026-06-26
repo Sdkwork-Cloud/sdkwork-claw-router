@@ -22,8 +22,8 @@ import {
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { ConfirmDialog } from '@sdkwork/clawrouter-pc-commons/components/ConfirmDialog';
-import { CopyButton } from '@sdkwork/clawrouter-pc-commons/components/CopyButton';
+import { ConfirmDialog } from '@sdkwork/clawroutes-pc-commons/components/ConfirmDialog';
+import { CopyButton } from '@sdkwork/clawroutes-pc-commons/components/CopyButton';
 import { CreateKeyDrawer, type ApiKeyFormValues } from './CreateKeyDrawer';
 import { createApiKeyInputsFromForm } from './apiKeyForm';
 import { ApiKeyService, type ApiKey, type ChannelGroup } from './apiKeyService';

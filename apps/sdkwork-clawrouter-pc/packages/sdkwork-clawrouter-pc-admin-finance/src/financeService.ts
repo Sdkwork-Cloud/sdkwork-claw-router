@@ -1,4 +1,4 @@
-import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
 
 type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 

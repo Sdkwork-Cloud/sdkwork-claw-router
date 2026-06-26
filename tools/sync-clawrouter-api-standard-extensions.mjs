@@ -21,50 +21,50 @@ const TARGETS = [
   {
     surface: "app-api",
     apiSurface: "app-api",
-    packageName: "sdkwork-router-app-api",
+    packageName: "sdkwork-routes-clawrouter-app-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-app-api",
     sdkFamily: "clawrouter-app-sdk",
     prefix: "/app/v3/api",
-    crateRoot: "crates/sdkwork-router-app-api",
+    crateRoot: "crates/sdkwork-routes-clawrouter-app-api",
     openApiPaths: [
       "apis/app-api/clawrouter/clawrouter-app-api.openapi.json",
       "generated/openapi/clawrouter-app-openapi.json",
     ],
     routeManifestPath:
-      "sdks/_route-manifests/app-api/sdkwork-router-app-api.route-manifest.json",
+      "sdks/_route-manifests/app-api/sdkwork-routes-clawrouter-app-api.route-manifest.json",
   },
   {
     surface: "backend-api",
     apiSurface: "backend-api",
-    packageName: "sdkwork-router-backend-api",
+    packageName: "sdkwork-routes-clawrouter-backend-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-backend-api",
     sdkFamily: "clawrouter-backend-sdk",
     prefix: "/backend/v3/api",
-    crateRoot: "crates/sdkwork-router-backend-api",
+    crateRoot: "crates/sdkwork-routes-clawrouter-backend-api",
     openApiPaths: [
       "apis/backend-api/clawrouter/clawrouter-backend-api.openapi.json",
       "generated/openapi/clawrouter-backend-openapi.json",
     ],
     routeManifestPath:
-      "sdks/_route-manifests/backend-api/sdkwork-router-backend-api.route-manifest.json",
+      "sdks/_route-manifests/backend-api/sdkwork-routes-clawrouter-backend-api.route-manifest.json",
   },
   {
     surface: "open-api",
     apiSurface: "open-api",
-    packageName: "sdkwork-router-open-api",
+    packageName: "sdkwork-routes-clawrouter-open-api",
     capability: "router",
     apiAuthority: "sdkwork-clawrouter-open-api",
     sdkFamily: "clawrouter-open-sdk",
     prefix: "/v1",
-    crateRoot: "crates/sdkwork-router-llm-open-api",
+    crateRoot: "crates/sdkwork-routes-llm-open-api",
     openApiPaths: [
       "apis/open-api/clawrouter/clawrouter-open-api.openapi.json",
       "sdks/clawrouter-open-sdk/openapi/clawrouter-open-sdk.openapi.json",
     ],
     routeManifestPath:
-      "sdks/_route-manifests/open-api/sdkwork-router-open-api.route-manifest.json",
+      "sdks/_route-manifests/open-api/sdkwork-routes-clawrouter-open-api.route-manifest.json",
   },
 ];
 

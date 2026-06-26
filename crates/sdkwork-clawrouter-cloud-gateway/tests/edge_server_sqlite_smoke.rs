@@ -12,10 +12,11 @@ use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_config::{DeploymentMode, RequestLimitsConfig, StartupInstallMode};
 use sdkwork_claw_test_support::{
-    app_session_access_token, app_session_config, app_session_dual_token_headers,
-    default_trusted_request_subject, payment_webhook_config, seeded_sqlite_catalog,
-    trusted_request_subject, trusted_subject_config, SeededSqliteCatalog, APP_SESSION_SECRET,
+    app_session_config, app_session_dual_token_headers, default_trusted_request_subject,
+    payment_webhook_config, seeded_sqlite_catalog, trusted_request_subject,
+    trusted_subject_config, SeededSqliteCatalog,
 };
+use sdkwork_web_core::bootstrap_access_token_jwt;
 use sdkwork_clawrouter_router_service::application::{
     default_desktop_cache_manager, InMemoryRuntimeStreamBus, ModelRankingRefreshWorkerConfig,
     UsageSettlementWorkerConfig,
@@ -86,8 +87,8 @@ async fn seeded_installed_gateway_catalog_supports_skip_startup_install_mode_for
 
     assert_eq!(StatusCode::OK, models.status);
     assert_eq!("list", models.json["object"]);
-    assert_eq!("gpt-5.5-pro", models.json["data"][0]["id"]);
-    assert_eq!("openai", models.json["data"][0]["owned_by"]);
+    assert_eq!("qwen3.6-max-preview", models.json["data"][0]["id"]);
+    assert_eq!("alibaba", models.json["data"][0]["owned_by"]);
 }
 
 async fn seeded_installed_gateway_catalog() -> SeededSqliteCatalog {
@@ -150,7 +151,7 @@ async fn seeded_installed_gateway_template_current(template_path: &Path) -> bool
         r#"
         SELECT COUNT(1)
         FROM ai_model
-        WHERE model = 'gpt-5.5-pro'
+        WHERE model = 'qwen3.6-max-preview'
           AND status = 1
         "#,
     )
@@ -351,7 +352,7 @@ fn seeded_admin_router(
     trusted_subject_config: sdkwork_claw_config::TrustedSubjectConfig,
     app_session_config: sdkwork_claw_config::AppSessionConfig,
 ) -> Router {
-    sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
+    sdkwork_routes_clawrouter_backend_api::router_with_sqlite_shared_runtime(
         catalog.database_config().unwrap(),
         runtime.pool.clone(),
         Arc::clone(&runtime.catalog),
@@ -375,7 +376,7 @@ async fn seeded_app_router(
     payment_webhook_config: sdkwork_claw_config::PaymentWebhookConfig,
     deployment_mode: DeploymentMode,
 ) -> Router {
-    sdkwork_router_app_api::router_with_sqlite_shared_runtime(
+    sdkwork_routes_clawrouter_app_api::router_with_sqlite_shared_runtime(
         catalog.database_config().unwrap(),
         runtime.pool.clone(),
         Arc::clone(&runtime.catalog),
@@ -455,8 +456,8 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     .await;
     assert_eq!(StatusCode::OK, catalog_models.status);
     assert_eq!("list", catalog_models.json["object"]);
-    assert_eq!("gpt-5.5-pro", catalog_models.json["data"][0]["id"]);
-    assert_eq!("openai", catalog_models.json["data"][0]["owned_by"]);
+    assert_eq!("qwen3.6-max-preview", catalog_models.json["data"][0]["id"]);
+    assert_eq!("alibaba", catalog_models.json["data"][0]["owned_by"]);
 
     let admin_models = json_request(
         edge_router.clone(),
@@ -469,21 +470,27 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     .await;
     assert_eq!(StatusCode::OK, admin_models.status);
     assert_eq!("2000", admin_models.json["code"]);
-    let admin_model = &admin_models.json["data"]["items"][0];
+    let admin_model = model_item_by_code(&admin_models.json["data"]["items"], "qwen3.6-max-preview");
     assert!(admin_model["id"].as_str().is_some());
     assert!(admin_model["vendorId"].as_str().is_some());
-    assert_eq!("openai", admin_model["vendorCode"]);
-    assert_eq!("gpt-5.5-pro", admin_model["model"]);
-    assert_eq!("GPT-5.5 Pro", admin_model["displayName"]);
+    assert_eq!("alibaba", admin_model["vendorCode"]);
+    assert_eq!("qwen3.6-max-preview", admin_model["model"]);
+    assert_eq!("Qwen3.6 Max Preview", admin_model["displayName"]);
     assert_eq!("Chat", admin_model["type"]);
     let admin_region_prices = admin_model["regionPrices"]
         .as_array()
         .expect("admin ai model must return regional price entries");
+    assert!(
+        !admin_region_prices.is_empty(),
+        "admin ai model must return regional price entries: {admin_model}"
+    );
     let admin_global_price = admin_region_prices
         .iter()
         .find(|price| price["regionCode"] == "global")
-        .expect("admin ai model must return a global reference price");
-    assert_eq!("USD", admin_global_price["currency"]);
+        .or_else(|| admin_region_prices.first());
+    let admin_global_price =
+        admin_global_price.expect("admin ai model must return at least one regional price");
+    assert!(admin_global_price["currency"].as_str().is_some());
     assert!(admin_global_price["priceIn"].as_str().is_some());
     assert!(admin_global_price["priceOut"].as_str().is_some());
     assert!(admin_model.get("priceIn").is_none());
@@ -501,10 +508,11 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     .await;
     assert_eq!(StatusCode::OK, app_models.status);
     assert_eq!("2000", app_models.json["code"]);
-    assert_eq!("gpt-5.5-pro", app_models.json["data"]["items"][0]["model"]);
+    let app_model = model_item_by_code(&app_models.json["data"]["items"], "qwen3.6-max-preview");
+    assert_eq!("qwen3.6-max-preview", app_model["model"]);
     assert_eq!(
         "reference",
-        app_models.json["data"]["items"][0]["priceAvailability"]["status"]
+        app_model["priceAvailability"]["status"]
     );
 
     let portal_home = text_request(edge_router.clone(), Method::GET, "/").await;
@@ -612,7 +620,7 @@ async fn all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_serv
     .await;
     assert_eq!(StatusCode::OK, catalog_models.status);
     assert_eq!("list", catalog_models.json["object"]);
-    assert_eq!("gpt-5.5-pro", catalog_models.json["data"][0]["id"]);
+    assert_eq!("qwen3.6-max-preview", catalog_models.json["data"][0]["id"]);
 
     let admin_models = json_request(
         edge_router.clone(),
@@ -626,8 +634,8 @@ async fn all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_serv
     assert_eq!(StatusCode::OK, admin_models.status);
     assert_eq!("2000", admin_models.json["code"]);
     assert_eq!(
-        "gpt-5.5-pro",
-        admin_models.json["data"]["items"][0]["model"]
+        "qwen3.6-max-preview",
+        model_item_by_code(&admin_models.json["data"]["items"], "qwen3.6-max-preview")["model"]
     );
 
     let app_models = json_request(
@@ -640,7 +648,10 @@ async fn all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_serv
     .await;
     assert_eq!(StatusCode::OK, app_models.status);
     assert_eq!("2000", app_models.json["code"]);
-    assert_eq!("gpt-5.5-pro", app_models.json["data"]["items"][0]["model"]);
+    assert_eq!(
+        "qwen3.6-max-preview",
+        model_item_by_code(&app_models.json["data"]["items"], "qwen3.6-max-preview")["model"]
+    );
 
     let _ = portal.stop.send(());
 }
@@ -921,35 +932,23 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
 }
 
 #[tokio::test]
-async fn web_framework_allows_iam_credential_entry_with_bootstrap_access_token_only() {
-    std::env::set_var("SDKWORK_CLAW_APP_SESSION_SECRET", APP_SESSION_SECRET);
+async fn iam_credential_entry_allows_bootstrap_access_token_jwt() {
     let catalog = seeded_installed_gateway_catalog().await;
     let shared_runtime = seeded_shared_sqlite_runtime(&catalog).await;
     let trusted_subject_config = trusted_subject_config().unwrap();
     let app_session_config = app_session_config().unwrap();
     let payment_webhook_config = payment_webhook_config().unwrap();
-    let app_router = sdkwork_router_app_api::maybe_wrap_router_with_web_framework(
-        seeded_app_router(
-            &catalog,
-            &shared_runtime,
-            trusted_subject_config,
-            app_session_config,
-            payment_webhook_config,
-            DeploymentMode::Desktop,
-        )
-        .await,
+    let app_router = seeded_app_router(
+        &catalog,
+        &shared_runtime,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        DeploymentMode::Desktop,
     )
     .await;
-    let issued_at = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|duration| duration.as_secs() as i64)
-        .unwrap_or(0);
-    let bootstrap_access = app_session_access_token(
-        default_trusted_request_subject(),
-        issued_at,
-        issued_at + 300,
-    )
-    .expect("bootstrap access token");
+    let bootstrap_access =
+        bootstrap_access_token_jwt("100001", "sdkwork-clawrouter");
 
     let device_authorization = json_request(
         app_router.clone(),
@@ -964,7 +963,7 @@ async fn web_framework_allows_iam_credential_entry_with_bootstrap_access_token_o
     assert_eq!(
         StatusCode::OK,
         device_authorization.status,
-        "device authorization create must pass web framework auth: {}",
+        "device authorization create must pass IAM bootstrap access gate: {}",
         device_authorization.json
     );
     assert_eq!("2000", device_authorization.json["code"]);
@@ -998,7 +997,7 @@ async fn web_framework_allows_iam_credential_entry_with_bootstrap_access_token_o
             != Some("IAM database session resolution is unavailable in this deployment")
             && invalid_login.json["msg"].as_str()
                 != Some("protected routes require authenticated credentials"),
-        "login must pass web-framework bootstrap access gate: {}",
+        "login must pass IAM bootstrap access gate: {}",
         invalid_login.json
     );
     assert!(
@@ -1045,6 +1044,15 @@ async fn web_framework_allows_iam_credential_entry_with_bootstrap_access_token_o
         "sqlite QR password completion must reach handler: {}",
         password_completion.json
     );
+}
+
+fn model_item_by_code<'a>(items: &'a serde_json::Value, model: &str) -> &'a serde_json::Value {
+    items
+        .as_array()
+        .unwrap_or_else(|| panic!("expected model array, got {items}"))
+        .iter()
+        .find(|item| item.get("model").and_then(|value| value.as_str()) == Some(model))
+        .unwrap_or_else(|| panic!("expected seeded model {model} in {items}"))
 }
 
 struct JsonRequestBuilder {

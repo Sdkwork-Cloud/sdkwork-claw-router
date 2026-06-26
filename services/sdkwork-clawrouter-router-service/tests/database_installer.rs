@@ -136,165 +136,62 @@ async fn sqlite_installer_installs_clawrouter_schema_once() {
 }
 
 #[tokio::test]
-async fn sqlite_installer_seeds_default_iam_permission_catalog() {
-    let pool = repair_sqlite_pool().await;
+async fn sqlite_installer_skips_product_iam_permission_catalog_when_federated() {
+    let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
 
-    sqlx::query("DELETE FROM iam_role_permission")
-        .execute(&pool)
-        .await
-        .unwrap();
-    sqlx::query("DELETE FROM iam_permission")
-        .execute(&pool)
-        .await
-        .unwrap();
-
     assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect missing default IAM permission catalog"
+        InstallationStatus::NotInstalled,
+        installer.status().await.unwrap()
     );
 
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
+    let installed = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, installed.status);
 
-    let rows = sqlx::query(
+    let permission_table_exists: i64 = sqlx::query_scalar(
         r#"
-        SELECT code, resource, action
-        FROM iam_permission
-        ORDER BY code
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = 'iam_permission'
         "#,
     )
-    .fetch_all(&pool)
+    .fetch_one(&pool)
     .await
     .unwrap();
-    let permissions = rows
-        .into_iter()
-        .map(|row| {
-            (
-                row.get::<String, _>("code"),
-                (
-                    row.get::<String, _>("resource"),
-                    row.get::<String, _>("action"),
-                ),
-            )
-        })
-        .collect::<BTreeMap<_, _>>();
-
-    let expected_permissions = [
-        ("iam.users.read", "iam.users", "read"),
-        ("iam.users.create", "iam.users", "create"),
-        ("iam.users.update", "iam.users", "update"),
-        ("iam.users.delete", "iam.users", "delete"),
-        ("iam.organizations.read", "iam.organizations", "read"),
-        ("iam.departments.manage", "iam.departments", "manage"),
-        ("iam.roles.manage", "iam.roles", "manage"),
-        ("iam.permissions.manage", "iam.permissions", "manage"),
-        ("iam.role_bindings.manage", "iam.role_bindings", "manage"),
-        ("ai.models.read", "ai.models", "read"),
-        ("ai.models.manage", "ai.models", "manage"),
-        ("ai.resources.manage", "ai.resources", "manage"),
-        ("ai.routing.manage", "ai.routing", "manage"),
-        ("apps.app_center.manage", "apps.app_center", "manage"),
-        ("commerce.orders.read", "commerce.orders", "read"),
-        ("commerce.payments.manage", "commerce.payments", "manage"),
-        ("drive.spaces.manage", "drive.spaces", "manage"),
-        (
-            "messaging.providers.manage",
-            "messaging.providers",
-            "manage",
-        ),
-        (
-            "integrations.service_providers.manage",
-            "integrations.service_providers",
-            "manage",
-        ),
-        ("ops.monitor.read", "ops.monitor", "read"),
-        ("system.audit.read", "system.audit", "read"),
-    ];
-    for (code, resource, action) in expected_permissions {
-        assert_eq!(
-            Some(&(resource.to_owned(), action.to_owned())),
-            permissions.get(code),
-            "installer must seed IAM permission {code}"
-        );
-    }
-    assert!(
-        permissions.len() >= 50,
-        "default IAM permission catalog must cover the admin management surface"
+    assert_eq!(
+        0, permission_table_exists,
+        "product installer must not seed IAM permission catalog when IAM is federated"
     );
 }
 
 #[tokio::test]
-async fn sqlite_installer_bootstraps_initial_admin_login_once() {
+async fn sqlite_installer_skips_product_bootstrap_admin_when_federated() {
     let pool = sqlite_pool().await;
     let installer =
         installer(pool.clone()).with_bootstrap_admin_password("Admin-Init-Test-Password-2026!");
 
     let installed = installer.ensure_installed().await.unwrap();
 
-    let bootstrap = installed
-        .bootstrap_admin
-        .expect("first install must expose one-time bootstrap admin credentials");
-    assert_eq!("created", bootstrap.status);
-    assert_eq!("admin", bootstrap.username);
-    assert_eq!("100001", bootstrap.tenant_id);
-    assert_eq!("0", bootstrap.organization_id);
-    assert_eq!("Admin-Init-Test-Password-2026!", bootstrap.initial_password);
+    assert!(
+        installed.bootstrap_admin.is_none(),
+        "product installer must not expose bootstrap admin credentials when IAM is federated"
+    );
 
-    let admin = sqlx::query(
+    let iam_user_table_exists: i64 = sqlx::query_scalar(
         r#"
-        SELECT
-            u.id,
-            u.tenant_id,
-            u.username,
-            u.display_name,
-            u.email,
-            u.status,
-            m.organization_id,
-            m.membership_kind,
-            c.credential_hash
-        FROM iam_user u
-        JOIN iam_organization_membership m
-          ON m.tenant_id = u.tenant_id
-         AND m.user_id = u.id
-         AND m.status = 'active'
-        JOIN iam_credential c
-          ON c.tenant_id = u.tenant_id
-         AND c.user_id = u.id
-         AND c.credential_type = 'password'
-         AND c.status = 'active'
-        WHERE u.tenant_id = '100001'
-          AND u.username = 'admin'
+        SELECT COUNT(1)
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = 'iam_user'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-
-    assert_eq!("1", admin.get::<String, _>("id"));
-    assert_eq!("100001", admin.get::<String, _>("tenant_id"));
-    assert_eq!("admin", admin.get::<String, _>("username"));
-    assert_eq!("Administrator", admin.get::<String, _>("display_name"));
-    assert_eq!("admin@sdkwork.com", admin.get::<String, _>("email"));
-    assert_eq!("active", admin.get::<String, _>("status"));
-    assert_eq!("0", admin.get::<String, _>("organization_id"));
-    assert_eq!("admin", admin.get::<String, _>("membership_kind"));
-    assert!(
-        Pbkdf2Sha256PasswordHasher
-            .verify_password(
-                "Admin-Init-Test-Password-2026!",
-                &admin.get::<String, _>("credential_hash"),
-            )
-            .unwrap(),
-        "bootstrap password must be stored with the normal IAM password hash format"
-    );
-
-    let installed_again = installer.ensure_installed().await.unwrap();
-    assert!(
-        installed_again.bootstrap_admin.is_none(),
-        "bootstrap password must not be returned after the admin account already exists"
+    assert_eq!(
+        0, iam_user_table_exists,
+        "product installer must not create IAM directory tables when IAM is federated"
     );
 }
 
@@ -585,6 +482,7 @@ async fn sqlite_admin_user_store_creates_default_channel_group_when_missing() {
 }
 
 #[tokio::test]
+#[ignore = "product installer no longer bootstraps IAM admin; sdkwork-iam-database-host owns bootstrap admin"]
 async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     let pool = repair_sqlite_pool().await;
     let installer =
@@ -697,6 +595,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
 }
 
 #[tokio::test]
+#[ignore = "product installer no longer bootstraps IAM admin; sdkwork-iam-database-host owns bootstrap admin"]
 async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_password() {
     let pool = repair_sqlite_pool().await;
     let installer =
@@ -775,6 +674,7 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
 }
 
 #[tokio::test]
+#[ignore = "product installer reset_admin_password is owned by sdkwork-iam-database-host"]
 async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
     let pool = repair_sqlite_pool().await;
     let installer =
@@ -845,6 +745,7 @@ async fn sqlite_installer_reset_admin_password_rotates_existing_password() {
 }
 
 #[tokio::test]
+#[ignore = "product installer reset_admin_password is owned by sdkwork-iam-database-host"]
 async fn sqlite_installer_reset_admin_password_bootstraps_empty_database() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -874,6 +775,7 @@ async fn sqlite_installer_reset_admin_password_bootstraps_empty_database() {
 }
 
 #[tokio::test]
+#[ignore = "product installer no longer bootstraps IAM admin; sdkwork-iam-database-host owns bootstrap admin"]
 async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_table() {
     let pool = sqlite_pool().await;
     sqlx::query(
@@ -1379,7 +1281,7 @@ async fn sqlite_installer_reimports_ai_routing_seed_when_admin_api_group_payload
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check() {
+async fn sqlite_installer_does_not_repair_product_iam_subject_when_federated() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
 
@@ -1393,35 +1295,14 @@ async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check()
         .unwrap();
 
     assert_eq!(
-        InstallationStatus::UpgradeRequired,
+        InstallationStatus::Installed,
         installer.status().await.unwrap(),
-        "installer status must detect that server-mode app-api startup has no active IAM subject"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-
-    let active_subject_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM iam_tenant t
-        JOIN iam_organization o ON o.tenant_id = t.id
-        WHERE t.code = 'SDKWORK'
-          AND t.status = 'active'
-          AND o.code = 'root'
-          AND o.status = 'active'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        1, active_subject_count,
-        "installer repair must restore a default active IAM tenant and organization"
+        "product installer must not require IAM subject seeds when IAM is federated"
     );
 }
 
 #[tokio::test]
+#[ignore = "product installer no longer repairs IAM organization metadata; IAM database host owns directory seeds"]
 async fn sqlite_installer_repairs_default_iam_subject_with_appbase_organization_metadata() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -2206,6 +2087,7 @@ async fn sqlite_installer_ensure_upgrade_report_preserves_latest_catalog_refresh
 }
 
 #[tokio::test]
+#[ignore = "product installer catalog refresh no longer bootstraps IAM admin"]
 async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install() {
     let catalog_root = single_vendor_catalog_root("openai");
     let pool = sqlite_pool().await;

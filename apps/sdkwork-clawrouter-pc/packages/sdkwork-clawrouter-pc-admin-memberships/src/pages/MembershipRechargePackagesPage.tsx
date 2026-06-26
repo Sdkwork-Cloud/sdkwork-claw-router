@@ -31,7 +31,7 @@ import {
   computeGrantAmount,
   listRechargeCurrencyCodes,
   normalizeRechargeSettings,
-} from '@sdkwork/clawrouter-pc-commons';
+} from '@sdkwork/clawroutes-pc-commons';
 
 type RechargeSettingsDraft = {
   baseCurrencyCode: string;

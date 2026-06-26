@@ -40,7 +40,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
   dependency app/backend routes default to `404` locally and are consumed through the shared
   gateway or explicit split-deployment base URLs.
 - Repository layout follows `SDKWORK_WORKSPACE_SPEC.md`: authored API inputs belong in `apis/`,
-  Rust route crates belong in `crates/sdkwork-router-<capability>-<surface>/`, generated SDK
+  Rust route crates belong in `crates/sdkwork-routes-<capability>-<surface>/`, generated SDK
   family workspaces belong in `sdks/`, and top-level `packages/` is limited to governed shared
   TypeScript or React package families.
 - Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.

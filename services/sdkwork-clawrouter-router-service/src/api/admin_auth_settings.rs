@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::State;
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
@@ -172,10 +172,10 @@ pub fn admin_auth_settings_router_with_store(
 
 async fn fetch_auth_settings(
     State(state): State<AdminAuthSettingsState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
 
     match state
         .store
@@ -191,11 +191,11 @@ async fn fetch_auth_settings(
 
 async fn update_auth_settings(
     State(state): State<AdminAuthSettingsState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_body::<AdminAuthSettingsUpdateRequest>(&body, "auth settings") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -227,14 +227,6 @@ async fn update_auth_settings(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminAuthSettingsSubject {
-    AdminAuthSettingsSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
 where

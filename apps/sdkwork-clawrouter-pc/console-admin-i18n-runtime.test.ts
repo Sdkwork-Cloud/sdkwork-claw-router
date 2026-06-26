@@ -128,7 +128,7 @@ function collectSourceFiles(): string[] {
     .filter((entry) => /^sdkwork-clawrouter-(admin|console)-/.test(entry.name))
     .flatMap((entry) => walk(path.join(PACKAGES_ROOT, entry.name, "src")));
   const sharedConsoleAdminFiles = [
-    path.join(PACKAGES_ROOT, "sdkwork-clawrouter-pc-commons", "src", "components", "Navbar.tsx"),
+    path.join(PACKAGES_ROOT, "sdkwork-clawroutes-pc-commons", "src", "components", "Navbar.tsx"),
   ];
 
   return [...consoleAdminPackageFiles, ...sharedConsoleAdminFiles];

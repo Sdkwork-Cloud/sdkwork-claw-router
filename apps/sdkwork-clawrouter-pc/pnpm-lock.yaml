@@ -189,9 +189,6 @@ importers:
       '@sdkwork/clawrouter-pc-admin-wallet':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-admin-wallet
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:packages/sdkwork-clawrouter-pc-commons
       '@sdkwork/clawrouter-pc-console-api-keys':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-console-api-keys
@@ -246,6 +243,9 @@ importers:
       '@sdkwork/clawrouter-pc-types':
         specifier: workspace:*
         version: link:packages/sdkwork-clawrouter-pc-types
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:packages/sdkwork-clawroutes-pc-commons
       '@sdkwork/commerce-contracts':
         specifier: workspace:*
         version: link:../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts
@@ -1008,6 +1008,9 @@ importers:
       '@sdkwork/iam-app-sdk':
         specifier: workspace:*
         version: link:../../../../sdks/sdkwork-iam-app-sdk/sdkwork-iam-app-sdk-typescript/generated/server-openapi
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap
       '@sdkwork/sdk-common':
         specifier: ^1.0.2
         version: 1.0.3
@@ -1087,6 +1090,9 @@ importers:
       '@sdkwork/i18n-pc-react':
         specifier: workspace:*
         version: link:../../../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react
+      '@sdkwork/iam-contracts':
+        specifier: workspace:*
+        version: link:../../../sdkwork-iam-common/packages/sdkwork-iam-contracts
       '@sdkwork/iam-sdk-adapter':
         specifier: workspace:*
         version: link:../../../sdkwork-iam-common/packages/sdkwork-iam-sdk-adapter
@@ -1118,6 +1124,9 @@ importers:
       '@sdkwork/iam-contracts':
         specifier: workspace:*
         version: link:../../../sdkwork-iam-common/packages/sdkwork-iam-contracts
+      '@sdkwork/iam-credential-entry':
+        specifier: workspace:*
+        version: link:../../../sdkwork-iam-common/packages/sdkwork-iam-credential-entry
       '@sdkwork/iam-runtime':
         specifier: workspace:*
         version: link:../../../sdkwork-iam-common/packages/sdkwork-iam-runtime
@@ -1282,9 +1291,6 @@ importers:
 
   ../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-resource:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-clawrouter/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons
       '@sdkwork/models-backend-sdk':
         specifier: workspace:*
         version: link:../../../../sdks/sdkwork-models-backend-sdk/sdkwork-models-backend-sdk-typescript
@@ -1713,27 +1719,27 @@ importers:
       '@sdkwork/agent-backend-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-kernel/sdks/sdkwork-agent-backend-sdk/sdkwork-agent-backend-sdk-typescript/generated/server-openapi
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-analytics:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-announcement:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-cache:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
     devDependencies:
       vitest:
         specifier: ^4.1.2
@@ -1747,27 +1753,27 @@ importers:
 
   packages/sdkwork-clawrouter-pc-admin-channel:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-core:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-dashboard:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-file-platform:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@sdkwork/drive-app-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript
@@ -1783,173 +1789,353 @@ importers:
 
   packages/sdkwork-clawrouter-pc-admin-finance:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-group:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-inventory:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-marketing:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-mcp:
     dependencies:
       '@sdkwork/clawrouter-pc-admin-core':
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-admin-core
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-memberships:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@sdkwork/commerce-service':
         specifier: workspace:*
         version: link:../../../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service
 
   packages/sdkwork-clawrouter-pc-admin-messaging:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-monitor:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-oauth:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-orders:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-organization:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-payments:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-prompts:
     dependencies:
       '@sdkwork/clawrouter-pc-admin-core':
         specifier: workspace:*
         version: link:../sdkwork-clawrouter-pc-admin-core
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@sdkwork/prompts-backend-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-prompts/sdks/sdkwork-prompts-backend-sdk/generated/server-openapi
 
   packages/sdkwork-clawrouter-pc-admin-ratelimit:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@tanstack/react-query':
         specifier: ^5.90.12
         version: 5.101.0(react@19.2.4)
 
   packages/sdkwork-clawrouter-pc-admin-record:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-relay-site:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@sdkwork/models-pc-admin-catalog':
         specifier: workspace:*
         version: link:../../../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog
 
   packages/sdkwork-clawrouter-pc-admin-runtime-region:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-service-nodes:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-service-provider:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-shell:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
       '@sdkwork/iam-contracts':
         specifier: workspace:*
         version: link:../../../../../sdkwork-iam/apps/sdkwork-iam-common/packages/sdkwork-iam-contracts
 
   packages/sdkwork-clawrouter-pc-admin-site:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-skill:
     dependencies:
       '@sdkwork/agent-backend-sdk':
         specifier: workspace:*
         version: link:../../../../../sdkwork-kernel/sdks/sdkwork-agent-backend-sdk/sdkwork-agent-backend-sdk-typescript/generated/server-openapi
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-user:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
   packages/sdkwork-clawrouter-pc-admin-wallet:
     dependencies:
-      '@sdkwork/clawrouter-pc-commons':
+      '@sdkwork/clawroutes-pc-commons':
         specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
+        version: link:../sdkwork-clawroutes-pc-commons
 
-  packages/sdkwork-clawrouter-pc-commons:
+  packages/sdkwork-clawrouter-pc-console-api-keys:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  packages/sdkwork-clawrouter-pc-console-core:
+    dependencies:
+      '@sdkwork/clawrouter-pc-console-shell':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-console-shell
+
+  packages/sdkwork-clawrouter-pc-console-dashboard:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-gateway:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-messages:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-settings:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-shell:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-usage:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-console-user:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-core:
+    dependencies:
+      sdkwork-commerce-app-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi
+      sdkwork-commerce-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
+      sdkwork-drive-backend-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi
+      sdkwork-generations-app-sdk-generated-typescript:
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.0
+        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  packages/sdkwork-clawrouter-pc-downloads:
+    dependencies:
+      '@sdkwork/utils':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
+
+  packages/sdkwork-clawrouter-pc-home:
+    dependencies:
+      '@sdkwork/clawrouter-pc-downloads':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-downloads
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.0
+        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  packages/sdkwork-clawrouter-pc-i18n:
+    devDependencies:
+      '@sdkwork/documents-pc-i18n':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-i18n
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.0
+        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  packages/sdkwork-clawrouter-pc-models:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  packages/sdkwork-clawrouter-pc-playground:
+    dependencies:
+      '@sdkwork/clawrouter-pc-console-api-keys':
+        specifier: workspace:*
+        version: link:../sdkwork-clawrouter-pc-console-api-keys
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+      '@sdkwork/generations-pc-workspace':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace
+      '@sdkwork/image-pc-generation':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-image/apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation
+      react-markdown:
+        specifier: 10.1.0
+        version: 10.1.0(@types/react@19.2.14)(react@19.2.4)
+      rehype-sanitize:
+        specifier: 6.0.0
+        version: 6.0.0
+      remark-gfm:
+        specifier: 4.0.1
+        version: 4.0.1
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.0
+        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  packages/sdkwork-clawrouter-pc-rankings:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+
+  packages/sdkwork-clawrouter-pc-shell:
+    dependencies:
+      '@sdkwork/clawroutes-pc-commons':
+        specifier: workspace:*
+        version: link:../sdkwork-clawroutes-pc-commons
+
+  packages/sdkwork-clawrouter-pc-types:
+    devDependencies:
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.3
+      vite:
+        specifier: ^6.2.0
+        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  packages/sdkwork-clawroutes-pc-commons:
     dependencies:
       '@sdkwork/agent-app-sdk':
         specifier: workspace:*
@@ -2016,193 +2202,13 @@ importers:
         version: link:../../../../../sdkwork-prompts/sdks/sdkwork-prompts-backend-sdk/generated/server-openapi
       '@sdkwork/sdk-common':
         specifier: ^1.0.2
-        version: 1.0.2
+        version: 1.0.3
       '@sdkwork/utils':
         specifier: workspace:*
         version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
       '@tanstack/react-query':
         specifier: ^5.90.12
         version: 5.101.0(react@19.2.4)
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-console-api-keys:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-
-  packages/sdkwork-clawrouter-pc-console-core:
-    dependencies:
-      '@sdkwork/clawrouter-pc-console-shell':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-console-shell
-
-  packages/sdkwork-clawrouter-pc-console-dashboard:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-gateway:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-messages:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-settings:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-shell:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-usage:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-console-user:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-core:
-    dependencies:
-      sdkwork-commerce-app-sdk-generated-typescript:
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi
-      sdkwork-commerce-backend-sdk-generated-typescript:
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi
-      sdkwork-drive-backend-sdk-generated-typescript:
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-drive/sdks/sdkwork-drive-backend-sdk/sdkwork-drive-backend-sdk-typescript/generated/server-openapi
-      sdkwork-generations-app-sdk-generated-typescript:
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-downloads:
-    dependencies:
-      '@sdkwork/utils':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-utils/packages/sdkwork-utils-typescript
-
-  packages/sdkwork-clawrouter-pc-home:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-      '@sdkwork/clawrouter-pc-downloads':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-downloads
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-i18n:
-    devDependencies:
-      '@sdkwork/documents-pc-i18n':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-i18n
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-models:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-
-  packages/sdkwork-clawrouter-pc-playground:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-      '@sdkwork/clawrouter-pc-console-api-keys':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-console-api-keys
-      '@sdkwork/generations-pc-workspace':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace
-      '@sdkwork/image-pc-generation':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-image/apps/sdkwork-image-pc/packages/sdkwork-image-pc-generation
-      react-markdown:
-        specifier: 10.1.0
-        version: 10.1.0(@types/react@19.2.14)(react@19.2.4)
-      rehype-sanitize:
-        specifier: 6.0.0
-        version: 6.0.0
-      remark-gfm:
-        specifier: 4.0.1
-        version: 4.0.1
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      vite:
-        specifier: ^6.2.0
-        version: 6.4.2(@types/node@25.9.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
-
-  packages/sdkwork-clawrouter-pc-rankings:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-    devDependencies:
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-
-  packages/sdkwork-clawrouter-pc-shell:
-    dependencies:
-      '@sdkwork/clawrouter-pc-commons':
-        specifier: workspace:*
-        version: link:../sdkwork-clawrouter-pc-commons
-
-  packages/sdkwork-clawrouter-pc-types:
     devDependencies:
       typescript:
         specifier: ~5.8.2

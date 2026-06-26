@@ -1,4 +1,4 @@
-import { defaultIfBlank, snakeCase } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
+import { defaultIfBlank, snakeCase } from '@sdkwork/clawroutes-pc-commons/sdkwork-utils';
 
 export type RankingModality = 'All' | 'LLM' | 'Image' | 'Audio' | 'Video' | 'Music' | 'Embedding' | 'Rerank';
 

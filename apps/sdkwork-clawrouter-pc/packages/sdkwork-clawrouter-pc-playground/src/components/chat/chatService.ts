@@ -8,7 +8,7 @@ import {
   mergeRuntimeUsageSnapshots,
   readRuntimeUsageSnapshot,
   type RuntimeUsageSnapshot,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import { createChatAssistantMessage } from './chatSession.ts';
 import { readRuntimeTextDelta } from '../../runtimeStream.ts';
 import {

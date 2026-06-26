@@ -2,7 +2,7 @@ import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   requiredSafePathSegment,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type {
   MessagingProviderAccountCreateRequest,
   MessagingRouteRuleCreateRequest,

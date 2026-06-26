@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::State;
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
@@ -102,10 +102,10 @@ pub fn admin_api_key_rate_limit_router_with_store(
 
 async fn fetch_api_key_rate_limits(
     State(state): State<AdminApiKeyRateLimitState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
 
     match state
         .store
@@ -125,11 +125,11 @@ async fn fetch_api_key_rate_limits(
 
 async fn create_api_key_rate_limit(
     State(state): State<AdminApiKeyRateLimitState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request =
         match parse_json_body::<AdminApiKeyRateLimitCreateRequest>(&body, "api key rate limit") {
             Ok(request) => request,
@@ -160,14 +160,6 @@ async fn create_api_key_rate_limit(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminApiKeyRateLimitSubject {
-    AdminApiKeyRateLimitSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_body<T>(body: &[u8], entity_name: &str) -> Result<T, String>
 where

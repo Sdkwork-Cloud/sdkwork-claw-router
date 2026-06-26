@@ -1,5 +1,5 @@
-import { getClawRouterBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/sdk-clients';
-import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { getClawRouterBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/sdk-clients';
+import { createClientOperationToken } from '@sdkwork/clawroutes-pc-commons/runtime';
 
 type BackendCommerceService = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 export type PaymentProviderAccountMutationInput = Parameters<BackendCommerceService['payments']['providerAccounts']['create']>[0];

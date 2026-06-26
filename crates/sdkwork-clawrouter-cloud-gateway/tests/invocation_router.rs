@@ -1047,7 +1047,7 @@ async fn invocation_router_records_trace_for_free_models_resource() {
                 .uri("/v1/models")
                 .header("authorization", "Bearer sk-live-secret")
                 .header("x-request-id", "req-invocation-router-models-trace")
-                .header("user-agent", "sdkwork-router-test")
+                .header("user-agent", "sdkwork-routes-test")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -1067,7 +1067,7 @@ async fn invocation_router_records_trace_for_free_models_resource() {
     assert_eq!("/v1/models", trace.request_path);
     assert_eq!("GET", trace.http_method);
     assert_eq!(Some(200), trace.http_status);
-    assert_eq!(Some("sdkwork-router-test"), trace.user_agent.as_deref());
+    assert_eq!(Some("sdkwork-routes-test"), trace.user_agent.as_deref());
 }
 
 #[tokio::test]

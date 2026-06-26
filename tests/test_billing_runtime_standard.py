@@ -187,7 +187,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "commerce-runtime.ts"
         ).read_text(encoding="utf-8")

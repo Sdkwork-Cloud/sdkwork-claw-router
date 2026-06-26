@@ -8,7 +8,7 @@ import {
   readAdminResourceRecordList,
   type AdminResourceRecord,
   type AdminResourceSection,
-} from '@sdkwork/clawrouter-pc-commons';
+} from '@sdkwork/clawroutes-pc-commons';
 import {
   attachAdminCategoryNamesToResult,
   createAdminAiCategory,
@@ -24,7 +24,7 @@ import {
   formatAdminResourceOptionLabel,
   readAdminResourceOptions,
   type AdminResourceOption,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import {
   DEFAULT_PROMPT_PAGE_PARAMS,
   createPrompt,

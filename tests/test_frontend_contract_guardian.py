@@ -98,7 +98,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         )
@@ -185,7 +185,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "utils"
             / "env.ts"
@@ -790,7 +790,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 / "apps"
                 / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-clawrouter-pc-commons"
+                / "sdkwork-clawroutes-pc-commons"
                 / "src"
                 / "sdk-clients.ts"
             )
@@ -800,7 +800,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal SDK client boundary is missing: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts",
+                "portal SDK client boundary is missing: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts",
                 result.messages,
             )
 
@@ -812,7 +812,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts",
                 "export function getClawRouterAppSdkClient() { return {}; }",
             )
 
@@ -820,7 +820,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "sdkwork-clawrouter-pc-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients",
+                "sdkwork-clawroutes-pc-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients",
                 result.messages,
             )
 
@@ -832,7 +832,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts",
                 """
                 import { SdkworkAppClient } from '@sdkwork/clawrouter-app-sdk';
                 import { SdkworkBackendClient } from '@sdkwork/clawrouter-backend-sdk';
@@ -870,7 +870,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "sdkwork-clawrouter-pc-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types without manual header/baseUrl escape hatches",
+                "sdkwork-clawroutes-pc-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types without manual header/baseUrl escape hatches",
                 result.messages,
             )
 
@@ -882,7 +882,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/utils/env.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/utils/env.ts",
                 """
                 const DEFAULT_API_BASE_URL = 'https://api.sdkwork.com';
                 export const API_BASE_URL = DEFAULT_API_BASE_URL;
@@ -917,13 +917,13 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal packages must value-import generated SDK clients only from sdkwork-clawrouter-pc-commons SDK boundary files: "
+                "portal packages must value-import generated SDK clients only from sdkwork-clawroutes-pc-commons SDK boundary files: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts "
                 "imports @sdkwork/clawrouter-app-sdk",
                 result.messages,
             )
             self.assertIn(
-                "portal packages must construct generated SDK clients only in sdkwork-clawrouter-pc-commons SDK boundary files: "
+                "portal packages must construct generated SDK clients only in sdkwork-clawroutes-pc-commons SDK boundary files: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -939,7 +939,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 """
                 import type { AppDashboardSummary } from '@sdkwork/clawrouter-app-sdk';
-                import { getClawRouterAppSdkClient, readApiRecord } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient, readApiRecord } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadDashboard(): Promise<AppDashboardSummary | undefined> {
                   const result = await getClawRouterAppSdkClient().dashboard.fetchDashboardData();
@@ -962,7 +962,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadDashboard() {
                   const result = await getClawRouterAppSdkClient().router.fetchDashboardOverview();
@@ -976,7 +976,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "portal business service files must read generated SDK results through "
-                "sdkwork-clawrouter-pc-commons/runtime helpers instead of result.data: "
+                "sdkwork-clawroutes-pc-commons/runtime helpers instead of result.data: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -999,7 +999,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal business API prefixes must be isolated to sdkwork-clawrouter-pc-commons SDK boundary files: "
+                "portal business API prefixes must be isolated to sdkwork-clawroutes-pc-commons SDK boundary files: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -1066,7 +1066,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadDashboard() {
                   return getClawRouterAppSdkClient().dashboard.fetchDashboardData();
@@ -1088,7 +1088,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadAnnouncements() {
                   return getClawRouterBackendSdkClient().announcements.fetch();
@@ -1110,7 +1110,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 """
-                import { ensurePlusApiSuccess, getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons';
+                import { ensurePlusApiSuccess, getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons';
 
                 export async function loadDashboard() {
                   const result = await getClawRouterAppSdkClient().router.fetchDashboardOverview();
@@ -1125,7 +1125,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "portal business service files must import runtime helpers from "
-                "sdkwork-clawrouter-pc-commons/runtime instead of the commons UI root: "
+                "sdkwork-clawroutes-pc-commons/runtime instead of the commons UI root: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts",
                 result.messages,
             )
@@ -1140,7 +1140,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
-                import { API_BASE_URL, CopyButton, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
+                import { API_BASE_URL, CopyButton, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons';
 
                 export function ApiEndpointView() {
                   return <CopyButton text={API_BASE_URL} />;
@@ -1152,7 +1152,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal browser source must import runtime helpers from sdkwork-clawrouter-pc-commons/runtime "
+                "portal browser source must import runtime helpers from sdkwork-clawroutes-pc-commons/runtime "
                 "instead of the commons UI root: "
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx "
                 "imports API_BASE_URL, resolveClawRouterRuntimeBoolean",
@@ -1169,8 +1169,8 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
-                import { CopyButton } from 'sdkwork-clawrouter-pc-commons';
-                import { API_BASE_URL, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { CopyButton } from 'sdkwork-clawroutes-pc-commons';
+                import { API_BASE_URL, resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
 
@@ -1192,7 +1192,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             self.write_contract(root, "routes:\n  - route: /\n")
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/index.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/index.ts",
                 """
                 export * from './components/CopyButton';
                 export * from './sdk-clients';
@@ -1204,9 +1204,9 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "sdkwork-clawrouter-pc-commons root must not re-export runtime modules; use "
-                "sdkwork-clawrouter-pc-commons/runtime for runtime helpers: "
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/index.ts "
+                "sdkwork-clawroutes-pc-commons root must not re-export runtime modules; use "
+                "sdkwork-clawroutes-pc-commons/runtime for runtime helpers: "
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/index.ts "
                 "exports ./sdk-clients, ./utils/env",
                 result.messages,
             )
@@ -1221,7 +1221,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts",
                 """
-                import { getClawRouterBackendSdkClient, getStoredAppSessionToken } from 'sdkwork-clawrouter-pc-commons';
+                import { getClawRouterBackendSdkClient, getStoredAppSessionToken } from 'sdkwork-clawroutes-pc-commons';
 
                 export async function loadUsers() {
                   const token = getStoredAppSessionToken();
@@ -1234,7 +1234,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "portal admin services must let sdkwork-clawrouter-pc-commons/src/sdk-clients.ts inject session tokens: "
+                "portal admin services must let sdkwork-clawroutes-pc-commons/src/sdk-clients.ts inject session tokens: "
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts",
                 result.messages,
             )
@@ -1496,14 +1496,14 @@ class FrontendContractGuardianTest(unittest.TestCase):
                     api_surface: app
                     evidence:
                       - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-commerce/src/commerceService.ts
-                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                 """,
             )
             self.write_portal_source(
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-commerce/src/commerceService.ts",
                 """
-                import { getClawRouterCommerceService } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterCommerceService } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function fetchBillingSummary() {
                   return getClawRouterCommerceService().account.summary.retrieve();
@@ -1512,7 +1512,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts",
                 """
                 import { getClawRouterAppSdkClient, getClawRouterBackendSdkClient } from './sdk-clients.ts';
 
@@ -1626,7 +1626,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
                 """
-                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function loadDirectory() {
                   return getSdkworkAppbaseBackendSdkClient().iam.users.list();
@@ -1638,7 +1638,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
                 """
                 import { createSdkworkGenerationService } from '@sdkwork/generations-pc-react';
-                import { getSdkworkGenerationsAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getSdkworkGenerationsAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function runPlaygroundAssetGeneration() {
                   return createSdkworkGenerationService({
@@ -1746,7 +1746,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
                 import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
-                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export const clawRouterAuthController = createSdkworkIamRuntimeAuthController({
                   getRuntime: getClawRouterIamRuntime,
@@ -1893,7 +1893,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-oauth/src/oauthAdminService.ts",
                 """
-                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawroutes-pc-commons/sdk-clients';
 
                 export async function listOAuthProviderCatalog() {
                   return getSdkworkAppbaseBackendSdkClient().iam.oauth.providerCatalog.list();
@@ -1977,7 +1977,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 frontend_operations:
                   - route: /
                     operation_scope: app_shell
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts
                     operation: fetchSiteBranding
                     operation_id: site.runtime.retrieve
                     api_surface: app
@@ -1989,7 +1989,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -2067,7 +2067,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 frontend_operations:
                   - route: /console/account
                     operation_scope: app_shell
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-console-service.ts
                     operation: fetchAccountDetails
                     operation_id: console.accountDetails.retrieve
                     api_surface: app
@@ -2078,7 +2078,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -2089,7 +2089,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-console-service.ts",
                 """
                 import { appAccountsCurrentSummaryRetrieve } from './commerce-runtime.ts';
 
@@ -2146,7 +2146,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawroutes-pc-commons/runtime';
 
                 export async function listModelCatalog() {
                   return getClawRouterAppSdkClient().intelligence.modelsList();
@@ -2182,7 +2182,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 frontend_operations:
                   - route: /
                     operation_scope: app_shell
-                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts
                     operation: fetchSiteBranding
                     operation_id: site.runtime.retrieve
                     api_surface: app
@@ -2192,7 +2192,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
             )
             self.write_portal_source(
                 root,
-                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts",
                 """
                 export async function fetchSiteBranding() {
                   return { siteName: 'Claw Router' };
@@ -3349,7 +3349,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
                 """
-                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
+                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
                 export async function send(request: { url: string; requestInit: RequestInit }) {
                   return fetch(request.url, request.requestInit);
@@ -3456,7 +3456,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
-                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons/runtime';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
                 export function ApiEndpointView() {
                   return null;
@@ -3552,7 +3552,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
-                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons/runtime';
+                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons/runtime';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
                 export function ApiEndpointView() {
                   return null;
@@ -3665,7 +3665,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiPlayground.tsx",
                 """
-                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
+                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
                 export async function send(request: { url: string; requestInit: RequestInit }) {
                   return fetch(request.url, request.requestInit);
@@ -3776,7 +3776,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 root,
                 "sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/components/ApiEndpointView.tsx",
                 """
-                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawrouter-pc-commons';
+                import { resolveClawRouterRuntimeBoolean } from 'sdkwork-clawroutes-pc-commons';
                 const enabled = resolveClawRouterRuntimeBoolean('VITE_TOOL_API_ENABLED', false);
                 export async function send(request: { url: string; requestInit: RequestInit }) {
                   return fetch(request.url, request.requestInit);

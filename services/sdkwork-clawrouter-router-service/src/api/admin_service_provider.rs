@@ -1,11 +1,11 @@
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
@@ -215,11 +215,11 @@ pub fn admin_service_provider_router_with_store(
 
 async fn fetch_dashboard(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    let query = match validated_list_query(trusted, query) {
+    let query = match validated_list_query(scoped, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -236,38 +236,38 @@ async fn fetch_dashboard(
 
 async fn list_providers(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_providers(query)).await
+    list_response(scoped, query, |query| state.store.list_providers(query)).await
 }
 
 async fn list_relations(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_relations(query)).await
+    list_response(scoped, query, |query| state.store.list_relations(query)).await
 }
 
 async fn list_downstreams(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_downstreams(query)).await
+    list_response(scoped, query, |query| state.store.list_downstreams(query)).await
 }
 
 async fn create_downstream(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Json(request): Json<ServiceProviderDownstreamCreateRequest>,
 ) -> Response {
-    let command = match validated_downstream_create_command(trusted, &headers, request) {
+    let command = match validated_downstream_create_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -285,38 +285,38 @@ async fn create_downstream(
 
 async fn list_members(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_members(query)).await
+    list_response(scoped, query, |query| state.store.list_members(query)).await
 }
 
 async fn list_bindings(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_bindings(query)).await
+    list_response(scoped, query, |query| state.store.list_bindings(query)).await
 }
 
 async fn list_contracts(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_contracts(query)).await
+    list_response(scoped, query, |query| state.store.list_contracts(query)).await
 }
 
 async fn list_pricing_rules(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_pricing_rules(query)
     })
     .await
@@ -324,11 +324,11 @@ async fn list_pricing_rules(
 
 async fn create_pricing_rule(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Json(request): Json<ServiceProviderPricingRuleCreateRequest>,
 ) -> Response {
-    let command = match validated_pricing_rule_create_command(trusted, &headers, request) {
+    let command = match validated_pricing_rule_create_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -346,12 +346,12 @@ async fn create_pricing_rule(
 
 async fn update_pricing_rule(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(rule_id): Path<String>,
     Json(request): Json<ServiceProviderPricingRuleUpdateRequest>,
 ) -> Response {
-    let command = match validated_pricing_rule_update_command(trusted, &headers, rule_id, request) {
+    let command = match validated_pricing_rule_update_command(scoped, &headers, rule_id, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -369,11 +369,11 @@ async fn update_pricing_rule(
 
 async fn simulate_price(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Json(request): Json<ServiceProviderPriceSimulationRequest>,
 ) -> Response {
-    let command = match validated_price_simulation_command(trusted, &headers, request) {
+    let command = match validated_price_simulation_command(scoped, &headers, request) {
         Ok(command) => command,
         Err(response) => return response,
     };
@@ -391,20 +391,20 @@ async fn simulate_price(
 
 async fn list_usage(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_usage(query)).await
+    list_response(scoped, query, |query| state.store.list_usage(query)).await
 }
 
 async fn list_wallet_accounts(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_wallet_accounts(query)
     })
     .await
@@ -412,20 +412,20 @@ async fn list_wallet_accounts(
 
 async fn list_statements(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_statements(query)).await
+    list_response(scoped, query, |query| state.store.list_statements(query)).await
 }
 
 async fn list_reconciliation_runs(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| {
+    list_response(scoped, query, |query| {
         state.store.list_reconciliation_runs(query)
     })
     .await
@@ -433,33 +433,33 @@ async fn list_reconciliation_runs(
 
 async fn list_adjustments(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_adjustments(query)).await
+    list_response(scoped, query, |query| state.store.list_adjustments(query)).await
 }
 
 async fn list_risk_events(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_risk_events(query)).await
+    list_response(scoped, query, |query| state.store.list_risk_events(query)).await
 }
 
 async fn list_audit_events(
     State(state): State<AdminServiceProviderState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<AdminServiceProviderListRequestQuery>,
 ) -> Response {
-    list_response(trusted, query, |query| state.store.list_audit_events(query)).await
+    list_response(scoped, query, |query| state.store.list_audit_events(query)).await
 }
 
 async fn list_response<'a, F>(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     query: AdminServiceProviderListRequestQuery,
     load: F,
 ) -> Response
@@ -471,7 +471,7 @@ where
         AdminServiceProviderCollection,
     >,
 {
-    let query = match validated_list_query(trusted, query) {
+    let query = match validated_list_query(scoped, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -494,10 +494,10 @@ fn collection_response(collection: AdminServiceProviderCollection) -> Response {
 }
 
 fn validated_list_query(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     query: AdminServiceProviderListRequestQuery,
 ) -> Result<ListAdminServiceProviderRecordsQuery, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -532,11 +532,11 @@ fn validated_list_query(
 }
 
 fn validated_price_simulation_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: ServiceProviderPriceSimulationRequest,
 ) -> Result<AdminServiceProviderPriceSimulationCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = Some(server_request_id()?);
     let quantity = normalize_required_text(request.quantity, "quantity", MAX_QUANTITY_LEN)?;
@@ -572,11 +572,11 @@ fn validated_price_simulation_command(
 }
 
 fn validated_downstream_create_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: ServiceProviderDownstreamCreateRequest,
 ) -> Result<CreateAdminServiceProviderDownstreamCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = Some(server_request_id()?);
     let default_multiplier = normalize_optional_text(
@@ -632,11 +632,11 @@ fn validated_downstream_create_command(
 }
 
 fn validated_pricing_rule_create_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     request: ServiceProviderPricingRuleCreateRequest,
 ) -> Result<CreateAdminServiceProviderPricingRuleCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = Some(server_request_id()?);
     let unit_price = normalize_required_text(request.unit_price, "unitPrice", MAX_DECIMAL_LEN)?;
@@ -690,12 +690,12 @@ fn validated_pricing_rule_create_command(
 }
 
 fn validated_pricing_rule_update_command(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: &HeaderMap,
     rule_id: String,
     request: ServiceProviderPricingRuleUpdateRequest,
 ) -> Result<UpdateAdminServiceProviderPricingRuleCommand, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let request_id = Some(server_request_id()?);
     let rule_id = normalize_required_text(rule_id, "ruleId", MAX_ID_LEN)?;
@@ -765,14 +765,6 @@ fn validate_decimal(value: &str, field_name: &str, rule: DecimalRule) -> Result<
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminServiceProviderSubject {
-    AdminServiceProviderSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 fn server_request_id() -> Result<String, Response> {
     generate_server_request_id().map_err(request_id_error_response)
 }

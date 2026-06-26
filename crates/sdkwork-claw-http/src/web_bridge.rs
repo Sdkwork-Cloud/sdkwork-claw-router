@@ -1,9 +1,80 @@
 use axum::extract::Request;
+use axum::http::Extensions;
+use sdkwork_iam_context_service::IamAppContext;
 use sdkwork_web_core::WebRequestContext;
 
 use crate::auth::{
     project_trusted_subject_for_legacy_handlers, TrustedRequestSubject, DEFAULT_USER_OPERATOR_TYPE,
 };
+
+fn parse_legacy_subject_i64(value: &str) -> Option<i64> {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+    trimmed.parse().ok()
+}
+
+fn parse_legacy_subject_organization_id(value: Option<&str>) -> i64 {
+    value
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .and_then(parse_legacy_subject_i64)
+        .unwrap_or(0)
+}
+
+fn trusted_request_subject_from_ids(
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+) -> TrustedRequestSubject {
+    TrustedRequestSubject {
+        tenant_id,
+        organization_id,
+        user_id,
+        operator_id: user_id,
+        operator_type: DEFAULT_USER_OPERATOR_TYPE,
+    }
+}
+
+/// Returns true when sdkwork-web-framework already authenticated a principal but the
+/// legacy `TrustedRequestSubject` bridge could not map string IDs into `i64` fields.
+pub fn authenticated_principal_failed_trusted_subject_projection(
+    extensions: &Extensions,
+) -> bool {
+    let Some(context) = extensions.get::<WebRequestContext>() else {
+        return false;
+    };
+    let Some(principal) = context.principal.as_ref() else {
+        return false;
+    };
+    if TrustedRequestSubject::from_extensions(extensions).is_some() {
+        return false;
+    }
+    if trusted_request_subject_from_web_context(context).is_some() {
+        return false;
+    }
+    if let Some(iam_context) = extensions.get::<IamAppContext>() {
+        if trusted_request_subject_from_iam_app_context(iam_context).is_some() {
+            return false;
+        }
+    }
+    !principal.tenant_id().trim().is_empty() || !principal.user_id().trim().is_empty()
+}
+
+/// Projects IAM app context into the legacy `TrustedRequestSubject` shape used by SQL stores.
+pub fn trusted_request_subject_from_iam_app_context(
+    context: &IamAppContext,
+) -> Option<TrustedRequestSubject> {
+    let tenant_id = parse_legacy_subject_i64(&context.tenant_id)?;
+    let organization_id = parse_legacy_subject_organization_id(context.organization_id.as_deref());
+    let user_id = parse_legacy_subject_i64(&context.user_id)?;
+    Some(trusted_request_subject_from_ids(
+        tenant_id,
+        organization_id,
+        user_id,
+    ))
+}
 
 /// Projects the standard `WebRequestContext` principal into the legacy
 /// `TrustedRequestSubject` extension consumed by existing Claw handlers.
@@ -11,19 +82,15 @@ pub fn trusted_request_subject_from_web_context(
     context: &WebRequestContext,
 ) -> Option<TrustedRequestSubject> {
     let principal = context.principal.as_ref()?;
-    let tenant_id = principal.tenant_id().parse().ok()?;
-    let organization_id = principal
-        .organization_id()
-        .and_then(|value| value.parse().ok())
-        .unwrap_or(0);
-    let user_id = principal.user_id().parse().ok()?;
-    Some(TrustedRequestSubject {
+    let tenant_id = parse_legacy_subject_i64(principal.tenant_id())?;
+    let organization_id =
+        parse_legacy_subject_organization_id(principal.organization_id());
+    let user_id = parse_legacy_subject_i64(principal.user_id())?;
+    Some(trusted_request_subject_from_ids(
         tenant_id,
         organization_id,
         user_id,
-        operator_id: user_id,
-        operator_type: DEFAULT_USER_OPERATOR_TYPE,
-    })
+    ))
 }
 
 /// Injects trusted-subject extensions for handlers that still extract
@@ -34,6 +101,21 @@ pub fn inject_legacy_handler_context_from_web_context(
 ) {
     if let Some(subject) = trusted_request_subject_from_web_context(context) {
         project_trusted_subject_for_legacy_handlers(request, subject);
+        return;
+    }
+    if let Some(iam_context) = request.extensions().get::<IamAppContext>() {
+        if let Some(subject) = trusted_request_subject_from_iam_app_context(iam_context) {
+            project_trusted_subject_for_legacy_handlers(request, subject);
+            return;
+        }
+    }
+    if let Some(principal) = context.principal.as_ref() {
+        tracing::warn!(
+            tenant_id = principal.tenant_id(),
+            organization_id = ?principal.organization_id(),
+            user_id = principal.user_id(),
+            "authenticated web-framework principal could not be projected to TrustedRequestSubject"
+        );
     }
 }
 
@@ -49,6 +131,7 @@ mod tests {
     use crate::auth::TrustedRequestSubject;
 
     use super::{
+        authenticated_principal_failed_trusted_subject_projection,
         inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
     };
 
@@ -204,5 +287,86 @@ mod tests {
         assert_eq!(100_001, subject.tenant_id);
         assert_eq!(30_002, subject.organization_id);
         assert_eq!(40_003, subject.user_id);
+    }
+
+    #[test]
+    fn trusted_request_subject_from_web_context_trims_numeric_ids() {
+        let principal = WebRequestPrincipal::builder()
+            .tenant_id(" 100001 ")
+            .organization_id(Some(" 30002 ".to_owned()))
+            .user_id(" 40003 ")
+            .login_scope(WebLoginScope::Organization)
+            .session_id(Some("session-1".to_owned()))
+            .app_id("sdkwork-clawrouter")
+            .environment(WebEnvironment::Dev)
+            .deployment_mode(WebDeploymentMode::Private)
+            .auth_level(WebAuthLevel::Password)
+            .build();
+        let context = WebRequestContext {
+            request_id: ServerRequestId("test-request".to_owned()),
+            trace_id: None,
+            api_surface: WebApiSurface::AppApi,
+            auth_mode: WebAuthMode::DualToken,
+            transport: WebTransportFacts {
+                path: "/app/v3/api/test".to_owned(),
+                method: "GET".to_owned(),
+                auth_token_present: true,
+                access_token_present: true,
+                api_key_present: false,
+                oauth_bearer_present: false,
+            },
+            principal: Some(principal),
+            locale: None,
+            client_kind: None,
+            operation: None,
+        };
+
+        let subject = trusted_request_subject_from_web_context(&context).expect("subject");
+        assert_eq!(100_001, subject.tenant_id);
+        assert_eq!(30_002, subject.organization_id);
+        assert_eq!(40_003, subject.user_id);
+    }
+
+    #[test]
+    fn authenticated_principal_failed_projection_detects_non_numeric_ids() {
+        let principal = WebRequestPrincipal::builder()
+            .tenant_id("tenant-bootstrap")
+            .organization_id(Some("0".to_owned()))
+            .user_id("system")
+            .login_scope(WebLoginScope::Tenant)
+            .session_id(Some("session-1".to_owned()))
+            .app_id("sdkwork-clawrouter")
+            .environment(WebEnvironment::Dev)
+            .deployment_mode(WebDeploymentMode::Private)
+            .auth_level(WebAuthLevel::Password)
+            .build();
+        let context = WebRequestContext {
+            request_id: ServerRequestId("test-request".to_owned()),
+            trace_id: None,
+            api_surface: WebApiSurface::AppApi,
+            auth_mode: WebAuthMode::DualToken,
+            transport: WebTransportFacts {
+                path: "/app/v3/api/ai/dashboard/overview".to_owned(),
+                method: "GET".to_owned(),
+                auth_token_present: true,
+                access_token_present: true,
+                api_key_present: false,
+                oauth_bearer_present: false,
+            },
+            principal: Some(principal),
+            locale: None,
+            client_kind: None,
+            operation: None,
+        };
+        let mut request = Request::new(Body::empty());
+        request.extensions_mut().insert(context);
+
+        assert!(trusted_request_subject_from_web_context(
+            request.extensions().get::<WebRequestContext>().expect("context")
+        )
+        .is_none());
+        assert!(authenticated_principal_failed_trusted_subject_projection(
+            request.extensions()
+        ));
     }
 }

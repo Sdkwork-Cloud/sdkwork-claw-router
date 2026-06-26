@@ -5,12 +5,14 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
+use crate::api::admin_sql_subject::{
+    map_required_admin_sql_subject, RequiredAdminSqlScopedSubject,
+};
 use crate::api::response::PlusApiResult;
 use crate::domain::DomainError;
-use crate::ports::{AdminRecordStore, AdminRecordSubject, ListAdminRecordLogsQuery};
+use crate::ports::{AdminRecordStore, ListAdminRecordLogsQuery};
 
 const DEFAULT_PAGE_NO: i64 = 1;
 const DEFAULT_PAGE_SIZE: i64 = 100;
@@ -39,11 +41,11 @@ pub fn admin_record_router_with_store(store: Arc<dyn AdminRecordStore + Send + S
 
 async fn fetch_logs(
     State(state): State<AdminRecordState>,
-    trusted: TrustedRequestSubject,
+    RequiredAdminSqlScopedSubject(subject): RequiredAdminSqlScopedSubject,
     _headers: HeaderMap,
     Query(request): Query<AdminRecordListQuery>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = map_required_admin_sql_subject(subject, |scoped| scoped.into());
     let query = match build_query(subject, request) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
@@ -55,17 +57,8 @@ async fn fetch_logs(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminRecordSubject {
-    AdminRecordSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
-
 fn build_query(
-    subject: AdminRecordSubject,
+    subject: crate::ports::AdminRecordSubject,
     request: AdminRecordListQuery,
 ) -> Result<ListAdminRecordLogsQuery, String> {
     let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);

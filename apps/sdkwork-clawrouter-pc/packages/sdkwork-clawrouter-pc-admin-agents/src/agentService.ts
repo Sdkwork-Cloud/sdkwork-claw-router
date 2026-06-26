@@ -3,7 +3,7 @@ import {
   getSdkworkAgentBackendSdkClient,
   readApiData,
   readApiItems,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export const DEFAULT_AGENT_PAGE_PARAMS = {
   page: '1',

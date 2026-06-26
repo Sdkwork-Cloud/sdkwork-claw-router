@@ -5,7 +5,7 @@ import {
 import { useEffect, useState } from 'react';
 import {
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import { fetchClawRouterAuthRuntimeSettings } from './clawRouterAuthSettingsService';
 
 type LoginMethod = NonNullable<SdkworkAuthRuntimeConfig['loginMethods']>[number];

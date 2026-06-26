@@ -18,7 +18,7 @@ COMMONS_RUNTIME = (
     / "apps"
     / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "sdk-clients.ts"
 )
@@ -97,7 +97,7 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "documents-reference-runtime-adapter.ts"
         ).read_text(encoding="utf-8")

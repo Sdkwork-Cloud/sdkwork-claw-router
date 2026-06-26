@@ -19,4 +19,4 @@ Long-lived business logic, generated SDK transport output, runtime state, caches
 
 ## Verification
 - `python -B tools/architecture_standard_guardian.py`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`

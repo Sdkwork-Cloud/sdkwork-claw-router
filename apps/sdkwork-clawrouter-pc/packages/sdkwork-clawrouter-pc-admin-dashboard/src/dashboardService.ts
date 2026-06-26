@@ -7,7 +7,7 @@ import {
   readRequiredNonNegativeNumber,
   readRequiredString,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type { InstallationStatusResponse } from '@sdkwork/clawrouter-backend-sdk';
 
 export type AdminDashboardTranslator = (key: string, fallback: string, options?: Record<string, unknown>) => string;

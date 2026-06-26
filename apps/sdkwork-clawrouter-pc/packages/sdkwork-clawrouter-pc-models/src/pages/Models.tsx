@@ -21,8 +21,8 @@ import {
   type ModelCatalogPricingCell,
 } from '../modelCatalog';
 import { ModelService, type ModelCatalogGroup } from '../modelService';
-import { FilterSidebar, CollapsibleSection, FilterCheckbox } from '@sdkwork/clawrouter-pc-commons';
-import { snakeCase } from '@sdkwork/clawrouter-pc-commons/sdkwork-utils';
+import { FilterSidebar, CollapsibleSection, FilterCheckbox } from '@sdkwork/clawroutes-pc-commons';
+import { snakeCase } from '@sdkwork/clawroutes-pc-commons/sdkwork-utils';
 
 import { ModalityIcon } from '../components/ModalityIcon';
 

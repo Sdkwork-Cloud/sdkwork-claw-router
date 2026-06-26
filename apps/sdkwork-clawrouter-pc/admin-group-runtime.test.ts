@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import { clearStoredAppSessionToken } from "./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts";
-import { resetClawRouterSdkClients } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
+import { clearStoredAppSessionToken } from "./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts";
+import { resetClawRouterSdkClients } from "./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts";
 import { GroupService } from "./packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts";
 import {
   createGroupInputFromForm,
@@ -215,7 +215,7 @@ test("admin group resource selectors support configurable single or multiple sel
     "utf8",
   );
   const sharedSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
     "utf8",
   );
 
@@ -234,7 +234,7 @@ test("admin group resource selectors provide searchable modal lists with selecte
     "utf8",
   );
   const sharedSource = readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
+    new URL("./packages/sdkwork-clawroutes-pc-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
     "utf8",
   );
 

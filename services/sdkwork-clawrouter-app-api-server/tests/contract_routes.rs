@@ -318,19 +318,14 @@ async fn default_router_does_not_mount_appbase_app_iam_routes_locally() {
 fn route_crate_source_does_not_construct_product_local_appbase_runtime_stores_by_default() {
     let source = std::fs::read_to_string(
         std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-            .join("../../crates/sdkwork-router-app-api/src/routes.rs"),
+            .join("../../crates/sdkwork-routes-clawrouter-app-api/src/routes.rs"),
     )
     .expect("read route crate source");
 
     for marker in [
-        "SqliteAppSessionEventStore",
-        "PostgresAppSessionEventStore",
-        "SqliteAppAuthStore",
-        "PostgresAppAuthStore",
         "SqliteAppIamDirectoryReadStore",
         "PostgresAppIamDirectoryReadStore",
-        "SqliteAppUserProfileReadStore",
-        "PostgresAppUserProfileReadStore",
+        "app_user_profile_router",
     ] {
         assert!(
             !source.contains(marker),

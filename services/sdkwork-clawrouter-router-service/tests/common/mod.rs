@@ -1,4 +1,9 @@
 use axum::http::request::Builder;
+use axum::http::Request;
+use sdkwork_web_core::{
+    ServerRequestId, WebApiSurface, WebAuthLevel, WebAuthMode, WebDeploymentMode, WebEnvironment,
+    WebLoginScope, WebRequestContext, WebRequestPrincipal, WebTransportFacts,
+};
 use std::sync::Once;
 
 pub const INTERNAL_TENANT_HEADER: &str = concat!("x-sdkwork-", "tenant-id");
@@ -31,4 +36,54 @@ impl InternalTrustedSubjectHeaders for Builder {
 #[allow(dead_code)]
 pub fn missing_internal_tenant_header_message() -> &'static str {
     concat!("x-sdkwork-", "tenant-id", " header is required")
+}
+
+pub fn web_framework_app_request<B>(
+    method: &str,
+    uri: &str,
+    body: B,
+    tenant_id: &str,
+    organization_id: Option<&str>,
+    user_id: &str,
+) -> Request<B>
+where
+    B: Send + 'static,
+{
+    let principal = WebRequestPrincipal::builder()
+        .tenant_id(tenant_id)
+        .organization_id(organization_id.map(str::to_owned))
+        .user_id(user_id)
+        .login_scope(WebLoginScope::Organization)
+        .session_id(Some("session-1".to_owned()))
+        .app_id("sdkwork-clawrouter")
+        .environment(WebEnvironment::Dev)
+        .deployment_mode(WebDeploymentMode::Private)
+        .auth_level(WebAuthLevel::Password)
+        .build();
+    let context = WebRequestContext {
+        request_id: ServerRequestId("router-test".to_owned()),
+        trace_id: None,
+        api_surface: WebApiSurface::AppApi,
+        auth_mode: WebAuthMode::DualToken,
+        transport: WebTransportFacts {
+            path: uri.to_owned(),
+            method: method.to_owned(),
+            auth_token_present: true,
+            access_token_present: true,
+            api_key_present: false,
+            oauth_bearer_present: false,
+        },
+        principal: Some(principal),
+        locale: None,
+        client_kind: None,
+        operation: None,
+    };
+
+    let mut request = Request::builder()
+        .method(method)
+        .uri(uri)
+        .body(body)
+        .expect("request");
+    request.extensions_mut().insert(context);
+    request
 }

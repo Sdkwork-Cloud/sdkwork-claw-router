@@ -26,7 +26,7 @@ function walk(dir, changed) {
       continue;
     }
     const before = fs.readFileSync(fullPath, 'utf8');
-    const after = before.replaceAll('sdkwork-clawrouter-pc-commons', '@sdkwork/clawrouter-pc-commons');
+    const after = before.replaceAll('sdkwork-clawroutes-pc-commons', '@sdkwork/clawroutes-pc-commons');
     if (after !== before) {
       fs.writeFileSync(fullPath, after, 'utf8');
       changed.push(fullPath);

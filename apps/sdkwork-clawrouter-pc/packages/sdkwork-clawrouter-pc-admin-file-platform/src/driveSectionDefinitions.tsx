@@ -1,5 +1,5 @@
 import { FolderOpen, KeyRound, Layers, Link2, ShieldCheck } from 'lucide-react';
-import type { AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import type { AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import { listDriveAuditEvents, listDriveNodes, listDrivePermissions, listDriveShareLinks, listDriveSpaces } from './driveService';
 
 export type DriveSectionId = 'spaces' | 'nodes' | 'permissions' | 'share-links' | 'audit';

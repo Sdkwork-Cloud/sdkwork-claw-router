@@ -196,11 +196,11 @@ ADMIN_MARKETING_STANDARD_SPEC_PATH = (
     / "specs"
     / "2026-05-26-admin-marketing-promotion-standard-design.md"
 )
-API_GATEWAY_STANDARD_DOC_PATH = ROOT / "docs" / "06-API-Gateway与接口标准设计.md"
+API_GATEWAY_STANDARD_DOC_PATH = ROOT / "docs" / "06-API-Gateway与接口标准设�?md"
 ADMIN_MARKETING_DESIGN_DOC_PATHS = [
     ROOT / "CHECK_RESULT.md",
-    ROOT / "docs" / "12-前端功能模块与数据库表结构映射.md",
-    ROOT / "docs" / "14-数据结构细节复核与补强记录.md",
+    ROOT / "docs" / "12-前端功能模块与数据库表结构映�?md",
+    ROOT / "docs" / "14-数据结构细节复核与补强记�?md",
 ]
 
 
@@ -445,7 +445,7 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
     def test_admin_marketing_tooling_no_longer_keeps_retired_coupon_batch_aliases(self) -> None:
         manifest_tool = (ROOT / "tools" / "api_contract_manifest.py").read_text(encoding="utf-8")
         payload_audit_tool = (ROOT / "tools" / "clawrouter_payload_sdk_audit.py").read_text(encoding="utf-8")
-        product_runtime_test = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        product_runtime_test = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
         combined_tooling = "\n".join([manifest_tool, payload_audit_tool, product_runtime_test])
 
         self.assertIn('"promotion-codes": "promotion_codes"', manifest_tool)

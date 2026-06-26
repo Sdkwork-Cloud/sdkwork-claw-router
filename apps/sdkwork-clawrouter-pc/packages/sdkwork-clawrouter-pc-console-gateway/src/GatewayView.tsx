@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlignLeft, Activity, Server, Timer } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawroutes-pc-commons';
 import { GatewayService, type GatewayTrace } from './gatewayService';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { User, Activity, Shield, CheckCircle } from 'lucide-react';
-import { BusinessStatePanel, readMediaResourceUrl } from '@sdkwork/clawrouter-pc-commons';
+import { BusinessStatePanel, readMediaResourceUrl } from '@sdkwork/clawroutes-pc-commons';
 import { UserService, UserProfile } from './userService';
 
 import { useTranslation } from 'react-i18next';

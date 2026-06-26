@@ -3,8 +3,8 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import test from 'node:test';
 
-import { clearStoredAppSessionToken } from './packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts';
-import { resetClawRouterSdkClients } from './packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts';
+import { clearStoredAppSessionToken } from './packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts';
+import { resetClawRouterSdkClients } from './packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts';
 import { ModelMappingService } from './../../../sdkwork-models/apps/sdkwork-models-pc/packages/sdkwork-models-pc-admin-catalog/src/modelService.ts';
 
 const PORTAL_ROOT = import.meta.dirname;

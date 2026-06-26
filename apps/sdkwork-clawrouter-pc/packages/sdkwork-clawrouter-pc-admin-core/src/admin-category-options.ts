@@ -14,9 +14,9 @@ import {
   type ClawRouterMediaResource,
   getClawRouterBackendSdkClient,
   type AdminCategoryOption,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
-export type { AdminCategoryOption } from '@sdkwork/clawrouter-pc-commons/runtime';
+export type { AdminCategoryOption } from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export interface AdminAiCategoryCreateInput {
   name: string;

@@ -7,7 +7,7 @@ import {
   ShieldAlert,
   ShieldCheck,
 } from 'lucide-react';
-import type { AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import type { AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   listStorageGarbageCollectionJobs,
   listStorageQuotas,

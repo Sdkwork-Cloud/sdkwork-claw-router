@@ -6,14 +6,14 @@
 
 **Architecture:** Keep production code unchanged. Add root package scripts that route Rust verification through a small Node runner with named profiles, isolated Cargo target directories, optional test-thread limits, and dry-run visibility. Add a Windows-aware process cleanup helper for repository-local Rust test binaries. Keep scoped profiles on a shared `target-rust-tests/daily` target dir so admin/app/gateway/product daily checks reuse the same compilation cache while still avoiding the normal `target/debug` tree.
 
-**Tech Stack:** Node.js ESM scripts, Cargo, pnpm, existing `run-claw-router-product.test.mjs` product tooling tests.
+**Tech Stack:** Node.js ESM scripts, Cargo, pnpm, existing `run-claw-router-application.test.mjs` product tooling tests.
 
 ---
 
 ### Task 1: Product Tooling Tests
 
 **Files:**
-- Modify: `scripts/run-claw-router-product.test.mjs`
+- Modify: `scripts/run-claw-router-application.test.mjs`
 - Modify: `package.json`
 - Create: `scripts/run-claw-router-rust-tests.mjs`
 - Create: `scripts/stop-claw-router-test-processes.mjs`
@@ -51,7 +51,7 @@ Import both scripts and assert that dry-run plans produce the expected Cargo com
 
 - [x] **Step 3: Run test to verify failure before implementation**
 
-Run: `node scripts/run-claw-router-product.test.mjs`
+Run: `node scripts/run-claw-router-application.test.mjs`
 
 Expected before implementation: FAIL because scripts and exports do not exist.
 
@@ -105,7 +105,7 @@ Expected: prints matching processes without stopping them.
 
 - [x] **Step 1: Run product tooling tests**
 
-Run: `node scripts/run-claw-router-product.test.mjs`
+Run: `node scripts/run-claw-router-application.test.mjs`
 
 Expected: PASS.
 
@@ -135,7 +135,7 @@ Expected: PASS, or report the first real failing test with isolated target artif
 
 **Files:**
 - Modify: `scripts/run-claw-router-rust-tests.mjs`
-- Modify: `scripts/run-claw-router-product.test.mjs`
+- Modify: `scripts/run-claw-router-application.test.mjs`
 - Modify: `package.json`
 - Create: `scripts/measure-claw-router-test-targets.mjs`
 
@@ -179,7 +179,7 @@ Made `stop-claw-router-test-processes.mjs` tolerate already-exited repo-local pr
 
 ### Updated Verification Notes
 
-- `node scripts/run-claw-router-product.test.mjs`: PASS.
+- `node scripts/run-claw-router-application.test.mjs`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick`: PASS.
 - `node scripts/run-claw-router-rust-tests.mjs quick` hot cache: 3.9s.
 - `node scripts/measure-claw-router-test-targets.mjs --dry-run --target sdkwork-clawrouter-admin-api-server:database_config_router --target sdkwork-clawrouter-app-api-server:database_config_router`: PASS.

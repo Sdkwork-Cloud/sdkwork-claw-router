@@ -160,7 +160,7 @@ Responsibilities:
     generated-SDK request parameter creation.
   - Expose typed functions for pages and forms.
   - Continue importing backend SDK access only through
-    `sdkwork-clawrouter-pc-commons/runtime`.
+    `sdkwork-clawroutes-pc-commons/runtime`.
 - `pages/*Page.tsx`
   - Own list loading, filters, selected row, drawer open state, delete/disable
     confirmation state, mutation refresh, loading, error, and empty states for

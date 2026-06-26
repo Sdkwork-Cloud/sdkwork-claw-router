@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bot } from 'lucide-react';
-import { AdminResourceCenter } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter } from '@sdkwork/clawroutes-pc-commons';
 import { listManagedAgents } from './agentService';
 
 export function AgentsAdmin() {

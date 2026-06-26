@@ -7,7 +7,7 @@ use axum::http::{HeaderMap, StatusCode, Uri};
 use axum::response::{IntoResponse, Response};
 use axum::routing::post;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
+use crate::api::app_sql_subject::{map_required_app_sql_subject, RequiredAppSqlScopedSubject};
 use serde::Deserialize;
 use serde_json::{Map, Value};
 
@@ -184,11 +184,11 @@ pub fn app_routing_channel_command_router_with_store(
 
 async fn create_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_routing_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingSubject::from);
     let request = match parse_json_object(&body, "routing channel request body is required", false)
     {
         Ok(request) => request,
@@ -214,12 +214,12 @@ async fn create_routing_channel(
 
 async fn update_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = map_routing_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingSubject::from);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -249,12 +249,12 @@ async fn update_routing_channel(
 
 async fn set_routing_channel_status(
     State(state): State<AppRoutingChannelCommandState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
     Json(request): Json<SetRoutingChannelStatusRequest>,
 ) -> Response {
-    let subject = map_routing_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingSubject::from);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -280,11 +280,11 @@ async fn set_routing_channel_status(
 
 async fn delete_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = map_routing_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingSubject::from);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -306,11 +306,11 @@ async fn delete_routing_channel(
 
 async fn test_routing_channel(
     State(state): State<AppRoutingChannelCommandState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(channel_id): Path<String>,
 ) -> Response {
-    let subject = map_routing_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingSubject::from);
     let channel_id = match parse_positive_id(&channel_id, "channel id") {
         Ok(channel_id) => channel_id,
         Err(message) => return bad_request(message),
@@ -329,15 +329,6 @@ async fn test_routing_channel(
         }
     }
 }
-
-fn map_routing_subject(trusted: TrustedRequestSubject) -> AppRoutingSubject {
-    AppRoutingSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    }
-}
-
 fn parse_json_object(
     body: &[u8],
     required_message: &'static str,

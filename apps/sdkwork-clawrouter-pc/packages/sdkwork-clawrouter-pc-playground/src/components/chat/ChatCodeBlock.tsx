@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Check, Copy } from 'lucide-react';
-import { copyTextToClipboard } from '@sdkwork/clawrouter-pc-commons/clipboard';
+import { copyTextToClipboard } from '@sdkwork/clawroutes-pc-commons/clipboard';
 
 const CODE_COPY_RESET_MS = 1400;
 

@@ -5,7 +5,7 @@ import {
   modelPricingBadgeLabel,
   modelPricingFieldUnitLabel,
 } from './pricing.ts';
-import { createClawRouterAppSdkModelExample } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { createClawRouterAppSdkModelExample } from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export const MODEL_CATEGORIES = ['Recommended', 'Open Source', 'Proprietary', 'Free', 'New'] as const;
 

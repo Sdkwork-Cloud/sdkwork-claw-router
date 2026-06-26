@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {
   readPortalPermissionScope,
   subscribePortalSessionChange,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 import { isAdminRouteAllowed } from './admin-menu-permissions.ts';
 

@@ -287,7 +287,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         service = (package_root / "src" / "modelService.ts").read_text(encoding="utf-8")
         view = (package_root / "src" / "index.tsx").read_text(encoding="utf-8")
         form = (package_root / "src" / "modelForm.ts").read_text(encoding="utf-8")
-        verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
+        verifier = (ROOT / "scripts" / "verify-claw-router-application.mjs").read_text(encoding="utf-8")
 
         self.assertEqual(package["type"], "module")
         self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
@@ -365,7 +365,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
     def test_admin_model_catalog_route_uses_standard_router_not_fallback_compat_layer(self) -> None:
         product_api_mod = (ROOT / "services/sdkwork-clawrouter-router-service/src/api/mod.rs").read_text(encoding="utf-8")
-        admin_api = (ROOT / "crates/sdkwork-router-backend-api/src/routes.rs").read_text(
+        admin_api = (ROOT / "crates/sdkwork-routes-clawrouter-backend-api/src/routes.rs").read_text(
             encoding="utf-8"
         )
         product_api_dir = ROOT / "services/sdkwork-clawrouter-router-service/src/api"

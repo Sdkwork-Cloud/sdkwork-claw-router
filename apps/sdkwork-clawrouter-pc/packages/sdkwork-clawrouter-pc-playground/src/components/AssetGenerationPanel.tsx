@@ -18,7 +18,7 @@ import {
   type SdkworkGenerationSfxModeConfig,
   type SdkworkGenerationSpeechModeConfig,
 } from '@sdkwork/generations-pc-workspace/generation-asset-config';
-import { toExternalUrlMediaResource, type ClawRouterMediaResource } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { toExternalUrlMediaResource, type ClawRouterMediaResource } from '@sdkwork/clawroutes-pc-commons/runtime';
 import type {
   PlaygroundGenerationSubmitInput,
   PlaygroundGenerationTargetType,

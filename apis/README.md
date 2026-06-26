@@ -19,7 +19,7 @@ Generated SDK transport output, generated SDK control-plane `.sdkwork/` files, s
 
 ## Verification
 - `python -B tools/architecture_standard_guardian.py`
-- `python -B -m unittest tests.test_sdkwork_router_api_package_standard`
+- `python -B -m unittest tests.test_sdkwork_routes_api_package_standard`
 
 ## Contract authority
 

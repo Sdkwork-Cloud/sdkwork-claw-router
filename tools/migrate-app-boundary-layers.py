@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-ROUTES = Path(__file__).resolve().parents[1] / "crates/sdkwork-router-app-api/src/routes.rs"
+ROUTES = Path(__file__).resolve().parents[1] / "crates/sdkwork-routes-clawrouter-app-api/src/routes.rs"
 
 BOUNDARIES = {
     "sdkwork_claw_http::app_request_subject_boundary": (

@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 COMMERCE_FRONTEND_DEPENDENCIES = [
     "@sdkwork/clawrouter-app-sdk",
     "@sdkwork/clawrouter-backend-sdk",
-    "sdkwork-clawrouter-pc-commons",
+    "sdkwork-clawroutes-pc-commons",
     "sdkwork-clawrouter-pc-admin-catalog",
     "sdkwork-clawrouter-pc-admin-inventory",
     "sdkwork-clawrouter-pc-admin-orders",
@@ -58,7 +58,7 @@ def retired_appbase_sdk_clients_path() -> str:
             "apps",
             "sdkwork-clawrouter-pc",
             "packages",
-            "sdkwork-clawrouter-pc-commons",
+            "sdkwork-clawroutes-pc-commons",
             "src",
             f"{retired_appbase_sdk_clients_module()}.ts",
         ]
@@ -519,10 +519,10 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                         - "@sdkwork/commerce-service"
                         - "@sdkwork/commerce-sdk-ports"
                       adapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                         - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx
                       sdkInjectionAdapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_commerce_standard tests.test_commerce_billing_standard
                     forbiddenProductForks: []
@@ -562,10 +562,10 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                         - "@sdkwork/commerce-service"
                         - "@sdkwork/commerce-sdk-ports"
                       adapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                         - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx
                       sdkInjectionAdapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_commerce_standard
                     forbiddenProductForks: []
@@ -890,7 +890,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_missing_appbase_integration
                     forbiddenProductForks: []
@@ -925,7 +925,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     forbiddenProductForks: []
                     sdkBoundary: generated-sdk-through-ports
                 """,
@@ -958,7 +958,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/commerce-runtime.ts
                     verification:
                       - npm test
                     forbiddenProductForks: []

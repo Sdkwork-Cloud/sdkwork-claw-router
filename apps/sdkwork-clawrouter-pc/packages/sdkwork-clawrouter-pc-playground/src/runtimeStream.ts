@@ -2,4 +2,4 @@ export {
   readRuntimeTextDelta,
   streamRuntimeInvocationEvents,
   type RuntimeStreamEvent,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';

@@ -3,7 +3,7 @@ import {
   getSdkworkDriveAppSdkClient,
   readApiData,
   readApiItems,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 async function resolveFirstDriveNodeId(): Promise<string | null> {
   const spaces = await listDriveSpaces();

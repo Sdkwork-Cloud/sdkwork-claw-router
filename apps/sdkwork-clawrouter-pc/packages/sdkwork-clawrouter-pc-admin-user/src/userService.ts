@@ -14,7 +14,7 @@ import {
   readRequiredString,
   readString,
   type ApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 import type {
   AdminApiKeyCreateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';

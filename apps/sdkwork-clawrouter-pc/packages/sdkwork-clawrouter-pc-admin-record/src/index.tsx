@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AlertTriangle, CheckCircle2, ChevronRight, ChevronDown, Zap, Search, Cpu, Info, User } from 'lucide-react';
-import { AdminTableShell, BusinessStateTableRow } from '@sdkwork/clawrouter-pc-commons';
-import { formatDecimalAmount, formatUserAgentDeviceLabel } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { AdminTableShell, BusinessStateTableRow } from '@sdkwork/clawroutes-pc-commons';
+import { formatDecimalAmount, formatUserAgentDeviceLabel } from '@sdkwork/clawroutes-pc-commons/runtime';
 import { RecordService, LogRecord } from './recordService';
 
 import { useTranslation } from 'react-i18next';

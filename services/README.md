@@ -10,7 +10,7 @@ SDKWork Claw Router Rust runtime maintainers.
 Existing product service crates, gateway and installer service crates, service-local tests, component specs, and runtime host code already declared in the Cargo workspace.
 
 ## Forbidden Content
-New router API route crates, generated SDK transport output, frontend packages, runtime databases, local secrets, logs, and caches. New route crates belong under `crates/sdkwork-router-<capability>-<surface>/`.
+New router API route crates, generated SDK transport output, frontend packages, runtime databases, local secrets, logs, and caches. New route crates belong under `crates/sdkwork-routes-<capability>-<surface>/`.
 
 ## Related Specs
 - `../../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`
@@ -19,4 +19,4 @@ New router API route crates, generated SDK transport output, frontend packages, 
 
 ## Verification
 - `cargo check --workspace`
-- `python -B -m unittest tests.test_sdkwork_router_api_package_standard`
+- `python -B -m unittest tests.test_sdkwork_routes_api_package_standard`

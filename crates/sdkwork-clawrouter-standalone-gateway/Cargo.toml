@@ -12,6 +12,7 @@ name = "sdkwork-clawrouter-standalone-gateway"
 path = "src/main.rs"
 
 [dependencies]
+sdkwork_clawrouter_gateway_assembly = { package = "sdkwork-clawrouter-gateway-assembly", path = "../sdkwork-clawrouter-gateway-assembly" }
 anyhow.workspace = true
 sdkwork-claw-config.workspace = true
 sdkwork-clawrouter-cloud-gateway.workspace = true

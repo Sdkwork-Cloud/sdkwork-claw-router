@@ -19,7 +19,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("app_api_key_router_with_api_key_hasher", source)
 
     def test_app_api_service_exposes_creation_only_with_command_store_and_hasher(self) -> None:
-        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        service = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         source = service.read_text(encoding="utf-8")
 
         self.assertNotIn("router_with_product_catalog_and_api_key_security_config", source)
@@ -39,7 +39,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("app_api_key_router_with_read_store_and_command_store", source)
 
     def test_database_api_key_routes_reload_sql_read_model(self) -> None:
-        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        service = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         source = service.read_text(encoding="utf-8")
 
         self.assertIn("api_key_secret_codec_from_config(&api_key_security_config)", source)
@@ -112,9 +112,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("post<ApiKeysCreateResult>", sdk)
         self.assertNotIn("xRequestId", sdk)
         self.assertIn("createClientOperationToken", frontend)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/idempotency'", frontend)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/sdk-clients'", frontend)
-        self.assertIn("from 'sdkwork-clawrouter-pc-commons/api-result'", frontend)
+        self.assertIn("from 'sdkwork-clawroutes-pc-commons/idempotency'", frontend)
+        self.assertIn("from 'sdkwork-clawroutes-pc-commons/sdk-clients'", frontend)
+        self.assertIn("from 'sdkwork-clawroutes-pc-commons/api-result'", frontend)
         self.assertNotIn("function createClientOperationToken", frontend)
         self.assertIn("const idempotencyKey = createClientOperationToken('create-api-key');", frontend)
         self.assertNotIn("createClientOperationToken('request')", frontend)
@@ -362,8 +362,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "CreateKeyDrawer.tsx"
         ).read_text(encoding="utf-8")
-        verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        verifier = (ROOT / "scripts" / "verify-claw-router-application.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         self.assertIn('"type": "module"', package)
         self.assertIn('"typecheck": "tsc --noEmit"', package)
@@ -761,7 +761,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         )
 
     def test_app_api_key_creation_uses_signed_trusted_subject_boundary(self) -> None:
-        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        service = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
         route_test = ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
@@ -788,7 +788,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         config_source = config_lib.read_text(encoding="utf-8")
         http_auth = ROOT / "crates" / "sdkwork-claw-http" / "src" / "auth.rs"
         http_auth_source = http_auth.read_text(encoding="utf-8")
-        service = ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs"
+        service = ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         service_source = service.read_text(encoding="utf-8")
         route_test = ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "tests" / "database_config_router.rs"
         route_test_source = route_test.read_text(encoding="utf-8")
@@ -797,7 +797,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "apps"
             / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")

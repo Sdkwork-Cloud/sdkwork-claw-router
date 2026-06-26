@@ -29,7 +29,7 @@ import {
   resolveVideoReferenceKindLimit,
   resolveVideoReferenceModeUpload,
 } from "./packages/sdkwork-clawrouter-pc-playground/src/videoReferenceCapability.ts";
-import { readRuntimeTextDelta } from "./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts";
+import { readRuntimeTextDelta } from "./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts";
 
 await i18next
   .use(initReactI18next)
@@ -287,11 +287,11 @@ test("chat playground consumes standard runtime SSE events for streaming interac
   const operationsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts");
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/chat/ChatPage.tsx");
   const runtimeStreamSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/runtimeStream.ts");
-  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts");
+  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts");
 
   assert.match(serviceSource, /streamRuntimeEvents\(runtimeInvocation\.id\)/);
   assert.match(operationsSource, /streamRuntimeInvocationEvents/);
-  assert.match(runtimeStreamSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+  assert.match(runtimeStreamSource, /sdkwork-clawroutes-pc-commons\/runtime/);
   assert.match(commonsRuntimeSource, /\.http\.streamJson/);
   assert.match(commonsRuntimeSource, /appApiPath/);
   assert.match(commonsRuntimeSource, /\/runtime\/invocations\/\$\{encodeURIComponent\(invocationId\)\}\/events\/stream/);
@@ -681,7 +681,7 @@ test("console API keys expose backend runtime default selection", () => {
 });
 
 test("runtime SSE event type comes directly from the generated app SDK contract", () => {
-  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts");
+  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts");
   const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/runtime-event-item.ts");
 
   assert.match(runtimeEventItemSource, /payloadJson: Record<string, JsonValue>;/);
@@ -1465,7 +1465,7 @@ test("agent playground uses runtime SSE without legacy agent session APIs", () =
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
   const itemSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/ChatHistoryItem.tsx");
   const runtimeStreamSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/runtimeStream.ts");
-  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts");
+  const commonsRuntimeSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts");
 
   assert.match(source, /from '\.\/appRuntimeApiOperations\.ts'/);
   assert.match(source, /createRuntimeInvocation/);
@@ -1488,7 +1488,7 @@ test("agent playground uses runtime SSE without legacy agent session APIs", () =
   assert.doesNotMatch(operationsSource, /client\.agents\./);
   assert.match(operationsSource, /client\.runtime\.invocations\.create/);
   assert.match(operationsSource, /streamRuntimeInvocationEvents/);
-  assert.match(runtimeStreamSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+  assert.match(runtimeStreamSource, /sdkwork-clawroutes-pc-commons\/runtime/);
   assert.match(commonsRuntimeSource, /\.http\.streamJson/);
   assert.match(commonsRuntimeSource, /appApiPath/);
   assert.match(commonsRuntimeSource, /\/runtime\/invocations\/\$\{encodeURIComponent\(invocationId\)\}\/events\/stream/);
@@ -1503,7 +1503,7 @@ test("playground generation orchestration is reusable across agent and modality 
   const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts");
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
   const generationsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts");
-  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
 
   assert.match(serviceSource, /runPlaygroundGeneration/);
@@ -1694,7 +1694,7 @@ test("video generation reference assets sit above the prompt and follow model mo
   assert(promptPosition >= 0, "Prompt textarea should be rendered by AssetGenerationPanel");
   assert(uploaderPosition < promptPosition, "Video reference asset uploader should sit above the prompt textarea");
   assert.match(typeSource, /export interface PlaygroundReferenceAssetInput/);
-  assert.match(typeSource, /import type \{ ClawRouterMediaResource \} from '@sdkwork\/clawrouter-pc-commons\/runtime';/);
+  assert.match(typeSource, /import type \{ ClawRouterMediaResource \} from '@sdkwork\/clawroutes-pc-commons\/runtime';/);
   assert.match(typeSource, /kind: 'image' \| 'audio' \| 'video';/);
   assert.match(typeSource, /role: 'first_frame' \| 'last_frame' \| 'reference_image' \| 'reference_audio' \| 'reference_video';/);
   assert.match(typeSource, /resource: ClawRouterMediaResource;/);
@@ -1817,7 +1817,7 @@ test("asset generation requires a real catalog model before submitting", () => {
 });
 
 test("runtime usage reader follows gateway and provider event envelopes for generated assets", () => {
-  const runtimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/runtime.ts");
+  const runtimeSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/runtime.ts");
 
   assert.match(runtimeSource, /gatewayResponse/);
   assert.match(runtimeSource, /gatewayEvent/);
@@ -2106,7 +2106,7 @@ test("app OpenAPI exposes product Chat and Runtime routes without legacy ai pref
 
 test("playground memory operations use sdkwork-memory app SDK instead of clawrouter app SDK", () => {
   const operationsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts");
-  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
   const memorySdkSource = readWorkspaceFile("../sdkwork-memory/sdks/sdkwork-memory-app-sdk/sdkwork-memory-app-sdk-typescript/generated/server-openapi/src/api/memory.ts");
 
   assert.match(operationsSource, /getSdkworkMemoryAppSdkClient/);

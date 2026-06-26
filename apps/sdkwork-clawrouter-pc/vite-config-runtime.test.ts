@@ -135,7 +135,7 @@ test("portal workspace packages resolve to source files outside node_modules in 
   );
   const resolvedSubpath = await callResolveId(
     resolver.resolveId,
-    "sdkwork-clawrouter-pc-commons/runtime",
+    "sdkwork-clawroutes-pc-commons/runtime",
     new URL("../../../sdkwork-documents/apps/sdkwork-documents-pc/packages/sdkwork-documents-pc-api-reference/src/codeSnippetClient.ts", import.meta.url).pathname,
   );
 
@@ -145,7 +145,7 @@ test("portal workspace packages resolve to source files outside node_modules in 
   );
   assert.equal(
     resolvedSubpath,
-    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-commons/src/runtime.ts"),
+    path.resolve(import.meta.dirname, "packages/sdkwork-clawroutes-pc-commons/src/runtime.ts"),
   );
   assert.ok(!String(resolvedRoot).includes(`${path.sep}node_modules${path.sep}`));
   assert.ok(!String(resolvedSubpath).includes(`${path.sep}node_modules${path.sep}`));
@@ -183,13 +183,13 @@ test("portal workspace packages resolve to source files during production build"
 
   const resolvedRoot = await callResolveId(
     resolver.resolveId,
-    "sdkwork-clawrouter-pc-commons",
+    "sdkwork-clawroutes-pc-commons",
     new URL("./src/App.tsx", import.meta.url).pathname,
   );
 
   assert.equal(
     resolvedRoot,
-    path.resolve(import.meta.dirname, "packages/sdkwork-clawrouter-pc-commons/src/index.ts"),
+    path.resolve(import.meta.dirname, "packages/sdkwork-clawroutes-pc-commons/src/index.ts"),
   );
   assert.ok(!String(resolvedRoot).includes(`${path.sep}node_modules${path.sep}`));
 });

@@ -24,7 +24,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             scripts["test:postgres:docker"],
         )
         self.assertEqual(
-            "node scripts/verify-claw-router-product.mjs",
+            "node scripts/verify-claw-router-application.mjs",
             scripts["verify"],
         )
         self.assertEqual(

@@ -2,7 +2,7 @@ import {
   SdkworkIamAuthRoutes,
 } from '@sdkwork/auth-pc-react';
 import { useTranslation } from 'react-i18next';
-import { getClawRouterIamRuntime } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { getClawRouterIamRuntime } from '@sdkwork/clawroutes-pc-commons/runtime';
 import { resolveClawRouterAuthAppearance } from './clawRouterAuthAppearance';
 import { ClawRouterAuthShell } from './ClawRouterAuthShell';
 import { useClawRouterAuthRuntimeConfig } from './clawRouterAuthConfig';

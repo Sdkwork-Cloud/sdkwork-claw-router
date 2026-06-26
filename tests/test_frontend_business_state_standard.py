@@ -12,8 +12,8 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
     ) -> None:
         forbidden_markers = ["localStorage", "sessionStorage"]
         allowed_paths = {
-            "sdkwork-clawrouter-pc-commons/src/app-session-token.ts",
-            "sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx",
+            "sdkwork-clawroutes-pc-commons/src/app-session-token.ts",
+            "sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx",
             "sdkwork-clawrouter-pc-i18n/src/index.ts",
             "sdkwork-clawrouter-pc-admin-shell/src/AdminHeader.tsx",
         }
@@ -46,10 +46,10 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
     def test_business_state_components_are_centralized_and_used_by_core_business_tables(
         self,
     ) -> None:
-        commons_index = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "index.ts"
+        commons_index = PORTAL_PACKAGES / "sdkwork-clawroutes-pc-commons" / "src" / "index.ts"
         business_state_component = (
             PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "components"
             / "BusinessState.tsx"

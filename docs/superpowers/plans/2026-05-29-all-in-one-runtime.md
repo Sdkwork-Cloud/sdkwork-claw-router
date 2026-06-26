@@ -66,9 +66,9 @@ Expected: PASS.
 
 **Files:**
 - Modify: `scripts/dev/start-workspace.mjs`
-- Modify: `scripts/run-claw-router-product.mjs`
+- Modify: `scripts/run-claw-router-application.mjs`
 - Modify: `package.json`
-- Test: `scripts/run-claw-router-product.test.mjs`
+- Test: `scripts/run-claw-router-application.test.mjs`
 
 - [ ] **Step 1: Write failing Node tests**
 
@@ -76,7 +76,7 @@ Add assertions that default `server` mode starts only blocking installer steps p
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `node scripts/run-claw-router-product.test.mjs --test-name-pattern "all-in-one"`
+Run: `node scripts/run-claw-router-application.test.mjs --test-name-pattern "all-in-one"`
 
 Expected: FAIL because launcher plans still default to distributed services.
 
@@ -86,7 +86,7 @@ Make `start-workspace.mjs` default to `runtimeMode: "all-in-one"`, add `--distri
 
 - [ ] **Step 4: Run focused Node tests**
 
-Run: `node scripts/run-claw-router-product.test.mjs --test-name-pattern "all-in-one|distributed"`
+Run: `node scripts/run-claw-router-application.test.mjs --test-name-pattern "all-in-one|distributed"`
 
 Expected: PASS.
 
@@ -94,7 +94,7 @@ Expected: PASS.
 
 **Files:**
 - Modify: `scripts/start-claw-router-production.mjs`
-- Test: `scripts/run-claw-router-product.test.mjs`
+- Test: `scripts/run-claw-router-application.test.mjs`
 
 - [ ] **Step 1: Write failing tests**
 
@@ -102,7 +102,7 @@ Add assertions that production start defaults to `SDKWORK_CLAW_ALL_IN_ONE_RUNTIM
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `node scripts/run-claw-router-product.test.mjs --test-name-pattern "production.*all-in-one"`
+Run: `node scripts/run-claw-router-application.test.mjs --test-name-pattern "production.*all-in-one"`
 
 Expected: FAIL because production start does not set the all-in-one env.
 
@@ -112,7 +112,7 @@ Set all-in-one by default, preserve existing forwarding behavior when any `--*-f
 
 - [ ] **Step 4: Run focused tests**
 
-Run: `node scripts/run-claw-router-product.test.mjs --test-name-pattern "production.*all-in-one|start-production"`
+Run: `node scripts/run-claw-router-application.test.mjs --test-name-pattern "production.*all-in-one|start-production"`
 
 Expected: PASS.
 
@@ -130,6 +130,6 @@ Document the default two-process local flow, one-process production flow, and ex
 Run:
 - `cargo test -p sdkwork-clawrouter-cloud-gateway --test edge_server edge_server_can_dispatch_to_in_process_upstreams --offline`
 - `cargo test -p sdkwork-clawrouter-cloud-gateway --test edge_server_sqlite_smoke all_in_one_edge_router_serves_sqlite_gateway_admin_and_app_without_service_ports --offline`
-- `node scripts/run-claw-router-product.test.mjs --test-name-pattern "all-in-one|distributed|start-production"`
+- `node scripts/run-claw-router-application.test.mjs --test-name-pattern "all-in-one|distributed|start-production"`
 
 Expected: PASS.

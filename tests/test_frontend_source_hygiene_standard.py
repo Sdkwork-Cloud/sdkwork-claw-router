@@ -158,8 +158,8 @@ def service_rel(source: Path) -> str:
 
 
 COMMONS_RUNTIME_IMPORT_MARKERS = (
-    "sdkwork-clawrouter-pc-commons/runtime",
-    "@sdkwork/clawrouter-pc-commons/runtime",
+    "sdkwork-clawroutes-pc-commons/runtime",
+    "@sdkwork/clawroutes-pc-commons/runtime",
 )
 
 
@@ -276,7 +276,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_commons_json_highlighter_accepts_unknown_input_without_any_boundary(self) -> None:
-        highlighter = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "utils" / "index.ts"
+        highlighter = PORTAL_PACKAGES / "sdkwork-clawroutes-pc-commons" / "src" / "utils" / "index.ts"
         source = highlighter.read_text(encoding="utf-8")
 
         self.assertIn("export const syntaxHighlightJson = (json: unknown): string =>", source)
@@ -616,57 +616,6 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "Active design docs must describe canonical MediaResource object/reference fields instead of legacy bare media URL columns.",
         )
 
-    def test_app_auth_and_profile_backend_media_fields_preserve_media_resource_objects(self) -> None:
-        source_expectations = {
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_auth_store.rs": [
-                r"\bpub\s+avatar_url\s*:\s*String\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_session_event_store.rs": [
-                r"\bpub\s+avatar_url\s*:\s*String\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "app_user_profile_read_store.rs": [
-                r"\bpub\s+avatar_url\s*:\s*String\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_auth.rs": [
-                r"\bpub\s+avatar_url\s*:\s*String\b",
-                r"\bavatar_url\s*:",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "app_auth_store.rs": [
-                r"\bavatar_url\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "app_auth_store.rs": [
-                r"\bavatar_url\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "sqlite" / "app_session_event_store.rs": [
-                r"\bavatar_url\b",
-            ],
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "infrastructure" / "sql" / "postgres" / "app_session_event_store.rs": [
-                r"\bavatar_url\b",
-            ],
-            ROOT / "crates" / "sdkwork-clawrouter-app-user-profile-repository-sqlx" / "src" / "sqlite.rs": [
-                r"\bavatar_url\b",
-            ],
-            ROOT / "crates" / "sdkwork-clawrouter-app-user-profile-repository-sqlx" / "src" / "postgres.rs": [
-                r"\bavatar_url\b",
-            ],
-        }
-        violations: list[str] = []
-
-        for source, patterns in source_expectations.items():
-            relative = rel(source)
-            content = source.read_text(encoding="utf-8", errors="ignore")
-            for pattern in patterns:
-                for match in re.finditer(pattern, content):
-                    line_number = content.count("\n", 0, match.start()) + 1
-                    line = content.splitlines()[line_number - 1].strip()
-                    violations.append(f"{relative}:{line_number}: {line}")
-
-        self.assertEqual(
-            [],
-            violations,
-            "App auth/profile backend structures must expose avatar as a MediaResource object and read avatar_resource_snapshot from storage.",
-        )
-
     def test_app_agent_registry_backend_media_fields_preserve_media_resource_objects(self) -> None:
         self.skipTest("app agent registry removed from claw router; owned by sdkwork-kernel")
 
@@ -747,7 +696,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
                 r"\breadString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "siteBranding.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawroutes-pc-commons" / "src" / "siteBranding.ts": [
                 r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
                 r"\breadConfiguredString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
             ],
@@ -1496,7 +1445,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
         for source in self._portal_sources():
             relative = rel(source)
-            if "sdkwork-clawrouter-pc-commons" in source.parts:
+            if "sdkwork-clawroutes-pc-commons" in source.parts:
                 continue
             if relative in allowed_optional_sources:
                 continue
@@ -1775,7 +1724,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "method: readHttpMethod(item.method)",
                 "readRequiredNumber(item, 'status', 'Gateway trace status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "notificationService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawroutes-pc-commons" / "src" / "notificationService.ts": [
                 "return readNotificationItems(result).map((item) => toSdkworkNotificationItem(readNotification(item)))",
                 "throw new Error('Notification list response missing items')",
                 "readRequiredString(value, 'id', 'Notification id is required')",
@@ -1895,7 +1844,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".filter(isGatewayTrace)",
                 "function isGatewayTrace(",
             ],
-            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "notificationService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawroutes-pc-commons" / "src" / "notificationService.ts": [
                 ".filter(isMessage)",
                 "function isMessage(",
             ],
@@ -1998,13 +1947,13 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_sdk_request_boundary_is_shared_not_locally_reimplemented(self) -> None:
         runtime_entrypoint = (
             PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "runtime.ts"
         )
         boundary = (
             PORTAL_PACKAGES
-            / "sdkwork-clawrouter-pc-commons"
+            / "sdkwork-clawroutes-pc-commons"
             / "src"
             / "sdk-request-boundary.ts"
         )
@@ -2034,7 +1983,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         import_name = "createIdempotencyParams"
         import_block = re.compile(
-            r"import\s*\{(?P<body>[^}]*\bcreateIdempotencyParams\b[^}]*)\}\s*from\s*['\"]sdkwork-clawrouter-pc-commons/runtime['\"]",
+            r"import\s*\{(?P<body>[^}]*\bcreateIdempotencyParams\b[^}]*)\}\s*from\s*['\"]sdkwork-clawroutes-pc-commons/runtime['\"]",
             re.DOTALL,
         )
 
@@ -2216,7 +2165,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "@sdkwork/clawrouter-open-sdk",
         }
         root_managed_runtime_dependencies = singleton_runtime_dependencies | boundary_runtime_dependencies
-        sdk_boundary_package = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/package.json"
+        sdk_boundary_package = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/package.json"
         root_package = json.loads((PORTAL_ROOT / "package.json").read_text(encoding="utf-8"))
         root_dependencies = root_package.get("dependencies", {})
 

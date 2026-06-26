@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{delete, get, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
@@ -138,11 +138,11 @@ pub fn admin_provider_secret_router_with_store(
 
 async fn fetch_provider_secrets(
     State(state): State<AdminProviderSecretState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_object(&body, "provider secret list body is invalid", true) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -173,11 +173,11 @@ async fn fetch_provider_secrets(
 
 async fn fetch_provider_secrets_from_query(
     State(state): State<AdminProviderSecretState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     Query(query): Query<ProviderSecretListQuery>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match normalize_list_query(query) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -204,11 +204,11 @@ async fn fetch_provider_secrets_from_query(
 
 async fn create_provider_secret(
     State(state): State<AdminProviderSecretState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_object(&body, "provider secret request body is required", false)
     {
         Ok(request) => request,
@@ -237,11 +237,11 @@ async fn create_provider_secret(
 
 async fn update_provider_secret(
     State(state): State<AdminProviderSecretState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_object(&body, "provider secret update body is required", false) {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -270,11 +270,11 @@ async fn update_provider_secret(
 
 async fn delete_provider_secret(
     State(state): State<AdminProviderSecretState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Path(secret_id): Path<String>,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let secret_id = match parse_positive_id(&secret_id, "provider secret id") {
         Ok(secret_id) => secret_id,
         Err(message) => return bad_request(message),
@@ -297,14 +297,6 @@ async fn delete_provider_secret(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminProviderSecretSubject {
-    AdminProviderSecretSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn parse_json_object(
     body: &[u8],

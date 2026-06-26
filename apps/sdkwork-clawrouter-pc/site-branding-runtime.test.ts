@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { fetchSiteBranding, resetSiteBrandingCache, DEFAULT_SITE_BRANDING } from './packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts';
-import { resetClawRouterSdkClients } from './packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts';
+import { fetchSiteBranding, resetSiteBrandingCache, DEFAULT_SITE_BRANDING } from './packages/sdkwork-clawroutes-pc-commons/src/siteBranding.ts';
+import { resetClawRouterSdkClients } from './packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts';
 
 test('site branding fetch reads from the app sites runtime sdk surface', async () => {
   resetClawRouterSdkClients();

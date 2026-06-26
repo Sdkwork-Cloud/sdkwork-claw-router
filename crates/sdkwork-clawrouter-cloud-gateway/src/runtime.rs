@@ -961,12 +961,25 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
 }
 
 async fn finalize_all_in_one_route_surfaces(
+    database_config: &DatabaseConfig,
+    database_pool: &DatabasePool,
     backend_router: Router,
     app_router: Router,
 ) -> (Router, Router) {
+    let postgres_pool = database_pool.as_postgres().cloned().map(std::sync::Arc::new);
     (
-        sdkwork_router_backend_api::maybe_wrap_router_with_web_framework(backend_router).await,
-        sdkwork_router_app_api::maybe_wrap_router_with_web_framework(app_router).await,
+        sdkwork_routes_clawrouter_backend_api::maybe_wrap_router_with_web_framework_and_iam_pool(
+            backend_router,
+            database_config,
+            postgres_pool.clone(),
+        )
+        .await,
+        sdkwork_routes_clawrouter_app_api::maybe_wrap_router_with_web_framework_and_iam_pool(
+            app_router,
+            database_config,
+            postgres_pool,
+        )
+        .await,
     )
 }
 
@@ -975,7 +988,7 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
     let gateway_router = build_gateway_router_from_all_in_one_context(&context)?;
     let (backend_router, app_router) = match &context.database_pool {
         DatabasePool::Sqlite(pool, _) => {
-            let backend_router = sdkwork_router_backend_api::router_with_sqlite_shared_runtime(
+            let backend_router = sdkwork_routes_clawrouter_backend_api::router_with_sqlite_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -989,7 +1002,7 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.models_catalog_root.clone(),
             )
             .map_err(anyhow::Error::new)?;
-            let app_router = sdkwork_router_app_api::router_with_sqlite_shared_runtime(
+            let app_router = sdkwork_routes_clawrouter_app_api::router_with_sqlite_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -1006,10 +1019,16 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
             )
             .await
             .map_err(anyhow::Error::new)?;
-            finalize_all_in_one_route_surfaces(backend_router, app_router).await
+            finalize_all_in_one_route_surfaces(
+                &context.database_config,
+                &context.database_pool,
+                backend_router,
+                app_router,
+            )
+            .await
         }
         DatabasePool::Postgres(pool, _) => {
-            let backend_router = sdkwork_router_backend_api::router_with_postgres_shared_runtime(
+            let backend_router = sdkwork_routes_clawrouter_backend_api::router_with_postgres_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -1023,7 +1042,7 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
                 context.models_catalog_root.clone(),
             )
             .map_err(anyhow::Error::new)?;
-            let app_router = sdkwork_router_app_api::router_with_postgres_shared_runtime(
+            let app_router = sdkwork_routes_clawrouter_app_api::router_with_postgres_shared_runtime(
                 context.database_config.clone(),
                 pool.clone(),
                 Arc::clone(&context.catalog),
@@ -1040,7 +1059,13 @@ pub async fn all_in_one_in_process_upstreams_from_env() -> anyhow::Result<EdgeIn
             )
             .await
             .map_err(anyhow::Error::new)?;
-            finalize_all_in_one_route_surfaces(backend_router, app_router).await
+            finalize_all_in_one_route_surfaces(
+                &context.database_config,
+                &context.database_pool,
+                backend_router,
+                app_router,
+            )
+            .await
         }
     };
     let sdkwork_api_cloud_gateway_router =
@@ -1095,14 +1120,8 @@ async fn build_embedded_sdkwork_api_cloud_gateway_router(
 }
 
 async fn build_claw_embedded_appbase_app_api_router() -> Result<Router, GatewayRouterError> {
-    let resolver = sdkwork_claw_http::ClawRouterWebRequestContextResolver::from_env()
-        .await
-        .map_err(|error| {
-            GatewayRouterError::Config(format!(
-                "failed to build claw router IAM web resolver for embedded appbase app-api: {error}"
-            ))
-        })?;
-    sdkwork_router_iam_app_api::build_sdkwork_iam_app_api_router_with_web_resolver(resolver)
+    let resolver = sdkwork_iam_web_adapter::iam_web_request_context_resolver_from_env().await;
+    sdkwork_routes_iam_app_api::build_sdkwork_iam_app_api_router_with_web_resolver(resolver)
         .await
         .map_err(|error| {
             GatewayRouterError::Config(format!(
@@ -1117,35 +1136,35 @@ fn claw_router_gateway_dependency_surfaces() -> [DependencyApiSurfaceConfig; 3] 
         DependencyApiSurfaceConfig {
             service_id: CLAW_ROUTER_BACKEND_API_SERVICE_ID.to_owned(),
             workspace: "sdkwork-clawrouter".to_owned(),
-            sdk_family: sdkwork_router_backend_api::manifest::SDK_FAMILY.to_owned(),
-            api_authority: sdkwork_router_backend_api::manifest::API_AUTHORITY.to_owned(),
+            sdk_family: sdkwork_routes_clawrouter_backend_api::manifest::SDK_FAMILY.to_owned(),
+            api_authority: sdkwork_routes_clawrouter_backend_api::manifest::API_AUTHORITY.to_owned(),
             surface: "backend".to_owned(),
-            api_prefix: sdkwork_router_backend_api::paths::ROUTE_PREFIX.to_owned(),
+            api_prefix: sdkwork_routes_clawrouter_backend_api::paths::ROUTE_PREFIX.to_owned(),
             runtime_mode: DependencyRuntimeMode::Embedded,
             same_origin_allowed: true,
             executable_export: Some(
-                "sdkwork_router_backend_api::build_sdkwork_claw_router_backend_api_router"
+                "sdkwork_routes_clawrouter_backend_api::build_sdkwork_claw_router_backend_api_router"
                     .to_owned(),
             ),
             cargo_feature: None,
-            cargo_dependency: Some("sdkwork-router-backend-api".to_owned()),
+            cargo_dependency: Some("sdkwork-routes-clawrouter-backend-api".to_owned()),
             coverage: "sdkwork-clawrouter-backend-api-route-crate".to_owned(),
             required_base_url_key: None,
         },
         DependencyApiSurfaceConfig {
             service_id: CLAW_ROUTER_APP_API_SERVICE_ID.to_owned(),
             workspace: "sdkwork-clawrouter".to_owned(),
-            sdk_family: sdkwork_router_app_api::manifest::SDK_FAMILY.to_owned(),
-            api_authority: sdkwork_router_app_api::manifest::API_AUTHORITY.to_owned(),
+            sdk_family: sdkwork_routes_clawrouter_app_api::manifest::SDK_FAMILY.to_owned(),
+            api_authority: sdkwork_routes_clawrouter_app_api::manifest::API_AUTHORITY.to_owned(),
             surface: "app".to_owned(),
-            api_prefix: sdkwork_router_app_api::paths::ROUTE_PREFIX.to_owned(),
+            api_prefix: sdkwork_routes_clawrouter_app_api::paths::ROUTE_PREFIX.to_owned(),
             runtime_mode: DependencyRuntimeMode::Embedded,
             same_origin_allowed: true,
             executable_export: Some(
-                "sdkwork_router_app_api::build_sdkwork_claw_router_app_api_router".to_owned(),
+                "sdkwork_routes_clawrouter_app_api::build_sdkwork_claw_router_app_api_router".to_owned(),
             ),
             cargo_feature: None,
-            cargo_dependency: Some("sdkwork-router-app-api".to_owned()),
+            cargo_dependency: Some("sdkwork-routes-clawrouter-app-api".to_owned()),
             coverage: "sdkwork-clawrouter-app-api-route-crate".to_owned(),
             required_base_url_key: None,
         },
@@ -1163,10 +1182,10 @@ fn claw_router_appbase_backend_dependency_surface() -> DependencyApiSurfaceConfi
         runtime_mode: DependencyRuntimeMode::Embedded,
         same_origin_allowed: true,
         executable_export: Some(
-            "sdkwork_router_iam_backend_api::build_sdkwork_iam_backend_api_router".to_owned(),
+            "sdkwork_routes_iam_backend_api::build_sdkwork_iam_backend_api_router".to_owned(),
         ),
         cargo_feature: Some("foundation-appbase".to_owned()),
-        cargo_dependency: Some("sdkwork-router-iam-backend-api".to_owned()),
+        cargo_dependency: Some("sdkwork-routes-iam-backend-api".to_owned()),
         coverage: "appbase-iam-backend-routes".to_owned(),
         required_base_url_key: None,
     }
@@ -1240,35 +1259,35 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
     )
     .map_err(anyhow::Error::msg)?;
     let provider_health_probe =
-        sdkwork_router_backend_api::shared_provider_health_probe_from_runtime_toml(
+        sdkwork_routes_clawrouter_backend_api::shared_provider_health_probe_from_runtime_toml(
             provider_secret_map_config.clone(),
             runtime_toml_ref,
         )
         .map_err(anyhow::Error::new)?;
     let cache_manager =
-        sdkwork_router_backend_api::shared_cache_manager_from_runtime_toml(runtime_toml_ref)
+        sdkwork_routes_clawrouter_backend_api::shared_cache_manager_from_runtime_toml(runtime_toml_ref)
             .map_err(anyhow::Error::new)?;
     let request_limits_config = RequestLimitsConfig::from_env_or_runtime_toml(runtime_toml_ref)
         .map_err(anyhow::Error::msg)?;
     let models_catalog_root =
-        sdkwork_router_backend_api::shared_models_catalog_root_from_runtime_toml(runtime_toml_ref);
+        sdkwork_routes_clawrouter_backend_api::shared_models_catalog_root_from_runtime_toml(runtime_toml_ref);
     let app_runtime_gateway_client =
-        sdkwork_router_app_api::shared_runtime_gateway_client_from_runtime_toml(runtime_toml_ref)
+        sdkwork_routes_clawrouter_app_api::shared_runtime_gateway_client_from_runtime_toml(runtime_toml_ref)
             .map_err(anyhow::Error::msg)?;
     let app_runtime_stream_bus =
-        sdkwork_router_app_api::shared_runtime_stream_bus_from_runtime_toml(
+        sdkwork_routes_clawrouter_app_api::shared_runtime_stream_bus_from_runtime_toml(
             runtime_toml_ref,
             deployment_mode,
         )
         .await
         .map_err(anyhow::Error::new)?;
     let model_ranking_refresh_worker_config =
-        sdkwork_router_app_api::shared_model_ranking_refresh_worker_config_from_toml(
+        sdkwork_routes_clawrouter_app_api::shared_model_ranking_refresh_worker_config_from_toml(
             runtime_toml_ref,
         )
         .map_err(anyhow::Error::msg)?;
     let app_catalog_refresh_interval =
-        sdkwork_router_app_api::shared_runtime_catalog_refresh_interval_from_toml(runtime_toml_ref)
+        sdkwork_routes_clawrouter_app_api::shared_runtime_catalog_refresh_interval_from_toml(runtime_toml_ref)
             .map_err(anyhow::Error::msg)?;
     let shared_catalog_refresh_interval = provider_runtime
         .catalog_refresh_interval

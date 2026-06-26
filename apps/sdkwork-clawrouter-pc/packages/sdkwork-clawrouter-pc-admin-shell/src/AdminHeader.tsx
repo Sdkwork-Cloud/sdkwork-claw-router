@@ -19,9 +19,9 @@ import {
   hasStoredPortalSession,
   readPortalPermissionScope,
   subscribePortalSessionChange,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
-import { useSiteBranding } from '@sdkwork/clawrouter-pc-commons/runtime';
-import { readMediaResourceUrl } from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
+import { useSiteBranding } from '@sdkwork/clawroutes-pc-commons/runtime';
+import { readMediaResourceUrl } from '@sdkwork/clawroutes-pc-commons/runtime';
 import { ADMIN_MODULES, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry.ts';
 import { listVisibleAdminModuleIds } from './admin-menu-permissions.ts';
 

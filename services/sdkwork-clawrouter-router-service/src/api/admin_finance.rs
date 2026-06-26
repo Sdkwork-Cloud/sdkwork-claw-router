@@ -1,11 +1,11 @@
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::{Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
@@ -69,11 +69,11 @@ pub fn admin_finance_router_with_store(store: Arc<dyn AdminFinanceStore + Send +
 
 async fn fetch_transactions(
     State(state): State<AdminFinanceState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Query(query): Query<AdminFinanceRequestQuery>,
 ) -> Response {
-    let query = match validated_query(trusted, &headers, query) {
+    let query = match validated_query(scoped, &headers, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -97,11 +97,11 @@ async fn fetch_transactions(
 
 async fn fetch_billing_records(
     State(state): State<AdminFinanceState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
     Query(query): Query<AdminFinanceRequestQuery>,
 ) -> Response {
-    let query = match validated_query(trusted, &headers, query) {
+    let query = match validated_query(scoped, &headers, query) {
         Ok(query) => query,
         Err(response) => return response,
     };
@@ -126,11 +126,11 @@ async fn fetch_billing_records(
 }
 
 fn validated_query(
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: &HeaderMap,
     query: AdminFinanceRequestQuery,
 ) -> Result<ValidatedFinanceListQuery, Response> {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
         return Err(bad_request("page must be greater than or equal to 1"));
@@ -154,14 +154,6 @@ fn validated_query(
     })
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminFinanceSubject {
-    AdminFinanceSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn normalize_optional_text(
     value: Option<String>,

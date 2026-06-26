@@ -4,7 +4,7 @@ import path from 'path';
 const packages = [
   'sdkwork-clawrouter-pc-types',
   'sdkwork-clawrouter-pc-i18n',
-  'sdkwork-clawrouter-pc-commons',
+  'sdkwork-clawroutes-pc-commons',
   'sdkwork-clawrouter-pc-core',
   'sdkwork-clawrouter-pc-home',
   'sdkwork-clawrouter-pc-playground',

@@ -31,12 +31,12 @@
     },
     {
       "capability": "app-iam-directory",
-      "crate": "crates/sdkwork-clawrouter-app-iam-directory-repository-sqlx",
+      "crate": "../sdkwork-iam/crates/sdkwork-iam-directory-repository-sqlx",
       "legacyPaths": [
-        "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_iam_directory_read_store.rs",
-        "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_iam_directory_read_store.rs"
+        "services/sdkwork-clawrouter-router-service/src/api/app_iam_directory.rs",
+        "crates/sdkwork-clawrouter-app-iam-directory-repository-sqlx"
       ],
-      "status": "MIGRATED"
+      "status": "RETIRED_TO_SDKWORK_IAM"
     },
     {
       "capability": "admin-dashboard",
@@ -61,10 +61,11 @@
       "capability": "app-user-profile",
       "crate": "crates/sdkwork-clawrouter-app-user-profile-repository-sqlx",
       "legacyPaths": [
-        "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/postgres/app_user_profile_read_store.rs",
-        "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/sqlite/app_user_profile_read_store.rs"
+        "services/sdkwork-clawrouter-router-service/src/api/app_user_profile.rs",
+        "services/sdkwork-clawrouter-router-service/src/ports/app_user_profile_read_store.rs",
+        "services/sdkwork-clawrouter-router-service/src/infrastructure/sql/app_user_profile_repository_adapter.rs"
       ],
-      "status": "MIGRATED"
+      "status": "RETIRED_TO_SDKWORK_IAM"
     },
     {
       "capability": "app-providers",

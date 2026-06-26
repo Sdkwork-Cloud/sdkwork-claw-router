@@ -119,9 +119,9 @@ test("admin organization page translations are registered", () => {
 test("admin organization service uses appbase backend directory reads and mutations", () => {
   const service = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
   const packageJson = JSON.parse(
-    source("packages/sdkwork-clawrouter-pc-commons/package.json"),
+    source("packages/sdkwork-clawroutes-pc-commons/package.json"),
   ) as { dependencies?: Record<string, string> };
-  const sdkBoundary = source("packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const sdkBoundary = source("packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
 
   assert.equal(packageJson.dependencies?.["@sdkwork/iam-app-sdk"], "workspace:*");
   assert.equal(packageJson.dependencies?.["@sdkwork/iam-backend-sdk"], "workspace:*");
@@ -1354,7 +1354,7 @@ test("admin organization role binding table exposes lifecycle status", () => {
 
 test("admin organization destructive actions show dependency counts and block unsafe deletes", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
-  const confirmDialog = source("packages/sdkwork-clawrouter-pc-commons/src/components/ConfirmDialog.tsx");
+  const confirmDialog = source("packages/sdkwork-clawroutes-pc-commons/src/components/ConfirmDialog.tsx");
 
   assert.match(sourceCode, /type ConfirmDependency = \{ count: number; label: string \};/);
   assert.match(sourceCode, /blocked\?: boolean/);
@@ -1449,8 +1449,8 @@ test("admin organization member table is enriched from appbase users", () => {
 });
 
 test("admin organization service calls appbase backend directory reads and write methods", async () => {
-  const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts");
-  const { resetClawRouterSdkClients } = await import("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts");
+  const { resetClawRouterSdkClients } = await import("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
   const { OrganizationService } = await import(
     "./packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
   );
@@ -1555,11 +1555,11 @@ test("admin organization service calls appbase backend directory reads and write
 });
 
 test("appbase backend SDK inherits the verified same-origin backend base URL", async () => {
-  const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts");
+  const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawroutes-pc-commons/src/app-session-token.ts");
   const {
     createSdkworkAppbaseBackendSdkClient,
     resetClawRouterSdkClients,
-  } = await import("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
+  } = await import("./packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts");
 
   Object.defineProperty(globalThis, "window", {
     configurable: true,

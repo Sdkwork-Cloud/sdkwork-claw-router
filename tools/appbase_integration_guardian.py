@@ -96,7 +96,7 @@ BUILT_IN_FORBIDDEN_PRODUCT_FORKS: tuple[str, ...] = (
             "apps",
             "sdkwork-clawrouter-pc",
             "packages",
-            "sdkwork-clawrouter-pc-commons",
+            "sdkwork-clawroutes-pc-commons",
             "src",
             f"{'-'.join(['appbase', 'sdk', 'clients'])}.ts",
         ]

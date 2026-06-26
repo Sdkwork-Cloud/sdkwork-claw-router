@@ -5,10 +5,9 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 
+use crate::api::app_sql_subject::{map_optional_app_sql_subject, ResolvedAppSqlScopedSubject};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
 use crate::ports::{
     AppRoutingApiKeyItem, AppRoutingChannelItem, AppRoutingItems, AppRoutingReadFuture,
     AppRoutingReadStore, AppRoutingRequestTraceItem, AppRoutingSubject, AppRoutingUsageSnapshot,
@@ -88,9 +87,11 @@ fn app_routing_router_with_state(
 
 async fn fetch_routing_channels(
     State(state): State<AppRoutingState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match routing_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -103,9 +104,11 @@ async fn fetch_routing_channels(
 
 async fn fetch_routing_api_keys(
     State(state): State<AppRoutingState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match routing_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -118,9 +121,11 @@ async fn fetch_routing_api_keys(
 
 async fn fetch_routing_request_traces(
     State(state): State<AppRoutingState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match routing_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -133,9 +138,11 @@ async fn fetch_routing_request_traces(
 
 async fn fetch_routing_usage(
     State(state): State<AppRoutingState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match routing_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -144,17 +151,6 @@ async fn fetch_routing_usage(
         Ok(snapshot) => Json(PlusApiResult::success(snapshot)).into_response(),
         Err(error) => app_routing_read_model_error(error),
     }
-}
-
-fn routing_subject(
-    subject: Option<TrustedRequestSubject>,
-    require_subject: bool,
-) -> Result<Option<AppRoutingSubject>, Response> {
-    map_optional_app_user_subject(subject, require_subject, |trusted| AppRoutingSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    })
 }
 
 fn app_routing_read_model_error(error: impl std::fmt::Display) -> Response {

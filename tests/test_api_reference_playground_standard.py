@@ -178,8 +178,8 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         production_smoke = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
         playground_request = API_REFERENCE_ROOT / "playgroundRequest.ts"
         playground_download = API_REFERENCE_ROOT / "playgroundResponseDownload.ts"
-        verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        verifier = (ROOT / "scripts" / "verify-claw-router-application.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         self.assertIn("export function createApiPlaygroundInitialState", row_runtime)
         self.assertIn("export function createApiPlaygroundInitialStateKey", row_runtime)
@@ -254,7 +254,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         for route in [
             "/api-reference?__browser-smoke-playground-primitive-response=1",
@@ -292,7 +292,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         for route in [
             "/api-reference?__browser-smoke-playground-api-key-auth=1",
@@ -347,7 +347,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         route = "/api-reference?__browser-smoke-tool-api-disabled=1"
         self.assertIn(route, browser_smoke)
@@ -383,7 +383,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
-        product_tests = (ROOT / "scripts" / "run-claw-router-product.test.mjs").read_text(encoding="utf-8")
+        product_tests = (ROOT / "scripts" / "run-claw-router-application.test.mjs").read_text(encoding="utf-8")
 
         route = "/api-reference?__browser-smoke-code-snippet-tabs=1"
         self.assertIn(route, browser_smoke)

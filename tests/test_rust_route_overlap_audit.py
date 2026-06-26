@@ -47,7 +47,7 @@ class RustRouteOverlapAuditTest(unittest.TestCase):
                 workspace_root
                 / "sdkwork-appbase"
                 / "crates"
-                / "sdkwork-router-iam-app-api"
+                / "sdkwork-routes-iam-app-api"
                 / "src"
             )
             appbase_source_dir.mkdir(parents=True)
@@ -72,8 +72,8 @@ class RustRouteOverlapAuditTest(unittest.TestCase):
         self.assertEqual(
             [
                 "duplicate Rust Axum method route GET /app/v3/api/iam/current_user: "
-                "../sdkwork-iam/crates/sdkwork-router-iam-app-api/src/lib.rs:5, "
-                "../sdkwork-iam/crates/sdkwork-router-iam-app-api/src/lib.rs:9"
+                "../sdkwork-iam/crates/sdkwork-routes-iam-app-api/src/lib.rs:5, "
+                "../sdkwork-iam/crates/sdkwork-routes-iam-app-api/src/lib.rs:9"
             ],
             result.messages,
         )

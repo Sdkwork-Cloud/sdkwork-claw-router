@@ -35,14 +35,14 @@ All notable changes to `sdkwork-clawrouter` release records will be documented h
 - `git diff --check` in `sdkwork-sdk-generator`.
 - `node --check scripts/plan-claw-router-install-packages.mjs`
 - `node --check scripts/build-claw-router-native-installer.mjs`
-- `node --check scripts/run-claw-router-product.test.mjs`
+- `node --check scripts/run-claw-router-application.test.mjs`
 - `node scripts/plan-claw-router-install-packages.mjs --check --json`
 - `node scripts/build-claw-router-native-installer.mjs --package-id linux-x64-service --check --dry-run --json`
 - `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
 - `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
 - `pnpm app-store:seed:check`
 - `cargo test -p sdkwork-claw-config`
-- `node --test scripts/run-claw-router-product.test.mjs --test-name-pattern "installation documentation covers release|install package planner covers|install package manifests distinguish|install package builder emits service and container|native installer builder emits apt-installable|native installer builder CLI validates"`
+- `node --test scripts/run-claw-router-application.test.mjs --test-name-pattern "installation documentation covers release|install package planner covers|install package manifests distinguish|install package builder emits service and container|native installer builder emits apt-installable|native installer builder CLI validates"`
 - GitHub Actions `Release Package` run `25969690825`, covering Linux x64, Linux arm64, Windows x64, Windows arm64, macOS x64, and macOS arm64.
 
 ### Release Gate Status
@@ -87,7 +87,7 @@ All notable changes to `sdkwork-clawrouter` release records will be documented h
 - `node scripts/plan-claw-router-install-packages.mjs --check`
 - `node scripts/build-claw-router-install-package.mjs --all --check --dry-run --json`
 - `node scripts/build-claw-router-native-installer.mjs --all --check --dry-run --json`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `node scripts/release-preflight.mjs --dry-run --json`
 - `cargo test -p sdkwork-clawrouter-router-service --test database_installer sqlite_installer_repairs`
 - Local Windows WiX fixture build for `windows-x64-desktop` `.msi`
@@ -129,7 +129,7 @@ All notable changes to `sdkwork-clawrouter` release records will be documented h
 
 ### Verification
 
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `node scripts/plan-claw-router-install-packages.mjs --check`
 - `node scripts/build-claw-router-install-package.mjs --check --dry-run --all`
 - `node scripts/smoke-install-package-init.mjs --check --dry-run`

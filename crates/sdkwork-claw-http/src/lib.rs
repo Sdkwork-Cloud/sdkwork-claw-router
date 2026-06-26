@@ -1,6 +1,4 @@
-pub mod app_session_tenant_signing;
 pub mod auth;
-pub mod claw_web_resolver;
 pub mod contract_routes;
 pub mod error;
 pub mod headers;
@@ -9,10 +7,11 @@ pub mod metrics;
 pub mod readiness;
 pub mod router;
 pub mod shutdown;
+pub mod claw_web_resolver;
 pub mod web_bridge;
 pub mod web_framework_compat;
 
-pub use app_session_tenant_signing::AppSessionTenantSigningKeyResolver;
+pub use sdkwork_iam_web_adapter::TenantSigningKeyResolver;
 pub use auth::{
     app_request_subject_boundary, attach_trusted_request_subject,
     decode_app_session_token_claims_unverified, optional_app_request_subject,
@@ -27,7 +26,6 @@ pub use auth::{
     AppSessionTokenKind, AppSubjectBoundaryConfig, TrustedRequestSubject,
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,
 };
-pub use claw_web_resolver::ClawRouterWebRequestContextResolver;
 pub use contract_routes::{
     app_openapi_response, backend_openapi_response, cloud_services_openapi_response,
     contract_fallback, gateway_openapi_response, openapi_schema_tabs_response_for_surface,
@@ -51,10 +49,16 @@ pub use router::{
 };
 pub use sdkwork_claw_contract::{ApiSurface, ContractOperation};
 pub use shutdown::{subscribe_shutdown_signal, wait_for_shutdown_signal};
+pub use claw_web_resolver::{
+    ensure_iam_database_env_for_claw_database, iam_web_resolver_for_claw_database,
+};
 pub use web_bridge::{
+    authenticated_principal_failed_trusted_subject_projection,
     inject_legacy_handler_context_from_web_context, trusted_request_subject_from_web_context,
 };
 pub use web_framework_compat::{
     apply_app_subject_boundary_if_legacy, apply_optional_app_subject_boundary_if_legacy,
-    claw_web_framework_enabled_from_env,
+    claw_web_framework_enabled_from_env, merge_web_framework_scoped_app_read_router,
+    merge_web_framework_scoped_app_router,
+    project_trusted_subject_from_web_request_context,
 };

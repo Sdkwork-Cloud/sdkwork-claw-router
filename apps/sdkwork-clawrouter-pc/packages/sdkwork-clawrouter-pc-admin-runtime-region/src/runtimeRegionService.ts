@@ -6,7 +6,7 @@ import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   readApiRecord,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 export type RuntimeRegionSettingsForm = AdminRuntimeRegionSettingsResponse;
 

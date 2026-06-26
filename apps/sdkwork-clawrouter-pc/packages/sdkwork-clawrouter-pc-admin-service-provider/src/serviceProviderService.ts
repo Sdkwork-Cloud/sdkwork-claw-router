@@ -1,7 +1,7 @@
 import {
   createClientOperationToken,
   getClawRouterBackendSdkClient,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
 
 type BackendServiceProviders = ReturnType<typeof getClawRouterBackendSdkClient>['serviceProviders'];
 type ListParams<TList> = TList extends (params?: infer TParams) => unknown ? TParams : never;

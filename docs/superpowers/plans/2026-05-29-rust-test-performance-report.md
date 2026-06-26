@@ -91,7 +91,7 @@ Updated:
 
 - `scripts/run-claw-router-rust-tests.mjs`
 - `scripts/measure-claw-router-test-targets.mjs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 
 Change:
 
@@ -129,7 +129,7 @@ Updated:
 
 - `package.json`
 - `scripts/run-claw-router-rust-tests.mjs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 - `services/sdkwork-clawrouter-router-service/tests/openai_compatible_http_relay.rs`
 
 Change:
@@ -291,8 +291,8 @@ Effect:
 
 Updated:
 
-- `scripts/verify-claw-router-product.mjs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/verify-claw-router-application.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 
 Change:
 
@@ -314,7 +314,7 @@ Updated:
 
 - `package.json`
 - `scripts/run-claw-router-rust-tests.mjs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 
 Change:
 
@@ -343,7 +343,7 @@ Change:
 
 Effect:
 
-- removes a large part of the manual “which Rust command should I run for this edit?” overhead
+- removes a large part of the manual “which Rust command should I run for this edit?�?overhead
 - reduces the chance that developers jump from a narrow source edit straight to `cargo test --workspace`
 - keeps the fast path conservative: exact-target selection where the repo naming makes that safe, existing curated profiles otherwise
 
@@ -353,7 +353,7 @@ Executed after the change:
 
 - `cargo test -p sdkwork-claw-test-support --lib`
 - `cargo test -p sdkwork-clawrouter-admin-api-server --test sqlite_product_model_route`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `node scripts/run-claw-router-rust-tests.mjs quick`
 - `node scripts/run-claw-router-rust-tests.mjs smoke`
 - `cargo test -p sdkwork-clawrouter-router-service --test openai_compatible_http_relay openai_compatible_relay_times_out`
@@ -369,7 +369,7 @@ Executed after the change:
 - `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker --target-dir target-rust-tests/iter-product`
 - `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker model_ranking_refresh_worker_recommends_alert_after_delayed_failure_threshold --target-dir target-rust-tests/iter-product -- --exact`
 - `cargo test -p sdkwork-clawrouter-router-service --test model_ranking_refresh_worker model_ranking_refresh_worker_skips_overlapping_run_for_same_worker --target-dir target-rust-tests/iter-product -- --exact`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-clawrouter-router-service/src/api/app_runtime.rs`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file services/sdkwork-clawrouter-cloud-gateway/src/runtime.rs`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --staged`
@@ -549,7 +549,7 @@ Updated:
 - `crates/sdkwork-clawrouter-router-service-test-support/src/repair.rs`
 - `crates/sdkwork-clawrouter-router-service-test-support/src/installed.rs`
 - `scripts/run-claw-router-rust-tests.mjs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 
 Change:
 
@@ -570,7 +570,7 @@ Effect:
 
 Executed after the change:
 
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `cargo test -p sdkwork-clawrouter-router-service-test-support`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/schema.rs`
 - `node scripts/run-claw-router-rust-tests.mjs auto --dry-run --changed-file crates/sdkwork-clawrouter-router-service-test-support/src/repair.rs`
@@ -590,7 +590,7 @@ Updated:
 
 - `services/sdkwork-clawrouter-router-service/tests/database_installer.rs`
 - `services/sdkwork-clawrouter-router-service/tests/database_installer_installed.rs`
-- `scripts/run-claw-router-product.test.mjs`
+- `scripts/run-claw-router-application.test.mjs`
 
 Change:
 
@@ -611,7 +611,7 @@ Effect:
 
 Executed after the change:
 
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `cargo test -p sdkwork-clawrouter-router-service --test database_installer_installed sqlite_installer_upgrades_existing_installation_when_versions_change -- --exact`
 - `cargo test -p sdkwork-clawrouter-router-service --test database_installer_installed sqlite_installer_catalog_sync_failure_rolls_back_catalog_rows -- --exact`
 - `cargo test -p sdkwork-clawrouter-router-service --test database_installer sqlite_installer_imports_course_comment_seed_with_canonical_scope_fields -- --exact`

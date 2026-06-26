@@ -64,8 +64,19 @@ class SdkworkStandardAlignmentGuardian:
     )
 
     HTTP_ROUTE_CRATES: tuple[str, ...] = (
-        "crates/sdkwork-router-app-api",
-        "crates/sdkwork-router-backend-api",
+        "crates/sdkwork-routes-clawrouter-app-api",
+        "crates/sdkwork-routes-clawrouter-backend-api",
+    )
+    IAM_RESOLVER_CANONICAL_IMPORT = "IamWebRequestContextResolver"
+    IAM_RESOLVER_LEGACY_IMPORT = "IamDatabaseWebRequestContextResolver"
+    IAM_RESOLVER_CANONICAL_FACTORY = "iam_web_request_context_resolver_from_env"
+    IAM_RESOLVER_LEGACY_FACTORY = "iam_database_resolver_from_env"
+    IAM_RESOLVER_CLAW_INTEGRATION_FILE = (
+        "crates/sdkwork-claw-http/src/claw_web_resolver.rs"
+    )
+    IAM_RESOLVER_CLAW_INTEGRATION_MARKERS: tuple[str, ...] = (
+        "iam_web_resolver_for_claw_database",
+        "ensure_iam_database_env_for_claw_database",
     )
 
     def __init__(self, root: Path) -> None:
@@ -87,6 +98,7 @@ class SdkworkStandardAlignmentGuardian:
         checks.extend(self._check_pc_package_taxonomy())
         checks.extend(self._check_rpc_discovery_policy())
         checks.extend(self._check_rust_service_naming())
+        checks.extend(self._check_iam_resolver_standardization())
         return AlignmentGuardianResult(checks=tuple(checks))
 
     def _check_root_component_specs(self) -> list[AlignmentCheck]:
@@ -275,8 +287,26 @@ class SdkworkStandardAlignmentGuardian:
             else ""
         )
         bypasses_legacy_boundary = "claw_web_framework_enabled_from_env()" in auth_text
-        injects_trusted_subject = "inject_legacy_handler_context_from_web_context" in bootstrap_text
-        if claw_http.exists() and web_framework_defaults_on and bypasses_legacy_boundary and injects_trusted_subject:
+        injects_trusted_subject = (
+            "inject_legacy_handler_context_from_web_context" in bootstrap_text
+            or "inject_legacy_handler_context_from_web_context"
+            in (
+                (self.root / self.HTTP_ROUTE_CRATES[1] / "src" / "web_bootstrap.rs")
+                .read_text(encoding="utf-8")
+                if (self.root / self.HTTP_ROUTE_CRATES[1] / "src" / "web_bootstrap.rs").exists()
+                else ""
+            )
+        )
+        projects_subject_middleware = "project_trusted_subject_from_web_request_context" in (
+            claw_http / "src" / "web_framework_compat.rs"
+        ).read_text(encoding="utf-8") if (claw_http / "src" / "web_framework_compat.rs").exists() else ""
+        if (
+            claw_http.exists()
+            and web_framework_defaults_on
+            and bypasses_legacy_boundary
+            and injects_trusted_subject
+            and projects_subject_middleware
+        ):
             checks.append(
                 AlignmentCheck(
                     id="web-framework-local-http-stack",
@@ -338,8 +368,7 @@ class SdkworkStandardAlignmentGuardian:
         )
         all_in_one_finalizes_both = (
             "finalize_all_in_one_route_surfaces" in gateway_text
-            and "sdkwork_router_app_api::maybe_wrap_router_with_web_framework" in gateway_text
-            and "sdkwork_router_backend_api::maybe_wrap_router_with_web_framework" in gateway_text
+            and "maybe_wrap_router_with_web_framework_and_iam_pool" in gateway_text
         )
         checks.append(
             AlignmentCheck(
@@ -352,7 +381,7 @@ class SdkworkStandardAlignmentGuardian:
                     if all_in_one_finalizes_both
                     else "gateway all-in-one must finalize both app-api and backend-api routers once"
                 ),
-                remediation="use finalize_all_in_one_route_surfaces to wrap both shared-runtime routers",
+                remediation="use finalize_all_in_one_route_surfaces with maybe_wrap_router_with_web_framework_and_iam_pool(database_config, postgres_pool)",
             )
         )
         return checks
@@ -370,7 +399,7 @@ class SdkworkStandardAlignmentGuardian:
     def _check_handler_subject_resolution(self) -> list[AlignmentCheck]:
         checks: list[AlignmentCheck] = []
         api_dir = self.root / "services" / "sdkwork-clawrouter-router-service" / "src" / "api"
-        allowlist = {"app_auth.rs", "subject.rs", "openai_invocation.rs", "openai_chat.rs", "openai_embeddings.rs", "openai_models.rs", "openai_responses.rs"}
+        allowlist = {"subject.rs", "openai_invocation.rs", "openai_chat.rs", "openai_embeddings.rs", "openai_models.rs", "openai_responses.rs"}
         legacy_files: list[str] = []
         migrated_files: list[str] = []
         openai_api_key_files: list[str] = []
@@ -477,7 +506,7 @@ class SdkworkStandardAlignmentGuardian:
         )
 
         pc_root = self.root / "apps" / "sdkwork-clawrouter-pc"
-        commons_pkg = pc_root / "packages" / "sdkwork-clawrouter-pc-commons" / "package.json"
+        commons_pkg = pc_root / "packages" / "sdkwork-clawroutes-pc-commons" / "package.json"
         pc_pkg = pc_root / "package.json"
         has_ts_dep = False
         for manifest in (commons_pkg, pc_pkg):
@@ -497,7 +526,7 @@ class SdkworkStandardAlignmentGuardian:
                 ),
                 remediation=(
                     "add ../../../sdkwork-utils/packages/sdkwork-utils-typescript to pnpm workspace "
-                    "and declare @sdkwork/utils in sdkwork-clawrouter-pc-commons"
+                    "and declare @sdkwork/utils in sdkwork-clawroutes-pc-commons"
                 ),
             )
         )
@@ -514,7 +543,7 @@ class SdkworkStandardAlignmentGuardian:
                     continue
                 if (
                     "@sdkwork/utils" in text
-                    or "sdkwork-clawrouter-pc-commons/sdkwork-utils" in text
+                    or "sdkwork-clawroutes-pc-commons/sdkwork-utils" in text
                 ):
                     ts_usage_files += 1
         app_src = pc_root / "src"
@@ -528,7 +557,7 @@ class SdkworkStandardAlignmentGuardian:
                     continue
                 if (
                     "@sdkwork/utils" in text
-                    or "sdkwork-clawrouter-pc-commons/sdkwork-utils" in text
+                    or "sdkwork-clawroutes-pc-commons/sdkwork-utils" in text
                 ):
                     ts_usage_files += 1
         checks.append(
@@ -542,7 +571,7 @@ class SdkworkStandardAlignmentGuardian:
                     if ts_usage_files
                     else "PC application declares @sdkwork/utils but has no imports yet"
                 ),
-                remediation="import helpers from sdkwork-clawrouter-pc-commons/sdkwork-utils instead of local duplicates",
+                remediation="import helpers from sdkwork-clawroutes-pc-commons/sdkwork-utils instead of local duplicates",
             )
         )
         return checks
@@ -747,7 +776,18 @@ class SdkworkStandardAlignmentGuardian:
                 )
                 continue
             bootstrap_text = bootstrap_rs.read_text(encoding="utf-8") if bootstrap_rs.exists() else ""
-            if "build_web_framework_layer" in bootstrap_text and "http_route_manifest()" in bootstrap_text:
+            wires_route_manifest = (
+                (
+                    "http_route_manifest()" in bootstrap_text
+                    or "claw_router_app_http_route_manifest()" in bootstrap_text
+                )
+                and (
+                    "WebFrameworkLayer::new" in bootstrap_text
+                    or "build_web_framework_layer" in bootstrap_text
+                    or "build_claw_router_" in bootstrap_text
+                )
+            )
+            if wires_route_manifest:
                 checks.append(
                     AlignmentCheck(
                         id=f"http-route-manifest-{route_crate}",
@@ -766,7 +806,7 @@ class SdkworkStandardAlignmentGuardian:
                         severity="blocking",
                         status="fail",
                         message=f"{route_crate} does not wire HttpRouteManifest into web framework bootstrap",
-                        remediation="use build_web_framework_layer(resolver, http_route_manifest(), public_prefixes)",
+                        remediation="wire HttpRouteManifest via WebFrameworkLayer::new(resolver).with_route_manifest(http_route_manifest())",
                     )
                 )
         return checks
@@ -1130,6 +1170,209 @@ class SdkworkStandardAlignmentGuardian:
                         remediation="execute pending rename migration per NAMING_SPEC.md",
                     )
                 )
+        return checks
+
+    def _check_iam_resolver_standardization(self) -> list[AlignmentCheck]:
+        checks: list[AlignmentCheck] = []
+
+        integration_path = self.root / self.IAM_RESOLVER_CLAW_INTEGRATION_FILE
+        if integration_path.exists():
+            integration_text = integration_path.read_text(encoding="utf-8", errors="ignore")
+            is_canonical_integration = all(
+                marker in integration_text for marker in self.IAM_RESOLVER_CLAW_INTEGRATION_MARKERS
+            )
+            if is_canonical_integration:
+                checks.append(
+                    AlignmentCheck(
+                        id="iam-resolver-claw-integration-factory",
+                        category="iam",
+                        severity="blocking",
+                        status="pass",
+                        message=(
+                            f"{self.IAM_RESOLVER_CLAW_INTEGRATION_FILE} provides claw-specific "
+                            "IAM resolver factory with database_config and shared pool wiring"
+                        ),
+                        remediation="",
+                    )
+                )
+            else:
+                checks.append(
+                    AlignmentCheck(
+                        id="iam-resolver-claw-integration-factory",
+                        category="iam",
+                        severity="blocking",
+                        status="fail",
+                        message=(
+                            f"{self.IAM_RESOLVER_CLAW_INTEGRATION_FILE} exists but is not the "
+                            "canonical claw IAM integration factory"
+                        ),
+                        remediation=(
+                            "implement iam_web_resolver_for_claw_database and "
+                            "ensure_iam_database_env_for_claw_database per WEB_FRAMEWORK_SPEC.md"
+                        ),
+                    )
+                )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-claw-integration-factory",
+                    category="iam",
+                    severity="blocking",
+                    status="fail",
+                    message=(
+                        f"missing claw IAM integration factory at "
+                        f"{self.IAM_RESOLVER_CLAW_INTEGRATION_FILE}"
+                    ),
+                    remediation=(
+                        "add claw_web_resolver.rs with iam_web_resolver_for_claw_database "
+                        "to wire database_config and shared postgres pools into IamWebRequestContextResolver"
+                    ),
+                )
+            )
+
+        deprecated_wrapper_paths = (
+            "crates/sdkwork-claw-http/src/iam_web_resolver.rs",
+            "crates/sdkwork-claw-http/src/web_resolver.rs",
+        )
+        for relative in deprecated_wrapper_paths:
+            wrapper_path = self.root / relative
+            if wrapper_path.exists():
+                checks.append(
+                    AlignmentCheck(
+                        id=f"iam-resolver-wrapper-{relative.replace('/', '-')}",
+                        category="iam",
+                        severity="blocking",
+                        status="fail",
+                        message=f"deprecated app-local IAM resolver wrapper still exists: {relative}",
+                        remediation="remove pass-through resolver wrapper and wire sdkwork_iam_web_adapter directly",
+                    )
+                )
+            else:
+                checks.append(
+                    AlignmentCheck(
+                        id=f"iam-resolver-wrapper-{relative.replace('/', '-')}",
+                        category="iam",
+                        severity="blocking",
+                        status="pass",
+                        message=f"no deprecated app-local IAM resolver wrapper at {relative}",
+                        remediation="",
+                    )
+                )
+
+        legacy_hits = 0
+        canonical_hits = 0
+        legacy_factory_hits = 0
+        canonical_factory_hits = 0
+        scan_roots = (
+            self.root / "crates",
+            self.root / "services",
+        )
+        for root in scan_roots:
+            if not root.exists():
+                continue
+            for path in root.rglob("*.rs"):
+                text = path.read_text(encoding="utf-8", errors="ignore")
+                if self.IAM_RESOLVER_LEGACY_IMPORT in text:
+                    legacy_hits += 1
+                if self.IAM_RESOLVER_CANONICAL_IMPORT in text:
+                    canonical_hits += 1
+                if self.IAM_RESOLVER_LEGACY_FACTORY in text:
+                    legacy_factory_hits += 1
+                if self.IAM_RESOLVER_CANONICAL_FACTORY in text:
+                    canonical_factory_hits += 1
+
+        if legacy_hits == 0:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-no-legacy-import",
+                    category="iam",
+                    severity="blocking",
+                    status="pass",
+                    message=f"no Rust source imports {self.IAM_RESOLVER_LEGACY_IMPORT}",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-no-legacy-import",
+                    category="iam",
+                    severity="blocking",
+                    status="fail",
+                    message=f"legacy IAM resolver import still present in {legacy_hits} Rust source file(s)",
+                    remediation=f"replace {self.IAM_RESOLVER_LEGACY_IMPORT} with {self.IAM_RESOLVER_CANONICAL_IMPORT}",
+                )
+            )
+
+        if canonical_hits > 0:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-canonical-import",
+                    category="iam",
+                    severity="blocking",
+                    status="pass",
+                    message=f"canonical IAM resolver import {self.IAM_RESOLVER_CANONICAL_IMPORT} is in use",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-canonical-import",
+                    category="iam",
+                    severity="blocking",
+                    status="fail",
+                    message=f"canonical IAM resolver import {self.IAM_RESOLVER_CANONICAL_IMPORT} is not used in Rust sources",
+                    remediation=f"use {self.IAM_RESOLVER_CANONICAL_IMPORT} from sdkwork_iam_web_adapter in web bootstrap layers",
+                )
+            )
+
+        if legacy_factory_hits == 0:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-no-legacy-factory",
+                    category="iam",
+                    severity="blocking",
+                    status="pass",
+                    message=f"no Rust source calls {self.IAM_RESOLVER_LEGACY_FACTORY}",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-no-legacy-factory",
+                    category="iam",
+                    severity="blocking",
+                    status="fail",
+                    message=f"legacy IAM resolver factory still present in {legacy_factory_hits} Rust source file(s)",
+                    remediation=f"replace {self.IAM_RESOLVER_LEGACY_FACTORY} with {self.IAM_RESOLVER_CANONICAL_FACTORY}",
+                )
+            )
+
+        if canonical_factory_hits > 0:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-canonical-factory",
+                    category="iam",
+                    severity="blocking",
+                    status="pass",
+                    message=f"canonical IAM resolver factory {self.IAM_RESOLVER_CANONICAL_FACTORY} is in use",
+                    remediation="",
+                )
+            )
+        else:
+            checks.append(
+                AlignmentCheck(
+                    id="iam-resolver-canonical-factory",
+                    category="iam",
+                    severity="blocking",
+                    status="fail",
+                    message=f"canonical IAM resolver factory {self.IAM_RESOLVER_CANONICAL_FACTORY} is not used in Rust sources",
+                    remediation=f"use {self.IAM_RESOLVER_CANONICAL_FACTORY} from sdkwork_iam_web_adapter in web bootstrap layers",
+                )
+            )
+
         return checks
 
 

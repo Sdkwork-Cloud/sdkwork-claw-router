@@ -593,7 +593,7 @@ test("admin searchable list toolbars keep search before primary create actions",
 });
 
 test("shared navigation notifications stay product-focused without read-only labels", () => {
-  const source = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx");
+  const source = readPortalFile("./packages/sdkwork-clawroutes-pc-commons/src/components/Navbar.tsx");
 
   assert.doesNotMatch(source, /readOnlyNotifications/);
   assert.doesNotMatch(source, />\s*只读\s*</);

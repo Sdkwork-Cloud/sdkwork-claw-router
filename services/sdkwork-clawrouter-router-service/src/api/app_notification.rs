@@ -5,12 +5,14 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 use serde::Serialize;
 
+use crate::api::app_sql_subject::{
+    map_optional_app_sql_subject, map_required_app_sql_subject, RequiredAppSqlScopedSubject,
+    ResolvedAppSqlScopedSubject,
+};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
 use crate::domain::DomainError;
 use crate::ports::{
     AcknowledgeAppNotificationCommand, AppNotificationFuture, AppNotificationItems,
@@ -117,11 +119,13 @@ fn app_notification_router_with_state(
 
 async fn list_notifications(
     State(state): State<AppNotificationState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
     _headers: HeaderMap,
     Query(query): Query<NotificationListQuery>,
 ) -> Response {
-    let subject = match notification_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -156,15 +160,12 @@ async fn list_notifications(
 
 async fn mark_popup_seen(
     State(state): State<AppNotificationState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_required_app_sql_subject(subject, |scoped| AppNotificationSubject::from(scoped));
     let app_id = match normalized_app_id(query.app_id.as_deref()) {
         Ok(app_id) => app_id,
         Err(response) => return response,
@@ -191,15 +192,12 @@ async fn mark_popup_seen(
 
 async fn acknowledge(
     State(state): State<AppNotificationState>,
-    subject: Option<TrustedRequestSubject>,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Path(notification_id): Path<String>,
     Query(query): Query<NotificationCommandQuery>,
 ) -> Response {
-    let subject = match required_subject(&state, subject) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
+    let subject = map_required_app_sql_subject(subject, |scoped| AppNotificationSubject::from(scoped));
     let app_id = match normalized_app_id(query.app_id.as_deref()) {
         Ok(app_id) => app_id,
         Err(response) => return response,
@@ -224,35 +222,6 @@ async fn acknowledge(
             app_notification_error("app notification acknowledgement is unavailable", error)
         }
     }
-}
-
-fn required_subject(
-    state: &AppNotificationState,
-    subject: Option<TrustedRequestSubject>,
-) -> Result<AppNotificationSubject, Response> {
-    notification_subject(subject, state.require_subject).and_then(|subject| {
-        subject.ok_or_else(|| {
-            (
-                StatusCode::UNAUTHORIZED,
-                Json(PlusApiResult::error(
-                    "4010",
-                    "trusted request subject is required for app notifications",
-                )),
-            )
-                .into_response()
-        })
-    })
-}
-
-fn notification_subject(
-    subject: Option<TrustedRequestSubject>,
-    require_subject: bool,
-) -> Result<Option<AppNotificationSubject>, Response> {
-    map_optional_app_user_subject(subject, require_subject, |trusted| AppNotificationSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
-    })
 }
 
 fn normalized_app_id(value: Option<&str>) -> Result<String, Response> {
@@ -297,23 +266,24 @@ fn mutation_success(state: &'static str) -> Response {
 fn bad_request(message: &str) -> Response {
     (
         StatusCode::BAD_REQUEST,
-        Json(PlusApiResult::error("4000", message)),
+        Json(PlusApiResult::error("4001", message)),
     )
         .into_response()
 }
 
-fn not_found(message: impl Into<String>) -> Response {
+fn not_found(message: String) -> Response {
     (
         StatusCode::NOT_FOUND,
-        Json(PlusApiResult::error("4040", message.into())),
+        Json(PlusApiResult::error("4040", message)),
     )
         .into_response()
 }
 
-fn app_notification_error(message: &str, error: impl std::fmt::Display) -> Response {
+fn app_notification_error(context: &str, error: DomainError) -> Response {
+    tracing::error!(error = %error, context, "app notification API failed");
     (
         StatusCode::INTERNAL_SERVER_ERROR,
-        Json(PlusApiResult::error("5000", format!("{message}: {error}"))),
+        Json(PlusApiResult::error("5000", context.to_owned())),
     )
         .into_response()
 }

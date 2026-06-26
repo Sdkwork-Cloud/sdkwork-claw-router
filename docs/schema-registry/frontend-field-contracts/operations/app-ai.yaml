@@ -1022,7 +1022,7 @@ frontend_operations:
             channel:
               type: string
 - route: /console/api-keys
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingChannels
   operation_scope: app_shell
   operation_id: routing.channels.list
@@ -1149,7 +1149,7 @@ frontend_operations:
               type: integer
               format: int64
 - route: /console/api-keys
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingApiKeys
   operation_scope: app_shell
   operation_id: routing.apiKeys.list
@@ -1197,7 +1197,7 @@ frontend_operations:
             createdAt:
               type: string
 - route: /console/gateway
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingRequestTraces
   operation_scope: app_shell
   operation_id: routing.requestTraces.list
@@ -1291,7 +1291,7 @@ frontend_operations:
             streaming:
               type: boolean
 - route: /console/usage
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingUsage
   operation_scope: app_shell
   operation_id: routing.usage.list

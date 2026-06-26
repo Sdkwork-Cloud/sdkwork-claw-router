@@ -6,11 +6,13 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 
+use crate::api::app_sql_subject::{
+    map_optional_app_sql_subject, map_required_app_sql_subject, RequiredAppSqlScopedSubject,
+    ResolvedAppSqlScopedSubject,
+};
 use crate::api::response::PlusApiResult;
-use crate::api::subject::map_optional_app_user_subject;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
@@ -110,9 +112,11 @@ fn app_routing_strategy_router_with_state(
 
 async fn fetch_routing_strategy(
     State(state): State<AppRoutingStrategyState>,
-    subject: Option<TrustedRequestSubject>,
+    ResolvedAppSqlScopedSubject(subject): ResolvedAppSqlScopedSubject,
 ) -> Response {
-    let subject = match resolve_routing_strategy_subject(subject, state.require_subject) {
+    let subject = match map_optional_app_sql_subject(subject, state.require_subject, |scoped| {
+        scoped.into()
+    }) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -127,11 +131,11 @@ async fn fetch_routing_strategy(
 
 async fn update_routing_strategy(
     State(state): State<AppRoutingStrategyState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(subject): RequiredAppSqlScopedSubject,
     _headers: HeaderMap,
     Json(request): Json<UpdateRoutingStrategyRequest>,
 ) -> Response {
-    let subject = resolve_required_routing_strategy_subject(trusted);
+    let subject = map_required_app_sql_subject(subject, AppRoutingStrategySubject::from);
     let snapshot = match validate_update_routing_strategy_request(request) {
         Ok(snapshot) => snapshot,
         Err(message) => return bad_request(message),
@@ -148,29 +152,6 @@ async fn update_routing_strategy(
         Err(error) => {
             routing_strategy_system_response("routing strategy command store is unavailable", error)
         }
-    }
-}
-
-fn resolve_routing_strategy_subject(
-    subject: Option<TrustedRequestSubject>,
-    require_subject: bool,
-) -> Result<Option<AppRoutingStrategySubject>, Response> {
-    map_optional_app_user_subject(subject, require_subject, |trusted| {
-        AppRoutingStrategySubject {
-            tenant_id: trusted.tenant_id,
-            organization_id: trusted.organization_id,
-            user_id: trusted.user_id,
-        }
-    })
-}
-
-fn resolve_required_routing_strategy_subject(
-    trusted: TrustedRequestSubject,
-) -> AppRoutingStrategySubject {
-    AppRoutingStrategySubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        user_id: trusted.user_id,
     }
 }
 

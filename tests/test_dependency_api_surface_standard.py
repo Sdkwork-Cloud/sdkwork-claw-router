@@ -11,14 +11,14 @@ PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 SDK_CLIENTS = (
     PORTAL_ROOT
     / "packages"
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "sdk-clients.ts"
 )
 IAM_RUNTIME = (
     PORTAL_ROOT
     / "packages"
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "src"
     / "iam-runtime.ts"
 )
@@ -27,7 +27,7 @@ PC_COMPONENT_SPEC = PORTAL_ROOT / "specs" / "component.spec.json"
 COMMONS_COMPONENT_SPEC = (
     PORTAL_ROOT
     / "packages"
-    / "sdkwork-clawrouter-pc-commons"
+    / "sdkwork-clawroutes-pc-commons"
     / "specs"
     / "component.spec.json"
 )
@@ -49,7 +49,7 @@ APPBASE_IAM_BACKEND_ROUTE_CRATE = (
     ROOT.parent
     / "sdkwork-appbase"
     / "crates"
-    / "sdkwork-router-iam-backend-api"
+    / "sdkwork-routes-iam-backend-api"
 )
 APPBASE_BACKEND_OPENAPI = (
     ROOT.parent
@@ -652,7 +652,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             set(organization_clients),
         )
         self.assertEqual(
-            "sdkwork-clawrouter-pc-commons/runtime",
+            "sdkwork-clawroutes-pc-commons/runtime",
             organization_clients["sdkwork-iam-backend-sdk"]["providedBy"],
         )
         self.assertTrue(
@@ -665,7 +665,7 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             set(user_clients),
         )
         self.assertEqual(
-            "sdkwork-clawrouter-pc-commons/runtime",
+            "sdkwork-clawroutes-pc-commons/runtime",
             user_clients["sdkwork-iam-backend-sdk"]["providedBy"],
         )
         self.assertTrue(

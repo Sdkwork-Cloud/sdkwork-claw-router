@@ -12,7 +12,7 @@ function readPortalFile(relativePath: string): string {
 test("admin prompt and mcp pages use left category management instead of section sidebar", () => {
   const promptSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-prompts/src/index.tsx");
   const mcpSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-mcp/src/index.tsx");
-  const categoryTreePath = resolve(PORTAL_ROOT, "packages/sdkwork-clawrouter-pc-commons/src/components/AdminCategoryManagementSidebar.tsx");
+  const categoryTreePath = resolve(PORTAL_ROOT, "packages/sdkwork-clawroutes-pc-commons/src/components/AdminCategoryManagementSidebar.tsx");
 
   assert.ok(existsSync(categoryTreePath), "shared admin category management sidebar must exist");
 
@@ -36,7 +36,7 @@ test("admin prompt and mcp pages use left category management instead of section
 test("admin prompt and mcp resource tables scroll inside the shared resource center", () => {
   const promptSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-prompts/src/index.tsx");
   const mcpSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-mcp/src/index.tsx");
-  const resourceCenterSource = readPortalFile("packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx");
+  const resourceCenterSource = readPortalFile("packages/sdkwork-clawroutes-pc-commons/src/components/AdminResourceCenter.tsx");
 
   for (const [name, source, tableMarker] of [
     ["prompts", promptSource, 'tableViewportDataAttribute="admin-prompts-table"'],

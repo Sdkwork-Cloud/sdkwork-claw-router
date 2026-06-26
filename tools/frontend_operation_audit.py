@@ -147,7 +147,7 @@ class FrontendOperationAudit:
         r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
     )
     COMMERCE_RUNTIME_SOURCE = (
-        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawroutes-pc-commons/src/sdk-clients.ts"
     )
     MISSING_COMMERCE_DEPENDENCY_PATTERN = re.compile(
         r"\bmissingCommerceDependencyOperation\s*\(\s*['\"]([^'\"]+)['\"]\s*\)"

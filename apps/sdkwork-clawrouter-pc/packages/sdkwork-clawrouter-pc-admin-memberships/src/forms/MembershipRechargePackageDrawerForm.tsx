@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { computeGrantAmount, type RechargeSettingsSnapshot } from '@sdkwork/clawrouter-pc-commons';
+import { computeGrantAmount, type RechargeSettingsSnapshot } from '@sdkwork/clawroutes-pc-commons';
 import {
   MembershipFormActions,
   MembershipFormFrame,

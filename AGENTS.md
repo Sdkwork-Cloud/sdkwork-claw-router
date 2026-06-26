@@ -35,7 +35,7 @@ Read `sdkwork.app.config.json` only when changing Claw Router application behavi
 - `specs/`: local application/component contracts and narrowing rules.
 - `apis/`: authored API contracts, route authority inputs, API examples, changelogs, and validation fixtures.
 - `apps/`: runnable application surfaces such as `apps/sdkwork-clawrouter-pc/`.
-- `crates/`: Rust crates, including `sdkwork-router-<capability>-<surface>` route crates.
+- `crates/`: Rust crates, including `sdkwork-routes-<capability>-<surface>` route crates.
 - `sdks/`: SDK families, OpenAPI authorities, derived generator inputs, and generated SDK artifacts.
 - `packages/`: governed shared TypeScript or React package families.
 - `configs/`, `deployments/`, `scripts/`, `tools/`, `docs/`, `tests/`: config templates, deployment descriptors, thin command entrypoints, validators, documentation, and verification assets.

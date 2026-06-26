@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BusinessStatePanel } from '@sdkwork/clawrouter-pc-commons';
+import { BusinessStatePanel } from '@sdkwork/clawroutes-pc-commons';
 import { MessagesService, type MessageItem } from './messagesService';
 
 function markMessageReadFeedback(messages: MessageItem[], messageId: string): MessageItem[] {

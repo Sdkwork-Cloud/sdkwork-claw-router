@@ -401,12 +401,13 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         product_api = (ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs").read_text(
             encoding="utf-8"
         )
-        app_api = (ROOT / "crates" / "sdkwork-router-app-api" / "src" / "routes.rs").read_text(encoding="utf-8")
+        app_api = (ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs").read_text(encoding="utf-8")
 
         self.assertIn("app_dashboard_overview_router", product_api)
         self.assertIn("app_dashboard_overview_router_with_read_store", product_api)
         self.assertIn("app_dashboard_overview_router()", app_api)
         self.assertIn("app_dashboard_overview_router_with_read_store", app_api)
+        self.assertIn("merge_web_framework_scoped_app_read_router", app_api)
         self.assertNotIn("/app/v3/api/router/dashboard/overview\", \"fetchDashboardOverview", app_api)
 
     def test_dashboard_overview_validates_query_before_read_store_access(self) -> None:
@@ -440,6 +441,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         self.assertIn('StatusCode::BAD_REQUEST', app_dashboard)
         self.assertIn('PlusApiResult::error("4001"', app_dashboard)
         self.assertIn("let validated_query = match validate_dashboard_overview_query(query)", app_dashboard)
+        self.assertIn("ResolvedAppSqlScopedSubject", app_dashboard)
         self.assertIn("validated_query.query", app_dashboard)
         self.assertIn("start_time: parsed_start", app_dashboard)
         self.assertIn("end_time: parsed_end", app_dashboard)

@@ -258,12 +258,12 @@ test('claw-router dev orchestrator loads topology profile and forwards workspace
   assert.match(devScript, /--service-layout/);
   assert.match(devScript, /--target/);
   assert.match(devScript, /--database/);
-  assert.match(devScript, /run-claw-router-product\.mjs/);
+  assert.match(devScript, /run-claw-router-application\.mjs/);
   assert.match(devScript, /topology is retired/);
 });
 
 test('CI verification plan includes commercial contract guardians and portal typecheck', async () => {
-  const module = await import('./verify-claw-router-product.mjs');
+  const module = await import('./verify-claw-router-application.mjs');
   const plan = module.buildVerificationPlan({ ci: true }, {});
   const labels = plan.map((step) => step.label);
 
@@ -273,7 +273,7 @@ test('CI verification plan includes commercial contract guardians and portal typ
 });
 
 test('verification plan runs topology checks before tooling contract tests', async () => {
-  const module = await import('./verify-claw-router-product.mjs');
+  const module = await import('./verify-claw-router-application.mjs');
   const plan = module.buildVerificationPlan({ fast: true }, {});
   const labels = plan.map((step) => step.label);
   const topologyValidateIndex = labels.indexOf('topology spec validate');

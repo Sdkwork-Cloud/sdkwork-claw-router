@@ -1,4 +1,4 @@
-import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/runtime';
+import { createClientOperationToken } from '@sdkwork/clawroutes-pc-commons/runtime';
 import type { ChatMessage } from './chatTypes';
 
 export function createChatUserMessage(prompt: string, createdAt = new Date(), id = createChatMessageId('user')): ChatMessage {

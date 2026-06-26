@@ -28,7 +28,6 @@ export const ADMIN_ROUTE_PERMISSION_HINTS: readonly AdminRoutePermissionHint[] =
   { pathPrefix: '/admin/inventory', requiredPermission: 'commerce.inventory.read' },
   { pathPrefix: '/admin/orders', requiredPermission: 'commerce.orders.read' },
   { pathPrefix: '/admin/payments', requiredPermission: 'commerce.payments.read' },
-  { pathPrefix: '/admin/memberships', requiredPermission: 'commerce.memberships.read' },
   { pathPrefix: '/admin/marketing', requiredPermission: 'commerce.marketing.read' },
   { pathPrefix: '/admin/wallet', requiredPermission: 'commerce.payments.read' },
   { pathPrefix: '/admin/finance', requiredPermission: 'finance.revenue.read' },

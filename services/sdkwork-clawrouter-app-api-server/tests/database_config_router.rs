@@ -22,12 +22,15 @@ use sqlx::sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions};
 use sqlx::{Row, SqlitePool};
 use std::str::FromStr;
 use std::sync::atomic::{AtomicU64, Ordering};
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex, Once};
 use std::time::{Duration as StdDuration, SystemTime, UNIX_EPOCH};
 use tokio::time::{sleep, Duration};
 use tower::ServiceExt;
 
 const API_KEYS_PATH: &str = "/app/v3/api/iam/api_keys";
+const TEST_SUBJECT_TENANT_ID: i64 = 100_001;
+const TEST_SUBJECT_ORGANIZATION_ID: i64 = 0;
+const TEST_SUBJECT_USER_ID: i64 = 30;
 
 static SQLITE_DB_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 
@@ -58,9 +61,9 @@ async fn database_config_app_api_keys_are_not_mounted_locally() {
             .oneshot(
                 session_authorization_header(
                     Request::builder().method(method).uri(uri.as_str()),
-                    10,
-                    20,
-                    30,
+                    TEST_SUBJECT_TENANT_ID,
+                    TEST_SUBJECT_ORGANIZATION_ID,
+                    TEST_SUBJECT_USER_ID,
                 )
                 .body(Body::empty())
                 .unwrap(),
@@ -124,7 +127,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
         INSERT INTO ai_channel_resource
             (uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status)
         VALUES
-            ('channel-resource-openrouter-gpt-4o-refresh-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+            ('channel-resource-openroutes-gpt-4o-refresh-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
         "#,
     )
     .bind(refresh_resource_id)
@@ -136,7 +139,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
         INSERT INTO ai_channel_group_resource
             (uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status)
         VALUES
-            ('channel-group-resource-openrouter-gpt-4o-refresh-app-api-test', 100001, 0, 10, ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+            ('channel-group-resource-openroutes-gpt-4o-refresh-app-api-test', 100001, 0, 10, ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
         "#,
     )
     .bind(refresh_resource_id)
@@ -166,1639 +169,6 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
     panic!("refreshed app model catalog did not include gpt-4o-refresh: {refreshed_payload}");
 }
 
-#[tokio::test]
-async fn database_config_user_profile_requires_session_and_returns_safe_subject_profile() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let unauthenticated_response = router
-        .clone()
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/iam/users/current")
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
-
-    let (status, payload, body_text) = request_json(
-        router,
-        session_request(
-            "GET",
-            "/app/v3/api/iam/users/current",
-            Body::empty(),
-            10,
-            20,
-            30,
-        ),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, status, "{body_text}");
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("Owner User", payload["data"]["displayName"]);
-    assert_eq!("owner@example.com", payload["data"]["email"]);
-    assert_eq!("+15550000030", payload["data"]["phone"]);
-    assert_eq!("zh-CN", payload["data"]["language"]);
-    assert!(payload["data"].get("avatarUrl").is_none());
-    assert_eq!(
-        json!({
-            "kind": "image",
-            "source": "provider_asset",
-            "uri": "iam-user-avatar:owner"
-        }),
-        payload["data"]["avatar"]
-    );
-    assert_eq!(true, payload["data"]["isVerified"]);
-    assert_eq!("active", payload["data"]["status"]);
-    assert_eq!("2026-04-01 08:00:00", payload["data"]["registeredAt"]);
-    assert_eq!("2026-04-29 10:00:00", payload["data"]["lastLogin"]);
-    assert_eq!("203.0.113.***", payload["data"]["lastLoginIp"]);
-    assert_eq!(
-        "2026-04-20 12:00:00",
-        payload["data"]["passwordLastChanged"]
-    );
-    assert_eq!(true, payload["data"]["twoFactorEnabled"]);
-    assert_eq!("2", payload["data"]["thirdPartyBound"]);
-    assert!(!body_text.contains("correct-password"));
-    assert!(!body_text.contains("pbkdf2-sha256"));
-    assert!(!body_text.contains("github-owner-open-id"));
-    assert!(!body_text.contains("Other User"));
-}
-
-#[tokio::test]
-async fn database_config_app_iam_directory_requires_session_and_lists_subject_directory() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_second_app_organization_membership(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let unauthenticated_response = router
-        .clone()
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/iam/organizations")
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
-
-    let (status, payload, body_text) = request_json(
-        router.clone(),
-        session_request(
-            "GET",
-            "/app/v3/api/iam/organizations",
-            Body::empty(),
-            100001,
-            0,
-            30,
-        ),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, status, "{body_text}");
-    assert_eq!("2000", payload["code"]);
-    let organizations = payload["data"]["items"].as_array().unwrap();
-    assert_eq!(2, organizations.len(), "{body_text}");
-    assert!(organizations
-        .iter()
-        .any(|item| item["name"] == "Root Organization"));
-    assert!(
-        organizations
-            .iter()
-            .any(|item| item["name"] == "Workspace Organization"),
-        "{body_text}"
-    );
-    assert!(!body_text.contains("Other User"));
-
-    let (status, memberships_payload, memberships_body_text) = request_json(
-        router.clone(),
-        session_request(
-            "GET",
-            "/app/v3/api/iam/organization_memberships",
-            Body::empty(),
-            100001,
-            0,
-            30,
-        ),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, status, "{memberships_body_text}");
-    assert_eq!("2000", memberships_payload["code"]);
-    let memberships = memberships_payload["data"]["items"].as_array().unwrap();
-    assert_eq!(2, memberships.len(), "{memberships_body_text}");
-    assert!(
-        memberships
-            .iter()
-            .all(|item| item["userId"] == "30" && item["tenantId"] == "100001"),
-        "{memberships_body_text}"
-    );
-    assert!(!memberships_body_text.contains("member-31"));
-
-    for uri in [
-        "/app/v3/api/iam/departments",
-        "/app/v3/api/iam/departments/tree",
-        "/app/v3/api/iam/department_assignments",
-        "/app/v3/api/iam/positions",
-        "/app/v3/api/iam/position_assignments",
-        "/app/v3/api/iam/role_bindings",
-    ] {
-        let (status, payload, body_text) = request_json(
-            router.clone(),
-            session_request("GET", uri, Body::empty(), 100001, 0, 30),
-        )
-        .await;
-        assert_eq!(StatusCode::OK, status, "{uri}: {body_text}");
-        assert_eq!("2000", payload["code"], "{uri}: {body_text}");
-        assert_eq!(
-            0,
-            payload["data"]["items"].as_array().unwrap().len(),
-            "{uri}: {body_text}"
-        );
-    }
-}
-
-#[tokio::test]
-async fn database_config_password_login_issues_app_session_and_records_password_provider_event() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-    let (login_status, login_payload, login_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .header("X-Request-Id", "password-login-request-1")
-            .body(Body::from(
-                json!({
-                    "grantType": "password",
-                    "username": "owner@example.com",
-                    "password": "correct-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, login_status);
-    assert_eq!("2000", login_payload["code"]);
-    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
-    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
-    let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
-    assert!(!auth_token.is_empty());
-    assert!(!access_token.is_empty());
-    assert!(!refresh_token.is_empty());
-    assert_ne!(auth_token, access_token);
-    assert_eq!("30", login_payload["data"]["user"]["id"]);
-    assert_eq!("owner", login_payload["data"]["user"]["username"]);
-    assert_eq!("owner@example.com", login_payload["data"]["user"]["email"]);
-    assert_eq!("Owner User", login_payload["data"]["user"]["displayName"]);
-    assert!(login_payload["data"]["user"].get("avatarUrl").is_none());
-    assert_eq!(
-        json!({
-            "kind": "image",
-            "source": "provider_asset",
-            "uri": "iam-user-avatar:owner"
-        }),
-        login_payload["data"]["user"]["avatar"]
-    );
-    assert_eq!(
-        "sdkwork-clawrouter",
-        login_payload["data"]["context"]["appId"]
-    );
-    assert_eq!("password", login_payload["data"]["context"]["authLevel"]);
-    assert_eq!("local", login_payload["data"]["context"]["deploymentMode"]);
-    assert_eq!("dev", login_payload["data"]["context"]["environment"]);
-    assert_eq!("100001", login_payload["data"]["context"]["tenantId"]);
-    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
-    assert_eq!("30", login_payload["data"]["context"]["userId"]);
-    assert_eq!(
-        login_payload["data"]["sessionId"],
-        login_payload["data"]["context"]["sessionId"]
-    );
-    assert_eq!(
-        "tenant:100001",
-        login_payload["data"]["context"]["dataScope"][0]
-    );
-    assert!(!login_body_text.contains("correct-password"));
-    assert!(!login_body_text.contains("pbkdf2-sha256"));
-
-    let (profile_status, profile_payload, profile_body_text) = request_json(
-        router,
-        Request::builder()
-            .method("GET")
-            .uri("/app/v3/api/iam/users/current")
-            .header("authorization", format!("Bearer {auth_token}"))
-            .header("Access-Token", access_token)
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, profile_status);
-    assert_eq!("2000", profile_payload["code"]);
-    assert_eq!("Owner User", profile_payload["data"]["displayName"]);
-    assert_eq!("owner@example.com", profile_payload["data"]["email"]);
-    assert!(!profile_body_text.contains("correct-password"));
-    assert!(!profile_body_text.contains("pbkdf2-sha256"));
-
-    let verification_pool = create_sqlite_pool(&database_url).await;
-    let security_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE tenant_id = '100001' AND user_id = '30' AND event_type = 'sessions.create'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let audit_request_id: String = sqlx::query_scalar(
-        "SELECT request_id FROM iam_audit_event WHERE actor_user_id = '30' AND action = 'sessions.create'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    verification_pool.close().await;
-    assert_eq!(1, security_event_count);
-    assert_server_generated_request_id(&audit_request_id, "password-login-request-1");
-}
-
-#[tokio::test]
-async fn database_config_app_session_current_refresh_update_and_logout_use_persisted_session() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_second_app_organization_membership(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-    let (login_status, login_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "grantType": "password",
-                    "username": "owner@example.com",
-                    "password": "correct-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, login_status);
-    let auth_token = login_payload["data"]["authToken"].as_str().unwrap();
-    let access_token = login_payload["data"]["accessToken"].as_str().unwrap();
-    let refresh_token = login_payload["data"]["refreshToken"].as_str().unwrap();
-    let session_id = login_payload["data"]["sessionId"].as_str().unwrap();
-    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
-
-    let (current_status, current_payload, current_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("GET")
-            .uri("/app/v3/api/auth/sessions/current")
-            .header("authorization", format!("Bearer {auth_token}"))
-            .header("Access-Token", access_token)
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, current_status);
-    assert_eq!("2000", current_payload["code"]);
-    assert_eq!(session_id, current_payload["data"]["sessionId"]);
-    assert_eq!("30", current_payload["data"]["user"]["id"]);
-    assert_eq!(
-        "owner@example.com",
-        current_payload["data"]["user"]["email"]
-    );
-    assert_eq!("0", current_payload["data"]["context"]["organizationId"]);
-    assert!(current_payload["data"].get("refreshToken").is_none());
-    assert!(!current_body_text.contains("correct-password"));
-    assert!(!current_body_text.contains("pbkdf2-sha256"));
-
-    let (refresh_status, refresh_payload, refresh_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions/refresh")
-            .header("content-type", "application/json")
-            .header("authorization", format!("Bearer {auth_token}"))
-            .header("Access-Token", access_token)
-            .body(Body::from(
-                json!({
-                    "refreshToken": refresh_token
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, refresh_status);
-    assert_eq!("2000", refresh_payload["code"]);
-    assert_eq!(session_id, refresh_payload["data"]["sessionId"]);
-    assert_ne!(auth_token, refresh_payload["data"]["authToken"]);
-    assert_ne!(access_token, refresh_payload["data"]["accessToken"]);
-    assert_ne!(refresh_token, refresh_payload["data"]["refreshToken"]);
-    assert!(!refresh_body_text.contains("correct-password"));
-
-    let new_auth_token = refresh_payload["data"]["authToken"].as_str().unwrap();
-    let new_access_token = refresh_payload["data"]["accessToken"].as_str().unwrap();
-    let old_current_status = router
-        .clone()
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/auth/sessions/current")
-                .header("authorization", format!("Bearer {auth_token}"))
-                .header("Access-Token", access_token)
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap()
-        .status();
-    assert_eq!(StatusCode::UNAUTHORIZED, old_current_status);
-
-    let (update_status, update_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("PATCH")
-            .uri("/app/v3/api/auth/sessions/current")
-            .header("content-type", "application/json")
-            .header("authorization", format!("Bearer {new_auth_token}"))
-            .header("Access-Token", new_access_token)
-            .body(Body::from(
-                json!({
-                    "organizationCode": "workspace"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, update_status);
-    assert_eq!("21", update_payload["data"]["context"]["organizationId"]);
-    assert_eq!(session_id, update_payload["data"]["sessionId"]);
-    let updated_auth_token = update_payload["data"]["authToken"].as_str().unwrap();
-    let updated_access_token = update_payload["data"]["accessToken"].as_str().unwrap();
-
-    let (logout_status, logout_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("DELETE")
-            .uri("/app/v3/api/auth/sessions/current")
-            .header("authorization", format!("Bearer {updated_auth_token}"))
-            .header("Access-Token", updated_access_token)
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, logout_status);
-    assert_eq!("2000", logout_payload["code"]);
-
-    let revoked_current_status = router
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/auth/sessions/current")
-                .header("authorization", format!("Bearer {updated_auth_token}"))
-                .header("Access-Token", updated_access_token)
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap()
-        .status();
-    assert_eq!(StatusCode::UNAUTHORIZED, revoked_current_status);
-
-    let verification_pool = create_sqlite_pool(&database_url).await;
-    let active_count: i64 =
-        sqlx::query_scalar("SELECT COUNT(1) FROM iam_session WHERE id = ? AND revoked_at IS NULL")
-            .bind(session_id)
-            .fetch_one(&verification_pool)
-            .await
-            .unwrap();
-    let refresh_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.refresh'",
-    )
-    .bind(session_id)
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let update_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.update'",
-    )
-    .bind(session_id)
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let revoke_event_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_security_event WHERE session_id = ? AND event_type = 'sessions.revoke'",
-    )
-    .bind(session_id)
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    verification_pool.close().await;
-    assert_eq!(0, active_count);
-    assert_eq!(1, refresh_event_count);
-    assert_eq!(1, update_event_count);
-    assert_eq!(1, revoke_event_count);
-}
-
-#[tokio::test]
-async fn database_config_auth_identity_routes_register_verify_and_reset_password() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let (code_status, code_payload, code_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "new-user@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(
-        StatusCode::OK,
-        code_status,
-        "verification code response payload: {code_payload}"
-    );
-    assert_eq!("2000", code_payload["code"]);
-    let code_id = code_payload["data"]["codeId"].as_str().unwrap();
-    let verification_code = code_payload["data"]["debugCode"].as_str().unwrap();
-    assert!(!code_id.is_empty());
-    assert!(!verification_code.is_empty());
-    assert!(!code_body_text.contains("pbkdf2-sha256"));
-
-    let (verify_status, verify_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes/verify")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "codeId": code_id,
-                    "target": "new-user@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL",
-                    "code": verification_code
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, verify_status);
-    assert_eq!("2000", verify_payload["code"]);
-    assert_eq!(true, verify_payload["data"]["verified"]);
-    assert_eq!(true, verify_payload["data"]["valid"]);
-
-    let (register_status, register_payload, register_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/registrations")
-            .header("content-type", "application/json")
-            .header("X-Request-Id", "register-request-1")
-            .body(Body::from(
-                json!({
-                    "channel": "EMAIL",
-                    "email": "new-user@example.com",
-                    "username": "new-user",
-                    "password": "new-user-password",
-                    "confirmPassword": "new-user-password",
-                    "verificationCode": verification_code
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(
-        StatusCode::OK,
-        register_status,
-        "registration response payload: {register_payload}"
-    );
-    assert_eq!("2000", register_payload["code"]);
-    assert_eq!("new-user", register_payload["data"]["user"]["username"]);
-    assert_eq!(
-        "new-user@example.com",
-        register_payload["data"]["user"]["email"]
-    );
-    assert_eq!("password", register_payload["data"]["context"]["authLevel"]);
-    assert_eq!("100001", register_payload["data"]["context"]["tenantId"]);
-    assert_eq!("0", register_payload["data"]["context"]["organizationId"]);
-    assert!(!register_body_text.contains("new-user-password"));
-    assert!(!register_body_text.contains("pbkdf2-sha256"));
-
-    let (reset_request_status, reset_request_payload, reset_request_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/password_reset_requests")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "account": "new-user@example.com",
-                    "channel": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, reset_request_status);
-    assert_eq!("2000", reset_request_payload["code"]);
-    let reset_code = reset_request_payload["data"]["debugCode"].as_str().unwrap();
-    assert!(!reset_code.is_empty());
-    assert!(!reset_request_body_text.contains("pbkdf2-sha256"));
-
-    let (reset_status, reset_payload, reset_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/password_resets")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "account": "new-user@example.com",
-                    "code": reset_code,
-                    "newPassword": "new-user-password-2",
-                    "confirmPassword": "new-user-password-2"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(
-        StatusCode::OK,
-        reset_status,
-        "password reset response payload: {reset_payload}"
-    );
-    assert_eq!("2000", reset_payload["code"]);
-    assert!(reset_payload["data"].as_object().unwrap().is_empty());
-    assert!(!reset_body_text.contains("new-user-password-2"));
-    assert!(!reset_body_text.contains("pbkdf2-sha256"));
-
-    let (login_status, login_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "grantType": "password",
-                    "username": "new-user@example.com",
-                    "password": "new-user-password-2"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, login_status);
-    assert_eq!("new-user", login_payload["data"]["user"]["username"]);
-    assert_eq!("0", login_payload["data"]["context"]["organizationId"]);
-
-    let verification_pool = create_sqlite_pool(&database_url).await;
-    let user_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '100001' AND username = 'new-user'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let credential_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_credential WHERE tenant_id = '100001' AND user_id = (SELECT id FROM iam_user WHERE username = 'new-user') AND credential_type = 'password' AND status = 'active'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let identity_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '100001' AND provider = 'email' AND subject = 'new-user@example.com'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    verification_pool.close().await;
-
-    assert_eq!(1, user_count);
-    assert_eq!(1, credential_count);
-    assert_eq!(1, identity_count);
-}
-
-#[tokio::test]
-async fn database_config_auth_registration_allows_email_without_verification_code_by_default() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let (register_status, register_payload, register_body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/registrations")
-            .header("content-type", "application/json")
-            .header("X-Request-Id", "register-without-code-request-1")
-            .body(Body::from(
-                json!({
-                    "channel": "EMAIL",
-                    "email": "no-code-user@example.com",
-                    "username": "no-code-user",
-                    "password": "no-code-user-password",
-                    "confirmPassword": "no-code-user-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, register_status);
-    assert_eq!("2000", register_payload["code"]);
-    assert_eq!("no-code-user", register_payload["data"]["user"]["username"]);
-    assert_eq!(
-        "no-code-user@example.com",
-        register_payload["data"]["user"]["email"]
-    );
-    assert_eq!("password", register_payload["data"]["context"]["authLevel"]);
-    assert!(!register_body_text.contains("no-code-user-password"));
-    assert!(!register_body_text.contains("pbkdf2-sha256"));
-
-    let verification_pool = create_sqlite_pool(&database_url).await;
-    let user_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user WHERE tenant_id = '100001' AND username = 'no-code-user'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    let identity_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM iam_user_identity WHERE tenant_id = '100001' AND provider = 'email' AND subject = 'no-code-user@example.com'",
-    )
-    .fetch_one(&verification_pool)
-    .await
-    .unwrap();
-    verification_pool.close().await;
-
-    assert_eq!(1, user_count);
-    assert_eq!(1, identity_count);
-}
-
-#[tokio::test]
-async fn database_config_auth_registration_requires_email_code_when_policy_enables_it() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "qr-only",
-                "loginMethods": ["password", "emailCode", "phoneCode", "sessionBridge"],
-                "oauthLoginEnabled": true,
-                "oauthProviders": ["wechat", "alipay", "douyin"],
-                "oauthRegion": "mainland",
-                "qrLoginEnabled": true,
-                "recoveryMethods": ["email", "phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": true,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let (register_status, register_payload, register_body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/registrations")
-            .header("content-type", "application/json")
-            .header("X-Request-Id", "register-email-code-policy-request-1")
-            .body(Body::from(
-                json!({
-                    "channel": "EMAIL",
-                    "email": "policy-user@example.com",
-                    "username": "policy-user",
-                    "password": "policy-user-password",
-                    "confirmPassword": "policy-user-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::BAD_REQUEST, register_status);
-    assert_eq!("4001", register_payload["code"]);
-    assert!(register_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("verificationCode must not be empty"));
-    assert!(!register_body_text.contains("policy-user-password"));
-}
-
-#[tokio::test]
-async fn database_config_auth_runtime_settings_are_public_and_match_persisted_policy() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password", "emailCode"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": ["github"],
-                "oauthRegion": "overseas",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email"],
-                "registerMethods": ["email"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": true,
-                    "emailRegistrationVerificationRequired": true,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let (status, payload, body_text) = request_json(
-        configured_router(&database_url).await,
-        Request::builder()
-            .method("GET")
-            .uri("/app/v3/api/system/iam/runtime")
-            .body(Body::empty())
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, status, "{body_text}");
-    assert_eq!("2000", payload["code"]);
-    assert_eq!("highlights-only", payload["data"]["leftRailMode"]);
-    assert_eq!(
-        json!(["password", "emailCode"]),
-        payload["data"]["loginMethods"]
-    );
-    assert_eq!(false, payload["data"]["oauthLoginEnabled"]);
-    assert_eq!(json!(["github"]), payload["data"]["oauthProviders"]);
-    assert_eq!("overseas", payload["data"]["oauthRegion"]);
-    assert_eq!(false, payload["data"]["qrLoginEnabled"]);
-    assert_eq!(
-        true,
-        payload["data"]["verificationPolicy"]["emailRegistrationVerificationRequired"]
-    );
-}
-
-#[tokio::test]
-async fn database_config_auth_identity_routes_support_email_and_phone_code_login() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password", "emailCode", "phoneCode"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "mainland",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email", "phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": true,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneCodeLoginEnabled": true,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let (email_code_status, email_code_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "owner@example.com",
-                    "scene": "LOGIN",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, email_code_status);
-    let email_code = email_code_payload["data"]["debugCode"].as_str().unwrap();
-
-    let (email_login_status, email_login_payload, email_login_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "grantType": "email_code",
-                    "email": "owner@example.com",
-                    "code": email_code
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, email_login_status);
-    assert_eq!("2000", email_login_payload["code"]);
-    assert_eq!("owner", email_login_payload["data"]["user"]["username"]);
-    assert_eq!(
-        "email_code",
-        email_login_payload["data"]["context"]["authLevel"]
-    );
-    assert!(!email_login_body_text.contains(email_code));
-    assert!(!email_login_body_text.contains("pbkdf2-sha256"));
-
-    let (phone_code_status, phone_code_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "+15550000030",
-                    "scene": "LOGIN",
-                    "verifyType": "PHONE"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, phone_code_status);
-    let phone_code = phone_code_payload["data"]["debugCode"].as_str().unwrap();
-
-    let (phone_login_status, phone_login_payload, phone_login_body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "grantType": "phone_code",
-                    "phone": "+15550000030",
-                    "code": phone_code
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, phone_login_status);
-    assert_eq!("2000", phone_login_payload["code"]);
-    assert_eq!("owner", phone_login_payload["data"]["user"]["username"]);
-    assert_eq!(
-        "phone_code",
-        phone_login_payload["data"]["context"]["authLevel"]
-    );
-    assert!(!phone_login_body_text.contains(phone_code));
-    assert!(!phone_login_body_text.contains("pbkdf2-sha256"));
-}
-
-#[tokio::test]
-async fn database_config_auth_settings_disable_login_methods_server_side() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["emailCode"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "mainland",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email"],
-                "registerMethods": ["email"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": true,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-
-    let (password_status, password_payload, password_body_text) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "grantType": "password",
-                    "username": "owner",
-                    "password": "correct-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::BAD_REQUEST, password_status);
-    assert_eq!("4001", password_payload["code"]);
-    assert!(password_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("password login is not enabled"));
-    assert!(!password_body_text.contains("correct-password"));
-
-    let (phone_code_status, phone_code_payload, _) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "+15550000030",
-                    "scene": "LOGIN",
-                    "verifyType": "PHONE"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::BAD_REQUEST, phone_code_status);
-    assert_eq!("4001", phone_code_payload["code"]);
-    assert!(phone_code_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("phone code login is not enabled"));
-}
-
-#[tokio::test]
-async fn database_config_auth_settings_disable_registration_methods_server_side() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "mainland",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email"],
-                "registerMethods": ["email"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let (status, payload, body_text) = request_json(
-        configured_router(&database_url).await,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/registrations")
-            .header("content-type", "application/json")
-            .header("X-Request-Id", "disabled-phone-register-request-1")
-            .body(Body::from(
-                json!({
-                    "channel": "PHONE",
-                    "phone": "+15550000999",
-                    "username": "disabled-phone-user",
-                    "password": "disabled-phone-password",
-                    "confirmPassword": "disabled-phone-password"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::BAD_REQUEST, status);
-    assert_eq!("4001", payload["code"]);
-    assert!(payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("phone registration is not enabled"));
-    assert!(!body_text.contains("disabled-phone-password"));
-}
-
-#[tokio::test]
-async fn database_config_auth_settings_disable_recovery_and_qr_server_side() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "mainland",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-
-    let router = configured_router(&database_url).await;
-    let (reset_status, reset_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/password_reset_requests")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "account": "owner@example.com",
-                    "channel": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::BAD_REQUEST, reset_status);
-    assert_eq!("4001", reset_payload["code"]);
-    assert!(reset_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("email password recovery is not enabled"));
-
-    drop(router);
-}
-
-#[tokio::test]
-async fn database_config_auth_verification_codes_fail_closed_without_debug_code_in_server_mode() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let router =
-        configured_router_with_deployment_mode(&database_url, DeploymentMode::Server).await;
-    let (status, payload, body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "new-user@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::INTERNAL_SERVER_ERROR, status);
-    assert_eq!("5000", payload["code"]);
-    assert!(body_text.contains("verification code delivery provider is not configured"));
-    assert!(!body_text.contains("debugCode"));
-    assert!(!body_text.contains("666666"));
-}
-
-#[tokio::test]
-async fn database_config_auth_verification_codes_queue_messaging_delivery_in_server_mode() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "overseas",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email", "phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "phoneCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneRegistrationVerificationRequired": false,
-                    "captchaAfterFailures": 3
-                }
-            }
-        }),
-    )
-    .await;
-    seed_messaging_verification_delivery(&pool).await;
-    pool.close().await;
-
-    let router =
-        configured_router_with_deployment_mode(&database_url, DeploymentMode::Server).await;
-    let (status, payload, body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "new-user@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::OK, status, "{body_text}");
-    assert_eq!("2000", payload["code"]);
-    assert!(payload["data"]["codeId"].as_str().unwrap().len() > 12);
-    assert!(payload["data"].get("debugCode").is_none());
-    assert!(!body_text.contains("666666"));
-
-    let pool = create_sqlite_pool(&database_url).await;
-    let request_row = sqlx::query(
-        r#"
-        SELECT request_no, scene_code, channel, delivery_purpose, target_type, target_masked,
-               template_version_id, template_variant_id, resolved_route_rule_id,
-               resolved_provider_account_id, resolved_sender_identity_id,
-               request_payload_redacted, dry_run, delivery_status
-        FROM messaging_send_request
-        WHERE tenant_id = 100001 AND organization_id = 0
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        payload["data"]["codeId"].as_str().unwrap(),
-        request_row.get::<String, _>("request_no")
-    );
-    assert_eq!("register", request_row.get::<String, _>("scene_code"));
-    assert_eq!("email", request_row.get::<String, _>("channel"));
-    assert_eq!(
-        "verification",
-        request_row.get::<String, _>("delivery_purpose")
-    );
-    assert_eq!("email", request_row.get::<String, _>("target_type"));
-    assert_eq!(
-        "n***@example.com",
-        request_row.get::<String, _>("target_masked")
-    );
-    assert_eq!(7001_i64, request_row.get::<i64, _>("template_version_id"));
-    assert_eq!(7101_i64, request_row.get::<i64, _>("template_variant_id"));
-    assert_eq!(
-        4001_i64,
-        request_row.get::<i64, _>("resolved_route_rule_id")
-    );
-    assert_eq!(
-        9101_i64,
-        request_row.get::<i64, _>("resolved_provider_account_id")
-    );
-    assert_eq!(
-        8101_i64,
-        request_row.get::<i64, _>("resolved_sender_identity_id")
-    );
-    assert_eq!(0_i64, request_row.get::<i64, _>("dry_run"));
-    assert_eq!("queued", request_row.get::<String, _>("delivery_status"));
-    let redacted_payload = request_row.get::<String, _>("request_payload_redacted");
-    assert!(redacted_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
-    assert!(!redacted_payload.contains("666666"));
-    assert!(!redacted_payload.contains("new-user@example.com"));
-
-    let attempt_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(*)
-        FROM messaging_send_attempt
-        WHERE tenant_id = 100001
-          AND organization_id = 0
-          AND provider_code = 'sendgrid'
-          AND provider_account_id = 9101
-          AND provider_status = 'queued'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(1, attempt_count);
-
-    let event_payload: String = sqlx::query_scalar(
-        r#"
-        SELECT payload_redacted
-        FROM messaging_delivery_event
-        WHERE tenant_id = 100001
-          AND organization_id = 0
-          AND provider_code = 'sendgrid'
-          AND event_type = 'queued'
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert!(event_payload.contains("\"deliveryStatus\":\"queued\""));
-    assert!(event_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
-    assert!(!event_payload.contains("666666"));
-    assert!(!event_payload.contains("new-user@example.com"));
-    pool.close().await;
-}
-
-#[tokio::test]
-async fn database_config_auth_verification_codes_return_429_when_messaging_rate_limited_in_server_mode(
-) {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password"],
-                "oauthLoginEnabled": false,
-                "oauthProviders": [],
-                "oauthRegion": "overseas",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email", "phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "phoneCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneRegistrationVerificationRequired": false,
-                    "captchaAfterFailures": 3
-                }
-            }
-        }),
-    )
-    .await;
-    seed_messaging_verification_delivery(&pool).await;
-    sqlx::query("UPDATE iam_verification_scene_policy SET max_send_per_hour = 1 WHERE id = 6101")
-        .execute(&pool)
-        .await
-        .unwrap();
-    pool.close().await;
-
-    let router =
-        configured_router_with_deployment_mode(&database_url, DeploymentMode::Server).await;
-    let first_response = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "limited@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-    assert_eq!(StatusCode::OK, first_response.0);
-    assert_eq!("2000", first_response.1["code"]);
-
-    let (status, payload, body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/auth/verification_codes")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "target": "limited@example.com",
-                    "scene": "REGISTER",
-                    "verifyType": "EMAIL"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::TOO_MANY_REQUESTS, status);
-    assert_eq!("4290", payload["code"]);
-    assert!(payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("verification code delivery is rate limited"));
-    assert!(!body_text.contains("debugCode"));
-    assert!(!body_text.contains("666666"));
-
-    let pool = create_sqlite_pool(&database_url).await;
-    let statuses: Vec<String> = sqlx::query_scalar(
-        r#"
-        SELECT delivery_status
-        FROM messaging_send_request
-        WHERE tenant_id = 100001 AND organization_id = 0
-        ORDER BY id ASC
-        "#,
-    )
-    .fetch_all(&pool)
-    .await
-    .unwrap();
-    assert_eq!(
-        vec!["queued".to_owned(), "rate_limited".to_owned()],
-        statuses
-    );
-
-    let attempt_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(*)
-        FROM messaging_send_attempt
-        WHERE tenant_id = 100001 AND organization_id = 0
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(1, attempt_count);
-
-    let bucket = sqlx::query(
-        r#"
-        SELECT send_count, reject_count
-        FROM messaging_rate_limit_bucket
-        WHERE tenant_id = 100001 AND organization_id = 0
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert_eq!(1_i64, bucket.get::<i64, _>("send_count"));
-    assert_eq!(1_i64, bucket.get::<i64, _>("reject_count"));
-
-    let rate_limited_event_payload: String = sqlx::query_scalar(
-        r#"
-        SELECT payload_redacted
-        FROM messaging_delivery_event
-        WHERE tenant_id = 100001
-          AND organization_id = 0
-          AND event_type = 'rate_limited'
-        LIMIT 1
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert!(rate_limited_event_payload.contains("\"deliveryStatus\":\"rate_limited\""));
-    assert!(rate_limited_event_payload.contains("\"variableKeys\":[\"code\",\"expiresAt\"]"));
-    assert!(!rate_limited_event_payload.contains("limited@example.com"));
-    pool.close().await;
-}
-
-#[tokio::test]
-async fn database_config_oauth_routes_are_explicit_when_provider_is_not_configured() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog_with_two_user_api_keys(&pool).await;
-    seed_app_user_data(&pool).await;
-    pool.close().await;
-
-    let (url_status, url_payload, _) = request_json(
-        configured_router(&database_url).await,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/oauth/authorization_urls")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "provider": "github",
-                    "redirectUri": "https://app.example/callback",
-                    "state": "state-1"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::BAD_REQUEST, url_status);
-    assert_eq!("4001", url_payload["code"]);
-    assert!(url_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("OAuth login is not enabled"));
-
-    let pool = create_sqlite_pool(&database_url).await;
-    seed_auth_settings_snapshot(
-        &pool,
-        json!({
-            "action": "update_auth_settings",
-            "settings": {
-                "leftRailMode": "highlights-only",
-                "loginMethods": ["password"],
-                "oauthLoginEnabled": true,
-                "oauthProviders": ["github"],
-                "oauthRegion": "overseas",
-                "qrLoginEnabled": false,
-                "recoveryMethods": ["email", "phone"],
-                "registerMethods": ["email", "phone"],
-                "verificationPolicy": {
-                    "emailCodeLoginEnabled": false,
-                    "emailRegistrationVerificationRequired": false,
-                    "phoneCodeLoginEnabled": false,
-                    "phoneRegistrationVerificationRequired": false
-                }
-            }
-        }),
-    )
-    .await;
-    pool.close().await;
-    let router = configured_router(&database_url).await;
-
-    let (url_status, url_payload, _) = request_json(
-        router.clone(),
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/oauth/authorization_urls")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "provider": "github",
-                    "redirectUri": "https://app.example/callback",
-                    "state": "state-1"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, url_status);
-    assert_eq!("5030", url_payload["code"]);
-    assert!(url_payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("OAuth provider is not configured"));
-
-    let (session_status, session_payload, session_body_text) = request_json(
-        router,
-        Request::builder()
-            .method("POST")
-            .uri("/app/v3/api/oauth/sessions")
-            .header("content-type", "application/json")
-            .body(Body::from(
-                json!({
-                    "provider": "github",
-                    "code": "oauth-code"
-                })
-                .to_string(),
-            ))
-            .unwrap(),
-    )
-    .await;
-
-    assert_eq!(StatusCode::SERVICE_UNAVAILABLE, session_status);
-    assert_eq!("5030", session_payload["code"]);
-    assert!(!session_body_text.contains("oauth-code"));
-}
 
 #[tokio::test]
 async fn database_config_dashboard_scopes_metrics_to_app_session_subject() {
@@ -1816,9 +186,9 @@ async fn database_config_dashboard_scopes_metrics_to_app_session_subject() {
             "GET",
             "/app/v3/api/ai/dashboard/overview?time_range=daily&start_time=2026-04-29T00:00:00Z&end_time=2026-04-29T23:59:59Z",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -1865,9 +235,9 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
         session_request_builder(
             "POST",
             "/app/v3/api/promotions/codes/redemptions",
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("content-type", "application/json")
         .header("Idempotency-Key", "redeem-idem-standard-1")
@@ -1891,9 +261,9 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
             "GET",
             "/app/v3/api/promotions/user_coupons",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -1911,9 +281,9 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
             "GET",
             "/app/v3/api/wallet/points",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -1928,9 +298,9 @@ async fn database_config_billing_redeem_persists_points_and_history_for_subject(
             "GET",
             "/app/v3/api/wallet/points/history",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -1985,9 +355,9 @@ async fn database_config_billing_redeem_replays_same_idempotency_key_via_appbase
             session_request_builder(
                 "POST",
                 "/app/v3/api/promotions/codes/redemptions",
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             )
             .header("content-type", "application/json")
             .header("Idempotency-Key", "redeem-idem-1")
@@ -2046,9 +416,9 @@ async fn database_config_wallet_accounts_uses_appbase_commerce_store() {
             "GET",
             "/app/v3/api/wallet/accounts",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2080,9 +450,9 @@ async fn database_config_wallet_accounts_uses_appbase_commerce_store() {
             "GET",
             "/app/v3/api/wallet/tokens",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2161,9 +531,9 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
                 "GET",
                 "/app/v3/api/recharges/packages",
                 Body::empty(),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             ),
         )
         .await;
@@ -2212,9 +582,9 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
                 "GET",
                 "/app/v3/api/billing/history",
                 Body::empty(),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             ),
         )
         .await;
@@ -2242,9 +612,9 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
             "GET",
             "/app/v3/api/wallet/points",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2259,9 +629,9 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
             "GET",
             "/app/v3/api/accounts/current/summary",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2488,9 +858,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
             "GET",
             "/app/v3/api/ai/routing/channels",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2523,9 +893,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
             "GET",
             "/app/v3/api/ai/routing/api_keys",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2549,9 +919,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
             "GET",
             "/app/v3/api/ai/routing/request_traces",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2571,9 +941,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
             "GET",
             "/app/v3/api/ai/routing/usage",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2590,9 +960,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
             "GET",
             "/app/v3/api/ai/routing/strategy",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -2645,9 +1015,9 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
                 "GET",
                 "/app/v3/api/ai/routing/strategy",
                 Body::empty(),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             ),
         )
         .await;
@@ -2876,9 +1246,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
                 "GET",
                 "/app/v3/api/ai/routing/channels",
                 Body::empty(),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             ),
         )
         .await;
@@ -2908,9 +1278,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         session_request_builder(
             "PUT",
             &format!("/app/v3/api/ai/routing/channels/{created_channel_id}"),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("content-type", "application/json")
         .header("X-Request-Id", "app-routing-channel-update-1")
@@ -2950,9 +1320,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
             session_request_builder(
                 "PUT",
                 &format!("/app/v3/api/ai/routing/channels/{created_channel_id}"),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             )
             .header("content-type", "application/json")
             .header("X-Request-Id", "app-routing-channel-update-new-provider-1")
@@ -2973,9 +1343,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         session_request_builder(
             "PUT",
             &format!("/app/v3/api/ai/routing/channels/{created_channel_id}/status"),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("content-type", "application/json")
         .body(Body::from(r#"{"status":"disabled"}"#))
@@ -2990,9 +1360,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         session_request_builder(
             "PUT",
             &format!("/app/v3/api/ai/routing/channels/{created_channel_id}/status"),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("content-type", "application/json")
         .body(Body::from(r#"{"status":"active"}"#))
@@ -3008,9 +1378,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
             "POST",
             &format!("/app/v3/api/ai/routing/channels/{created_channel_id}/verify"),
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3028,9 +1398,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
             "DELETE",
             &format!("/app/v3/api/ai/routing/channels/{created_channel_id}"),
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3045,9 +1415,9 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
                 "GET",
                 "/app/v3/api/ai/routing/channels",
                 Body::empty(),
-                10,
-                20,
-                30,
+                TEST_SUBJECT_TENANT_ID,
+                TEST_SUBJECT_ORGANIZATION_ID,
+                TEST_SUBJECT_USER_ID,
             ),
         )
         .await;
@@ -3185,9 +1555,9 @@ async fn database_config_app_routing_channel_test_runs_real_provider_probe_and_r
         session_request_builder(
             "POST",
             "/app/v3/api/ai/routing/channels/4003/verify",
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("X-Request-Id", "app-routing-channel-probe-success-1")
         .body(Body::empty())
@@ -3340,9 +1710,9 @@ async fn database_config_app_routing_channel_test_records_masked_provider_failur
         session_request_builder(
             "POST",
             "/app/v3/api/ai/routing/channels/4003/verify",
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         )
         .header("X-Request-Id", "app-routing-channel-probe-failure-1")
         .body(Body::empty())
@@ -3494,9 +1864,9 @@ async fn database_config_app_communication_notifications_route_is_removed() {
             "GET",
             "/app/v3/api/communication/notifications",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ))
         .await
         .unwrap();
@@ -3616,9 +1986,9 @@ async fn database_config_app_gateway_traces_require_session_scope_and_mask_clien
             "GET",
             "/app/v3/api/ai/gateway/traces",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3667,9 +2037,9 @@ async fn database_config_checkout_requires_session_and_scopes_order_status_to_su
             "GET",
             "/app/v3/api/recharges/orders/ORDER-OWNER-1",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3694,9 +2064,9 @@ async fn database_config_checkout_requires_session_and_scopes_order_status_to_su
             "GET",
             "/app/v3/api/recharges/orders/ORDER-OTHER-1",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3754,9 +2124,9 @@ async fn database_config_recharge_lists_packages_and_persists_pending_payment_or
             "GET",
             "/app/v3/api/recharges/packages",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3879,9 +2249,9 @@ async fn database_config_commerce_foundation_reads_exchange_rules_for_session_sc
             "GET",
             "/app/v3/api/wallet/exchange_rate",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3898,9 +2268,9 @@ async fn database_config_commerce_foundation_reads_exchange_rules_for_session_sc
             "GET",
             "/app/v3/api/wallet/points/exchanges/rules?source_asset_type=points&target_asset_type=cash",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -3945,9 +2315,9 @@ async fn database_config_settings_requires_session_and_upserts_subject_preferenc
             "GET",
             "/app/v3/api/iam/users/settings",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -4000,9 +2370,9 @@ async fn database_config_settings_requires_session_and_upserts_subject_preferenc
             "GET",
             "/app/v3/api/iam/users/settings",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -4075,9 +2445,9 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
             "GET",
             "/app/v3/api/ai/usage/logs?status=success&q=gpt-4o-mini&start_time=2026-04-29T00:00:00Z&end_time=2026-04-29T23:59:59Z",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -4119,9 +2489,9 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
             "GET",
             "/app/v3/api/ai/usage/logs?status=success&q=gpt-4o-cost-only&start_time=2026-04-29T00:00:00Z&end_time=2026-04-29T23:59:59Z",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -4143,9 +2513,9 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
             "GET",
             "/app/v3/api/ai/usage/logs?status=error&start_time=2026-04-29T00:00:00Z&end_time=2026-04-29T23:59:59Z",
             Body::empty(),
-            10,
-            20,
-            30,
+            TEST_SUBJECT_TENANT_ID,
+            TEST_SUBJECT_ORGANIZATION_ID,
+            TEST_SUBJECT_USER_ID,
         ),
     )
     .await;
@@ -4196,7 +2566,18 @@ async fn capture_provider_health_probe(
     }))
 }
 
+static LEGACY_APP_API_INTEGRATION_ENV: Once = Once::new();
+
+fn enable_legacy_app_api_subject_boundary_for_integration_tests() {
+    LEGACY_APP_API_INTEGRATION_ENV.call_once(|| {
+        // Integration tests mount product routers without the web-framework shell and
+        // exercise claw app-session tokens directly.
+        std::env::set_var("SDKWORK_CLAW_WEB_FRAMEWORK_LEGACY", "true");
+    });
+}
+
 async fn configured_router(database_url: &str) -> axum::Router {
+    enable_legacy_app_api_subject_boundary_for_integration_tests();
     let pool = create_sqlite_pool(database_url).await;
     sdkwork_clawrouter_app_api_server::router_with_sqlite_product_catalog(
         pool,
@@ -4210,6 +2591,7 @@ async fn configured_router(database_url: &str) -> axum::Router {
 }
 
 async fn configured_router_with_catalog_refresh(database_url: &str) -> axum::Router {
+    enable_legacy_app_api_subject_boundary_for_integration_tests();
     let _model_ranking_enabled =
         EnvOverride::set("SDKWORK_CLAW_MODEL_RANKING_REFRESH_WORKER_ENABLED", "false");
     let _catalog_refresh_interval = EnvOverride::set(
@@ -4232,6 +2614,7 @@ async fn configured_router_with_deployment_mode(
     database_url: &str,
     deployment_mode: DeploymentMode,
 ) -> axum::Router {
+    enable_legacy_app_api_subject_boundary_for_integration_tests();
     let _runtime_guard = AppRuntimeWorkerEnvGuard::disabled_for_test();
     sdkwork_clawrouter_app_api_server::router_with_database_config_api_key_trusted_subject_app_session_deployment_mode_config(
         DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
@@ -4249,6 +2632,7 @@ async fn configured_router_with_provider_secret_map(
     database_url: &str,
     provider_secret_map_config: ProviderSecretMapConfig,
 ) -> axum::Router {
+    enable_legacy_app_api_subject_boundary_for_integration_tests();
     let _runtime_guard = AppRuntimeWorkerEnvGuard::disabled_for_test();
     sdkwork_clawrouter_app_api_server::router_with_database_config_api_key_trusted_subject_app_session_provider_secret_map_and_deployment_mode_config(
         DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
@@ -6547,8 +4931,8 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
         "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9103, 'resource-modality-llm-app-api-test', 100001, 0, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)",
         "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9104, 'resource-modality-image-app-api-test', 100001, 0, 'modality.image', 'modality', 'Image', 'image', 1, 4)",
         "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9105, 'resource-model-openai-gpt-4o-mini-image-app-api-test', 100001, 0, 'model.openai.gpt-4o-mini.image', 'model_api', 'GPT-4o mini Image', 'openai', 'image', 'openai.images', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 5)",
-        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status) VALUES (9202, 'channel-resource-openrouter-gpt-4o-mini-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
-        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status) VALUES (9203, 'channel-group-resource-openrouter-gpt-4o-mini-app-api-test', 100001, 0, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
+        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status) VALUES (9202, 'channel-resource-openroutes-gpt-4o-mini-app-api-test', 100001, 0, 3001, 'openrouter', 'openrouter-main', 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
+        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status) VALUES (9203, 'channel-group-resource-openroutes-gpt-4o-mini-app-api-test', 100001, 0, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code, rate_multiplier, official_price_multiplier, status, updated_at) VALUES (10, 100001, 0, 'standard-group', 'Standard Group', 'standard', '1.000000', '1.100000', 1, '2026-04-29 09:00:00')",
         "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 100001, 0, 10, 3001, 1, 100, 1, 1)",

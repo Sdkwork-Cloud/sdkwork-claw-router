@@ -206,7 +206,7 @@ This repository follows `../sdkwork-specs/SDKWORK_WORKSPACE_SPEC.md`. The standa
 
 - `apis/` - authored API contracts, route authority inputs, examples, changelogs, and API validation fixtures.
 - `apps/` - runnable application surfaces. `apps/sdkwork-clawrouter-pc/` is the PC React portal root.
-- `crates/` - authored Rust crates. Rust route crates use `crates/sdkwork-router-<capability>-<surface>/`, including open-api, app-api, and backend-api route packages.
+- `crates/` - authored Rust crates. Rust route crates use `crates/sdkwork-routes-<capability>-<surface>/`, including open-api, app-api, and backend-api route packages.
 - `sdks/` - SDK family workspaces, materialized authority OpenAPI, derived generator inputs, generated language SDKs, and SDK evidence.
 - `jobs/` - job schedules, queue bindings, batch descriptors, and maintenance runbooks.
 - `tools/` - reusable guardians, generators, validators, migrations, and operator utilities.
@@ -551,7 +551,7 @@ without starting the live `pnpm dev` workspace by default:
 
 - `cargo fmt --check`
 - `cargo check --all-targets` with `RUSTFLAGS=-D warnings`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `python -B -m tools.repository_delivery_guardian`
 - `python -B -m tools.clawrouter_sdk_guardian`
 - `python -B -m tools.clawrouter_skill_guardian`
@@ -579,7 +579,7 @@ without starting the live `pnpm dev` workspace by default:
 For a faster local pass while editing contracts only:
 
 ```powershell
-node scripts/verify-claw-router-product.mjs --skip-contract-guardians
+node scripts/verify-claw-router-application.mjs --skip-contract-guardians
 ```
 
 Do not use `--skip-contract-guardians` for final delivery.
@@ -609,7 +609,7 @@ pnpm.cmd verify -- --with-edge-dev-smoke
 ```
 
 `CLAWROUTER_VERIFY_EDGE_DEV_SMOKE=1` also opts `verify` into the live dev smoke.
-Use `node scripts/verify-claw-router-product.mjs --skip-edge-dev-smoke` only to
+Use `node scripts/verify-claw-router-application.mjs --skip-edge-dev-smoke` only to
 override an environment that would otherwise enable it.
 
 ## Fast Local Iteration
@@ -624,7 +624,7 @@ pnpm verify:fast
 and source-standard regressions:
 
 - `python -B -m tools.repository_delivery_guardian`
-- `node scripts/run-claw-router-product.test.mjs`
+- `node scripts/run-claw-router-application.test.mjs`
 - `pnpm --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`
 
@@ -1498,3 +1498,6 @@ Owner and lifecycle status are tracked in `specs/component.spec.json`.
 - [docs/product/prd/PRD.md](docs/product/prd/PRD.md)
 - [docs/architecture/tech/TECH_ARCHITECTURE.md](docs/architecture/tech/TECH_ARCHITECTURE.md)
 
+## Application Roots
+
+- [apps directory index](apps/README.md)

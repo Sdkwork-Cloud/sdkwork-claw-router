@@ -1,8 +1,8 @@
-import { createClientOperationToken } from '@sdkwork/clawrouter-pc-commons/idempotency';
+import { createClientOperationToken } from '@sdkwork/clawroutes-pc-commons/idempotency';
 import {
   getClawRouterAppSdkClient,
   getSdkworkAppbaseAppSdkClient,
-} from '@sdkwork/clawrouter-pc-commons/sdk-clients';
+} from '@sdkwork/clawroutes-pc-commons/sdk-clients';
 import {
   ensureSdkworkApiSuccess,
   isRecord,
@@ -13,7 +13,7 @@ import {
   readRequiredApiItems,
   readRequiredString,
   readString,
-} from '@sdkwork/clawrouter-pc-commons/api-result';
+} from '@sdkwork/clawroutes-pc-commons/api-result';
 import { DEFAULT_CHANNEL_GROUP } from './apiKeyForm.ts';
 
 type ApiKeyModality = 'audio' | 'image' | 'music' | 'text' | 'video';

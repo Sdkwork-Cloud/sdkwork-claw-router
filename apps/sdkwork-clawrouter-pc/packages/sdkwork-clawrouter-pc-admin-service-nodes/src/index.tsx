@@ -5,7 +5,7 @@ import {
   AdminTableShell,
   BusinessStateTableRow,
   ConfirmDialog,
-} from '@sdkwork/clawrouter-pc-commons';
+} from '@sdkwork/clawroutes-pc-commons';
 import {
   ServiceNodeService,
   type ServiceNode,

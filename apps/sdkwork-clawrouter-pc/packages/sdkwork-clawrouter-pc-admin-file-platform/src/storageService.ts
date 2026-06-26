@@ -15,8 +15,8 @@ import {
   readApiItems,
   readApiRecord,
   requiredSafePathSegment,
-} from '@sdkwork/clawrouter-pc-commons/runtime';
-import type { DriveBackendSdkClient } from '@sdkwork/clawrouter-pc-commons/runtime';
+} from '@sdkwork/clawroutes-pc-commons/runtime';
+import type { DriveBackendSdkClient } from '@sdkwork/clawroutes-pc-commons/runtime';
 
 type DriveBackend = DriveBackendSdkClient['drive'];
 type StorageProvidersApi = DriveBackend['storageProviders'];

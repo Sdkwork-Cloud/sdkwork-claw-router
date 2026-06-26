@@ -8,188 +8,25 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
-    def test_console_user_operation_is_backed_by_real_app_api_router(self) -> None:
+    def test_console_user_current_profile_is_federated_iam_not_product_local(self) -> None:
         product_api_mod = (
             ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_api = (ROOT / "services" / "sdkwork-clawrouter-app-api-server" / "src" / "lib.rs").read_text(
-            encoding="utf-8"
-        )
-        app_user_path = (
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "api" / "app_user_profile.rs"
-        )
-
-        self.assertTrue(app_user_path.exists())
-        app_user = app_user_path.read_text(encoding="utf-8")
-
-        self.assertIn("mod app_user_profile;", product_api_mod)
-        self.assertIn("app_user_profile_router", product_api_mod)
-        self.assertIn("app_user_profile_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/iam/users/current", app_user)
-        self.assertNotIn("/app/v3/api/user/profile", app_user)
-        self.assertIn("TrustedRequestSubject", app_user)
-        self.assertIn("require_subject", app_user)
-        self.assertIn("AppUserProfileReadStore", app_user)
-        self.assertIn("EmptyAppUserProfileReadStore", app_user)
-        self.assertIn('PlusApiResult::error("4010"', app_user)
-        self.assertIn("app user profile read model is unavailable", app_user)
-
-        self.assertNotIn("AppUserProfileStore", app_api)
-        self.assertNotIn("SqliteAppUserProfileReadStore", app_api)
-        self.assertNotIn("PostgresAppUserProfileReadStore", app_api)
-        self.assertNotIn("app_user_profile_router()", app_api)
-        self.assertNotIn("app_user_profile_router_with_read_store", app_api)
-        self.assertIn("app_request_subject_boundary", app_api)
-
-    def test_console_user_port_exposes_only_safe_frontend_fields(self) -> None:
-        ports_mod = (
-            ROOT / "services" / "sdkwork-clawrouter-router-service" / "src" / "ports" / "mod.rs"
+        routes = (
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "routes.rs"
         ).read_text(encoding="utf-8")
-        port_path = (
-            ROOT
-            / "services"
-            / "sdkwork-clawrouter-router-service"
-            / "src"
-            / "ports"
-            / "app_user_profile_read_store.rs"
-        )
+        iam_runtime = (
+            ROOT / "crates" / "sdkwork-routes-clawrouter-app-api" / "src" / "iam_runtime.rs"
+        ).read_text(encoding="utf-8")
 
-        self.assertTrue(port_path.exists())
-        port = port_path.read_text(encoding="utf-8")
-
-        self.assertIn("mod app_user_profile_read_store;", ports_mod)
-        for export_name in [
-            "AppUserProfileReadFuture",
-            "AppUserProfileReadStore",
-            "AppUserProfileSnapshot",
-            "AppUserProfileSubject",
-        ]:
-            self.assertIn(export_name, ports_mod)
-            self.assertIn(export_name, port)
-
-        for field_name in [
-            "id",
-            "username",
-            "display_name",
-            "email",
-            "phone",
-            "language",
-            "avatar",
-            "is_verified",
-            "status",
-            "registered_at",
-            "last_login",
-            "last_login_ip",
-            "password_last_changed",
-            "two_factor_enabled",
-            "third_party_bound",
-        ]:
-            self.assertIn(field_name, port)
-
-        self.assertIn("pub display_name: String,", port)
-        self.assertIn("Value", port)
-        self.assertIn("pub avatar: Value,", port)
-        self.assertIn("#[serde(rename_all = \"camelCase\")]", port)
-        self.assertNotIn("avatar_url", port)
-        for sensitive_field in [
-            "password_hash",
-            "salt",
-            "secret",
-            "token",
-            "open_id",
-            "union_id",
-            "client_ip_hash",
-            "device_fingerprint_hash",
-            "user_agent_hash",
-            "session_id_hash",
-            "third_party_bound_snapshot",
-        ]:
-            self.assertNotIn(sensitive_field, port.lower())
-        self.assertNotIn("mock", port.lower())
-
-    def test_console_user_sql_read_stores_use_real_tables_scope_and_safe_columns(self) -> None:
-        for relative, store_name in [
-            (
-                "crates/sdkwork-clawrouter-app-user-profile-repository-sqlx/src/sqlite.rs",
-                "SqliteAppUserProfileReadStore",
-            ),
-            (
-                "crates/sdkwork-clawrouter-app-user-profile-repository-sqlx/src/postgres.rs",
-                "PostgresAppUserProfileReadStore",
-            ),
-        ]:
-            store_path = ROOT / relative
-            self.assertTrue(store_path.exists())
-            store = store_path.read_text(encoding="utf-8")
-            compact_store = " ".join(store.split())
-
-            self.assertIn(store_name, store)
-            for table in [
-                "iam_user",
-                "iam_organization_membership",
-                "iam_session",
-                "iam_user_login_event",
-                "iam_user_identity",
-            ]:
-                self.assertIn(table, store)
-
-            for scope_column in ["tenant_id", "organization_id", "user_id"]:
-                self.assertIn(scope_column, store)
-
-            for safe_column in [
-                "username",
-                "display_name",
-                "email",
-                "phone",
-                "language",
-                "avatar_resource_snapshot",
-                "user_status",
-                "registered_at",
-                "last_login",
-                "last_login_ip",
-                "password_last_changed",
-                "mfa_enabled",
-                "identity_binding_count",
-            ]:
-                self.assertIn(safe_column, store)
-
-            self.assertIn("load_user_profile", store)
-            self.assertIn("CAST(u.created_at AS TEXT) AS registered_at", store)
-            self.assertIn("COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'SDKWork User') AS display_name", store)
-            self.assertIn("u.avatar_resource_snapshot", store)
-            self.assertIn("AS avatar_resource_snapshot", store)
-            self.assertIn('avatar: media_resource_from_row(row, "avatar_resource_snapshot", "image")', compact_store)
-            self.assertIn("COALESCE(u.status, '') AS user_status", store)
-            self.assertIn(
-                'third_party_bound: integer_cell(row, "identity_binding_count") .max(0) .to_string()',
-                compact_store,
-            )
-            self.assertIn("missing app user profile status from database row", store)
-            self.assertIn("LIMIT", store)
-            self.assertIn("SELECT", store)
-            self.assertNotIn("SELECT *", store)
-            self.assertNotIn("avatar_url", store)
-            self.assertNotIn("COALESCE(u.status, 1) AS user_status", store)
-            self.assertNotIn('status: user_status_label(integer_cell(row, "user_status"))', store)
-            self.assertNotIn("plus_user", store)
-            self.assertNotIn("plus_oauth_account", store)
-            for sensitive_column in [
-                "u.password",
-                "password_hash",
-                "u.salt",
-                "secret",
-                "token",
-                "open_id",
-                "union_id",
-                "client_ip_hash",
-                "last_login_ip_hash",
-                "device_fingerprint_hash",
-                "user_agent_hash",
-                "session_id_hash",
-                "third_party_bound_snapshot",
-                "oauth_user_info",
-            ]:
-                self.assertNotIn(sensitive_column, store.lower())
+        self.assertNotIn("mod app_user_profile;", product_api_mod)
+        self.assertNotIn("app_user_profile_router", product_api_mod)
+        self.assertNotIn("app_user_profile_router_with_read_store", product_api_mod)
+        self.assertNotIn("app_user_profile_router", routes)
+        self.assertNotIn("AppUserProfileReadStore", routes)
+        self.assertIn("merge_federated_iam_routers", routes)
+        self.assertIn("wire_iam_routers", iam_runtime)
+        self.assertIn("bootstrap_iam_database_from_env", iam_runtime)
 
     def test_console_user_contract_response_schema_is_precise(self) -> None:
         contract_text = (
@@ -204,37 +41,13 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             ),
             None,
         )
-        def iter_schema_nodes(value):
-            if isinstance(value, dict):
-                yield value
-                for child in value.values():
-                    yield from iter_schema_nodes(child)
-            elif isinstance(value, list):
-                for child in value:
-                    yield from iter_schema_nodes(child)
-
-        schema = next(
-            (
-                item
-                for item in iter_schema_nodes(contract)
-                if item.get("name") == "IamUserResponse"
-                and item.get("type") == "object"
-                and "properties" in item
-            ),
-            None,
-        )
 
         self.assertIsNotNone(operation)
         self.assertEqual("/app/v3/api/iam/users/current", operation["api_path"])
         self.assertEqual("IamUserResponse", operation["response_schema"]["name"])
-        self.assertEqual(
-            {"$ref": "#/components/schemas/IamUserResponse"},
-            operation["response_schema"]["schema"],
-        )
-
-        self.assertIsNotNone(schema)
-        self.assertEqual("object", schema["type"])
-        self.assertFalse(schema["additionalProperties"])
+        self.assertEqual("object", operation["response_schema"]["type"])
+        self.assertFalse(operation["response_schema"]["additionalProperties"])
+        response_schema = operation["response_schema"]
         self.assertEqual(
             [
                 "id",
@@ -253,10 +66,10 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
                 "twoFactorEnabled",
                 "thirdPartyBound",
             ],
-            schema["required"],
+            response_schema["required"],
         )
 
-        properties = schema["properties"]
+        properties = response_schema["properties"]
         self.assertEqual(
             {"type": "string", "minLength": 1, "maxLength": 128},
             properties["displayName"],
@@ -288,18 +101,6 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_iam = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts"
-        ).read_text(encoding="utf-8")
-        iam_user_response_path = (
-            ROOT
-            / "sdks"
-            / "clawrouter-app-sdk"
-            / "clawrouter-app-sdk-typescript"
-            / "src"
-            / "types"
-            / "iam-user-response.ts"
-        )
         frontend = (
             ROOT
             / "apps"
@@ -315,21 +116,8 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertTrue((package_root / "tsconfig.json").exists())
         self.assertIn('"IamUserResponse"', openapi)
         self.assertIn('"$ref": "#/components/schemas/IamUserResponse"', openapi)
-        self.assertTrue(iam_user_response_path.exists())
 
-        iam_user_response = iam_user_response_path.read_text(encoding="utf-8")
-        self.assertIn("export interface IamUserResponse", iam_user_response)
-        self.assertIn("displayName: string;", iam_user_response)
-        self.assertIn("avatar: MediaResource;", iam_user_response)
-        self.assertNotIn("avatarUrl", iam_user_response)
-        self.assertIn("isVerified: boolean;", iam_user_response)
-        self.assertIn("thirdPartyBound: string;", iam_user_response)
-        self.assertIn(
-            "async retrieve(): Promise<UsersCurrentRetrieveResult>",
-            sdk_iam,
-        )
-
-        self.assertIn("IamUserResponse as SdkUserProfileResponse", frontend)
+        self.assertIn("getSdkworkAppbaseAppSdkClient().iam.users.current.retrieve()", frontend)
         self.assertIn("export interface UserProfile", frontend)
         self.assertIn("name: SdkUserProfileResponse['displayName'];", frontend)
         self.assertIn("avatar: SdkUserProfileResponse['avatar'];", frontend)
@@ -338,7 +126,6 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Promise<UserProfile>", frontend)
         self.assertIn("normalizeUserProfile", frontend)
         self.assertIn("readRequiredString(data, 'email', 'User profile response missing data')", frontend)
-        self.assertIn("getSdkworkAppbaseAppSdkClient().iam.users.current.retrieve()", frontend)
         self.assertNotIn("getClawRouterAppSdkClient().user.fetchUserProfile()", frontend)
         self.assertNotIn("as unknown as UserProfile", frontend)
         self.assertNotIn("initialAvatar", frontend)

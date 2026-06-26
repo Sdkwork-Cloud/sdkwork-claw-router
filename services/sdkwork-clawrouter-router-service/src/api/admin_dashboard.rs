@@ -1,15 +1,14 @@
 use std::sync::Arc;
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::extract::State;
 use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use axum::routing::get;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 
 use crate::api::response::PlusApiResult;
-use crate::api::subject::admin_operator_fields;
-use crate::ports::{AdminDashboardQuery, AdminDashboardReadStore, AdminDashboardSubject};
+use crate::ports::{AdminDashboardQuery, AdminDashboardReadStore};
 
 #[derive(Clone)]
 struct AdminDashboardState {
@@ -29,16 +28,10 @@ pub fn admin_dashboard_router_with_read_store(
 
 async fn fetch_admin_dashboard_overview(
     State(state): State<AdminDashboardState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
 ) -> Response {
-    let operator = admin_operator_fields(trusted);
     let query = AdminDashboardQuery {
-        subject: AdminDashboardSubject {
-            tenant_id: operator.tenant_id,
-            organization_id: operator.organization_id,
-            operator_id: operator.operator_id,
-            operator_type: operator.operator_type,
-        },
+        subject: scoped.into(),
     };
 
     match state.read_store.load_dashboard(query).await {

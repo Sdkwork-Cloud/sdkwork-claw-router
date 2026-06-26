@@ -6,7 +6,7 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::post;
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
+use crate::api::app_sql_subject::RequiredAppSqlScopedSubject;
 use serde::{Deserialize, Serialize};
 
 use crate::api::response::PlusApiResult;
@@ -180,12 +180,12 @@ pub fn payment_aggregate_router_with_runtime_store(
 
 async fn cancel_refund(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(refund_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -221,11 +221,11 @@ async fn cancel_refund(
 
 async fn create_refund(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -270,11 +270,11 @@ async fn create_refund(
 
 async fn create_payment_intent(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -316,12 +316,12 @@ async fn create_payment_intent(
 
 async fn confirm_payment_intent(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -354,12 +354,12 @@ async fn confirm_payment_intent(
 
 async fn capture_payment_intent(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
@@ -397,12 +397,12 @@ async fn capture_payment_intent(
 
 async fn cancel_payment_intent(
     State(state): State<PaymentAggregateState>,
-    trusted: TrustedRequestSubject,
+    RequiredAppSqlScopedSubject(scope): RequiredAppSqlScopedSubject,
     headers: HeaderMap,
     Path(payment_intent_id): Path<String>,
     body: Bytes,
 ) -> Response {
-    let subject = trusted;
+    let subject = scope;
     let idempotency_key = match required_header(&headers, IDEMPOTENCY_KEY_HEADER) {
         Ok(value) => value,
         Err(message) => return bad_request(message),

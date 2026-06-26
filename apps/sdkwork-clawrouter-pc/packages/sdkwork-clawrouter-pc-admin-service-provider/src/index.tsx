@@ -17,7 +17,7 @@ import {
   Users,
   X,
 } from 'lucide-react';
-import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawrouter-pc-commons';
+import { AdminResourceCenter, type AdminResourceSection } from '@sdkwork/clawroutes-pc-commons';
 import {
   DEFAULT_SERVICE_PROVIDER_PAGE_PARAMS,
   backendServiceProviderAdjustmentsList,

@@ -6,7 +6,7 @@ import {
   ConfirmDialog,
   type AdminResourceRecord,
   type AdminResourceSection,
-} from '@sdkwork/clawrouter-pc-commons';
+} from '@sdkwork/clawroutes-pc-commons';
 import {
   backendFulfillmentShipmentCreate,
   backendFulfillmentShipmentUpdate,

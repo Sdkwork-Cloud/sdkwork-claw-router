@@ -1,5 +1,6 @@
 use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
+use crate::api::admin_sql_subject::RequiredAdminSqlScopedSubject;
 
 use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
@@ -7,7 +8,6 @@ use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch, post};
 use axum::{Json, Router};
-use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -202,10 +202,10 @@ pub fn admin_site_router_with_store(
 async fn fetch_sites(
     State(state): State<AdminSiteState>,
     Query(params): Query<ListSitesParams>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     match state
         .store
         .list_sites(ListAdminSitesQuery {
@@ -224,11 +224,11 @@ async fn fetch_sites(
 
 async fn create_site(
     State(state): State<AdminSiteState>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let request = match parse_json_body::<SiteRequest>(&body, "site") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
@@ -250,11 +250,11 @@ async fn create_site(
 async fn update_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -281,10 +281,10 @@ async fn update_site(
 async fn delete_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -303,10 +303,10 @@ async fn delete_site(
 async fn fetch_site_channels(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -327,29 +327,29 @@ async fn fetch_site_channels(
 async fn test_site_connection(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
 ) -> Response {
-    site_connection_action(state, site_id, trusted, headers, false).await
+    site_connection_action(state, site_id, scoped, headers, false).await
 }
 
 async fn health_check_site(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     headers: HeaderMap,
 ) -> Response {
-    site_connection_action(state, site_id, trusted, headers, true).await
+    site_connection_action(state, site_id, scoped, headers, true).await
 }
 
 async fn site_connection_action(
     state: AdminSiteState,
     site_id: String,
-    trusted: TrustedRequestSubject,
+    scoped: crate::api::admin_sql_subject::SqlScopedAdminSubject,
     _headers: HeaderMap,
     persist_health: bool,
 ) -> Response {
-    let subject = map_subject(trusted);
+    let subject = scoped.into();
     let site_id = match parse_positive_id(&site_id, "site id") {
         Ok(site_id) => site_id,
         Err(message) => return bad_request(message),
@@ -366,14 +366,6 @@ async fn site_connection_action(
     }
 }
 
-fn map_subject(trusted: TrustedRequestSubject) -> AdminSiteSubject {
-    AdminSiteSubject {
-        tenant_id: trusted.tenant_id,
-        organization_id: trusted.organization_id,
-        operator_id: trusted.operator_id,
-        operator_type: trusted.operator_type,
-    }
-}
 
 fn build_create_site_command(
     state: AdminSiteState,
