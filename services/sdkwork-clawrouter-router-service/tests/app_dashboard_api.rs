@@ -99,12 +99,12 @@ async fn app_dashboard_overview_returns_mapping_error_for_non_numeric_web_princi
         .await
         .unwrap();
 
-    assert_eq!(StatusCode::INTERNAL_SERVER_ERROR, response.status());
+    assert_eq!(StatusCode::UNPROCESSABLE_ENTITY, response.status());
     let body = axum::body::to_bytes(response.into_body(), usize::MAX)
         .await
         .unwrap();
     let payload: Value = serde_json::from_slice(&body).unwrap();
-    assert_eq!("5001", payload["code"]);
+    assert_eq!("4220", payload["code"]);
     assert!(read_store.captured_subject.lock().unwrap().is_none());
 }
 

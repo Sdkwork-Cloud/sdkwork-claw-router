@@ -1,26 +1,25 @@
 use axum::extract::Request;
 use axum::http::Extensions;
 use sdkwork_iam_context_service::IamAppContext;
+use sdkwork_iam_bootstrap::{
+    parse_iam_sql_organization_id, parse_iam_sql_tenant_id, parse_iam_sql_user_id,
+};
 use sdkwork_web_core::WebRequestContext;
 
 use crate::auth::{
     project_trusted_subject_for_legacy_handlers, TrustedRequestSubject, DEFAULT_USER_OPERATOR_TYPE,
 };
 
-fn parse_legacy_subject_i64(value: &str) -> Option<i64> {
-    let trimmed = value.trim();
-    if trimmed.is_empty() {
-        return None;
-    }
-    trimmed.parse().ok()
+fn parse_legacy_subject_user_i64(value: &str) -> Option<i64> {
+    parse_iam_sql_user_id(value).ok()
+}
+
+fn parse_legacy_subject_tenant_i64(value: &str) -> Option<i64> {
+    parse_iam_sql_tenant_id(value).ok()
 }
 
 fn parse_legacy_subject_organization_id(value: Option<&str>) -> i64 {
-    value
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .and_then(parse_legacy_subject_i64)
-        .unwrap_or(0)
+    parse_iam_sql_organization_id(value.unwrap_or("0")).unwrap_or(0)
 }
 
 fn trusted_request_subject_from_ids(
@@ -66,9 +65,9 @@ pub fn authenticated_principal_failed_trusted_subject_projection(
 pub fn trusted_request_subject_from_iam_app_context(
     context: &IamAppContext,
 ) -> Option<TrustedRequestSubject> {
-    let tenant_id = parse_legacy_subject_i64(&context.tenant_id)?;
+    let tenant_id = parse_legacy_subject_tenant_i64(&context.tenant_id)?;
     let organization_id = parse_legacy_subject_organization_id(context.organization_id.as_deref());
-    let user_id = parse_legacy_subject_i64(&context.user_id)?;
+    let user_id = parse_legacy_subject_user_i64(&context.user_id)?;
     Some(trusted_request_subject_from_ids(
         tenant_id,
         organization_id,
@@ -82,10 +81,10 @@ pub fn trusted_request_subject_from_web_context(
     context: &WebRequestContext,
 ) -> Option<TrustedRequestSubject> {
     let principal = context.principal.as_ref()?;
-    let tenant_id = parse_legacy_subject_i64(principal.tenant_id())?;
+    let tenant_id = parse_legacy_subject_tenant_i64(principal.tenant_id())?;
     let organization_id =
         parse_legacy_subject_organization_id(principal.organization_id());
-    let user_id = parse_legacy_subject_i64(principal.user_id())?;
+    let user_id = parse_legacy_subject_user_i64(principal.user_id())?;
     Some(trusted_request_subject_from_ids(
         tenant_id,
         organization_id,
