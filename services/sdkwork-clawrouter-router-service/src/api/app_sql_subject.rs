@@ -8,6 +8,10 @@ use axum::http::request::Parts;
 use axum::http::{Extensions, HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::Json;
+use sdkwork_iam_bootstrap::{
+    is_legacy_opaque_iam_subject_id, parse_iam_sql_organization_id, parse_iam_sql_tenant_id,
+    parse_iam_sql_user_id, IamSqlSubjectParseError,
+};
 use sdkwork_web_core::{TenantAppContext, WebRequestContext};
 use sdkwork_claw_http::TrustedRequestSubject;
 
@@ -41,9 +45,24 @@ pub enum SqlScopedSubjectMappingError {
 impl SqlScopedSubject {
     pub fn from_tenant_app(context: &TenantAppContext) -> Result<Self, SqlScopedSubjectMappingError> {
         Ok(Self {
-            tenant_id: parse_positive_sql_id(&context.tenant_id, SqlScopedSubjectMappingError::InvalidTenantId)?,
-            organization_id: parse_organization_sql_id(context.organization_id.as_deref()),
-            user_id: parse_positive_sql_id(&context.user_id, SqlScopedSubjectMappingError::InvalidUserId)?,
+            tenant_id: map_iam_sql_parse_error(
+                parse_iam_sql_tenant_id(&context.tenant_id),
+                SqlScopedSubjectMappingError::InvalidTenantId,
+            )?,
+            organization_id: map_iam_sql_parse_error(
+                parse_iam_sql_organization_id(
+                    context
+                        .organization_id
+                        .as_deref()
+                        .filter(|value| !value.trim().is_empty())
+                        .unwrap_or("0"),
+                ),
+                SqlScopedSubjectMappingError::InvalidOrganizationId,
+            )?,
+            user_id: map_iam_sql_parse_error(
+                parse_iam_sql_user_id(&context.user_id),
+                SqlScopedSubjectMappingError::InvalidUserId,
+            )?,
         })
     }
 
@@ -205,7 +224,13 @@ pub fn resolve_optional_app_sql_subject(
     if let Some(context) = extensions.get::<WebRequestContext>() {
         if let Some(principal) = context.principal.as_ref() {
             let tenant_app = TenantAppContext::try_from_request_context(context)
-                .map_err(|_| subject_mapping_failed_response())?;
+                .map_err(|_| {
+                    subject_mapping_failed_response(
+                        principal.tenant_id(),
+                        principal.user_id(),
+                        SqlScopedSubjectMappingError::InvalidUserId,
+                    )
+                })?;
             return match SqlScopedSubject::from_tenant_app(&tenant_app) {
                 Ok(subject) => Ok(Some(subject)),
                 Err(error) => {
@@ -216,7 +241,11 @@ pub fn resolve_optional_app_sql_subject(
                         ?error,
                         "failed to map TenantAppContext into SqlScopedSubject"
                     );
-                    Err(subject_mapping_failed_response())
+                    Err(subject_mapping_failed_response(
+                        principal.tenant_id(),
+                        principal.user_id(),
+                        error,
+                    ))
                 }
             };
         }
@@ -232,38 +261,40 @@ pub fn resolve_optional_app_sql_subject(
     Ok(None)
 }
 
-pub fn subject_mapping_failed_response() -> Response {
+pub fn subject_mapping_failed_response(
+    tenant_id: &str,
+    user_id: &str,
+    error: SqlScopedSubjectMappingError,
+) -> Response {
+    let legacy = is_legacy_opaque_iam_subject_id(tenant_id)
+        || is_legacy_opaque_iam_subject_id(user_id);
+    let message = if legacy {
+        "authenticated principal uses a legacy opaque IAM id; restart the application to repair IAM subject ids or sign in again with a snowflake-backed account"
+    } else {
+        match error {
+            SqlScopedSubjectMappingError::InvalidTenantId => {
+                "authenticated principal tenant id is not a positive numeric SQL subject"
+            }
+            SqlScopedSubjectMappingError::InvalidOrganizationId => {
+                "authenticated principal organization id is not a valid numeric SQL subject"
+            }
+            SqlScopedSubjectMappingError::InvalidUserId => {
+                "authenticated principal user id is not a positive numeric SQL subject"
+            }
+        }
+    };
     (
-        StatusCode::INTERNAL_SERVER_ERROR,
-        Json(PlusApiResult::<()>::error(
-            "5001",
-            "authenticated principal could not be mapped to SQL subject scope",
-        )),
+        StatusCode::UNPROCESSABLE_ENTITY,
+        Json(PlusApiResult::<()>::error("4220", message)),
     )
         .into_response()
 }
 
-fn parse_positive_sql_id(value: &str, error: SqlScopedSubjectMappingError) -> Result<i64, SqlScopedSubjectMappingError> {
-    let trimmed = value.trim();
-    if trimmed.is_empty() {
-        return Err(error);
-    }
-    let parsed = trimmed
-        .parse::<i64>()
-        .map_err(|_| error)?;
-    if parsed <= 0 {
-        return Err(error);
-    }
-    Ok(parsed)
-}
-
-fn parse_organization_sql_id(value: Option<&str>) -> i64 {
-    value
-        .map(str::trim)
-        .filter(|value| !value.is_empty())
-        .and_then(|value| value.parse::<i64>().ok())
-        .filter(|value| *value >= 0)
-        .unwrap_or(0)
+fn map_iam_sql_parse_error<T>(
+    result: Result<T, IamSqlSubjectParseError>,
+    error: SqlScopedSubjectMappingError,
+) -> Result<T, SqlScopedSubjectMappingError> {
+    result.map_err(|_| error)
 }
 
 #[cfg(test)]
@@ -293,7 +324,24 @@ mod tests {
     }
 
     #[test]
-    fn from_tenant_app_rejects_non_numeric_ids() {
+    fn from_tenant_app_rejects_legacy_opaque_ids() {
+        let context = TenantAppContext {
+            tenant_id: "100001".to_owned(),
+            organization_id: Some("0".to_owned()),
+            app_id: "sdkwork-clawrouter".to_owned(),
+            user_id: "iamu_0192ab3c-4d5e-7890-abcd-ef1234567890".to_owned(),
+            session_id: Some("session-1".to_owned()),
+            environment: WebEnvironment::Dev,
+            login_scope: WebLoginScope::Tenant,
+        };
+        assert_eq!(
+            Err(SqlScopedSubjectMappingError::InvalidUserId),
+            SqlScopedSubject::from_tenant_app(&context)
+        );
+    }
+
+    #[test]
+    fn from_tenant_app_rejects_non_numeric_tenant_ids() {
         let context = TenantAppContext {
             tenant_id: "tenant-bootstrap".to_owned(),
             organization_id: Some("0".to_owned()),
